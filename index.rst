@@ -3,7 +3,7 @@
 .. meta::pyth
    :generatepdf: true
    
-Qualcomm Linux Build Guide test1
+Qualcomm Linux Build Guide
 ========================================
 
 .. toctree::
