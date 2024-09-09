@@ -173,7 +173,17 @@ Flash software using QDL
    If you need ModemManager, you can start it again after the flashing
    is complete.
 
-2. Download the QDL tool, compile it, and flash the images:
+2. Prerequisites for using QDL:
+
+   - The modules ``make`` and ``gcc`` must be available.
+   - Install the following dependent packages:
+
+   ::
+
+      sudo apt-get install git libxml2-dev libusb-1.0-0-dev pkg-config
+   ::
+
+3.  Download the QDL tool, compile it, and flash the images:
 
    ::
 
@@ -191,7 +201,7 @@ Flash software using QDL
       # qdl <prog.mbn> [<program> <patch> ...]
       # Example: build_path is build-qcom-wayland
       cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image
-      <workspace_path>b/qdl_tool/qdl --storage ufs --include qcom-multimedia-image prog_firehose_ddr.elf rawprogram*.xml patch*.xml
+      <workspace_path>/qdl_tool/qdl prog_firehose_ddr.elf rawprogram*.xml patch*.xml
 
    Flashing is successful if you see *partition 1 is now bootable* on
    the terminal window as shown in the following message:
