@@ -11,7 +11,9 @@ Sync firmware
 The following table describes the Qualcomm Yocto layers and release
 tags:
 
-.. flat-table:: Table : Qualcomm Yocto layers and manifest tags
+.. tabularcolumns:: |p{3cm}|p{5cm}|p{3cm}|p{5cm}|
+
+.. flat-table:: Table: Qualcomm Yocto layers and manifest tags
    :header-rows: 1
    :class: longtable
 
@@ -36,17 +38,15 @@ tags:
      - ``meta-qcom-extras``
      - meta-qcom-extras release tag
      - r1.0_00046.0 
-   * - see :ref:`Table :Mapping access levels. <build_mapping_access_levels>`.
+   * - See :ref:`Table: Mapping access levels  <build_mapping_access_levels>`
      - NA
      - firmware release tag
      - r1.0_00044.0
-
-The following tables describe the available distributions for firmware
-that can be downloaded according to the need and entitlements:
+The following tables describe the available distributions for firmware that can be downloaded according to the need and entitlements:
 
 .. _build_mapping_access_levels:
 
-.. flat-table:: Table : Mapping access levels
+.. flat-table:: Table: Mapping access levels
    :widths: 24 24 24
    :header-rows: 1
    :class: longtable table-wrap
@@ -152,60 +152,52 @@ that can be downloaded according to the need and entitlements:
 
        ``meta-qcom-extras``
 
-       ``meta-qcom-qim-product-sdk`` 
+       ``meta-qcom-qim-product-sdk``
 
-
-
-For Yocto layer descriptions, see :ref:`Table : 1. Qualcomm Linux Yocto layers <host_machine_qsc_Launcher>`.
+For Yocto layer descriptions, see :ref:`Table: Qualcomm Linux Yocto layers <host_machine_qsc_Launcher>`.
 
 .. _Mapping_firmware_table:
 
-      .. list-table:: Table : Mapping of firmware distributions and git repositories
-         :header-rows: 1
-         :class: longtable
+.. flat-table:: Table: Mapping of firmware distributions and git repositories
+   :widths: 24 24 24
+   :header-rows: 1
+   :class: longtable
 
-         * - Firmware distribution
-           - Git command
-           - Directory into which firmware gets synced on git clone
+   * - Firmware distribution
+     - Git command
+     - Directory into which firmware gets synced on git clone
 
-         * - Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NoModem
-           - ``git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem_nomodem.git``
-           - ``qualcomm-linux-spf-1-0_ap_standard_oem_nomodem``
+   * - Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NoModem
+     - ``git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem_nomodem.git``
+     - ``qualcomm-linux-spf-1-0_ap_standard_oem_nomodem``
 
-         * - Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NM_QIMPSDK
-           - ``git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk.git``
-           - ``qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk``
+   * - Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NM_QIMPSDK
+     - ``git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk.git``
+     - ``qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk``
 
-         * - Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NM_QIRPSDK
-           - ``git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qirpsdk.git``
-           - ``qualcomm-linux-spf-1-0_ap_standard_oem_nm-qirpsdk``
+   * - Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NM_QIRPSDK
+     - ``git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qirpsdk.git``
+     - ``qualcomm-linux-spf-1-0_ap_standard_oem_nm-qirpsdk``
 
-         * - Qualcomm_Linux.SPF.1.0|AP|Standard|OEM\|
-           - ``git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem.git``
-           - ``qualcomm-linux-spf-1-0_ap_standard_oem``
+   * - Qualcomm_Linux.SPF.1.0|AP|Standard|OEM\|
+     - ``git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem.git``
+     - ``qualcomm-linux-spf-1-0_ap_standard_oem``
 
-         * - Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|QIMPSDK
-           - ``git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem_qimpsdk.git``
-           - ``qualcomm-linux-spf-1-0_ap_standard_oem_qimpsdk``
+   * - Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|QIMPSDK
+     - ``git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem_qimpsdk.git``
+     - ``qualcomm-linux-spf-1-0_ap_standard_oem_qimpsdk``
 
-         * - Qualcomm_Linux.SPF.1.0|AMSS|Standard|OEM\|
-           - ``git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_amss_standard_oem.git``
-           - ``qualcomm-linux-spf-1-0_amss_standard_oem``
+   * - Qualcomm_Linux.SPF.1.0|AMSS|Standard|OEM\|
+     - ``git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_amss_standard_oem.git``
+     - ``qualcomm-linux-spf-1-0_amss_standard_oem``
 
-         * - Qualcomm_Linux.SPF.1.0|AMSS|Standard|OEM|QIMPSDK
-           - ``git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_amss_standard_oem_qimpsdk.git``
-           - ``qualcomm-linux-spf-1-0_amss_standard_oem_qimpsdk``
-  
+   * - Qualcomm_Linux.SPF.1.0|AMSS|Standard|OEM|QIMPSDK
+     - ``git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_amss_standard_oem_qimpsdk.git``
+     - ``qualcomm-linux-spf-1-0_amss_standard_oem_qimpsdk``
 
-.. note:: Commands in the following sections are based on binary and
-          source for firmware images without modem and GPS (see the command in :ref:`Table : Mapping of firmware distributions and git repositories <Mapping_firmware_table>`). Hence, ``qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk`` is used. If you
-          use any other distribution, then update the directory accordingly.
+.. note:: Commands in the following sections are based on binary and source for firmware images without modem and GPS (see the command in :ref:`Table: Mapping of firmware distributions and git repositories <Mapping_firmware_table>`). Hence, ``qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk`` is used. If you use any other distribution, then update the directory accordingly.
 
-The **Git command** column (see :ref:`Table : Mapping of firmware distributions and git repositories <Mapping_firmware_table>`) provides the git repository,
-which contains the firmware sources. These repositories are hosted on
-Qualcomm servers. Clone the appropriate repositories based on your
-access profile and use case. The following git clone command downloads
-the selected firmware components in source, except the modem:
+The **Git command** column (see :ref:`Table: Mapping of firmware distributions and git repositories <Mapping_firmware_table>`) provides the git repository, which contains the firmware sources. These repositories are hosted on Qualcomm servers. Clone the appropriate repositories based on your access profile and use case. The following git clone command downloads the selected firmware components in source, except the modem:
 
 ::
 
@@ -807,7 +799,7 @@ Build QIMP SDK image with extras
       mkdir -p layers/meta-qcom-extras
       cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/<product>/common/config/meta-qcom-extras/* layers/meta-qcom-extras/
       # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/).
-      git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b qcom-6.6.28-QLI.1.1-Ver.1.1_qim-product-sdk-1.1.3 layers/meta-qcom-qim-product-sdk
+      git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b qcom-6.6.38-QLI.1.2-Ver.1.0_qim-product-sdk-1.1.1 layers/meta-qcom-qim-product-sdk
 
    .. note:: For the ``<manifest release tag>`` and
             ``<meta-qcom-extras release tag>`` information, see the *Build-critical release tags* section in the `Release

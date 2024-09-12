@@ -37,7 +37,7 @@ Docker
       sudo vim /etc/docker/daemon.json
       # Add an entry similar to the following in /etc/docker/daemon.json:
       {
-              "registry-mirrors": ["https://docker-registry.qualcomm.com"]
+         "registry-mirrors": ["https://docker-registry.qualcomm.com"]
       }
 
    .. note::

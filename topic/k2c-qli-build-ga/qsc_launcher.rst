@@ -227,7 +227,7 @@ Use QSC Launcher
 
       The Qualcomm Linux Yocto layers are described in the following table:
 	  
-        .. list-table:: Table : Qualcomm Linux Yocto layers
+        .. list-table:: Table: Qualcomm Linux Yocto layers
            :widths: 22 50
            :header-rows: 1
            :class: longtable

@@ -146,7 +146,7 @@ Linux:
        - ``qcom-robotics-ros2-humble``
 
 
-For Yocto layer descriptions, see :ref:`Table : 1. Qualcomm Linux Yocto layers <host_machine_qsc_Launcher>`.
+For Yocto layer descriptions, see :ref:`Table: Qualcomm Linux Yocto layers <host_machine_qsc_Launcher>`.
 
 .. note:: For information on building the ``meta-qcom-extras`` add-on
           layer and select firmware sources, see :doc:`GitHub workflow (firmware and extras) <build_addn_info>`.
