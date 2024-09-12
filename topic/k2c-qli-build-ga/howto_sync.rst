@@ -158,7 +158,7 @@ This includes the following steps:
 
    .. note:: For the ``<manifest release tag>`` information, see the
              *Build-critical release tags* section in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
-             An example ``<manifest release tag>`` is ``qcom-6.6.28-QLI.1.1-Ver.1.1.xml``.
+             An example ``<manifest release tag>`` is ``qcom-6.6.38-QLI.1.2-Ver.1.0.xml``.
 
 2. Set up the build environment:
 

@@ -23,23 +23,23 @@ tags:
    * - :rspan:`2` Public developers (unregistered)
      - ``meta-qcom-hwe``
      - manifest release tag
-     - qcom-6.6.28-QLI.1.1-Ver.1.1.xml
+     - qcom-6.6.38-QLI.1.2-Ver.1.0.xml
    *  
      - ``meta-qcom-qim-product-sdk``
      - manifest release tag
-     - qcom-6.6.28-QLI.1.1-Ver.1.1_qim-product-sdk-1.1.3.xml
+     - qcom-6.6.38-QLI.1.2-Ver.1.0_qim-product-sdk-1.1.1.xml
    *  
      - ``meta-qcom-robotics-sdk``
      - manifest release tag
-     - qcom-6.6.28-QLI.1.1-Ver.1.1_robotics-product-sdk-1.1.xml
+     - qcom-6.6.38-QLI.1.2-Ver.1.0_robotics-product-sdk-1.1.xml
    * - Licensed developers with Authorized access
      - ``meta-qcom-extras``
      - meta-qcom-extras release tag
-     - r1.0_00041.0 
+     - r1.0_00046.0 
    * - see :ref:`Table :Mapping access levels. <build_mapping_access_levels>`.
      - NA
      - firmware release tag
-     - r1.0_00039.2
+     - r1.0_00044.0
 
 The following tables describe the available distributions for firmware
 that can be downloaded according to the need and entitlements:
@@ -212,7 +212,7 @@ the selected firmware components in source, except the modem:
    mkdir -p <FIRMWARE_ROOT>
    cd <FIRMWARE_ROOT>
    git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk.git
-   # Example, <firmware release tag> is r1.0_00039.2
+   # Example, <firmware release tag> is r1.0_00044.0
 
 .. note:: 
     | The ``git clone`` command clones the content into the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk`` directory.
@@ -715,10 +715,10 @@ Build base image with extras
       mkdir <WORKSPACE_DIR>
       cd <WORKSPACE_DIR>
       repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m <manifest release tag>
-      # Example, <manifest release tag> is qcom-6.6.28-QLI.1.1-Ver.1.1.xml
+      # Example, <manifest release tag> is qcom-6.6.38-QLI.1.2-Ver.1.0.xml
       repo sync
       git clone https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_hlos_oem_metadata.git -b <meta-qcom-extras release tag> --depth 1
-      # Example, <meta-qcom-extras release tag> is r1.0_00041.0
+      # Example, <meta-qcom-extras release tag> is r1.0_00046.0
       mkdir -p layers/meta-qcom-extras
       cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/QCM6490.LE.1.0/common/config/meta-qcom-extras/* layers/meta-qcom-extras/
 
@@ -738,8 +738,8 @@ Build base image with extras
       # It enables source compilation for the corresponding binaries present in meta-qcom-hwe.
       # This ID is constant for the firmware repository qualcomm-linux-spf-1-0_ap_standard_oem_nm-qirpsdk.git.
       # CUST_ID must be initialized to <PARTY_ID> for "Licensed developers (contact Qualcomm for access)".
-      # For example, for distros like "Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|" and "Qualcomm_Linux.SPF.1.0|AMSS|Standard|OEM|",
-      # <PARTY_ID> is provided while signing up for distros mapping to "Licensed developers (contact Qualcomm for access)".
+      # For example, for distributions like "Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|" and "Qualcomm_Linux.SPF.1.0|AMSS|Standard|OEM|",
+      # <PARTY_ID> is provided while signing up for distributions mapping to "Licensed developers (contact Qualcomm for access)".
       # To find <PARTY_ID>, sign in to your account at qualcomm.com.
       # Click the profile icon, select Account Settings, and then scroll to Company Information section.
       # Use the number specified for Export ID as <PARTY_ID>.
@@ -796,13 +796,13 @@ Build QIMP SDK image with extras
       mkdir <WORKSPACE_DIR>
       cd <WORKSPACE_DIR>
       repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m <manifest release tag>
-      # Example, <manifest release tag> is qcom-6.6.28-QLI.1.1-Ver.1.1.xml
+      # Example, <manifest release tag> is qcom-6.6.38-QLI.1.2-Ver.1.0.xml
       repo sync
       git clone https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_hlos_oem_metadata.git -b <meta-qcom-extras release tag> --depth 1
-      # Example, <meta-qcom-extras release tag> is r1.0_00041.0
+      # Example, <meta-qcom-extras release tag> is r1.0_00046.0
       mkdir -p layers/meta-qcom-extras
       cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/QCM6490.LE.1.0/common/config/meta-qcom-extras/* layers/meta-qcom-extras/
-      git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b qcom-6.6.28-QLI.1.1-Ver.1.1_qim-product-sdk-1.1.3 layers/meta-qcom-qim-product-sdk
+      git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b qcom-6.6.38-QLI.1.2-Ver.1.0_qim-product-sdk-1.1.1 layers/meta-qcom-qim-product-sdk
 
    .. note:: For the ``<manifest release tag>`` and
             ``<meta-qcom-extras release tag>`` information, see the *Build-critical release tags* section in the `Release
@@ -819,8 +819,8 @@ Build QIMP SDK image with extras
       # It enables source compilation for the corresponding binaries present in meta-qcom-hwe.
       # This ID is constant for the firmware repository qualcomm-linux-spf-1-0_ap_standard_oem_nm-qirpsdk.git.
       # CUST_ID must be initialized to <PARTY_ID> for "Licensed developers (contact Qualcomm for access)".
-      # For example, for distros like "Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|" and "Qualcomm_Linux.SPF.1.0|AMSS|Standard|OEM|",
-      # <PARTY_ID> is provided while signing up for distros mapping to "Licensed developers (contact Qualcomm for access)".
+      # For example, for distributions like "Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|" and "Qualcomm_Linux.SPF.1.0|AMSS|Standard|OEM|",
+      # <PARTY_ID> is provided while signing up for distributions mapping to "Licensed developers (contact Qualcomm for access)".
       # To find <PARTY_ID>, sign in to your account at qualcomm.com.
       # Click the profile icon, select Account Settings, and then scroll to Company Information section.
       # Use the number specified for Export ID as <PARTY_ID>.
@@ -884,10 +884,10 @@ Build QIRP SDK image with extras
       mkdir <WORKSPACE_DIR>
       cd <WORKSPACE_DIR>
       repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m <manifest release tag>
-      # Example, <manifest release tag> is qcom-6.6.28-QLI.1.1-Ver.1.1.xml
+      # Example, <manifest release tag> is qcom-6.6.38-QLI.1.2-Ver.1.0.xml
       repo sync
       git clone https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_hlos_oem_metadata.git -b <meta-qcom-extras release tag> --depth 1
-      # Example, <meta-qcom-extras release tag> is r1.0_00041.0
+      # Example, <meta-qcom-extras release tag> is r1.0_00046.0
       mkdir -p layers/meta-qcom-extras
       mkdir -p layers/meta-qcom-robotics-extras
       cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/QCM6490.LE.1.0/common/config/meta-qcom-extras/* layers/meta-qcom-extras/
@@ -898,7 +898,7 @@ Build QIRP SDK image with extras
       git clone https://github.com/quic-yocto/meta-qcom-robotics-distro.git layers/meta-qcom-robotics-distro
       git clone https://github.com/quic-yocto/meta-qcom-robotics-sdk.git layers/meta-qcom-robotics-sdk
       git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b <qim-product-sdk release tag> layers/meta-qcom-qim-product-sdk
-      # Example, <qim-product-sdk release tag> is qcom-6.6.28-QLI.1.1-Ver.1.1_qim-product-sdk-1.1.3
+      # Example, <qim-product-sdk release tag> is qcom-6.6.38-QLI.1.2-Ver.1.0_qim-product-sdk-1.1.1
 
    .. note:: 
       For the ``<manifest release tag>``, ``<meta-qcom-extras release tag>``, and ``<qim-product-sdk release tag>`` information, see the
@@ -915,8 +915,8 @@ Build QIRP SDK image with extras
       # It enables source compilation for the corresponding binaries present in meta-qcom-hwe.
       # This ID is constant for the firmware repository qualcomm-linux-spf-1-0_ap_standard_oem_nm-qirpsdk.git.
       # CUST_ID must be initialized to <PARTY_ID> for "Licensed developers (contact Qualcomm for access)".
-      # For example, for distros like "Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|" and "Qualcomm_Linux.SPF.1.0|AMSS|Standard|OEM|",
-      # <PARTY_ID> is provided while signing up for distros mapping to "Licensed developers (contact Qualcomm for access)".
+      # For example, for distributions like "Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|" and "Qualcomm_Linux.SPF.1.0|AMSS|Standard|OEM|",
+      # <PARTY_ID> is provided while signing up for distributions mapping to "Licensed developers (contact Qualcomm for access)".
       # To find <PARTY_ID>, sign in to your account at qualcomm.com.
       # Click the profile icon, select Account Settings, and then scroll to Company Information section.
       # Use the number specified for Export ID as <PARTY_ID>.

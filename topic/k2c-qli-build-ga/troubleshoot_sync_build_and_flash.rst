@@ -264,9 +264,9 @@ Sync
    ::
 
       # Replace the following command
-      repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linuxSTXkirkstone -m qcom-6.6.28-QLI.1.1-Ver.1.1.xml
+      repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linuxSTXkirkstone -m qcom-6.6.38-QLI.1.2-Ver.1.0.xml
       # with
-      repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m qcom-6.6.28-QLI.1.1-Ver.1.1.xml
+      repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m qcom-6.6.38-QLI.1.2-Ver.1.0.xml
 
 .. _section_ays_4gc_p1c_vinayjk_02-29-24-1707-9-256:
 
