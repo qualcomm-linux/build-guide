@@ -3,7 +3,7 @@
 Host machine requirements
 -------------------------------
 
-.. tabularcolumns:: |p{4cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|
+.. tabularcolumns:: |p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|
 
 .. flat-table::
    :header-rows: 2

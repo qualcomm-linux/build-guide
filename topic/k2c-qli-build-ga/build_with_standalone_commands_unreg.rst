@@ -61,28 +61,28 @@ manifest release tags that are used to download and build Qualcomm
 Linux:
 
 .. note::
-   The following is the syntax for manifest release tag:
-   ``qcom-<Linux LTS Kernel Version>-QLI.<version>-Ver.<release>.xml``
+   - The following is the syntax for manifest release tag: ``qcom-<Linux LTS Kernel Version>-QLI.<version>-Ver.<release>.xml``
+    
+     For example, the manifest release tag ``qcom-6.6.38-QLI.1.2-Ver.1.0.xml`` denotes the following:
+     
+     - 6.6.38 – Linux Kernel
+     - QLI.1.2 – Qualcomm Linux version 1.2
+     - 1.0 – Milestone release
 
-   For example, the manifest release tag ``qcom-6.6.38-QLI.1.2-Ver.1.0.xml`` denotes the following:
-    - 6.6.38 – Linux Kernel
-    - QLI.1.2 – Qualcomm Linux version 1.2
-    - 1.0 – Milestone release
+   - The following is the syntax for additional productization manifest release tag: ``qcom-<Linux LTS Kernel version>-QLI.<version>-Ver.<release>_<product/customization>-<release>.xml``
 
-   The following is the syntax for additional productization manifest release tag:
-   ``qcom-<Linux LTS Kernel version>-QLI.<version>-Ver.<release>_<product/customization>-<release>.xml``
+     For example, the additional productization manifest release tag ``qcom-6.6.38-QLI.1.2-Ver.1.0_qim-product-sdk-1.1.1.xml`` denotes the following:
+     
+     - 6.6.38 – Linux Kernel
+     - QLI.1.2 – Qualcomm Linux version 1.2
+     - qim-product-sdk-1.1.1 – QIMP SDK release on top of QLI.1.2
 
-   For example, the additional productization manifest release tag ``qcom-6.6.38-QLI.1.2-Ver.1.0_qim-product-sdk-1.1.1.xml`` denotes the following:
-    - 6.6.38 – Linux Kernel
-    - QLI.1.2 – Qualcomm Linux version 1.2
-    - qim-product-sdk-1.1.1 – QIMP SDK release on top of QLI.1.2
-
-      Other product/customization examples:
+       Other product/customization examples:
 
         - *realtime-linux-1.0*
         - *robotics-product-sdk-1.1*
-    - 1.0 – Milestone release
-    - 1.1.1 – Patch release associated with the milestone release
+     - 1.0 – Milestone release
+     - 1.1.1 – Patch release associated with the milestone release
 
 .. list-table:: Yocto layers mapped to manifest release tags
    :header-rows: 1
@@ -164,11 +164,11 @@ Build base image
       # and enters into build-qcom-wayland directory.
 
    .. note::
-      Build also supports ``base`` and ``custom`` build overrides. The default override is custom and you can override to base when required:
-      
-      ``MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment``
+      - Build also supports ``base`` and ``custom`` build overrides. The default override is custom and you can override to base when required:
 
-      For various machine and build override combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
+        ``MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment``
+
+      - For various machine and build override combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
 
 3. Build the software image:
 
@@ -198,8 +198,8 @@ Build QIMP SDK image
 1. Download Qualcomm Yocto and supporting layers:
 
    .. note:: 
-             | The ``<manifest release tag>`` for the QIMP SDK build is the same as the base build. The QIMP SDK layer must be cloned on top of the base build. 
-             | For the latest ``<manifest release tag>``, see the *Build-Critical Release Tags* section in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
+      - The ``<manifest release tag>`` for the QIMP SDK build is the same as the base build. The QIMP SDK layer must be cloned on top of the base build. 
+      - For the latest ``<manifest release tag>``, see the *Build-Critical Release Tags* section in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
 
    ::
 
@@ -214,8 +214,8 @@ Build QIMP SDK image
 
    ::
 
-      git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b <qim-product-sdk release tag> layers/meta-qcom-qim-product-sdk
-      # Example, <qim-product-sdk release tag> is qcom-6.6.38-QLI.1.2-Ver.1.0_qim-product-sdk-1.1.1
+      git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b <meta-qcom-qim-product-sdk release tag> layers/meta-qcom-qim-product-sdk
+      # Example, <meta-qcom-qim-product-sdk release tag> is qcom-6.6.38-QLI.1.2-Ver.1.0_qim-product-sdk-1.1.1
 
    To build a QIMP SDK layer, the following export is required:
 
@@ -237,7 +237,7 @@ Build QIMP SDK image
 
       bitbake qcom-multimedia-image
       # Build SDK image
-      bitbake qim-product-sdk
+      bitbake qcom-qim-product-sdk
 
    On successful build, you can check if ``system.img`` is present in
    the

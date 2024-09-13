@@ -11,7 +11,7 @@ Sync firmware
 The following table describes the Qualcomm Yocto layers and release
 tags:
 
-.. tabularcolumns:: |p{3cm}|p{5cm}|p{3cm}|p{5cm}|
+.. tabularcolumns:: |p{3cm}|p{4cm}|p{3cm}|p{4cm}|
 
 .. flat-table:: Table: Qualcomm Yocto layers and manifest tags
    :header-rows: 1
@@ -207,8 +207,8 @@ The **Git command** column (see :ref:`Table: Mapping of firmware distributions a
    # Example, <firmware release tag> is r1.0_00044.0
 
 .. note:: 
-    | The ``git clone`` command clones the content into the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk`` directory.
-    | For the latest ``<firmware release tag>``, see the *Build-critical release tags* section in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
+   - The ``git clone`` command clones the content into the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk`` directory.
+   - For the latest ``<firmware release tag>``, see the *Build-critical release tags* section in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
 
 .. _section_v5m_4gq_p1c_vinayjk_03-02-24-1519-24-381:
 
@@ -473,10 +473,10 @@ Build firmware
 
        .. note:: 
           Firmware prebuild is successful if the following zip files are generated in the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCM6490.LE.1.0/common/build/ufs/bin`` directory:
-                  
-          -  ``QCM6490_bootbinaries.zip``
-          -  ``QCM6490_dspso.zip``
-          -  ``QCM6490_fw.zip``
+
+           -  ``QCM6490_bootbinaries.zip``
+           -  ``QCM6490_dspso.zip``
+           -  ``QCM6490_fw.zip``
 
    .. tab:: QCS9075 
 
@@ -840,7 +840,8 @@ Build QIMP SDK image with extras
    ::
 
       bitbake qcom-multimedia-image
-      bitbake qim-product-sdk
+      # Build SDK image
+      bitbake qcom-qim-product-sdk
 
    .. note:: 
       Clean the QIMP SDK build:
@@ -850,8 +851,8 @@ Build QIMP SDK image with extras
          bitbake -fc cleansstate qcom-multimedia-image
          bitbake -fc cleanall qcom-multimedia-image
 
-         bitbake -fc cleansstate qim-product-sdk
-         bitbake -fc cleanall qim-product-sdk
+         bitbake -fc cleansstate qcom-qim-product-sdk
+         bitbake -fc cleanall qcom-qim-product-sdk
 
    On successful build, you can check if ``system.img`` is present in
    the
@@ -895,11 +896,11 @@ Build QIRP SDK image with extras
       git clone https://github.com/quic-yocto/meta-qcom-robotics.git layers/meta-qcom-robotics
       git clone https://github.com/quic-yocto/meta-qcom-robotics-distro.git layers/meta-qcom-robotics-distro
       git clone https://github.com/quic-yocto/meta-qcom-robotics-sdk.git layers/meta-qcom-robotics-sdk
-      git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b <qim-product-sdk release tag> layers/meta-qcom-qim-product-sdk
-      # Example, <qim-product-sdk release tag> is qcom-6.6.38-QLI.1.2-Ver.1.0_qim-product-sdk-1.1.1
+      git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b <meta-qcom-qim-product-sdk release tag> layers/meta-qcom-qim-product-sdk
+      # Example, <meta-qcom-qim-product-sdk release tag> is qcom-6.6.38-QLI.1.2-Ver.1.0_qim-product-sdk-1.1.1
 
    .. note:: 
-      For the ``<manifest release tag>``, ``<meta-qcom-extras release tag>``, and ``<qim-product-sdk release tag>`` information, see the
+      For the ``<manifest release tag>``, ``<meta-qcom-extras release tag>``, and ``<meta-qcom-qim-product-sdk release tag>`` information, see the
       *Build-critical release tags* section in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
 
 2. Set up the Yocto build:

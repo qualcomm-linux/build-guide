@@ -117,13 +117,11 @@ Create a Yocto Docker image and build:
    ``qcom-download-utils/qcom-6.6.38-QLI.1.2-Ver.1.0/build-qcom-wayland``.
 
 .. note:: 
-   | **# ERROR: error.GitError: git config (‘–replace-all’,‘color.ui’, ‘auto’): error: could not write config file /home/$USER/.gitconfig: Device or resource busy**
-   | This error is triggered when your gitconfig does not set the UI color
-     configuration as Git 1.8.4 is enabled by default. To enable color
-     display in your account, run the following command: ``git config --global color.ui auto``.
+   - **# ERROR: error.GitError: git config (‘–replace-all’,‘color.ui’, ‘auto’): error: could not write config file /home/$USER/.gitconfig: Device or resource busy**
+     
+     This error is triggered when your gitconfig does not set the UI color configuration as Git 1.8.4 is enabled by default. To enable color display in your account, run the following command: ``git config --global color.ui auto``.
 
-.. note:: 
-   If a build error is triggered and fixed, run the commands in :ref:`Rebuild <section_p1h_tv3_v1c_vinayjk_03-23-24-142-26-643>`.
+   - If a build error is triggered and fixed, run the commands in :ref:`Rebuild <section_p1h_tv3_v1c_vinayjk_03-23-24-142-26-643>`.
 
 .. _section_mp2_1n4_w1c:
 
@@ -146,8 +144,8 @@ Build QIMP SDK image
 
       ::
 
-         git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b <qim-product-sdk release tag> layers/meta-qcom-qim-product-sdk
-         # Example, <qim-product-sdk release tag> is qcom-6.6.38-QLI.1.2-Ver.1.0_qim-product-sdk-1.1.1
+         git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b <meta-qcom-qim-product-sdk release tag> layers/meta-qcom-qim-product-sdk
+         # Example, <meta-qcom-qim-product-sdk release tag> is qcom-6.6.38-QLI.1.2-Ver.1.0_qim-product-sdk-1.1.1
 
       To build a QIMP SDK layer, the following export is required:
 
@@ -169,7 +167,7 @@ Build QIMP SDK image
 
          bitbake qcom-multimedia-image
          # Build SDK image
-         bitbake qim-product-sdk
+         bitbake qcom-qim-product-sdk
 
 .. _section_p1h_tv3_v1c_vinayjk_03-23-24-142-26-643:
 

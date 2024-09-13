@@ -49,7 +49,7 @@ required software tools are ready.
         login <your Qualcomm login id>
         password <your PAT token>
 
-3. Set up the locales (if not set up already):
+#. Set up the locales (if not set up already):
 
    ::
 
@@ -58,7 +58,7 @@ required software tools are ready.
       export LC_ALL=en_US.UTF-8
       export LANG=en_US.UTF-8
 
-4. Update git configurations:
+#. Update git configurations:
 
    ::
 
@@ -227,8 +227,8 @@ Build QIMP SDK image
 
    ::
 
-      git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b <qim-product-sdk release tag> layers/meta-qcom-qim-product-sdk
-      # Example, <qim-product-sdk release tag> is qcom-6.6.38-QLI.1.2-Ver.1.0_qim-product-sdk-1.1.1
+      git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b <meta-qcom-qim-product-sdk release tag> layers/meta-qcom-qim-product-sdk
+      # Example, <meta-qcom-qim-product-sdk release tag> is qcom-6.6.38-QLI.1.2-Ver.1.0_qim-product-sdk-1.1.1
 
    To build a QIMP SDK layer, the following export is required:
 
@@ -250,7 +250,7 @@ Build QIMP SDK image
 
       bitbake qcom-multimedia-image
       # Build SDK image
-      bitbake qim-product-sdk
+      bitbake qcom-qim-product-sdk
 
    On successful build, you can check if ``system.img`` is present in
    the

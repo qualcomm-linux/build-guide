@@ -177,7 +177,7 @@ EDL mode, use any one of the following methods:
 Flash software using QDL
 ------------------------------------
 
-.. note:: Prerequisites
+.. note:: **Prerequisites**
    
    - The modules ``make`` and ``gcc`` must be available.
    - Install the following dependent packages:
@@ -247,7 +247,7 @@ Flash software using QDL
           2. Disconnect from the host.
           3. Reboot the host.
 
-          Do not move the QDL tool from this location to another alternate path or host PC. If you must use the standalone QDL, see :ref:`How to build a standalone QDL <how_to_build_qdl_standalone>`. To connect to the device, see :ref:`How to SSH <section_hmw_vsh_p1c_vinayjk_03-01-24-1110-45-279>`.
+          Do not move the QDL tool from this location to an alternate path or host PC. If you must use the standalone QDL, see :ref:`How to build a standalone QDL <how_to_build_qdl_standalone>`. To connect to the device, see :ref:`How to SSH <section_hmw_vsh_p1c_vinayjk_03-01-24-1110-45-279>`.
 
 
 .. note:: The device reboots on successful completion of the flashing procedure. To verify the updated software version, see `Check software version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-253/ubuntu_host.html#sub$check_sw_version_uart>`__.

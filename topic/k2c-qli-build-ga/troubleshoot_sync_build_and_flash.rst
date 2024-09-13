@@ -18,19 +18,14 @@ Docker
 
       sudo systemctl start docker
 
--  **Error response from daemon: Get “https://registry-1.docker.io/v2/”:
-   http: server gave HTTP response to HTTPS client**
+-  **Error response from daemon: Get “https://registry-1.docker.io/v2/”: http: server gave HTTP response to HTTPS client**
 
    Add an internal Docker registry mirror (internal setting for Qualcomm
    network).
 
    .. note::
 
-             Do not include # comments in the JSON configuration file.
-
-             Using a tab instead of space and other invisible whitespace
-             characters may break the proper work of JSON configuration files and
-             may lead to ``docker.service`` failing to start.
+      Do not include # comments in the JSON configuration file. Using a tab instead of space and other invisible whitespace characters might break the functionality of JSON configuration files and might also lead to ``docker.service`` failing to start.
 
    ::
 
@@ -42,9 +37,9 @@ Docker
 
    .. note::
 
-      As an alternative, you can add the following entry in /etc/docker/daemon.json:
+      As an alternative, you can add the following entry in ``/etc/docker/daemon.json``:
 
-      "registry-mirrors": ["https://ccr.ccs.tencentyun.com"]
+      ``"registry-mirrors": ["https://ccr.ccs.tencentyun.com"]``
 
    Restart the Docker service to take the new settings.
 

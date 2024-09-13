@@ -171,5 +171,5 @@ follow these steps to build ``meta-qcom-qim-product-sdk``:
 
       bitbake qcom-multimedia-image
       # Build SDK image
-      bitbake qim-product-sdk
+      bitbake qcom-qim-product-sdk
 

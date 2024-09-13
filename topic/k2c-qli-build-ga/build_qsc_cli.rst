@@ -51,11 +51,8 @@ Download
     -   Select the appropriate distribution to download. Distribution access is controlled by access levels as listed in the following access controlled distributions table:
 
    .. note:: 
-         For more details on the available distributions, see *Access Controlled Distribution* table 
-         in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
-
-   .. note::
-         ``meta-selinux``, ``meta-virtualization``, ``meta-security``, ``meta-rust``, ``meta-openembedded``, and ``poky/meta`` are community layers that are common for all the distributions listed in the following access controlled distributions table. For more information on Qualcomm Linux BSP layers, see *Qualcomm BSP metadata layers* in the `Qualcomm Linux Yocto Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-27/platform_software_features.html#sub$qualcomm_bsp_metadata_layers>`__.
+      - For more details on the available distributions, see *Access Controlled Distribution* table in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
+      - ``meta-selinux``, ``meta-virtualization``, ``meta-security``, ``meta-rust``, ``meta-openembedded``, and ``poky/meta`` are community layers that are common for all the distributions listed in the following access controlled distributions table. For more information on Qualcomm Linux BSP layers, see *Qualcomm BSP metadata layers* in the `Qualcomm Linux Yocto Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-27/platform_software_features.html#sub$qualcomm_bsp_metadata_layers>`__.
 
    .. flat-table:: Access controlled distributions
       :widths: 24 24 24

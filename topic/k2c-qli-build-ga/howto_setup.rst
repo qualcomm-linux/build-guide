@@ -77,7 +77,7 @@ To set up the debug UART connection and view diagnostic messages, connect the mi
    -  Login: ``root``
    -  Password: ``oelinux123`` 
      
-      .. note:: If the login console does not display as expected, verify the USB connection. If necessary, disconnect and then reconnect the micro-USB.
+      .. note:: If the login console does not display as expected, verify the USB connection. If the issue persists, disconnect and then reconnect the micro-USB.
 
 .. note:: 
     If you want to run sample applications from the UART shell, remount the root file system with write permissions:
@@ -108,7 +108,7 @@ To update the Wi-Fi configuration, perform the following from the debug :ref:`UA
 #. Open the default ``/etc/wpa_supplicant.conf`` file using your preferred text editor and modify the content of the file to match the SSID and password of your router:
 
    .. note::
-        You can see the configurations of security types specified in the default ``/etc/wpa_supplicant.conf`` file to add your required router configurations.
+        You can check the configurations of security types specified in the default ``/etc/wpa_supplicant.conf`` file to add your required router configurations.
 
    ::
 
@@ -206,10 +206,8 @@ controller (``renesas``). Ensure that ``renesas_usb_fw.mem`` is
 available at the ``/lib/firmware`` directory.
 
 .. note:: 
-        | If ``renesas_usb_fw.mem`` firmware is not available at the ``/lib/firmware`` directory, 
-          then :ref:`connect to UART <section_ags_ssh_p1c_vinayjk_03-01-24-1109-49-684>` 
-          and :ref:`enable the Wi-Fi <howto_setup_wifi_sub>`.
-        | After getting SSH and IP address, :ref:`update PCIe to USB controller firmware <section_nsb_5gs_5bc_vinayjk_06-21-24-1803-34-149>`.
+   - If ``renesas_usb_fw.mem`` firmware is not available at the ``/lib/firmware`` directory, then :ref:`connect to UART <section_ags_ssh_p1c_vinayjk_03-01-24-1109-49-684>` and :ref:`enable the Wi-Fi <howto_setup_wifi_sub>`.
+   - After getting SSH and IP address, :ref:`update PCIe to USB controller firmware <section_nsb_5gs_5bc_vinayjk_06-21-24-1803-34-149>`.
 
 To check if USB to ETH controller is enumerated, run the following
 command:
@@ -270,8 +268,7 @@ solution.
    ``/lib/firmware``.
 
    .. note:: 
-        The firmware name should be ``renesas_usb_fw.mem`` and if not, you must rename it. The driver identifies the firmware based on
-        this specific filename, and other firmware names will not function.
+        The firmware name must be ``renesas_usb_fw.mem`` and if not, rename it. The driver identifies the firmware based on this specific filename, and other firmware names will not function.
 
    **Example**:
 

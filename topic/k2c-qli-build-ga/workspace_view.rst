@@ -56,8 +56,8 @@ Workspace structure with GitHub workflow standalone instructions
    following figure:
 
    .. note::
-       -  ``qualcomm-linux-spf-1-0_ap_standard_oem_nomodem`` contains the downloaded select firmware sources.
-       -  ``LE.QCLINUX.1.0.r1`` contains the built Yocto workspace. 
+      - ``qualcomm-linux-spf-1-0_ap_standard_oem_nomodem`` contains the downloaded select firmware sources.
+      - ``LE.QCLINUX.1.0.r1`` contains the built Yocto workspace. 
    
    |ws_standalone_3|
 
@@ -66,19 +66,17 @@ Workspace structure with GitHub workflow standalone instructions
    following figure:
 
    .. note::
-
-       -  ``qualcomm-linux-spf-1-0_amss_standard_oem_nomodem`` contains the downloaded select firmware sources.
-       -  ``LE.QCLINUX.1.0.r1`` contains the built Yocto workspace. 
+      - ``qualcomm-linux-spf-1-0_amss_standard_oem_nomodem`` contains the downloaded select firmware sources.
+      - ``LE.QCLINUX.1.0.r1`` contains the built Yocto workspace. 
   
    |ws_standalone_4|
 
 .. _section_pg4_nzt_vbc_vinayjk_06-25-24-1332-59-291:
 
 Images directory structure after successful build
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Images directory after a successful build is shown in the following
-   figure:
+-  Images directory after a successful build is shown in the following figure:
 
    .. image:: ../../media/k2c-qli-build-ga/ws_standalone_5.png
 

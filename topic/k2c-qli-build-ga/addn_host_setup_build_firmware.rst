@@ -3,8 +3,7 @@
 Ubuntu host setup
 -------------------------
 
-The Ubuntu host machine needs a few setup operations to ensure that the
-required software tools are ready.
+The Ubuntu host machine needs a few setup operations to ensure that the required software tools are ready.
 
 1. Install the following packages:
 
@@ -79,7 +78,7 @@ required software tools are ready.
 
 #. Set up Python 3.10.2:
 
-   .. note:: Skip the following instructions if you already have python 3.10.2 or later versions.
+   .. note:: Skip the following instructions if you already have Python 3.10.2 or later versions.
 
    ::
 
