@@ -36,7 +36,7 @@ your end. However, the following steps must be performed:
       files on top.
    #. Qualcomm is providing git history to all the source repositories.
       A reference list of repositories is provided in the `Release
-      Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
+      Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
       For Qualcomm repositories that are branched and modified at your
       end, perform the following steps:
 
@@ -79,7 +79,7 @@ How to download layers for the QIMP SDK build using the manifest release tag
 Download layers for the QIMP SDK:
 
 .. note:: For the latest ``<manifest release tag>``, see the
-          *Build-critical release tags* section in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
+          *Build-critical release tags* section in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
 
 ::
 
@@ -101,7 +101,7 @@ How to download layers for the QIRP SDK build by using manifest release tag
 Download layers for the QIRP SDK:
 
 .. note:: 
-   For the latest ``<manifest release tag>``, see the *Build-critical release tags* section in the `Release  Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
+   For the latest ``<manifest release tag>``, see the *Build-critical release tags* section in the `Release  Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
 
 ::
 
@@ -122,7 +122,7 @@ How to download layers for the real-time Linux build by using manifest release t
 
 Download layers for the real-time Linux:
 
-.. note:: For the latest ``<manifest release tag>``, see the *Build-critical release tags* section in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
+.. note:: For the latest ``<manifest release tag>``, see the *Build-critical release tags* section in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
 
 ::
 
@@ -162,7 +162,7 @@ follow these steps to build ``meta-qcom-qim-product-sdk``:
    ::
 
       MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland source setup-environment
-      # source setup-environment: Sets the environment settings, creates the build directory build-qcom-wayland,
+      # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
       # and enters into build-qcom-wayland directory
 
 3. Build the software image:

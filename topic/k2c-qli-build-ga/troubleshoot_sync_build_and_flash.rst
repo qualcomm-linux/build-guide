@@ -341,7 +341,7 @@ Build
       touch <workspace_path>/downloads/git2/qpm-git.qualcomm.com.home2.git.revision-history.qualcomm_linux-spf-1-0-le-qclinux-1-0-r1_api-linux_history_prebuilts.git.done
 
    After creating the ``.done`` file, proceed with the
-   ``bitbake <image-recipe>`` command. After the first build completes,
+   ``bitbake <image recipe>`` command. After the first build completes,
    it is recommended to set up your own `download directory <https://docs.yoctoproject.org/4.0.16/singleindex.html#term-DL_DIR>`__.
 
 -  **make[4]: /bin/sh: Argument list too long**

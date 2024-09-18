@@ -5,7 +5,7 @@
 Build with QSC CLI
 ========================================
 
-The following sections provide instructions to build Qualcomm Linux
+The following sections provide instructions to configure, download, compile, and flash Qualcomm Linux
 using the QSC CLI.
 
 .. include:: host_machine_requirements.rst

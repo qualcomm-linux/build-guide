@@ -66,7 +66,7 @@ Create a Yocto Docker image and build:
 
 1. Run ``docker_build.sh`` to create the Docker image with Dockerfile
    (**Dockerfile_22.04**) and Dockertag
-   (**qcom-6.6.38-QLI.1.2-Ver.1.0_22.04**). This Docker image is used to
+   (**qcom-6.6.38-qli.1.2-ver.1.0_22.04**). This Docker image is used to
    create the container environment to run the Yocto build.
 
    **Dockertag**: Release folder in lower case letters appended by the
@@ -79,7 +79,7 @@ Create a Yocto Docker image and build:
 
    ::
 
-      bash docker/docker_build.sh -f ./docker/dockerfiles/Dockerfile_22.04 -t qcom-6.6.38-QLI.1.2-Ver.1.0_22.04
+      bash docker/docker_build.sh -f ./docker/dockerfiles/Dockerfile_22.04 -t qcom-6.6.38-qli.1.2-ver.1.0_22.04
 
    If you face any issues while running ``docker_build.sh``, see the
    following solution:
@@ -88,28 +88,28 @@ Create a Yocto Docker image and build:
 
       # Error 1: cache related issue.
          # If you are facing issue with the docker build command, try using --no-cache option. This option will force rebuilding of layers already available
-         $ bash docker/docker_build.sh -n --no-cache -f ./docker/dockerfiles/Dockerfile_22.04 -t qcom-6.6.38-QLI.1.2-Ver.1.0_22.04
+         $ bash docker/docker_build.sh -n --no-cache -f ./docker/dockerfiles/Dockerfile_22.04 -t qcom-6.6.38-qli.1.2-ver.1.0_22.04
 
       # Error2: response from daemon: Get "https://registry-1.docker.io/v2/": http: server gave HTTP response to HTTPS client
-         # Add internal Docker registry mirror. (Internal-only setting for the Qualcomm network)
+         # Check with your IT administrator to acquire ``registry-mirrors`` URL and replace ``<my-docker-mirror-host>`` in the following solution 
          # Using a tab instead of space and other invisible white-space characters may break the proper work of json configuration files
-         # and later may lead to Docker service failing to start.
+         # and later may lead to Docker service failing to start
 
          # Solution:
            sudo vim /etc/docker/daemon.json
            # Add an entry similar to the following in /etc/docker/daemon.json:
            {
-              "registry-mirrors": ["https://docker-registry.qualcomm.com"]
+              "registry-mirrors": ["https://<my-docker-mirror-host>"]
            }
            # Restart the Docker service to take the new settings
            sudo systemctl restart docker
 
-2. Sync and build the Yocto image in a Docker container with the Docker
+#. Sync and build the Yocto image in a Docker container with the Docker
    tag and release parameters:
 
    ::
 
-      bash docker/docker_run.sh -t qcom-6.6.38-QLI.1.2-Ver.1.0_22.04 -r qcom-6.6.38-QLI.1.2-Ver.1.0 --build-override custom
+      bash docker/docker_run.sh -t qcom-6.6.38-qli.1.2-ver.1.0_22.04 -r qcom-6.6.38-QLI.1.2-Ver.1.0 --build-override custom
 
    Build workspace is available in
    ``<qcom-download-utils download path>/<release>/build-qcom-wayland``.
@@ -129,7 +129,7 @@ Build QIMP SDK image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. :ref:`Build base image <section_opk_sh4_w1c>` with Docker.
-2. Build QIMP SDK on top of the base image with Docker:
+#. Build QIMP SDK on top of the base image with Docker:
 
    a. Run the ``docker run`` command:
 
@@ -138,7 +138,7 @@ Build QIMP SDK image
          # Run the following commands inside the base image build location
          cd <workspace_path>/qcom-download-utils/qcom-6.6.38-QLI.1.2-Ver.1.0
          bash
-         docker run -it -v "${HOME}/.gitconfig":"/home/${USER}/.gitconfig" -v "${HOME}/.netrc":"/home/${USER}/.netrc" -v $(pwd):$(pwd) -w $(pwd) qcom-6.6.38-QLI.1.2-Ver.1.0_22.04 /bin/bash
+         docker run -it -v "${HOME}/.gitconfig":"/home/${USER}/.gitconfig" -v "${HOME}/.netrc":"/home/${USER}/.netrc" -v $(pwd):$(pwd) -w $(pwd) qcom-6.6.38-qli.1.2-ver.1.0_22.04 /bin/bash
 
    #. Clone QIMP SDK layer into the workspace:
 
@@ -157,9 +157,13 @@ Build QIMP SDK image
 
       ::
 
-         MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland source setup-environment
-         # source setup-environment: Sets the environment settings, creates the build directory build-qcom-wayland,
-         # and enters into build-qcom-wayland directory
+         MACHINE=<machine> DISTRO=qcom-wayland QCOM_SELECTED_BSP=<override> source setup-environment
+         # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
+         # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
+         # and enters into build-qcom-wayland directory.
+
+      .. note::
+          For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
 
    #. Build the software image:
 
@@ -174,7 +178,7 @@ Build QIMP SDK image
 Rebuild
 ^^^^^^^^^^^^^^
 
--  List the Docker images:
+1. List the Docker images:
 
    ::
 
@@ -185,9 +189,9 @@ Rebuild
    ::
 
       REPOSITORY                                               TAG                         IMAGE ID       CREATED        SIZE
-      qcom-6.6.38-QLI.1.2-Ver.1.0_22.04                        latest                      8fcea388d8ca   2 days ago     1.47GB
+      qcom-6.6.38-qli.1.2-ver.1.0_22.04                        latest                      8fcea388d8ca   2 days ago     1.47GB
 
--  Attach the container:
+#. Attach the container:
 
    ::
 
@@ -196,21 +200,25 @@ Rebuild
 
       # Run the following commands inside the base image build location
       bash
-      docker run -it -v "${HOME}/.gitconfig":"/home/${USER}/.gitconfig" -v "${HOME}/.netrc":"/home/${USER}/.netrc" -v $(pwd):$(pwd) -w $(pwd) qcom-6.6.38-QLI.1.2-Ver.1.0_22.04 /bin/bash
+      docker run -it -v "${HOME}/.gitconfig":"/home/${USER}/.gitconfig" -v "${HOME}/.netrc":"/home/${USER}/.netrc" -v $(pwd):$(pwd) -w $(pwd) qcom-6.6.38-qli.1.2-ver.1.0_22.04 /bin/bash
 
       # Example
       WORKSPACE=<workspace_path>/qcom-download-utils/qcom-6.6.38-QLI.1.2-Ver.1.0
 
--  Set up the build environment:
+#. Set up the build environment:
 
    ::
 
       # cd <release directory>
-      MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland source setup-environment
-      # source setup-environment: Sets the environment settings, creates the build directory build-qcom-wayland,
-      # and enters into build-qcom-wayland directory
+      MACHINE=<machine> DISTRO=qcom-wayland QCOM_SELECTED_BSP=<override> source setup-environment
+      # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
+      # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
+      # and enters into build-qcom-wayland directory.
 
--  Build the software image:
+   .. note::
+      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+
+#. Build the software image:
 
    ::
 
@@ -222,4 +230,3 @@ Flash
 ^^^^^^^
 
 Flash software images to the device using :doc:`Flash images for registered users <flash_images>`.
-

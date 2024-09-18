@@ -48,7 +48,7 @@ Use QSC Launcher
    -  Host OS: **Linux**
    -  Target OS: **LE** 
 
-   .. note:: See `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__ for all the supported chipsets.
+   .. note:: See `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__ for all the supported chipsets.
 
 .. image:: ../../media/k2c-qli-build-ga/qsc_launcher_specifyEnvironment_v2.jpg
 
@@ -63,12 +63,12 @@ Use QSC Launcher
    b. Select product ID (For chipset QCM6490 and target OS LE,
       **QCM6490.LE.1.0** is the product ID).
 
-   c. Select release ID (See the latest `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__. For example, **r00218.1**).
+   c. Select release ID (See the latest `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__. For example, **r00218.1**).
 
    d. Select the appropriate distribution to download. Distribution access is controlled by access levels as listed in the following table:
 
         .. note::  
-          For more details on the available distributions, see the **Access Controlled Distribution** table in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
+          For more details on the available distributions, see the **Access Controlled Distribution** table in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
 
       .. flat-table:: 
          :widths: 24 24 24

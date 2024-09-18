@@ -3,8 +3,7 @@
 Use QSC CLI
 ------------------
 
-This section provides instructions on how to download, compile, and
-recompile Qualcomm Linux using QSC CLI.
+This section provides instructions on how to configure, download, compile, and flash Qualcomm Linux using QSC CLI.
 
 .. _section_ez3_31x_v1c:
 
@@ -29,7 +28,7 @@ Download
 
       # qsc-cli download --workspace-path '<absolute_workspace_path>' --product '<Product_ID>' --build '<Build_ID>' --distribution '<Distro>'
 
-   -  Select Product_ID and Build_ID values from the **QSC-CLI Input Parameters** table in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
+   -  Select Product_ID and Build_ID values from the **QSC-CLI Input Parameters** table in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
 
       Example: For QCM6490 with Linux embedded (LE) build, the input
       parameters are shown in the following table:
@@ -51,7 +50,7 @@ Download
     -   Select the appropriate distribution to download. Distribution access is controlled by access levels as listed in the following access controlled distributions table:
 
    .. note:: 
-      - For more details on the available distributions, see *Access Controlled Distribution* table in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
+      - For more details on the available distributions, see *Access Controlled Distribution* table in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
       - ``meta-selinux``, ``meta-virtualization``, ``meta-security``, ``meta-rust``, ``meta-openembedded``, and ``poky/meta`` are community layers that are common for all the distributions listed in the following access controlled distributions table. For more information on Qualcomm Linux BSP layers, see *Qualcomm BSP metadata layers* in the `Qualcomm Linux Yocto Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-27/platform_software_features.html#sub$qualcomm_bsp_metadata_layers>`__.
 
    .. flat-table:: Access controlled distributions
@@ -273,7 +272,7 @@ CLI:
    qsc-cli compile --image LE.QCLINUX.1.0.r1 --workspace-path '/local/mnt/workspace/Qworkspace_QIMPSDK'
 
 .. note:: 
-    For more information on software image names (``--image``), see QSC-CLI Input Parameters table in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
+    For more information on software image names (``--image``), see QSC-CLI Input Parameters table in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
 
 .. _section_x2k_vnf_w1c:
 

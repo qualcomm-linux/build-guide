@@ -169,29 +169,31 @@ Build base image
 
    .. note:: For the latest ``<manifest release tag>``, see the
              *Build-critical release tags* section in the `Release
-             Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
+             Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
 
-2. Set up the build environment:
+#. Set up the build environment:
 
    ::
 
-      MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland source setup-environment
-      # source setup-environment: Sets the environment settings, creates the build directory build-qcom-wayland,
+      MACHINE=<machine> DISTRO=qcom-wayland QCOM_SELECTED_BSP=<override> source setup-environment
+      # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
+      # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
       # and enters into build-qcom-wayland directory.
 
-3. Build the software image:
+   .. note::
+      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+
+#. Build the software image:
 
    .. note:: 
       For supported image recipes, see :ref:`What are the image recipes supported as part of the GitHub workflow? <section_x3c_n5l_zbc_vinayjk_07-08-24-1744-58-455>`.
 
    ::
 
-      bitbake <image recipes>
-      bitbake qcom-multimedia-image
+      bitbake <image recipe>
+      # Example, bitbake qcom-multimedia-image
 
-   On successful build, you can check if ``system.img`` is present in
-   the
-   ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image``
+   On successful build, you can check if ``system.img`` is present in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image``
    directory:
 
    ::
@@ -221,9 +223,9 @@ Build QIMP SDK image
 
    .. note:: For the latest ``<manifest release tag>``, see the
              *Build-critical release tags* section in the `Release
-             Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
+             Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
 
-2. Clone QIMP SDK layer into the workspace:
+#. Clone QIMP SDK layer into the workspace:
 
    ::
 
@@ -236,15 +238,19 @@ Build QIMP SDK image
 
       export EXTRALAYERS="meta-qcom-qim-product-sdk"
 
-3. Set up the build environment:
+#. Set up the build environment:
 
    ::
 
-      MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland source setup-environment
-      # source setup-environment: Sets the environment settings, creates the build directory build-qcom-wayland,
+      MACHINE=<machine> DISTRO=qcom-wayland QCOM_SELECTED_BSP=<override> source setup-environment
+      # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
+      # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
       # and enters into build-qcom-wayland directory.
 
-4. Build the software image:
+   .. note::
+      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+
+#. Build the software image:
 
    ::
 
@@ -284,9 +290,9 @@ Build QIRP SDK image
 
    .. note::  For the latest ``<manifest release tag>``, see the
               *Build-critical release tags* section in the `Release
-              Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
+              Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
 
-2. Download the QIRP SDK layers into the base build ``<WORKSPACE DIR>``
+#. Download the QIRP SDK layers into the base build ``<WORKSPACE DIR>``
    directory:
 
    ::
@@ -297,24 +303,27 @@ Build QIRP SDK image
       git clone https://github.com/quic-yocto/meta-qcom-robotics-sdk.git layers/meta-qcom-robotics-sdk
       git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk layers/meta-qcom-qim-product-sdk
 
-3. Set up the build environment:
+#. Set up the build environment:
 
    ::
 
       ln -s layers/meta-qcom-robotics-distro/set_bb_env.sh ./setup-robotics-environment
       ln -s layers/meta-qcom-robotics-sdk/scripts/qirp-build ./qirp-build
-      MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-robotics-ros2-humble source setup-robotics-environment
-      # source setup-robotics-environment: Sets the environment settings, creates the build directory build-qcom-robotics-ros2-humble,
+      MACHINE=<machine> DISTRO=qcom-robotics-ros2-humble QCOM_SELECTED_BSP=<override> source setup-robotics-environment
+      # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-robotics-environment
+      # source setup-robotics-environment: Sets the environment, creates the build directory build-qcom-robotics-ros2-humble,
       # and enters into build-qcom-robotics-ros2-humble directory.
 
-4. Build the robotics image and QIRP SDK artifacts:
+   .. note::
+      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+
+#. Build the robotics image and QIRP SDK artifacts:
 
    ::
 
       ../qirp-build qcom-robotics-full-image
 
-   On a successful build, you can see the QIRP SDK build artifacts at
-   the following paths:
+   On a successful build, you can see the QIRP SDK build artifacts at the following paths:
 
    ::
 
@@ -344,9 +353,9 @@ Build real-time Linux image
 
    .. note::  For the latest ``<manifest release tag>``, see the
               *Build-critical release tags* section in the `Release
-              Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
+              Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
 
-2. Clone real-time Linux layer into the workspace:
+#. Clone real-time Linux layer into the workspace:
 
    ::
 
@@ -359,15 +368,19 @@ Build real-time Linux image
 
       export EXTRALAYERS="meta-qcom-realtime"
 
-3. Set up the build environment:
+#. Set up the build environment:
 
    ::
 
-      MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland source setup-environment
-      # source setup-environment: Sets the environment settings, creates the build directory build-qcom-wayland,
-      # and enters into build-qcom-wayland directory
+      MACHINE=<machine> DISTRO=qcom-wayland QCOM_SELECTED_BSP=<override> source setup-environment
+      # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
+      # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
+      # and enters into build-qcom-wayland directory.
 
-4. Build the software image:
+   .. note::
+      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+
+#. Build the software image:
 
    ::
 

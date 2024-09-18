@@ -58,7 +58,7 @@ environment and generate eSDK:
 
    ::
 
-      MACHINE=<machine> DISTRO=<distro> source setup-environment
+      MACHINE=<machine> DISTRO=qcom-wayland source setup-environment
       bitbake -c do_populate_sdk_ext <image>
 
       # Example
@@ -95,7 +95,7 @@ environment and generate eSDK:
    ::
 
       cd <workspace_path>
-      MACHINE=<machine> DISTRO=<distro> source setup-environment
+      MACHINE=<machine> DISTRO=qcom-wayland source setup-environment
       bitbake -c do_populate_sdk_ext <image>
 
       # Example
@@ -118,7 +118,7 @@ environment and generate eSDK:
 
       ::
 
-         MACHINE=<machine> DISTRO=<distro> source setup-environment
+         MACHINE=<machine> DISTRO=qcom-wayland source setup-environment
          bitbake -c do_populate_sdk_ext <image>
 
          # Example
