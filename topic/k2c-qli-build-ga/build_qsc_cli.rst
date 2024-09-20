@@ -62,7 +62,7 @@ Download
         - Distribution
         - Yocto layers
       * - :rspan:`2` Public developers (unregistered)
-        - Base build: High-level operating system (OS) and prebuilt firmware (GPS only)
+        - Default build: High-level operating system (OS) and prebuilt firmware (GPS only)
            
           ``Qualcomm_Linux.SPF.1.0|TEST|DEVICE|PUBLIC``
         - ``meta-qcom``
@@ -71,7 +71,7 @@ Download
 
           ``meta-qcom-distro``
       *  
-        - Base build + Qualcomm Intelligent Multimedia Product (QIMP) SDK
+        - Default build + Qualcomm Intelligent Multimedia Product (QIMP) SDK
            
           ``Qualcomm_Linux.SPF.1.0|TEST|DEVICE|PB_QIMPSDK``
         - ``meta-qcom``
@@ -82,7 +82,7 @@ Download
           
           ``meta-qcom-qim-product-sdk``
       *  
-        - Base build + QIMP SDK + Qualcomm Intelligent Robotics Product (QIRP) SDK
+        - Default build + QIMP SDK + Qualcomm Intelligent Robotics Product (QIRP) SDK
           
           ``Qualcomm_Linux.SPF.1.0|TEST|DEVICE|RoboApiLnx``
         - ``meta-qcom``
@@ -101,7 +101,7 @@ Download
           
           ``meta-qcom-qim-product-sdk``
       * - :rspan:`2` Licensed developers with Authorized access
-        - Base build: High-level OS and firmware source (GPS only)
+        - Default build: High-level OS and firmware source (GPS only)
           
           ``Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NoModem``
         - ``meta-qcom``
@@ -112,7 +112,7 @@ Download
           
           ``meta-qcom-extras``
       *  
-        - Base build + QIMP SDK
+        - Default build + QIMP SDK
           
           ``Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NM_QIMPSDK``
         - ``meta-qcom``
@@ -125,7 +125,7 @@ Download
           
           ``meta-qcom-qim-product-sdk``
       *  
-        - Base build + QIMP SDK + QIRP SDK
+        - Default build + QIMP SDK + QIRP SDK
           
           ``Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NM_QIRPSDK``
         - ``meta-qcom``
@@ -148,7 +148,7 @@ Download
           
           ``meta-qcom-qim-product-sdk``
       * - :rspan:`3` Licensed developers (contact Qualcomm for access)
-        - Base build: High-level OS and firmware (GPS only) source
+        - Default build: High-level OS and firmware (GPS only) source
           
           ``Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|``
         - ``meta-qcom``
@@ -159,7 +159,7 @@ Download
           
           ``meta-qcom-extras``
       *  
-        - Base build + QIMP SDK (GPS only)
+        - Default build + QIMP SDK (GPS only)
           
           ``Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|QIMPSDK``
         - ``meta-qcom``
@@ -172,7 +172,7 @@ Download
           
           ``meta-qcom-qim-product-sdk``
       *  
-        - Base build: High-level OS and firmware (GPS and modem) source
+        - Default build: High-level OS and firmware (GPS and modem) source
           
           ``Qualcomm_Linux.SPF.1.0|AMSS|Standard|OEM|``
         - ``meta-qcom``
@@ -183,7 +183,7 @@ Download
           
           ``meta-qcom-extras``
       *  
-        - Base build + QIMP SDK (GPS and modem)
+        - Default build + QIMP SDK (GPS and modem)
           
           ``Qualcomm_Linux.SPF.1.0|AMSS|Standard|OEM|QIMPSDK``
         - ``meta-qcom``

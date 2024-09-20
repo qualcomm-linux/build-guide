@@ -59,7 +59,7 @@ Check the machine configuration
 
 .. _section_opk_sh4_w1c:
 
-Build base image
+Build default image
 ^^^^^^^^^^^^^^^^^^^^^
 
 Create a Yocto Docker image and build:
@@ -109,7 +109,11 @@ Create a Yocto Docker image and build:
 
    ::
 
-      bash docker/docker_run.sh -t qcom-6.6.38-qli.1.2-ver.1.0_22.04 -r qcom-6.6.38-QLI.1.2-Ver.1.0 --build-override custom
+      bash docker/docker_run.sh -t qcom-6.6.38-qli.1.2-ver.1.0_22.04 -r qcom-6.6.38-QLI.1.2-Ver.1.0 -M <machine> --build-override <override>
+      # Example, bash docker/docker_run.sh -t qcom-6.6.38-qli.1.2-ver.1.0_22.04 -r qcom-6.6.38-QLI.1.2-Ver.1.0 -M qcs6490-rb3gen2-vision-kit --build-override custom
+
+   .. note::
+      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
 
    Build workspace is available in
    ``<qcom-download-utils download path>/<release>/build-qcom-wayland``.
@@ -128,7 +132,7 @@ Create a Yocto Docker image and build:
 Build QIMP SDK image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. :ref:`Build base image <section_opk_sh4_w1c>` with Docker.
+1. :ref:`Build default image <section_opk_sh4_w1c>` with Docker.
 #. Build QIMP SDK on top of the base image with Docker:
 
    a. Run the ``docker run`` command:

@@ -97,7 +97,7 @@ Linux:
         - ``meta-qcom``
         - ``meta-qcom-hwe``
         - ``meta-qcom-distro``
-     - Base build: High-level OS and prebuilt firmware (GPS only)
+     - Default build: High-level OS and prebuilt firmware (GPS only)
        
        ``qcom-6.6.38-QLI.1.2-Ver.1.0.xml``
      - ``qcom-wayland``
@@ -107,7 +107,7 @@ Linux:
         - ``meta-qcom-hwe``
         - ``meta-qcom-distro``
         - ``meta-qcom-qim-product-sdk``
-     - Base build + QIMP SDK build:
+     - Default build + QIMP SDK build:
        
        ``qcom-6.6.38-QLI.1.2-Ver.1.0_qim-product-sdk-1.1.1.xml``
      - ``qcom-wayland``
@@ -116,7 +116,7 @@ Linux:
         - ``meta-qcom-hwe``
         - ``meta-qcom-distro``
         - ``meta-qcom-realtime``
-     - Base build + Real-time kernel build:
+     - Default build + Real-time kernel build:
        
        ``qcom-6.6.38-QLI.1.2-Ver.1.0_realtime-linux-1.0.xml``
      - ``qcom-wayland``
@@ -129,7 +129,7 @@ Linux:
         - ``meta-qcom-robotics-distro``
         - ``meta-qcom-robotics-sdk``
         - ``meta-qcom-qim-product-sdk``
-     - Base build + QIRP SDK build:
+     - Default build + QIRP SDK build:
        
        ``qcom-6.6.38-QLI.1.2-Ver.1.0_robotics-product-sdk-1.0.xml``
      - ``qcom-robotics-ros2-humble``
@@ -138,7 +138,7 @@ For Yocto layer descriptions, see :ref:`Table: Qualcomm Linux Yocto layers <host
 
 .. _section_sk2_xk2_fbc:
 
-Build base image
+Build default image
 ^^^^^^^^^^^^^^^^^^^^^
 
 1. Download Qualcomm Yocto and supporting layers:
@@ -195,7 +195,7 @@ Build QIMP SDK image
 1. Download Qualcomm Yocto and supporting layers:
 
    .. note:: 
-      - The ``<manifest release tag>`` for the QIMP SDK build is the same as the base build. The QIMP SDK layer must be cloned on top of the base build. 
+      - The ``<manifest release tag>`` for the QIMP SDK build is the same as the default build. The QIMP SDK layer must be cloned on top of the default build. 
       - For the latest ``<manifest release tag>``, see the *Build-Critical Release Tags* section in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
 
    ::
@@ -257,7 +257,7 @@ Build QIRP SDK image
 
 1. Download Qualcomm Yocto and supporting layers:
 
-   .. note:: The ``<manifest release tag>`` for QIRP SDK build is the same as the base build. QIRP SDK layers must be cloned on top of the base build.
+   .. note:: The ``<manifest release tag>`` for QIRP SDK build is the same as the default build. QIRP SDK layers must be cloned on top of the default build.
 
    ::
 
@@ -270,12 +270,12 @@ Build QIRP SDK image
 
    .. note:: For the latest ``<manifest release tag>``, see the *Build-Critical Release Tags* section in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
 
-#. Download the QIRP SDK layers into the base build ``<WORKSPACE DIR>``
+#. Download the QIRP SDK layers into the default build ``<WORKSPACE DIR>``
    directory:
 
    ::
 
-      git clone https://git.codelinaro.org/clo/le/meta-ros.git -b ros.qclinux.1.0.r1-rel layers/meta-ros
+      git clone https://github.com/ros/meta-ros -b kirkstone layers/meta-ros
       git clone https://github.com/quic-yocto/meta-qcom-robotics.git layers/meta-qcom-robotics
       git clone https://github.com/quic-yocto/meta-qcom-robotics-distro.git layers/meta-qcom-robotics-distro
       git clone https://github.com/quic-yocto/meta-qcom-robotics-sdk.git layers/meta-qcom-robotics-sdk
@@ -293,7 +293,7 @@ Build QIRP SDK image
       # and enters into build-qcom-robotics-ros2-humble directory.
 
    .. note::
-      To know the ``<machine>`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
 
 #. Build the robotics image and QIRP SDK artifacts:
 
@@ -317,7 +317,7 @@ Build real-time Linux image
 
 1. Download Qualcomm Yocto and supporting layers:
 
-   .. note:: The ``<manifest release tag>`` for real-time Linux image is the same as the base build. Real-time Linux must be cloned on top of the base build.
+   .. note:: The ``<manifest release tag>`` for real-time Linux image is the same as the default build. Real-time Linux must be cloned on top of the default build.
 
    ::
 
@@ -347,13 +347,13 @@ Build real-time Linux image
 
    ::
 
-      MACHINE=<machine> DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
+      MACHINE=<machine> DISTRO=qcom-wayland QCOM_SELECTED_BSP=<override> source setup-environment
       # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
       # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
       # and enters into build-qcom-wayland directory.
 
    .. note::
-      To know the ``<machine>`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
 
 #. Build the software image:
 

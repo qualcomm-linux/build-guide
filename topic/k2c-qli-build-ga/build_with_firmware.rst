@@ -55,7 +55,7 @@ The following tables describe the available distributions for firmware that can 
      - **Distribution**
      - Yocto layers
    * - :rspan:`2` Licensed developers with Authorized access
-     - Base build: High-level OS and firmware source (GPS only)
+     - Default build: High-level OS and firmware source (GPS only)
        
        ``Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NoModem``
      - 
@@ -67,7 +67,7 @@ The following tables describe the available distributions for firmware that can 
        
        ``meta-qcom-extras``
    *  
-     - Base build + QIMP SDK
+     - Default build + QIMP SDK
       
         ``Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NM_QIMPSDK``
      - ``meta-qcom``
@@ -80,7 +80,7 @@ The following tables describe the available distributions for firmware that can 
 
        ``meta-qcom-qim-product-sdk``  
    *  
-     - Base build + QIMP SDK + QIRP SDK
+     - Default build + QIMP SDK + QIRP SDK
       
         ``Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NM_QIRPSDK``
      - ``meta-qcom``
@@ -103,7 +103,7 @@ The following tables describe the available distributions for firmware that can 
 
        ``meta-qcom-qim-product-sdk``
    * - :rspan:`3` Licensed developers (contact Qualcomm for access)
-     - Base build: High-level OS and firmware (GPS only) source
+     - Default build: High-level OS and firmware (GPS only) source
        
        ``Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|``
      - 
@@ -115,7 +115,7 @@ The following tables describe the available distributions for firmware that can 
 
        ``meta-qcom-extras``
    *  
-     - Base build + QIMP SDK (GPS only)
+     - Default build + QIMP SDK (GPS only)
       
         ``Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|QIMPSDK``
      - ``meta-qcom``
@@ -130,7 +130,7 @@ The following tables describe the available distributions for firmware that can 
 
        ``meta-qcom-qim-product-sdk``
    *  
-     - Base build: High-level OS and firmware (GPS and modem) source
+     - Default build: High-level OS and firmware (GPS and modem) source
       
         ``Qualcomm_Linux.SPF.1.0|AMSS|Standard|OEM|``
      - ``meta-qcom``
@@ -141,7 +141,7 @@ The following tables describe the available distributions for firmware that can 
 
        ``meta-qcom-extras``
    *  
-     - Base build + QIMP SDK (GPS and modem)
+     - Default build + QIMP SDK (GPS and modem)
       
         ``Qualcomm_Linux.SPF.1.0|AMSS|Standard|OEM|QIMPSDK``
      - ``meta-qcom``
@@ -691,7 +691,7 @@ Build firmware
 
 .. _section_unn_4gq_p1c_vinayjk_03-02-24-1519-24-874:
 
-Build base image with extras
+Build default image with extras
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Download Qualcomm Yocto and supporting layers with extras:
@@ -751,7 +751,7 @@ Build base image with extras
       # and enters into build-qcom-wayland directory.
 
    .. note::
-      To know the ``<machine>``parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+      To know the ``<machine>`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
 
 #. Compile the Yocto build:
 
@@ -900,7 +900,7 @@ Build QIRP SDK image with extras
       cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/<product>/common/config/meta-qcom-robotics-extras/* layers/meta-qcom-robotics-extras/
       # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/).
 
-      git clone https://git.codelinaro.org/clo/le/meta-ros.git -b ros.qclinux.1.0.r1-rel layers/meta-ros
+      git clone https://github.com/ros/meta-ros -b kirkstone layers/meta-ros
       git clone https://github.com/quic-yocto/meta-qcom-robotics.git layers/meta-qcom-robotics
       git clone https://github.com/quic-yocto/meta-qcom-robotics-distro.git layers/meta-qcom-robotics-distro
       git clone https://github.com/quic-yocto/meta-qcom-robotics-sdk.git layers/meta-qcom-robotics-sdk

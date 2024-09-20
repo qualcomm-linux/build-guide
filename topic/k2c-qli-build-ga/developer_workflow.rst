@@ -11,7 +11,7 @@ How to sync and build with real-time Linux?
 ``PREEMPT_RT`` patches for the Qualcomm Linux kernel are provided in the
 ``meta-qcom-realtime`` layer. This layer is available in the Qualcomm
 `github <https://github.com/quic-yocto/meta-qcom-realtime>`__ and it is
-built on top of the base build image. For more details on this layer,
+built on top of the default build image. For more details on this layer,
 see
 `meta-qcom-realtime <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-27/platform_software_features.html#qualcomm_bsp_metadata_layers__section_atv_3dd_51c_vinayjk_03-18-24-1703-35-26>`__
 from the `Qualcomm Linux Yocto
