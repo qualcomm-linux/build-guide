@@ -14,8 +14,7 @@ Unregistered users must flash the software using the following steps:
 Update ``udev`` rules
 ------------------------------------
 
-Ensure that the ``udev`` USB rules for the Qualcomm manufacturing vendor
-ID **05c6** are configured on the Linux host:
+Ensure that the ``udev`` USB rules for the Qualcomm manufacturing vendor ID **05c6** are configured on the Linux host:
 
 1. Navigate to the ``udev`` USB rules directory:
 
@@ -30,8 +29,7 @@ ID **05c6** are configured on the Linux host:
       ls
 
    -  If the ``51-qcom-usb.rules`` file is not present, use
-      ``sudo vi 51-qcom-usb.rules`` to create it and add the following
-      content to the file:
+      ``sudo vi 51-qcom-usb.rules`` to create it and add the following content to the file:
 
       ::
 
@@ -49,18 +47,14 @@ ID **05c6** are configured on the Linux host:
 
       sudo systemctl restart udev
 
-If the USB cable is already connected to the host, unplug the cable and
-then reconnect it for the updated rules to take effect.
+If the USB cable is already connected to the host, unplug the cable and then reconnect it for the updated rules to take effect.
 
 .. _section_vgg_mly_v1c:
 
 Move to EDL mode
 ------------------------------------
 
-The device must be in EDL mode before you flash the software. The
-Qualcomm RB3 Gen 2 device enters EDL mode if there is no image on the
-device after power up or if it is corrupted. To force the device into
-EDL mode, use any one of the following methods:
+The device must be in EDL mode before you flash the software. The Qualcomm RB3 Gen 2 device enters EDL mode if there is no image on the device after power up or if it is corrupted. To force the device into EDL mode, use any one of the following methods:
 
 **Using UART**
 
@@ -196,8 +190,7 @@ Flash software using QDL
 
       sudo systemctl stop ModemManager
 
-   If you need ModemManager, you can start it again after the flashing
-   is complete.
+   If you need ModemManager, you can start it again after the flashing is complete.
   
 #. Download the QDL tool, compile it, and flash the images:
 
@@ -219,8 +212,7 @@ Flash software using QDL
       cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image
       <workspace_path>/qdl_tool/qdl prog_firehose_ddr.elf rawprogram*.xml patch*.xml
 
-   Flashing is successful if you see *partition 1 is now bootable* on
-   the terminal window as shown in the following message:
+   Flashing is successful if you see *partition 1 is now bootable* on the terminal window as shown in the following message:
 
    ::
 

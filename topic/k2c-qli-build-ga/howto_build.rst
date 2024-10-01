@@ -64,7 +64,7 @@ environment and generate eSDK:
       # Example, bitbake -c do_populate_sdk_ext qcom-multimedia-image
 
    .. note::
-      To know the ``<machine>`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.    
+      To know the ``<machine>`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.    
 
 2. After building with ``meta-qcom-extras`` and firmware sources with
    QSC CLI:
@@ -170,7 +170,7 @@ setup and then use the BitBake commands to rebuild:
       bitbake qcom-multimedia-image
 
    .. note::
-      To know the ``<machine>`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+      To know the ``<machine>`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
 -  Build image ``qcom-multimedia-test-image``:
 
@@ -215,17 +215,11 @@ How to build a standalone QDL?
 How can I change the Hexagon tool install path?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-``HEXAGON_ROOT`` environment variable must point to the path where the
-Hexagon tools are installed. By default, ``qpm-cli`` installs
-``HEXAGON_ROOT`` in ``$HOME``. You can also choose an alternate
-directory to install ``HEXAGON_ROOT``.
+``HEXAGON_ROOT`` environment variable must point to the path where the Hexagon tools are installed. By default, ``qpm-cli`` installs ``HEXAGON_ROOT`` in ``$HOME``. You can also choose an alternate directory to install ``HEXAGON_ROOT``.
 
-You can use the ``––path`` option in ``qpm-cli`` command to install
-Hexagon tools in a directory of your choice and export the
-``HEXAGON_ROOT`` variable to the same directory.
+You can use the ``––path`` option in ``qpm-cli`` command to install Hexagon tools in a directory of your choice and export the ``HEXAGON_ROOT`` variable to the same directory.
 
-Provide an absolute path for ``<TOOLS_DIR>`` in ``qpm-cli`` and export
-commands as shown in the following example:
+Provide an absolute path for ``<TOOLS_DIR>`` in ``qpm-cli`` and export commands as shown in the following example:
 
 ::
 
@@ -324,7 +318,7 @@ How to download the Platform eSDK?
 
       sh ./qcom-wayland-x86_64-qcom-multimedia-image-armv8-2a-qcm6490-toolchain-ext-1.0.sh
 
-5. Follow the instructions on the console to install the eSDK in a convenient location of your host PC.
+5. Follow the instructions on the console to install the eSDK in a convenient location of your host machine.
 
 6. Ensure that the eSDK installation is successful.
 

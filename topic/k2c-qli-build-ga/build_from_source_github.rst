@@ -36,7 +36,9 @@ The Ubuntu host machine needs a few setup operations to ensure that the required
         | [Info]: Starting qsc-cli version 0.0.0.9
         | **5LThNlklb55mMVLB5C2KqUGU2jCF**
 
-#. Use your preferred text editor to edit ``~/.netrc`` and add the following entries:
+#. Use your preferred text editor to edit the ``~/.netrc`` file and add the following entries:
+
+   .. note:: Create the ``~/.netrc`` file if it does not exist.
 
    ::
 
@@ -162,7 +164,7 @@ Build BSP image
 
    .. note:: For the latest ``<manifest release tag>``, see the
              *Build-critical release tags* section in the `Release
-             Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+             Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
 #. Set up the build environment:
 
@@ -174,7 +176,7 @@ Build BSP image
       # and enters into build-qcom-wayland directory.
 
    .. note::
-      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
 #. Build the software image:
 
@@ -214,7 +216,7 @@ Build QIMP SDK image
 
    .. note:: For the latest ``<manifest release tag>``, see the
              *Build-critical release tags* section in the `Release
-             Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+             Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
 #. Clone the QIMP SDK layer into the workspace:
 
@@ -239,7 +241,7 @@ Build QIMP SDK image
       # and enters into build-qcom-wayland directory.
 
    .. note::
-      To know the ``<machine>`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+      To know the ``<machine>`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
 #. Build the software image:
 
@@ -277,7 +279,7 @@ Build QIRP SDK image
 
    .. note::  For the latest ``<manifest release tag>``, see the
               *Build-critical release tags* section in the `Release
-              Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+              Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
 #. Download the QIRP SDK layers into the BSP build ``<WORKSPACE DIR>``
    directory:
@@ -302,7 +304,7 @@ Build QIRP SDK image
       # and enters into build-qcom-robotics-ros2-humble directory.
 
    .. note::
-      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
 #. Build the robotics image and QIRP SDK artifacts:
 
@@ -312,7 +314,7 @@ Build QIRP SDK image
 
    After a successful build, you can see the QIRP SDK build artifacts at the following paths:
 
-   :
+   ::
 
       QIRP SDK artifacts: <WORKSPACE DIR>/build-qcom-robotics-ros2-humble/tmp-glibc/deploy/qirpsdk_artifacts/qirp-sdk_<version>.tar.gz
       # system.img is present in the following path
@@ -338,7 +340,7 @@ Build real-time Linux image
 
    .. note::  For the latest ``<manifest release tag>``, see the
               *Build-critical release tags* section in the `Release
-              Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+              Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
 #. Clone the real-time Linux layer into the workspace:
 
@@ -363,7 +365,7 @@ Build real-time Linux image
       # and enters into build-qcom-wayland directory.
 
    .. note::
-      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
 #. Build the software image:
 
@@ -383,6 +385,4 @@ Build real-time Linux image
 Flash
 ^^^^^^^
 
-To flash the software images to the device, see :doc:`Flash images for registered users <flash_images>`.
-
-
+To flash the software images to the device, see :doc:`Flash images <flash_images>`.

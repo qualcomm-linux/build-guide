@@ -8,12 +8,11 @@ Build with firmware sources
 Sync firmware
 ^^^^^^^^^^^^^^
 
-The following table describes the Qualcomm Yocto layers and release
-tags:
+The following table describes the Qualcomm Yocto layers and release tags:
 
 .. tabularcolumns:: |p{3cm}|p{4cm}|p{3cm}|p{4cm}|
 
-.. flat-table:: Table: Qualcomm Yocto layers and manifest tags
+.. flat-table:: Qualcomm Yocto layers and manifest tags
    :header-rows: 1
    :class: longtable
 
@@ -38,7 +37,7 @@ tags:
      - ``meta-qcom-extras``
      - meta-qcom-extras release tag
      - r1.0_00046.0 
-   * - See :ref:`Table: Mapping access levels <build_mapping_access_levels>`
+   * - See :ref:`Mapping access levels <build_mapping_access_levels>`
      - NA
      - firmware release tag
      - r1.0_00044.0
@@ -47,7 +46,7 @@ The following tables describe the firmware distributions that can be downloaded 
 
 .. _build_mapping_access_levels:
 
-.. flat-table:: Table: Mapping access levels
+.. flat-table:: Mapping access levels
    :widths: 24 24 24
    :header-rows: 1
    :class: longtable table-wrap
@@ -159,7 +158,7 @@ The following tables describe the firmware distributions that can be downloaded 
 
 .. _Mapping_firmware_table:
 
-.. flat-table:: Table: Mapping of firmware distributions and git repositories
+.. flat-table:: Mapping of firmware distributions and git repositories
    :widths: 24 24 24
    :header-rows: 1
    :class: longtable
@@ -196,9 +195,9 @@ The following tables describe the firmware distributions that can be downloaded 
      - ``git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_amss_standard_oem_qimpsdk.git``
      - ``qualcomm-linux-spf-1-0_amss_standard_oem_qimpsdk``
 
-.. note:: Commands in the following sections are based on binary and source for firmware images without modem and GPS (see the command in :ref:`Table: Mapping of firmware distributions and git repositories <Mapping_firmware_table>`). Hence, ``qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk`` is used. If you use any other distribution, then update the directory accordingly.
+.. note:: Commands in the following sections are based on binary and source for firmware images without modem and GPS (see the command in :ref:`Mapping of firmware distributions and git repositories <Mapping_firmware_table>`). Hence, ``qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk`` is used. If you use any other distribution, then update the directory accordingly.
 
-The **Git command** column (see :ref:`Table: Mapping of firmware distributions and git repositories <Mapping_firmware_table>`) provides the git repository, which contains the firmware sources. These repositories are hosted on Qualcomm servers. Clone the appropriate repositories based on your access profile and use case. The following ``git clone`` command downloads the selected firmware components in source, except the modem:
+The **Git command** column (see :ref:`Mapping of firmware distributions and git repositories <Mapping_firmware_table>`) provides the git repository, which contains the firmware sources. These repositories are hosted on Qualcomm servers. Clone the appropriate repositories based on your access profile and use case. The following ``git clone`` command downloads the selected firmware components in source, except the modem:
 
 ::
 
@@ -209,7 +208,7 @@ The **Git command** column (see :ref:`Table: Mapping of firmware distributions a
 
 .. note:: 
    - The ``git clone`` command clones the content into the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk`` directory.
-   - For the latest ``<firmware release tag>``, see the *Build-critical release tags* section in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+   - For the latest ``<firmware release tag>``, see the *Build-critical release tags* section in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
 .. _section_v5m_4gq_p1c_vinayjk_03-02-24-1519-24-381:
 
@@ -268,7 +267,7 @@ Build firmware
 
                export SECTOOLS=<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/<product>/common/sectoolsv2/ext/Linux/sectools
                export SECTOOLS_DIR=<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/<product>/common/sectoolsv2/ext/Linux
-               # An example <product> is QCM6490.LE.1.0, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/).
+               # An example <product> is QCM6490.LE.1.0, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/).
 
          -  Install and set up Qualcomm\ :sup:`®` Hexagon\ :sup:`™`:
 
@@ -472,7 +471,7 @@ Build firmware
          ::
 
             # cd <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/<product>/common/build
-            # An example <product> is QCM6490.LE.1.0, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/)
+            # An example <product> is QCM6490.LE.1.0, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/)
             cd <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCM6490.LE.1.0/common/build
             python build.py --imf
 
@@ -531,7 +530,7 @@ Build firmware
 
                export SECTOOLS=<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/<product>/common/sectoolsv2/ext/Linux/sectools
                export SECTOOLS_DIR=<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/<product>/common/sectoolsv2/ext/Linux
-               # An example <product> is QCS9100.LE.1.0, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/).
+               # An example <product> is QCS9100.LE.1.0, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/).
 
          -  Install and set up Qualcomm\ :sup:`®` Hexagon\ :sup:`™`:
 
@@ -696,7 +695,7 @@ Build firmware
          ::
 
             # cd <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/<product>/common/build
-            # An example <product> is QCS9100.LE.1.0, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/)
+            # An example <product> is QCS9100.LE.1.0, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/)
             cd <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCS9100.LE.1.0/common/build
             python build.py --imf
 
@@ -726,12 +725,12 @@ Build BSP image with extras
       # Example, <meta-qcom-extras release tag> is r1.0_00046.0
       mkdir -p layers/meta-qcom-extras
       cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/<product>/common/config/meta-qcom-extras/* layers/meta-qcom-extras/
-      # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/).
+      # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/).
 
    .. note:: For the ``<manifest release tag>`` and
             ``<meta-qcom-extras release tag>`` information, see the
             *Build-critical release tags* section in the `Release
-            Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+            Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
 #. Set up the Yocto build:
 
@@ -757,7 +756,7 @@ Build BSP image with extras
       # QCM6490_dspso.zip, and QCM6490_fw.zip. 
       # Set the environment variable to pick up the prebuilts:
       export FWZIP_PATH="<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/<product>/common/build/ufs/bin"
-      # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/).
+      # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/).
 
 #. Set up the build environment:
 
@@ -769,7 +768,7 @@ Build BSP image with extras
       # and enters into build-qcom-wayland directory.
 
    .. note::
-      To know the ``<machine>`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+      To know the ``<machine>`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
 #. Compile the Yocto build:
 
@@ -791,7 +790,7 @@ Build BSP image with extras
       cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image
       ls -al system.img
 
-#. Flash the generated build using :doc:`Flash images for registered users <flash_images>`.
+#. Flash the generated build using :doc:`Flash images <flash_images>`.
 
 .. _section_cx2_dqf_s1c_vinayjk_03-11-24-2139-47-648:
 
@@ -813,12 +812,12 @@ Build QIMP SDK image with extras
       # Example, <meta-qcom-extras release tag> is r1.0_00046.0
       mkdir -p layers/meta-qcom-extras
       cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/<product>/common/config/meta-qcom-extras/* layers/meta-qcom-extras/
-      # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/).
+      # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/).
       git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b qcom-6.6.38-QLI.1.2-Ver.1.0_qim-product-sdk-1.1.1 layers/meta-qcom-qim-product-sdk
 
    .. note:: For the ``<manifest release tag>`` and
             ``<meta-qcom-extras release tag>`` information, see the *Build-critical release tags* section in the `Release
-            Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+            Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
 #. Set up the Yocto build:
 
@@ -844,7 +843,7 @@ Build QIMP SDK image with extras
       # QCM6490_dspso.zip, and QCM6490_fw.zip. 
       # Set the environment variable to pick up the prebuilts:
       export FWZIP_PATH="<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/<product>/common/build/ufs/bin"
-      # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/).
+      # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/).
 
 #. Set up the build environment:
 
@@ -856,7 +855,7 @@ Build QIMP SDK image with extras
       # and enters into build-qcom-wayland directory.
 
    .. note::
-      To know the ``<machine>`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+      To know the ``<machine>`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
 #. Compile the QIMP SDK build:
 
@@ -884,7 +883,7 @@ Build QIMP SDK image with extras
       cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image
       ls -al system.img
 
-#. Flash the generated build using :doc:`Flash images for registered users <flash_images>`.
+#. Flash the generated build using :doc:`Flash images <flash_images>`.
 
 .. _section_kjz_d1j_5bc_vinayjk_06-20-24-1130-57-104:
 
@@ -910,7 +909,7 @@ Build QIRP SDK image with extras
       mkdir -p layers/meta-qcom-robotics-extras
       cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/<product>/common/config/meta-qcom-extras/* layers/meta-qcom-extras/
       cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/<product>/common/config/meta-qcom-robotics-extras/* layers/meta-qcom-robotics-extras/
-      # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/).
+      # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/).
 
       git clone https://github.com/ros/meta-ros -b kirkstone layers/meta-ros
       git clone https://github.com/quic-yocto/meta-qcom-robotics.git layers/meta-qcom-robotics
@@ -946,7 +945,7 @@ Build QIRP SDK image with extras
       # QCM6490_dspso.zip, and QCM6490_fw.zip.
       # Set the environment variable to pick up the prebuilts:
       export FWZIP_PATH="<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qirpsdk/<product>/common/build/ufs/bin"
-      # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/).
+      # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/).
 
 #. Compile the QIRP SDK build:
 
@@ -961,7 +960,7 @@ Build QIRP SDK image with extras
       ../qirp-build qcom-robotics-full-image
 
    .. note::
-      To know the ``<machine>`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+      To know the ``<machine>`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
    After a successful build, you can see the QIRP SDK build artifacts at the following paths:
 
@@ -971,5 +970,4 @@ Build QIRP SDK image with extras
       # system.img is present in the following path
       Robotics image: <workspace_path>/build-qcom-robotics-ros2-humble/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-robotics-full-image
 
-#. Flash the generated build using :doc:`Flash images for registered users <flash_images>`.
-
+#. Flash the generated build using :doc:`Flash images <flash_images>`.

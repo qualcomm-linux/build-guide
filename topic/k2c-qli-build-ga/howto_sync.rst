@@ -152,7 +152,7 @@ This includes the following steps:
       repo sync
 
    .. note:: For the ``<manifest release tag>`` information, see the
-             *Build-critical release tags* section in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+             *Build-critical release tags* section in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
              An example ``<manifest release tag>`` is ``qcom-6.6.38-QLI.1.2-Ver.1.0.xml``.
 
 2. Set up the build environment:
@@ -163,7 +163,7 @@ This includes the following steps:
       # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
 
    .. note::
-      To know the ``<machine>`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+      To know the ``<machine>`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
 3. Build the software image:
 

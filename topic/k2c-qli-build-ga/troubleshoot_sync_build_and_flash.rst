@@ -195,7 +195,7 @@ Sync
 
    ::
 
-      qsc-cli download --workspace-path '/local/mnt/workspace/<userid>/K2L/QSC_CLI_BUILD/build' --product 'QCM6490.LE.1.0' --build 'QCM6490.LE.1.0-00134-STD.PROD-1' --distribution 'Qualcomm_Linux.SPF.1.0|TEST|DEVICE|PUBLIC'
+      qsc-cli download --workspace-path '/local/mnt/workspace/<userid>/K2L/QSC_CLI_BUILD/build' --product 'QCM6490.LE.1.0' --release 'r00263.4' --distribution 'Qualcomm_Linux.SPF.1.0|TEST|DEVICE|PUBLIC'
       [Info]: Starting qsc-cli version 0.0.0.7 
       (node:2924765) ExperimentalWarning: The Fetch API is an experimental feature. This feature could change at any time
       (Use `qsc-cli --trace-warnings ...` to show where the warning was created)

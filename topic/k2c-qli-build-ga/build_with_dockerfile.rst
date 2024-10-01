@@ -112,7 +112,7 @@ Create a Yocto Docker image and build:
       # Example, bash docker/docker_run.sh -t qcom-6.6.38-qli.1.2-ver.1.0_22.04 -r qcom-6.6.38-QLI.1.2-Ver.1.0 -M qcs6490-rb3gen2-vision-kit --build-override custom --alternate-repo true 
 
    .. note::
-      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
    Build workspace is available in
    ``<qcom-download-utils download path>/<release>/build-qcom-wayland``.
@@ -166,7 +166,7 @@ Build QIMP SDK image
          # and enters into build-qcom-wayland directory.
 
       .. note::
-          To know the ``<machine>`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+          To know the ``<machine>`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
    #. Build the software image:
 
@@ -219,7 +219,7 @@ Rebuild
       # and enters into build-qcom-wayland directory.
 
    .. note::
-      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
 #. Build the software image:
 
@@ -227,9 +227,11 @@ Rebuild
 
       bitbake qcom-multimedia-image
 
+.. note:: Exit from Docker before you flash the images.
+
 .. _section_x2k_vnf_w1c:
 
 Flash
 ^^^^^^^
 
-To flash the software images to the device, see :doc:`Flash images for registered users <flash_images>`.
+To flash the software images to the device, see :doc:`Flash images <flash_images>`.

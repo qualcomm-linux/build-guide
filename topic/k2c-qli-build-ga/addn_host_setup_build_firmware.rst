@@ -30,7 +30,9 @@ The Ubuntu host machine needs a few setup operations to ensure that the required
       | [Info]: Starting qsc-cli version 0.0.0.9
       | **5LThNlklb55mMVLB5C2KqUGU2jCF**
 
-#. Use your preferred text editor to edit ``~/.netrc`` and add the following entries:
+#. Use your preferred text editor to edit the ``~/.netrc`` file and add the following entries:
+
+   .. note:: Create the ``~/.netrc`` file if it does not exist.
 
    ::
 

@@ -5,7 +5,7 @@
 Build with QSC Launcher (UPDATES IN PROGRESS. NOT TO BE TESTED)
 ================================================================
 
-The following sections provide instructions to configure, download, compile, and flash Qualcomm Linux
+The following sections explain how to configure, download, compile, and flash Qualcomm Linux
 using the QSC Launcher.
 
 .. _host_machine_qsc_Launcher:

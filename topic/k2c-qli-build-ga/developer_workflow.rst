@@ -19,8 +19,6 @@ Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-27>`__.
 
 To sync and build real-time Linux, see :ref:`Build real-time Linux image <section_k51_23b_wbc_vinayjk_06-26-24-1344-54-418>`.
 
-.. note:: Real-time kernel is not supported on QCS5430.
-
 .. _section_qct_b5g_s1c_vinayjk_03-12-24-127-51-384:
 
 How to migrate from previous release to next release?
@@ -36,7 +34,7 @@ your end. However, the following steps must be performed:
       files on top.
    #. Qualcomm is providing git history to all the source repositories.
       A reference list of repositories is provided in the `Release
-      Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+      Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
       For Qualcomm repositories that are branched and modified at your
       end, perform the following steps:
 
@@ -79,7 +77,7 @@ How to download layers for the QIMP SDK build using the manifest release tag
 Download layers for the QIMP SDK:
 
 .. note:: For the latest ``<manifest release tag>``, see the
-          *Build-critical release tags* section in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+          *Build-critical release tags* section in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
 ::
 
@@ -101,7 +99,7 @@ How to download layers for the QIRP SDK build by using manifest release tag
 Download layers for the QIRP SDK:
 
 .. note:: 
-   For the latest ``<manifest release tag>``, see the *Build-critical release tags* section in the `Release  Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+   For the latest ``<manifest release tag>``, see the *Build-critical release tags* section in the `Release  Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
 ::
 
@@ -122,7 +120,7 @@ How to download layers for the real-time Linux build by using manifest release t
 
 Download layers for the real-time Linux:
 
-.. note:: For the latest ``<manifest release tag>``, see the *Build-critical release tags* section in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+.. note:: For the latest ``<manifest release tag>``, see the *Build-critical release tags* section in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
 ::
 
@@ -167,7 +165,7 @@ follow these steps to build ``meta-qcom-qim-product-sdk``:
       # and enters into build-qcom-wayland directory
 
    .. note::
-      To know the ``<machine>`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240911224732/>`__.
+      To know the ``<machine>`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
 3. Build the software image:
 
