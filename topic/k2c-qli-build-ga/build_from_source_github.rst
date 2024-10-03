@@ -106,7 +106,7 @@ The following table shows an example mapping of the Yocto layers to the manifest
          - ``meta-qcom-distro``
        - BSP build: High-level OS and prebuilt firmware (GPS only)
          
-         ``qcom-6.6.38-QLI.1.2-Ver.1.0.xml``
+         ``qcom-6.6.38-QLI.1.2-Ver.1.1.xml``
        - ``qcom-wayland``
      * - 
          - ``meta-qcom``
@@ -115,7 +115,7 @@ The following table shows an example mapping of the Yocto layers to the manifest
          - ``meta-qcom-qim-product-sdk``
        - BSP build + QIMP SDK build:
          
-         ``qcom-6.6.38-QLI.1.2-Ver.1.0_qim-product-sdk-1.1.1.xml``
+         ``qcom-6.6.38-QLI.1.2-Ver.1.1_qim-product-sdk-1.1.2.xml``
        - ``qcom-wayland``
      * - 
          - ``meta-qcom``
@@ -124,7 +124,7 @@ The following table shows an example mapping of the Yocto layers to the manifest
          - ``meta-qcom-realtime``
        - BSP build + Real-time kernel build:
          
-         ``qcom-6.6.38-QLI.1.2-Ver.1.0_realtime-linux-1.0.xml``
+         ``qcom-6.6.38-QLI.1.2-Ver.1.1_realtime-linux-1.0.xml``
        - ``qcom-wayland``
      * - 
          - ``meta-qcom``
@@ -137,7 +137,7 @@ The following table shows an example mapping of the Yocto layers to the manifest
          - ``meta-qcom-qim-product-sdk``
        - BSP build + QIRP SDK build:
          
-         ``qcom-6.6.38-QLI.1.2-Ver.1.0_robotics-product-sdk-1.0.xml``
+         ``qcom-6.6.38-QLI.1.2-Ver.1.1_robotics-product-sdk-1.1.xml``
        - ``qcom-robotics-ros2-humble``
 
 .. note::
@@ -159,7 +159,7 @@ Build BSP image
       mkdir <WORKSPACE_DIR>
       cd <WORKSPACE_DIR>
       repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m <manifest release tag>
-      # Example, <manifest release tag> is qcom-6.6.38-QLI.1.2-Ver.1.0.xml
+      # Example, <manifest release tag> is qcom-6.6.38-QLI.1.2-Ver.1.1.xml
       repo sync
 
    .. note:: For the latest ``<manifest release tag>``, see the
@@ -211,7 +211,7 @@ Build QIMP SDK image
       mkdir <WORKSPACE_DIR>
       cd <WORKSPACE_DIR>
       repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m <manifest release tag>
-      # Example, <manifest release tag> is qcom-6.6.38-QLI.1.2-Ver.1.0.xml
+      # Example, <manifest release tag> is qcom-6.6.38-QLI.1.2-Ver.1.1.xml
       repo sync
 
    .. note:: For the latest ``<manifest release tag>``, see the
@@ -223,7 +223,7 @@ Build QIMP SDK image
    ::
 
       git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b <meta-qcom-qim-product-sdk release tag> layers/meta-qcom-qim-product-sdk
-      # Example, <meta-qcom-qim-product-sdk release tag> is qcom-6.6.38-QLI.1.2-Ver.1.0_qim-product-sdk-1.1.1
+      # Example, <meta-qcom-qim-product-sdk release tag> is qcom-6.6.38-QLI.1.2-Ver.1.1_qim-product-sdk-1.1.2
 
    To build a QIMP SDK layer, the following export is required:
 
@@ -274,7 +274,7 @@ Build QIRP SDK image
       mkdir <WORKSPACE_DIR>
       cd <WORKSPACE_DIR>
       repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m <manifest release tag>
-      # Example, <manifest release tag> is qcom-6.6.38-QLI.1.2-Ver.1.0.xml
+      # Example, <manifest release tag> is qcom-6.6.38-QLI.1.2-Ver.1.1.xml
       repo sync
 
    .. note::  For the latest ``<manifest release tag>``, see the
@@ -335,7 +335,7 @@ Build real-time Linux image
       mkdir <WORKSPACE_DIR>
       cd <WORKSPACE_DIR>
       repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m <manifest release tag>
-      # Example, <manifest release tag> is qcom-6.6.38-QLI.1.2-Ver.1.0.xml
+      # Example, <manifest release tag> is qcom-6.6.38-QLI.1.2-Ver.1.1.xml
       repo sync
 
    .. note::  For the latest ``<manifest release tag>``, see the
@@ -347,7 +347,7 @@ Build real-time Linux image
    ::
 
       git clone https://github.com/quic-yocto/meta-qcom-realtime -b <meta-qcom-realtime release tag> layers/meta-qcom-realtime
-      # Example, <meta-qcom-realtime release tag> is qcom-6.6.38-QLI.1.2-Ver.1.0_realtime-linux-1.0
+      # Example, <meta-qcom-realtime release tag> is qcom-6.6.38-QLI.1.2-Ver.1.1_realtime-linux-1.0
 
    To build a real-time layer, the following export is required:
 

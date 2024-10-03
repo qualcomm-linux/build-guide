@@ -85,7 +85,7 @@ Download layers for the QIMP SDK:
    mkdir <WORKSPACE_DIR>
    cd <WORKSPACE_DIR>
    repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m <manifest release tag>
-   # Example, <manifest release tag> is qcom-6.6.38-QLI.1.2-Ver.1.0_qim-product-sdk-1.1.1.xml
+   # Example, <manifest release tag> is qcom-6.6.38-QLI.1.2-Ver.1.1_qim-product-sdk-1.1.2.xml
    repo sync
 
 .. note:: 
@@ -107,7 +107,7 @@ Download layers for the QIRP SDK:
    mkdir <WORKSPACE_DIR>
    cd <WORKSPACE_DIR>
    repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m <manifest release tag>
-   # Example, <manifest release tag> is qcom-6.6.38-QLI.1.2-Ver.1.0_robotics-product-sdk-1.0.xml
+   # Example, <manifest release tag> is qcom-6.6.38-QLI.1.2-Ver.1.1_robotics-product-sdk-1.1.xml
    repo sync
 
 .. note:: 
@@ -128,7 +128,7 @@ Download layers for the real-time Linux:
    mkdir <WORKSPACE_DIR>
    cd <WORKSPACE_DIR>
    repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m <manifest release tag>
-   # Example, <manifest release tag> is qcom-6.6.38-QLI.1.2-Ver.1.0_realtime-linux-1.0.xml
+   # Example, <manifest release tag> is qcom-6.6.38-QLI.1.2-Ver.1.1_realtime-linux-1.0.xml
    repo sync
 
 .. note:: 
@@ -153,7 +153,7 @@ follow these steps to build ``meta-qcom-qim-product-sdk``:
 
    .. note:: For more information on 
              ``<meta-qcom-qim-product-sdk release tag>``, see https://github.com/quic-yocto/meta-qcom-qim-product-sdk/tags. An
-             example ``<meta-qcom-qim-product-sdk release tag>`` is ``qcom-6.6.38-QLI.1.2-Ver.1.0_qim-product-sdk-1.1.1.xml``.
+             example ``<meta-qcom-qim-product-sdk release tag>`` is ``qcom-6.6.38-QLI.1.2-Ver.1.1_qim-product-sdk-1.1.2.xml``.
 
 2. Set up the build environment:
 
