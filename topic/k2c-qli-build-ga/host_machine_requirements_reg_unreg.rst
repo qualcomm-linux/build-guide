@@ -52,6 +52,6 @@ Host machine requirements
 
 .. note:: To set up a virtual machine (VM) running Ubuntu 22.04 OS on
           Microsoft Windows or Apple Mac, see `Qualcomm Linux Virtual Machine
-          Setup Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-41/>`__.
+          Setup Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-41/>`__.
           Code compilation on a VM is a slow process and may take a few hours.
           Qualcomm recommends using an Ubuntu host machine for compilation.

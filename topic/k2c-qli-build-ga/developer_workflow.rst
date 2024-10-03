@@ -13,9 +13,9 @@ How to sync and build with real-time Linux?
 `GitHub <https://github.com/quic-yocto/meta-qcom-realtime>`__ and it is
 built on top of the BSP build image. For more information on this layer,
 see
-`meta-qcom-realtime <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-27/platform_software_features.html#qualcomm_bsp_metadata_layers__section_atv_3dd_51c_vinayjk_03-18-24-1703-35-26>`__
+`meta-qcom-realtime <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-27/platform_software_features.html#qualcomm_bsp_metadata_layers__section_atv_3dd_51c_vinayjk_03-18-24-1703-35-26>`__
 from the `Qualcomm Linux Yocto
-Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-27>`__.
+Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-27>`__.
 
 To sync and build real-time Linux, see :ref:`Build real-time Linux image <section_k51_23b_wbc_vinayjk_06-26-24-1344-54-418>`.
 
@@ -59,7 +59,7 @@ How to build a Qualcomm Linux kernel?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 See `building the
-kernel <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-3/yocto-kernel-support.html#build-kernel-image>`__.
+kernel <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-3/yocto-kernel-support.html#build-kernel-image>`__.
 
 .. _section_lb1_c5g_s1c_vinayjk_03-12-24-127-56-85:
 
@@ -67,7 +67,7 @@ How to customize Qualcomm Yocto layers?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 See `user
-customizations <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-27/user_customizations.html>`__.
+customizations <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-27/user_customizations.html>`__.
 
 .. _section_l2s_5qj_ybc_vinayjk_07-04-24-2052-5-755:
 

@@ -89,15 +89,15 @@ The device must be in the EDL mode before you flash the software. The Qualcomm s
 .. note:: The device must have a Qualcomm Linux build image.
 
 1. `Install
-   QUD <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-253/additional_setup.html#sub$qsg_instal_qud>`__
+   QUD <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-253/additional_setup.html#sub$qsg_instal_qud>`__
    on the host device.
 
 2. `Install
-   ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-253/additional_setup.html#sub$qsg_install_adb>`__
+   ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-253/additional_setup.html#sub$qsg_install_adb>`__
    on the host device.
 
 3. `Connect
-   ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-253/additional_setup.html#sub$qsg_connect_to_adb>`__
+   ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-253/additional_setup.html#sub$qsg_connect_to_adb>`__
    to the device.
 
 4. Move the device to EDL mode:
@@ -246,7 +246,7 @@ Flash software using QDL
           Do not move the QDL tool from this location to an alternate path or host machine. If you must use the standalone QDL, see :ref:`How to build a standalone QDL <how_to_build_qdl_standalone>`. To connect to the device, see :ref:`How to SSH <section_hmw_vsh_p1c_vinayjk_03-01-24-1110-45-279>`.
 
 
-.. note:: The device reboots after the flashing procedure is completed successfully. To verify the updated software version, see `Check software version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-253/ubuntu_host.html#sub$check_sw_version_uart>`__.
+.. note:: The device reboots after the flashing procedure is completed successfully. To verify the updated software version, see `Check software version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-253/ubuntu_host.html#sub$check_sw_version_uart>`__.
 
 Flash software using PCAT
 ------------------------------------
@@ -331,4 +331,4 @@ Flash software using PCAT
 .. note::
 
    -  To connect to the device, see :ref:`How to SSH <section_hmw_vsh_p1c_vinayjk_03-01-24-1110-45-279>`.
-   -  The device reboots on successful completion of the flashing procedure. To verify the updated software version, see `Check software version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-253/ubuntu_host.html#sub$check_sw_version_uart>`__.
+   -  The device reboots on successful completion of the flashing procedure. To verify the updated software version, see `Check software version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-253/ubuntu_host.html#sub$check_sw_version_uart>`__.

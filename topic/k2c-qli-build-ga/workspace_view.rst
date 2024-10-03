@@ -101,7 +101,7 @@ Images directory structure after successful build
    |                             | information, see `Qualcomm Linux Yocto |
    |                             | Guide <ht                              |
    |                             | tps://docs.qualcomm.com/bundle/publicr |
-   |                             | esource/topics/80-70014-27/platform_so |
+   |                             | esource/topics/80-70015-27/platform_so |
    |                             | ftware_features.html#partitioning>`__. |
    +-----------------------------+----------------------------------------+
    | ``qdl``                     | Flashing tool binary                   |

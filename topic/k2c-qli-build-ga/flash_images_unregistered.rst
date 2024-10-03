@@ -87,15 +87,15 @@ The device must be in EDL mode before you flash the software. The Qualcomm RB3 G
 .. note:: The RB3 Gen 2 device must have a Qualcomm Linux build image.
 
 1. `Install
-   QUD <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-253/additional_setup.html#sub$qsg_instal_qud>`__
+   QUD <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-253/additional_setup.html#sub$qsg_instal_qud>`__
    on the host device.
 
 2. `Install
-   ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-253/additional_setup.html#sub$qsg_install_adb>`__
+   ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-253/additional_setup.html#sub$qsg_install_adb>`__
    on the host device.
 
 3. `Connect
-   ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-253/additional_setup.html#sub$qsg_connect_to_adb>`__
+   ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-253/additional_setup.html#sub$qsg_connect_to_adb>`__
    to the RB3 Gen 2 device.
 
 4. Move the device to EDL mode:
@@ -242,4 +242,4 @@ Flash software using QDL
           Do not move the QDL tool from this location to an alternate path or host PC. If you must use the standalone QDL, see :ref:`How to build a standalone QDL <how_to_build_qdl_standalone>`. To connect to the device, see :ref:`How to SSH <section_hmw_vsh_p1c_vinayjk_03-01-24-1110-45-279>`.
 
 
-.. note:: The device reboots on successful completion of the flashing procedure. To verify the updated software version, see `Check software version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-253/ubuntu_host.html#sub$check_sw_version_uart>`__.
+.. note:: The device reboots on successful completion of the flashing procedure. To verify the updated software version, see `Check software version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-253/ubuntu_host.html#sub$check_sw_version_uart>`__.

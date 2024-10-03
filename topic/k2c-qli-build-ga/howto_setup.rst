@@ -266,31 +266,51 @@ To check the Ethernet IP address, run the following command:
 How to update USB and Ethernet controller firmware?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For USB or Ethernet connectivity issues on the RB3 Gen 2 device, updating the firmware of the PCIe to USB controller might resolve the issue.
+If you encounter USB or Ethernet connectivity issues on the RB3 Gen 2 device, a firmware update to the USB controller may be a solution.
 
-**Prerequisite**: The device should be connected to the SSH terminal.
+.. rubric:: Prerequisites
 
-1. To download the
-   `firmware <https://www.renesas.com/us/en/products/interface/usb-switches-hubs/upd720201-usb-30-host-controller>`__,
-   you must register and log in with your ID.
+- Ensure that the software is upgraded as described in `Update Software <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-253/set_up_the_device.html#ubuntu-up-sw>`__ before updating the Renesas firmware.
+- The device should be connected to the Linux host through the USB Type-C cable.
 
-#. Transfer the files using SCP to the following path:
-   ``/lib/firmware``.
+.. note:: The following procedure is applicable only to Ubuntu 22.04 host. If you are using a Windows or Mac host, set up an Ubuntu virtual machine by following the instructions described in the `Virtual Machine Setup Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-41/getting-started.html>`__.
 
-   .. note:: 
-        The firmware name must be ``renesas_usb_fw.mem`` and if not, rename it. The driver identifies the firmware based on this specific filename, and other firmware names will not function.
+1. Register and log in to `Renesas <https://www.renesas.com/>`__.
 
-   **Example**:
+#. `Download the firmware <https://www.renesas.com/en/products/interface/usb-switches-hubs/upd720201-usb-30-host-controller#design_development>`__.
+
+#. Create the ``usb_fw.img`` image and copy the USB firmware:
 
    ::
 
-      scp renesas_usb.mem root@<ip address>:/lib/firmware
+      dd if=/dev/zero of=usb_fw.img bs=4k count=240
+      mkfs -t ext4 usb_fw.img
+      mkdir usb_fw
+      sudo mount -o loop usb_fw.img usb_fw/
+      sudo cp -rf renesas_usb_fw.mem usb_fw
+      sudo umount usb_fw
 
-   .. note:: 
-          When prompted for a password, enter ``oelinux123``.
+#. Start the device in fastboot mode:
 
-.. note:: 
-      After flashing the firmware, reboot the device. Upon subsequent boot-up, the driver reads the firmware and activates the PCIe-to-USB controller.
+   ::
 
+      adb root
+      adb shell
+      reboot bootloader
 
+#. Check if the device is in fastboot mode:
 
+   ::
+
+      fastboot devices
+
+   .. container:: screenoutput
+
+       7dc85f5e     fastboot
+
+#. Flash the ``usb_fw.img`` image to the device:
+
+   ::
+
+      fastboot erase usb_fw
+      fastboot flash usb_fw  usb_fw.img
