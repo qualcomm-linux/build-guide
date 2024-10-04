@@ -195,9 +195,11 @@ The following tables describe the firmware distributions that can be downloaded 
      - ``git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_amss_standard_oem_qimpsdk.git``
      - ``qualcomm-linux-spf-1-0_amss_standard_oem_qimpsdk``
 
-.. note:: Commands in the following sections are based on binary and source for firmware images without modem and GPS (see the command in :ref:`Mapping of firmware distributions and git repositories <Mapping_firmware_table>`). Hence, ``qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk`` is used. If you use any other distribution, then update the directory accordingly.
+.. note:: Commands in the following sections are based on the binary and source for firmware images without modem and GPS (see the command in :ref:`Mapping of firmware distributions and git repositories <Mapping_firmware_table>`). Hence, ``qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk`` is used. If you use any other distribution, then update the directory accordingly.
 
-The **Git command** column (see :ref:`Mapping of firmware distributions and git repositories <Mapping_firmware_table>`) provides the git repository, which contains the firmware sources. These repositories are hosted on Qualcomm servers. Clone the appropriate repositories based on your access profile and use case. The following ``git clone`` command downloads the selected firmware components in source, except the modem:
+The **Git command** column (see :ref:`Mapping of firmware distributions and git repositories <Mapping_firmware_table>`) provides information about the git repositories that contain the firmware sources. These repositories are hosted on Qualcomm servers. Clone the appropriate repositories based on your access profile and use case.
+
+The following ``git clone`` command downloads the selected firmware components in source, except the modem:
 
 ::
 
@@ -235,7 +237,7 @@ Build firmware
 
                bash
 
-         -  Install libffi6 using the following commands. This is required for the QAIC compiler, which generates header and source files from IDL files:
+         -  Install the libffi6 package using the following commands. This is required for the QAIC compiler, which generates header and source files from IDL files:
 
             ::
 
@@ -269,7 +271,7 @@ Build firmware
                export SECTOOLS_DIR=<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/<product>/common/sectoolsv2/ext/Linux
                # An example <product> is QCM6490.LE.1.0, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/).
 
-         -  Install and set up Qualcomm\ :sup:`®` Hexagon\ :sup:`™`:
+         -  Install and set up Qualcomm\ :sup:`®` Hexagon\ :sup:`™` Processor:
 
             ::
 
@@ -277,15 +279,15 @@ Build firmware
                export HEXAGON_ROOT=$HOME/Qualcomm/HEXAGON_Tools
                echo $HEXAGON_ROOT
 
-            .. note:: Set the environment variable HEXAGON_ROOT to the path where the Hexagon SDK is installed. To change the install path when using ``qpm-cli``, see :ref:`How can I change the Hexagon tool install path? <section_nqg_cj3_v1c_vinayjk_03-23-24-006-3-877>`.
+            .. note:: Set the environment variable HEXAGON_ROOT to the path where the Hexagon SDK is installed. To change the install path when using ``qpm-cli``, see :ref:`Change the Hexagon tool install path <section_nqg_cj3_v1c_vinayjk_03-23-24-006-3-877>`.
 
          .. rubric:: Build cDSP 
 
          **Tools required**
 
-         -  Compiler version – Hexagon 8.4.07
-         -  Python version – Python 3.10.2
-         -  Install libffi6 
+         -  Compiler version: Hexagon 8.4.07
+         -  Python version: Python 3.10.2
+         -  libffi6 package 
          
          **Build steps**
 
@@ -311,11 +313,11 @@ Build firmware
 
          **Tools required**
 
-         -  Compiler version – Hexagon 8.4.07
-         -  Python version – Python 3.10.2
-         -  Install libffi6 
+         -  Compiler version: Hexagon 8.4.07
+         -  Python version: Python 3.10.2
+         -  libffi6 package 
          
-         **Nanopb integration (only one-time setup)**
+         **Nanopb integration (one-time setup)**
 
          ::
 
@@ -348,7 +350,7 @@ Build firmware
 
          **Tools required**
 
-         -  Compiler version – LLVM version must be updated to 14.0.4
+         -  Compiler version: LLVM version must be updated to 14.0.4
 
             .. note:: 
                To avoid build errors, ensure that there is a ``/`` at the end of the command.
@@ -357,9 +359,9 @@ Build firmware
 
                export LLVM=<FIRMWARE_ROOT>/llvm/14.0.4/
 
-         -  Python version – Python 3.10
+         -  Python version: Python 3.10
 
-         -  Install libffi6  
+         -  libffi6 package  
          
          **Build steps**
 
@@ -401,8 +403,8 @@ Build firmware
 
          **Tools required**
 
-         -  Compiler version – LLVM 16.0.7
-         -  Python version – Python 3.10 
+         -  Compiler version: LLVM 16.0.7
+         -  Python version: Python 3.10 
          
          **Build steps**
 
@@ -431,8 +433,8 @@ Build firmware
 
          **Tools required**
 
-         -  Compiler version – LLVM 14.0.4
-         -  Python version – Python 3.10 
+         -  Compiler version: LLVM 14.0.4
+         -  Python version: Python 3.10 
             
          **Build steps**
 
@@ -498,7 +500,7 @@ Build firmware
 
                bash
 
-         -  Install libffi6 using the following commands. This is required for the QAIC compiler, which generates header and source files from IDL files:
+         -  Install the libffi6 package using the following commands. This is required for the QAIC compiler, which generates header and source files from IDL files:
 
             ::
 
@@ -532,7 +534,7 @@ Build firmware
                export SECTOOLS_DIR=<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/<product>/common/sectoolsv2/ext/Linux
                # An example <product> is QCS9100.LE.1.0, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/).
 
-         -  Install and set up Qualcomm\ :sup:`®` Hexagon\ :sup:`™`:
+         -  Install and set up Qualcomm\ :sup:`®` Hexagon\ :sup:`™` Processor:
 
             ::
 
@@ -540,14 +542,14 @@ Build firmware
                export HEXAGON_ROOT=$HOME/Qualcomm/HEXAGON_Tools
                echo $HEXAGON_ROOT
 
-            .. note:: Set the environment variable HEXAGON_ROOT to the path where the Hexagon SDK is installed. To change the install path when using ``qpm-cli``, see :ref:`How can I change the Hexagon tool install path? <section_nqg_cj3_v1c_vinayjk_03-23-24-006-3-877>`.
+            .. note:: Set the environment variable HEXAGON_ROOT to the path where the Hexagon SDK is installed. To change the install path when using ``qpm-cli``, see :ref:`Change the Hexagon tool install path? <section_nqg_cj3_v1c_vinayjk_03-23-24-006-3-877>`.
 
          .. rubric:: Build DSP      
 
          **Tools required**
 
-         -  Compiler version – Hexagon 8.6.05.2
-         -  Python version – Python 3.8.2
+         -  Compiler version: Hexagon 8.6.05.2
+         -  Python version: Python 3.8.2
          
          **Build steps**
 
@@ -592,15 +594,15 @@ Build firmware
 
          **Tools required**
 
-         -  Compiler version – LLVM version must be updated to 14.0.4
+         -  Compiler version: LLVM version must be updated to 14.0.4
 
             ::
 
                export LLVM=<FIRMWARE_ROOT>/llvm/14.0.4/
 
-         -  Python version – Python 3.10
+         -  Python version: Python 3.10
 
-         -  Install libffi6  
+         -  libffi6 package 
          
          **Build steps**
 
@@ -642,8 +644,8 @@ Build firmware
 
          **Tools required**
 
-         -  Compiler version – LLVM 16.0.7
-         -  Python version – Python 3.10 
+         -  Compiler version: LLVM 16.0.7
+         -  Python version: Python 3.10 
          
          **Build steps**
 
@@ -711,7 +713,7 @@ Build firmware
 Build BSP image with extras
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Download Qualcomm Yocto and supporting layers with extras:
+1. Download Qualcomm Yocto and the supporting layers with extras:
 
    ::
 
@@ -782,7 +784,7 @@ Build BSP image with extras
           bitbake -fc cleansstate qcom-multimedia-image
           bitbake -fc cleanall qcom-multimedia-image
 
-   After a successful build, you can verify if ``system.img`` is present in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image`` directory:
+   After a successful build, check that the ``system.img`` file is in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image`` directory:
 
    ::
 
@@ -796,7 +798,7 @@ Build BSP image with extras
 Build QIMP SDK image with extras
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Download QIMP SDK layers, Qualcomm Yocto, and supporting layers with
+1. Download the QIMP SDK layers, Qualcomm Yocto layer, and the supporting layers with
    extras:
 
    ::
@@ -875,7 +877,7 @@ Build QIMP SDK image with extras
          bitbake -fc cleansstate qcom-qim-product-sdk
          bitbake -fc cleanall qcom-qim-product-sdk
 
-   After a successful build, you can check if ``system.img`` is present in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image`` directory:
+   After a successful build, check that the ``system.img`` file is in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image`` directory:
 
    ::
 
@@ -889,7 +891,7 @@ Build QIMP SDK image with extras
 Build QIRP SDK image with extras
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note:: Ensure that you have cloned the respective firmware for QIRP SDK. For example, ``qualcomm-linux-spf-1-0_ap_standard_oem_nm-qirpsdk``.
+.. note:: Before you begin, clone the respective firmware for QIRP SDK, for example, ``qualcomm-linux-spf-1-0_ap_standard_oem_nm-qirpsdk``.
 
 1. Download QIRP SDK layers, Qualcomm Yocto, and supporting layers with
    extras:
@@ -961,7 +963,7 @@ Build QIRP SDK image with extras
    .. note::
       To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
-   After a successful build, you can see the QIRP SDK build artifacts at the following paths:
+   After a successful build, check that the QIRP SDK build artifacts are at the following paths:
 
    ::
 

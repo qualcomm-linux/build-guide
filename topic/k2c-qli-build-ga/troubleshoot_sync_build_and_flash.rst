@@ -116,7 +116,7 @@ Sync
 
    -  If you have redirection in your ``/etc/gitconfig`` or
       ``~/.gitconfig`` to an internal mirror.
-   -  If your internal mirror has prefix to branches while mirroring.
+   -  If your internal mirror has a prefix to branches while mirroring.
       For example, if ``/etc/gitconfig`` redirects and the internal
       mirror has a stable branch from upstream git mirrored as
       ``aosp/stable``, then the following error appears while performing
@@ -195,7 +195,7 @@ Sync
 
    ::
 
-      qsc-cli download --workspace-path '/local/mnt/workspace/<userid>/K2L/QSC_CLI_BUILD/build' --product 'QCM6490.LE.1.0' --release 'r00263.4' --distribution 'Qualcomm_Linux.SPF.1.0|TEST|DEVICE|PUBLIC'
+      qsc-cli download --workspace-path '/local/mnt/workspace/<userid>/K2L/QSC_CLI_BUILD/build' --product 'QCM6490.LE.1.0' --release 'r00270.1' --distribution 'Qualcomm_Linux.SPF.1.0|TEST|DEVICE|PUBLIC'
       [Info]: Starting qsc-cli version 0.0.0.7 
       (node:2924765) ExperimentalWarning: The Fetch API is an experimental feature. This feature could change at any time
       (Use `qsc-cli --trace-warnings ...` to show where the warning was created)
@@ -206,7 +206,7 @@ Sync
 
    **Solution**
 
-   This error occurs because QSC CLI is incompatible with Qlauncher.
+   This error may occur if QSC CLI is incompatible with Qlauncher.
    Qlauncher is going to be deprecated and replaced with a new
    application from the QSC. If you have Qlauncher in the workspace, you
    can run the following commands:
@@ -263,10 +263,26 @@ Sync
       # with
       repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m qcom-6.6.38-QLI.1.2-Ver.1.1.xml
 
+-  **pull access denied for 032693710300.dkr.ecr.us-west-2.amazonaws.com/stormchaser/ql-tool**
+
+   This error may occur while running the ``qsc-cli`` download command.
+
+   **Error excerpt**
+   Unable to find image '032693710300.dkr.ecr.us-west-2.amazonaws.com/stormchaser/ql-tool:20.04.20231220102843864.9' locally
+   docker: Error response from daemon: pull access denied for 032693710300.dkr.ecr.us-west-2.amazonaws.com/stormchaser/ql-tool, repository does not exist or may require 'docker login': denied: Your authorization token has expired. Reauthenticate and try again.
+
+   **Solution**
+      
+   ::
+
+      rm -rf ~/.docker/config.json
+
+   Rerun the ``qsc-cli`` command.
+
 .. _section_ays_4gc_p1c_vinayjk_02-29-24-1707-9-256:
 
 Build
-------------
+--------
 
 -  **ERROR: linux-kernel-qcom-6.6-r0 do_menuconfig: No valid terminal
    found, unable to open devshell**
@@ -307,11 +323,11 @@ Build
    from any source’)**
 
    These are intermittent fetch failures. Check if there is a
-   network/host issue at your end, else it might be the server creating
+   network/host issue at your end, else it may be the server creating
    this issue. You could increase ``postBuffer`` and
    ``maxRequestBuffer`` settings in your ``.gitconfig`` file if the
    errors occur while fetching the git repositories. If you are using
-   ``qsc-cli``, then these configurations are already taken care by the
+   ``qsc-cli``, then these configurations are already taken care of by the
    ``qsc-cli`` tool:
 
    ::
@@ -393,8 +409,7 @@ Build
    4. Fetch the log with verbose logging available under the diag
       recipe’s working directory
       ``build-qcom-wayland/tmp-glibc/work/qcm6490-qcom-linux/diag/15.0-r0/temp``.
-   5. Share ``log.do_fetch`` from this path with the Qualcomm CE point
-      of contact. 
+   5. Share ``log.do_fetch`` from this path with the Qualcomm support team. 
       
    .. note:: Enabling git verbose logging for all recipes
              can significantly increase the build time. It is recommended to
@@ -460,7 +475,7 @@ Build
 
 -  **failed: database disk image is malformed. abort()ing pseudo client by server request**
 
-   The Pseudo tool encounters path mismatch and corrupt database issues when processing file system operations. When Pseudo simulates file system operations in a Yocto project, problems might occur in the process of handling file paths and permissions.
+   The Pseudo tool encounters path mismatch and corrupt database issues when processing the file system operations. When Pseudo simulates the file system operations in a Yocto project, problems might occur in the process of handling file paths and permissions.
 
    This is a known issue in the `Yocto community <https://wiki.yoctoproject.org/wiki/Pseudo_Abort>`__.
 

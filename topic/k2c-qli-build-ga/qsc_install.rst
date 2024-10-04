@@ -10,7 +10,7 @@ Install QSC using a GUI
 
    The QSC Debian package (``.deb``) is downloaded to your machine.
 
-2. To install the QSC Debian package using the Ubuntu GNOME GUI, GDebi must be installed. Run the following command on your linux host machine to install GDebi:
+2. To install the QSC Debian package using the Ubuntu GNOME GUI, it is necessary to first ensure GDebi is installed. Run the following command on your linux host machine to install GDebi:
 
    ::
 
@@ -18,7 +18,7 @@ Install QSC using a GUI
 
 3. Right-click on the downloaded QSC Debian file and click **Open with GDebi Package Installer**.
 
-   .. image:: ../../media/k2c-qli-build-ga/open_with_gdebi.png
+   .. image:: ../../media/k2c-qli-build-ga/deb_gui_installer.png
 
 4. Click **Install Package**.
 
@@ -30,7 +30,7 @@ Install QSC using a GUI
    .. image:: ../../media/k2c-qli-build-ga/current_user.png
 
 
-6. Accept the license agreement. Click **Next** on the screen.
+6. Accept the license agreement. Click **Next**.
 
    .. image:: ../../media/k2c-qli-build-ga/lic_agreement_next.png
 
@@ -39,12 +39,12 @@ Install QSC using a GUI
 
    .. image:: ../../media/k2c-qli-build-ga/accept.png
 
-   Wait for the installation to complete as shown below.
+   Wait for the installation to complete.
 
    .. image:: ../../media/k2c-qli-build-ga/installation_finished.png
 
 
-8. Click **Show Applications** to find the Qualcomm Software Center.
+8. To find the Qualcomm Software Center, click **Show Applications**.
 
    .. image:: ../../media/k2c-qli-build-ga/show_apps.png
 

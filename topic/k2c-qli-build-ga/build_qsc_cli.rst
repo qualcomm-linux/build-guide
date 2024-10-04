@@ -15,7 +15,7 @@ Software download
    ::
 
       qsc-cli download --workspace-path '<Base_Workspace_Path>' --product '<Product_ID>' --distribution '<Distribution>' --release '<Release_ID>'
-      # Example, qsc-cli download --workspace-path '/local/mnt/workspace/sample_workspace' --product 'QCM6490.LE.1.0' --distribution 'Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NoModem' --release 'r00263.4'
+      # Example, qsc-cli download --workspace-path '/local/mnt/workspace/sample_workspace' --product 'QCM6490.LE.1.0' --distribution 'Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NoModem' --release 'r00270.1'
 
    .. note::
       - If you are downloading more than one distribution, create a new workspace for each distribution that you download.
@@ -31,12 +31,11 @@ Build default configuration
 
 Compile
 ''''''''
-
 .. note:: For information on the default configurations, see the table *Default values of MACHINE and QCOM_SELECTED_BSP parameters for QSC* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
-Start the compilation after the download is complete:
+Start the compilation process after the download is complete:
 
-.. note:: Depending on the size of the software and host machine configuration, the compilation process may take a few hours.
+.. note:: Depending on the size of the software and the host machine configuration, the compilation process may take a few hours.
 
 ::
 
@@ -45,7 +44,7 @@ Start the compilation after the download is complete:
    # Example
    qsc-cli compile --workspace-path '/local/mnt/workspace/sample_workspace'
 
-This process builds the necessary Qualcomm firmware and also completes the Qualcomm Linux build.
+This process builds the necessary Qualcomm firmware and completes the Qualcomm Linux build.
 
 .. note:: If you encounter a BitBake fetcher error, try recompiling to resolve the issue. If the issue persists, see :ref:`BitBake Fetcher Error <do_fetch_error_1>` for a solution.
 
@@ -70,7 +69,7 @@ To recompile after any modifications to the software release, use your existing 
 Flash
 '''''''''
 
-.. note:: For the QSC CLI to detect the connected devices and flash the software builds, ensure that the Qualcomm Product Configuration Assistant Tool (PCAT) and Qualcomm USB Driver (QUD) are installed on the host machine. Use ``qpm-cli`` to install PCAT and QUD:
+.. note:: For the QSC CLI to detect the connected devices and flash the software builds, ensure that the Qualcomm Product Configuration Assistant Tool (PCAT) and Qualcomm USB Driver (QUD) are installed on the host machine. Use the ``qpm-cli`` command to install PCAT and QUD:
 
 ::
 
@@ -80,7 +79,7 @@ Flash
 
 The ``qpm-cli --help`` command lists the help options.
 
-For Ubuntu 22.04, you may encounter an issue while installing QUD, where you might be asked to enroll the public key on your Linux host for a successful QUD installation. For more information, see the file ``signReadme.txt`` in the ``/opt/QTI/sign/`` directory.
+For Ubuntu 22.04, you may encounter an issue while installing QUD, where you might be asked to enroll the public key on your Linux host for a successful QUD installation. For more information, see the ``signReadme.txt`` file in the ``/opt/QTI/sign/`` directory.
 
 .. note:: Before you flash the software, ensure that the device is in Emergency Download (EDL) mode. For more information on how to force the device into EDL mode, see :ref:`Move to EDL mode <section_vgg_mly_v1c>`.
   
@@ -92,14 +91,14 @@ For Ubuntu 22.04, you may encounter an issue while installing QUD, where you mig
       # Example:
       qsc-cli flash --workspace-path '/local/mnt/workspace/sample_workspace' --serial 'be116704'
    
-   The ``--buildflavor`` argument is optional and only required for devices that have multiple flavors. To list the build flavors, run the following command on host machine:
+   The ``--buildflavor`` argument is optional and only required for devices that have multiple flavors. To list the build flavors, run the following command on the host machine:
       
    ::
 
       qsc-cli flash --workspace-path <workspace path> --list-buildflavor
 
    .. note::
-      - To know the `<serial number>`, run the following command on host machine:
+      - To find the `<serial number>`, run the following command on the host machine:
 
         ::
       
@@ -114,13 +113,13 @@ For Ubuntu 22.04, you may encounter an issue while installing QUD, where you mig
             NA | NA          | EDL          | BE116704      | be116704          | Qualcomm USB Composite Device:QUSB_BULK_CID:042F_SN:BE116704
 
       - The device reboots after the flashing procedure is completed successfully. To verify the updated software version, see `Check software version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-253/ubuntu_host.html#sub$check_sw_version_uart>`__.
-      - To connect to the device, see :ref:`How to SSH <section_hmw_vsh_p1c_vinayjk_03-01-24-1110-45-279>`.
+      - To connect to the device, see :ref:`Use SSH <section_hmw_vsh_p1c_vinayjk_03-01-24-1110-45-279>`.
 
 .. _build_own_config:
 
 Build your own configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-To build your own configuration, you must compile the build for default machine configuration and compile the LE.QCLINUX.1.0.r1 image with your own MACHINE and QCOM_SELECTED_BSP.
+To build your own configuration, you must compile the build for default machine configuration and compile the LE.QCLINUX.1.0.r1 image with your own MACHINE and QCOM_SELECTED_BSP parameter values.
 
 1. Compile the build for default machine configuration:
 
@@ -128,7 +127,7 @@ To build your own configuration, you must compile the build for default machine 
    
    #. :ref:`Compile the default build <compile_qsc_cli>`.
    
-2. Compile the ``LE.QCLINUX.1.0.r1`` image with your own MACHINE and QCOM_SELECTED_BSP.
+2. Compile the ``LE.QCLINUX.1.0.r1`` image with your own MACHINE and QCOM_SELECTED_BSP parameter values.
    
    .. note:: For information on the supported machine configurations of the development kit, see the table *MACHINE and QCOM_SELECTED_BSP parameter value* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
    
@@ -144,13 +143,13 @@ To build your own configuration, you must compile the build for default machine 
    
       .. note:: An environment is setup to execute your own build commands for a given software image. QSC will not track the status of input workspaces in the future releases and flash using ``qsc-cli`` will not be supported for these workspaces.
 
-   b. Update the highlighted command as per your own machine configuration and run it on the terminal:
+   b. Update the highlighted command according to your own machine configuration and run it on the terminal:
 
       .. image:: ../../media/k2c-qli-build-ga/compile_terminal_new.png
 
-      For example, to build for Qualcomm® RB3 Gen 2 Core Development Kit, update the ``MACHINE`` in the above build command to ``qcs6490-rb3gen2-core-kit``.
+      For example, to build for Qualcomm® RB3 Gen 2 Core Development Kit, change the value of ``MACHINE`` in the above build command to ``qcs6490-rb3gen2-core-kit``.
    
-   c. After a successful build, check that the ``system.img`` is in the ``<Base_Workspace_Path>/DEV/LE.QCLINUX.1.0.r1/build-<DISTRO>/tmp-glibc/deploy/images/<MACHINE>/qcom-multimedia-image`` directory with updated timestamp. For example:
+   c. After a successful build, check that the ``system.img`` file is in the ``<Base_Workspace_Path>/DEV/LE.QCLINUX.1.0.r1/build-<DISTRO>/tmp-glibc/deploy/images/<MACHINE>/qcom-multimedia-image`` directory with an updated timestamp. For example:
 
       ::
 
@@ -158,16 +157,16 @@ To build your own configuration, you must compile the build for default machine 
          ls -al system.img
          
    .. note::      
-       The compilation of any individual software images except ``LE.QCLINUX.1.0.r1`` must be followed by compiling the software product and ``LE.QCLINUX.1.0.r1`` in the same order.
+       When compiling a software image other than ``LE.QCLINUX.1.0.r1``, ensure that you also compile both the software product and ``LE.QCLINUX.1.0.r1`` in the same order.
  
-       For example, if ``BOOT.MXF.1.0.c1`` is compiled, ensure to compile the software product (for example, QCM6490.LE.1.0) and ``LE.QCLINUX.1.0.r1``.
+       For example, if you compile ``BOOT.MXF.1.0.c1``, ensure that you also compile the software product (such as ``QCM6490.LE.1.0``) and then ``LE.QCLINUX.1.0.r1``.
       
 3. To flash your build, see :ref:`Flash images <flash_images>`.
 
    .. note::
-      - Before flashing, ensure to have the build images path updated with the compiled build images workspace path ``<Base_Workspace_Path>/DEV/LE.QCLINUX.1.0.r1/build-<DISTRO>/tmp-glibc/deploy/images/<MACHINE>/qcom-multimedia-image``.
+      - Before flashing, update the build images path to the compiled build images workspace at ``<Base_Workspace_Path>/DEV/LE.QCLINUX.1.0.r1/build-<DISTRO>/tmp-glibc/deploy/images/<MACHINE>/qcom-multimedia-image``.
 
         For example, ``<Base Workspace Path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-core-kit/qcom-multimedia-image``.
 
       - The device reboots after the flashing procedure is completed successfully. To verify the updated software version, see `Check software version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-253/ubuntu_host.html#sub$check_sw_version_uart>`__.
-      - To connect to the device, see :ref:`How to SSH <section_hmw_vsh_p1c_vinayjk_03-01-24-1110-45-279>`.
+      - To connect to the device, see :ref:`Use SSH <section_hmw_vsh_p1c_vinayjk_03-01-24-1110-45-279>`.

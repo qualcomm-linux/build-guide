@@ -28,4 +28,4 @@ Install QSC CLI
 
       qsc-cli login -u <username>
 
-.. note:: For more information, see ``qsc-cli`` related topics in :doc:`How to Sync <howto_sync>`.
+.. note:: For more information, see ``qsc-cli`` related topics in :ref:`How to Sync <howto_sync>`.

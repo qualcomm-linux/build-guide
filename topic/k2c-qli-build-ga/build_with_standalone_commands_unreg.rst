@@ -8,7 +8,7 @@ Build with standalone commands
 Ubuntu host setup
 ^^^^^^^^^^^^^^^^^^^^^
 
-The Ubuntu host machine needs a few setup operations to ensure that the
+The Ubuntu host machine must be setup to ensure that the
 required software tools are installed and configured for use.
 
 1. Install the following packages to prepare your host environment for
@@ -116,7 +116,7 @@ The following table shows an example mapping of Yocto layers to the manifest rel
      For example, the manifest release tag ``qcom-6.6.38-QLI.1.2-Ver.1.1.xml`` denotes the following:
      
      - 6.6.38: Linux Kernel
-     - QLI.1.2: Qualcomm Linux version 1.2
+     - QLI.1.2: Qualcomm Linux v1.2
      - 1.0: Milestone release
 
    - Syntax for the additional productization manifest release tag:
@@ -126,7 +126,7 @@ The following table shows an example mapping of Yocto layers to the manifest rel
      For example, the additional productization manifest release tag ``qcom-6.6.38-QLI.1.2-Ver.1.1_qim-product-sdk-1.1.2.xml`` denotes the following:
      
      - 6.6.38: Linux Kernel
-     - QLI.1.2: Qualcomm Linux version 1.2
+     - QLI.1.2: Qualcomm Linux v1.2
      - qim-product-sdk-1.1.1: QIMP SDK release on top of QLI.1.2
 
        Other product/customization examples:
@@ -143,7 +143,7 @@ The following table shows an example mapping of Yocto layers to the manifest rel
 Build BSP image
 ^^^^^^^^^^^^^^^^^^^^^
 
-1. Download Qualcomm Yocto and supporting layers:
+1. Download Qualcomm Yocto and the supporting layers:
 
    ::
 
@@ -172,7 +172,7 @@ Build BSP image
 #. Build the software image:
 
    .. note::
-      For supported image recipes, see :ref:`image recipes supported in the GitHub workflow <section_x3c_n5l_zbc_vinayjk_07-08-24-1744-58-455>`.
+      For supported image recipes, see :ref:`Image recipes supported in the GitHub workflow <section_x3c_n5l_zbc_vinayjk_07-08-24-1744-58-455>`.
 
    ::
 
@@ -191,7 +191,7 @@ Build BSP image
 Build QIMP SDK image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Download Qualcomm Yocto and supporting layers:
+1. Download Qualcomm Yocto and the supporting layers:
 
    .. note:: 
       - The ``<manifest release tag>`` for the QIMP SDK build is the same as the BSP build. Clone the QIMP SDK layer on top of the BSP build. 
@@ -251,7 +251,7 @@ Build QIMP SDK image
 Build QIRP SDK image
 ^^^^^^^^^^^^^^^^^^^^^
 
-1. Download Qualcomm Yocto and supporting layers:
+1. Download Qualcomm Yocto and the supporting layers:
 
    .. note:: The ``<manifest release tag>`` for QIRP SDK build is the same as the BSP build. Clone the QIRP SDK layers on top of the BSP build.
 
@@ -282,7 +282,7 @@ Build QIRP SDK image
 
       ln -s layers/meta-qcom-robotics-distro/set_bb_env.sh ./setup-robotics-environment
       ln -s layers/meta-qcom-robotics-sdk/scripts/qirp-build ./qirp-build
-      MACHINE=custom DISTRO=qcom-robotics-ros2-humble QCOM_SELECTED_BSP=<override> source setup-robotics-environment
+      MACHINE=<machine> DISTRO=qcom-robotics-ros2-humble QCOM_SELECTED_BSP=<override> source setup-robotics-environment
       # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-robotics-ros2-humble QCOM_SELECTED_BSP=custom source setup-robotics-environment
       # source setup-robotics-environment: Sets the environment, creates the build directory build-qcom-robotics-ros2-humble,
       # and enters into build-qcom-robotics-ros2-humble directory.
@@ -290,7 +290,7 @@ Build QIRP SDK image
    .. note::
       For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
-#. Build the robotics image and QIRP SDK artifacts:
+#. Build the robotics image and the QIRP SDK artifacts:
 
    ::
 
@@ -309,7 +309,7 @@ Build QIRP SDK image
 Build real-time Linux image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Download Qualcomm Yocto and supporting layers:
+1. Download Qualcomm Yocto and the supporting layers:
 
    .. note:: The ``<manifest release tag>`` for real-time Linux image is the same as the BSP build. Clone the real-time Linux on top of the BSP build.
 

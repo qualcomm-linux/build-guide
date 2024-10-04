@@ -3,7 +3,7 @@
 Flash images
 ===============
 
-Follow these steps to flash the software:
+Follow these steps to flash the software images:
 
 1. Update the ``udev`` rules (one-time prerequisite).
 2. Move the device to Emergency Download (EDL) mode.
@@ -82,7 +82,7 @@ The device must be in the EDL mode before you flash the software. The Qualcomm s
 
        Bus 002 Device 014: ID 05c6:9008 Qualcomm, Inc. Gobi Wireless Modem (QDL mode)
 
-.. note:: This procedure is applicable for Ubuntu host environment.
+.. note:: This procedure applies to the Ubuntu host environment.
 
 **Using ADB**
 
@@ -118,7 +118,7 @@ The device must be in the EDL mode before you flash the software. The Qualcomm s
 
        Bus 002 Device 014: ID 05c6:9008 Qualcomm, Inc. Gobi Wireless Modem (QDL mode)
 
-.. note:: This procedure is applicable for Ubuntu host environment.
+.. note:: This procedure applies to the Ubuntu host environment.
 
 **Manual**
 
@@ -187,7 +187,7 @@ Flash software using QDL
 
 1. Ensure that the ModemManager tool is not running.
 
-   Some Linux distributions include the ModemManager tool, which allows you to configure the mobile broadband. When the device is connected in USB mode, it is identified as a Qualcomm modem, and ModemManager tries to configure the device. As this interferes with QDL flashing, you must disable ModemManager before connecting your device.
+   Some Linux distributions include the ModemManager tool, which allows you to configure the mobile broadband. When the device is connected in the USB mode, it is identified as a Qualcomm modem, and the ModemManager tries to configure the device. As this interferes with the QDL flashing, you must disable the ModemManager before connecting your device.
    
    If you are using a Linux distribution with ``systemd``, stop the ModemManager tool using the following command:
 
@@ -195,7 +195,7 @@ Flash software using QDL
 
       sudo systemctl stop ModemManager
 
-   If you need ModemManager, you can start it again after the flashing is complete.
+   If you need the ModemManager, you can restart it after the flashing is complete.
   
 #. Download the QDL tool, compile it, and flash the images:
 
@@ -244,9 +244,9 @@ Flash software using QDL
           2. Disconnect from the host.
           3. Reboot the host.
 
-          Do not move the QDL tool from the ``<workspace_path>`` location to an alternate path or host machine. If you must use the standalone QDL, see :ref:`How to build a standalone QDL <how_to_build_qdl_standalone>`.
+          Do not move the QDL tool from the ``<workspace_path>`` location to an alternate path or the host machine. If you must use the standalone QDL, see :ref:`Build a standalone QDL <how_to_build_qdl_standalone>`.
           
-          To connect to the device, see :ref:`How to SSH <section_hmw_vsh_p1c_vinayjk_03-01-24-1110-45-279>`.
+          To connect to the device, see :ref:`Use SSH <section_hmw_vsh_p1c_vinayjk_03-01-24-1110-45-279>`.
 
 
 .. note:: The device reboots after the flashing procedure is completed successfully. To verify the updated software version, see `Check software version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-253/ubuntu_host.html#sub$check_sw_version_uart>`__.
@@ -277,7 +277,7 @@ Flash software using PCAT
 
        crw-rw-rw- 1 root 242 0 Dec 10 10:51 /dev/QTI_HS-USB_QDLoader_9008_3-8:1.0
 
-3. Verify if the device entered QDL mode:
+3. Verify if the device entered the QDL mode:
 
    ::
 
@@ -289,7 +289,7 @@ Flash software using PCAT
 
        Bus 002 Device 014: ID 05c6:9008 Qualcomm, Inc. Gobi Wireless Modem (QDL mode)
 
-4. Check if the device is recognized by PCAT:
+4. Check if the device is recognized by the PCAT:
 
    ::
 
@@ -312,7 +312,7 @@ Flash software using PCAT
       # Example
       PCAT -PLUGIN SD -DEVICE be116704 -BUILD "<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image" -MEMORYTYPE UFS -FLAVOR asic
 
-   If the software has been flashed successfully, you see the following message:
+   If the software has been flashed successfully, you will see the following message:
 
    .. container:: screenoutput
 
@@ -333,4 +333,4 @@ Flash software using PCAT
 
 .. note::
    -  The device reboots on successful completion of the flashing procedure. To verify the updated software version, see `Check software version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-253/ubuntu_host.html#sub$check_sw_version_uart>`__.
-   -  To connect to the device, see :ref:`How to SSH <section_hmw_vsh_p1c_vinayjk_03-01-24-1110-45-279>`.
+   -  To connect to the device, see :ref:`Use SSH <section_hmw_vsh_p1c_vinayjk_03-01-24-1110-45-279>`.

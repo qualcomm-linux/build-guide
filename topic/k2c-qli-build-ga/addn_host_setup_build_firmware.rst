@@ -3,7 +3,7 @@
 Ubuntu host setup
 -------------------------
 
-The Ubuntu host machine needs a few setup operations to ensure that the required software tools are ready.
+The Ubuntu host machine must be setup to ensure that the required software tools are installed and configured for use.
 
 1. Install the following packages:
 

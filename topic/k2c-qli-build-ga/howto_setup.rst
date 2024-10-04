@@ -5,8 +5,8 @@ Setup
 
 .. _section_ags_ssh_p1c_vinayjk_03-01-24-1109-49-684:
 
-How to connect to a UART shell?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Connect to a UART shell
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. container:: persistenttab-soc
 
@@ -14,13 +14,13 @@ How to connect to a UART shell?
 
       .. group-tab:: QCS6490/QCS5430
          
-         To set up the debug UART connection and view diagnostic messages, connect the micro-USB cable from the micro-USB port on the RB3 Gen 2 device to the Linux host.
+         To set up the debug UART connection and view the diagnostic messages, connect the micro-USB cable from the micro-USB port on the RB3 Gen 2 device to the Linux host.
 
          .. image:: ../../media/k2c-qli-build-ga/micro_usb_port.jpg
 
       .. group-tab:: QCS9075
 
-         To set up the debug UART connection and view diagnostic messages, connect the debug-USB cable from the debug-USB port on the QCS9075 device to the Linux host.
+         To set up the debug UART connection and view the diagnostic messages, connect the debug-USB cable from the debug-USB port on the QCS9075 device to the Linux host.
 
          .. image:: ../../media/k2c-qli-build-ga/uart_ridesx.png
 
@@ -47,13 +47,14 @@ How to connect to a UART shell?
 
       sudo minicom -s
 
-4. Press the Down arrow key to select the **Serial port setup** option.
-   Use the Up and Down arrow keys to navigate through the menu.
+4. Press the Down arrow key to select the **Serial port setup** option. Use the Up and Down arrow keys to navigate through the menu.
 
    .. image:: ../../media/k2c-qli-build-ga/serial_port_setup.jpg
       :align: center
 
 5. Set up the serial device configuration:
+
+   .. note:: Ensure that the letters are in uppercase.
 
    a. Press **A** on your keyboard to set up the serial device name such
       as ``/dev/ttyUSB0``.
@@ -69,8 +70,6 @@ How to connect to a UART shell?
 
    #. Press **F** on your keyboard to set the **Hardware Flow Control**
       to ``No``.
-
-      .. note:: Ensure that the letters A, E, Q, and F are in uppercase.
 
       .. image:: ../../media/k2c-qli-build-ga/serial_device_configuration.png
          :align: center
@@ -100,8 +99,8 @@ How to connect to a UART shell?
 
 .. _section_hmw_vsh_p1c_vinayjk_03-01-24-1110-45-279:
 
-How to SSH?
-^^^^^^^^^^^^^^
+Use SSH
+^^^^^^^^^^
 
 .. _howto_setup_wifi_sub:
 
@@ -119,8 +118,7 @@ To update the Wi-Fi configuration, perform the following from the debug :ref:`UA
 
 #. Open the default ``/etc/wpa_supplicant.conf`` file using your preferred text editor and modify the content of the file to match the SSID and password of your router:
 
-   .. note::
-        You can check the configurations of security types specified in the default ``/etc/wpa_supplicant.conf`` file to add your required router configurations.
+   .. note:: Check the configurations of security types specified in the default ``/etc/wpa_supplicant.conf`` file to add your required router configurations.
 
    ::
 
@@ -190,7 +188,7 @@ Ensure that a :ref:`Wi-Fi connection <howto_setup_wifi_sub>` is established befo
 
       ifconfig wlan0
 
-#. Use the IP address obtained from **step 1** to SSH the device from the remote host:
+#. Use the IP address to establish an SSH connection from the remote host to the device:
 
    ::
 
@@ -210,16 +208,16 @@ Ensure that a :ref:`Wi-Fi connection <howto_setup_wifi_sub>` is established befo
 
 .. _section_j5g_rds_5bc_vinayjk_06-21-24-1739-53-921:
 
-How to configure Ethernet with RJ45 port?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Configure Ethernet with RJ45 port
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Ethernet/RJ45 port is enabled as a downstream port of PCIe to USB
-controller (``renesas``). Ensure that ``renesas_usb_fw.mem`` is
+controller (``renesas``). Ensure that the ``renesas_usb_fw.mem`` is
 available at the ``/lib/firmware`` directory.
 
 .. note:: 
-   - If ``renesas_usb_fw.mem`` firmware is not available at the ``/lib/firmware`` directory, then :ref:`connect to UART <section_ags_ssh_p1c_vinayjk_03-01-24-1109-49-684>` and :ref:`enable the Wi-Fi <howto_setup_wifi_sub>`.
-   - After getting SSH and IP address, :ref:`update PCIe to USB controller firmware <section_nsb_5gs_5bc_vinayjk_06-21-24-1803-34-149>`.
+   - If the ``renesas_usb_fw.mem`` firmware is not available at the ``/lib/firmware`` directory, then :ref:`connect to UART <section_ags_ssh_p1c_vinayjk_03-01-24-1109-49-684>` and :ref:`enable the Wi-Fi <howto_setup_wifi_sub>`.
+   - After getting the SSH and the IP address, :ref:`update PCIe to USB controller firmware <section_nsb_5gs_5bc_vinayjk_06-21-24-1803-34-149>`.
 
 To check if USB to ETH controller is enumerated, run the following
 command:
@@ -263,10 +261,10 @@ To check the Ethernet IP address, run the following command:
 
 .. _section_nsb_5gs_5bc_vinayjk_06-21-24-1803-34-149:
 
-How to update USB and Ethernet controller firmware?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Update USB and Ethernet controller firmware
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you encounter USB or Ethernet connectivity issues on the RB3 Gen 2 device, a firmware update to the USB controller may be a solution.
+If you encounter USB or Ethernet connectivity issues on the RB3 Gen 2 device, consider updating the firmware for the USB controller.
 
 .. rubric:: Prerequisites
 
@@ -290,7 +288,7 @@ If you encounter USB or Ethernet connectivity issues on the RB3 Gen 2 device, a 
       sudo cp -rf renesas_usb_fw.mem usb_fw
       sudo umount usb_fw
 
-#. Start the device in fastboot mode:
+#. Start the device in Fastboot mode:
 
    ::
 
@@ -298,7 +296,7 @@ If you encounter USB or Ethernet connectivity issues on the RB3 Gen 2 device, a 
       adb shell
       reboot bootloader
 
-#. Check if the device is in fastboot mode:
+#. Check if the device is in Fastboot mode:
 
    ::
 

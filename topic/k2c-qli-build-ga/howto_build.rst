@@ -5,10 +5,10 @@ Build
 
 .. _section_gcp_5hh_q1c_vinayjk_03-04-24-2335-11-750:
 
-How do I know if my build is completed?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Check if the build is complete
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If your build instruction is ``bitbake qcom-multimedia-image``, then you can check if ``system.img`` is present in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image``
+If your build instruction is ``bitbake qcom-multimedia-image``, check if the ``system.img`` is present in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image``
 directory:
 
 ::
@@ -18,8 +18,8 @@ directory:
 
 .. _section_bcj_vhh_q1c_vinayjk_03-04-24-2335-25-265:
 
-How to generate eSDK?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Generate an eSDK
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Get a Docker shell and shell prompt**
 
@@ -46,13 +46,14 @@ How to generate eSDK?
       # Example
       WORKSPACE=/local/mnt/workspace/Qworkspace/DEV && SRC_DIR=LE.QCLINUX.1.0.r1 && docker run --rm  -it -v ~/.qualcomm_launcher_workspace_config:/var/tmp/.docker_qualcomm_launcher_setup/ -v $WORKSPACE:$WORKSPACE -e LOCAL_USER_NAME=`id -u -n` -e LOCAL_USER_ID=`id -u` -e USER=`id -u` -e WORKSPACE=$WORKSPACE -w $WORKSPACE/$SRC_DIR 032693710300.dkr.ecr.us-west-2.amazonaws.com/stormchaser/le.um-k2c:20.04.20231215014450998.7 bash
 
-Check if you are in a workspace that has ``.repo`` in it. Set up the
-environment and generate eSDK:
+Check if you are in a workspace that has ``.repo`` in it.
+
+Set up the environment and generate eSDK:
 
 .. note:: When the eSDK generation build command is complete, the images
           are generated in the following directory: ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/sdk``.
 
-1. After building ``meta-qcom-hwe`` with QSC CLI:
+1. After building the ``meta-qcom-hwe`` with QSC CLI:
 
    ::
 
@@ -79,8 +80,8 @@ environment and generate eSDK:
       # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
       bitbake -c do_populate_sdk_ext qcom-multimedia-image
 
-3. After building Standalone instructions within the same shell (shell
-   where build is successful):
+3. After building standalone instructions within the same shell (shell
+   where the build is successful):
 
    ::
 
@@ -139,15 +140,14 @@ environment and generate eSDK:
 
 **Solution**
 
-Rebuild the image and generate eSDK again.
+Rebuild the image and generate the eSDK again.
 
 .. _section_hjt_vhh_q1c_vinayjk_03-04-24-2335-32-213:
 
-How to rebuild using Docker environment?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Rebuild using Docker environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Following are the commands to connect to Docker for your environment
-setup and then use the BitBake commands to rebuild:
+Run the commands to connect to Docker for your environment setup and then use the BitBake commands to rebuild:
 
 ::
 
@@ -180,8 +180,8 @@ setup and then use the BitBake commands to rebuild:
 
 .. _how_to_build_qdl_standalone:
 
-How to build a standalone QDL?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Build a standalone QDL
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Prerequisites:**
 
@@ -210,12 +210,12 @@ How to build a standalone QDL?
 
 .. _section_nqg_cj3_v1c_vinayjk_03-23-24-006-3-877:
 
-How can I change the Hexagon tool install path?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Change the Hexagon tool install path
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-``HEXAGON_ROOT`` environment variable must point to the path where the Hexagon tools are installed. By default, ``qpm-cli`` installs ``HEXAGON_ROOT`` in ``$HOME``. You can also choose an alternate directory to install ``HEXAGON_ROOT``.
+The ``HEXAGON_ROOT`` environment variable must point to the path where the Hexagon tools are installed. By default, the ``qpm-cli`` tool installs ``HEXAGON_ROOT`` variable in ``$HOME`` directory. You can also choose an alternate installation directory.
 
-You can use the ``––path`` option in ``qpm-cli`` command to install Hexagon tools in a directory of your choice and export the ``HEXAGON_ROOT`` variable to the same directory.
+Use the ``––path`` option in ``qpm-cli`` command to install Hexagon tools in a directory of your choice and export the ``HEXAGON_ROOT`` variable to the same directory.
 
 Provide an absolute path for ``<TOOLS_DIR>`` in ``qpm-cli`` and export commands as shown in the following example:
 
@@ -229,8 +229,8 @@ Provide an absolute path for ``<TOOLS_DIR>`` in ``qpm-cli`` and export commands 
 
 .. _section_x3c_n5l_zbc_vinayjk_07-08-24-1744-58-455:
 
-What are the image recipes supported in the GitHub workflow?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Image recipes supported in the GitHub workflow
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +------------------------------------+------------------------------------------+
 | Image recipe                       | Description                              |
@@ -254,8 +254,8 @@ What are the image recipes supported in the GitHub workflow?
 
 .. _section_imr_xc4_1cc_vinayjk_07-12-24-1513-38-780:
 
-How to download the Platform eSDK?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Download the Platform eSDK
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Check the :ref:`host machine requirements <host_machine_req_github_workflow_unregistered_users>`.
 
@@ -277,13 +277,13 @@ How to download the Platform eSDK?
 
    #. Download the zipped file:
 
-      -  For Ubuntu x86 architecture-based host machines:
+      -  For a Ubuntu x86 architecture-based host machine:
 
          ::
 
             wget https://artifacts.codelinaro.org/artifactory/qli-ci/flashable-binaries/qimpsdk/qcs6490-rb3gen2-core-kit/x86/qcom-6.6.38-QLI.1.2-Ver.1.1_qim-product-sdk-1.1.1.zip
 
-      -  For Arm architecture-based host machines:
+      -  For an Arm architecture-based host machine:
 
          ::
 
@@ -302,7 +302,7 @@ How to download the Platform eSDK?
 
    #. If you do not have the necessary write permissions for the
       directory where you are trying to install the eSDK, the installer
-      alerts you and then terminates. In such a scenario, set up the
+      alerts you and then terminates. If this occurs, set up the
       permissions in the directory appropriately by using the following
       command and rerun the installer:
 
@@ -316,7 +316,7 @@ How to download the Platform eSDK?
 
       sh ./qcom-wayland-x86_64-qcom-multimedia-image-armv8-2a-qcm6490-toolchain-ext-1.0.sh
 
-5. Follow the instructions on the console to install the eSDK in a convenient location of your host machine.
+5. Follow the instructions on the console to install the eSDK in a convenient location on your host machine.
 
 6. Ensure that the eSDK installation is successful.
 

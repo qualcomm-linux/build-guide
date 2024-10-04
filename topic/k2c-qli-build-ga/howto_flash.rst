@@ -5,7 +5,7 @@ Flash
 
 .. _section_tfh_hsh_p1c_vinayjk_03-01-24-1106-28-905:
 
-How to flash Qualcomm configuration data table (CDT) with QDL?
+Flash Qualcomm configuration data table (CDT) with QDL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For the Qualcomm hardware, the source of platform information on a device is the CDT, which is a blob that contains information about the current platform and its subvariants. You can update CDT by flashing a CDT binary:

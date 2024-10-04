@@ -15,14 +15,14 @@ Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-27>`__ be
 Unregistered users
 ------------------
 
-Unregistered users can sync and build Qualcomm Linux using the :doc:`GitHub workflow for unregistered users <github_workflow_unregistered_users>`. Qualcomm provides firmware components to unregistered users exclusively as binary files.
+Unregistered users can sync and build Qualcomm Linux using the :doc:`GitHub workflow for unregistered users <github_workflow_unregistered_users>`. Qualcomm exclusively offers firmware components in the form of binary files to users who are not registered.
 
 .. _section_x3d_nqy_v1c:
 
 Registered users
 -----------------
 
-Registered users can use any one of the following three methods to sync and build Qualcomm Linux. These methods use the Qualcomm Yocto layers and the supporting base Yocto layers. Registered users have source access to some of the firmware components and Qualcomm tools for building and downloading software.
+Registered users can use any one of the following three methods to sync and build Qualcomm Linux. These methods use the Qualcomm Yocto layers and the supporting base Yocto layers. Registered users have the ability to access the source of certain firmware components and Qualcomm tools, which allows them to build and download the software.
 
 
 .. list-table:: 
@@ -47,6 +47,6 @@ Registered users can use any one of the following three methods to sync and buil
 
    - Prebuilt binaries along with Platform eSDK links are listed in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/ReleaseNote.html#prebuilt-flashable-images-along-with-esdk>`__.
 
-     The Platform eSDK is an installer generated from the Qualcomm Linux software. It provides a complete Yocto environment that allows you to sync, modify, compile, and install applications and open-source plug-ins. For more information, see :ref:`How to download the Platform eSDK <section_imr_xc4_1cc_vinayjk_07-12-24-1513-38-780>`.
+     The Platform eSDK is an installer generated from the Qualcomm Linux software. It provides a complete Yocto environment that allows you to sync, modify, compile, and install applications and open-source plug-ins. For more information, see :ref:`Download the Platform eSDK <section_imr_xc4_1cc_vinayjk_07-12-24-1513-38-780>`.
     
    - See `hardware SoCs <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-115/soc.html>`__ that are supported on Qualcomm Linux.

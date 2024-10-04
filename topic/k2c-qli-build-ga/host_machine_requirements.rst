@@ -14,7 +14,7 @@ Host machine requirements
 
       * - x86 machine
         - Git 1.8.3.1 or later versions
-        - :rspan:`4` A ``sudo`` permission is required to execute a few commands.
+        - :rspan:`4` A ``sudo`` permission is required to execute a few commands
 
       * - Quad-core CPU, for example, Intel i7-2600 at 3.4 GHz
           (equivalent or better)

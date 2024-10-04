@@ -119,15 +119,15 @@ You can install the ``tree`` command and run it on your workspace. The Yocto wor
    -  Few additional directories are for the Qualcomm firmware. While
       building with extras:
 
-      -  These additional firmware are built.
+      -  The additional firmware is built.
       -  The output binaries from these are picked up from firmware
          recipes in the Qualcomm Yocto layers.
       -  For detailed sync and build instructions, see :doc:`GitHub workflow (firmware and extras) <build_addn_info>`. |ws_qsc_cli_4|
 
 .. _section_whj_vhh_q1c_vinayjk_03-04-24-2335-25-416:
 
-How to refresh the workspace with a new download using QSC CLI?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Refresh the workspace with a new download using QSC CLI
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This option is supported only for the ``LE.QCLINUX.1.0.r1`` image, which
 syncs the Yocto layers and prepares the Yocto workspace to be built.

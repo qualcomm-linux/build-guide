@@ -5,7 +5,7 @@ Developer workflow
 
 .. _section_ycs_nrf_s1c_vinayjk_03-11-24-2150-29-324:
 
-How to sync and build with real-time Linux?
+Sync and build with real-time Linux
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``PREEMPT_RT`` patches for the Qualcomm Linux kernel are provided in the
@@ -21,18 +21,18 @@ To sync and build real-time Linux, see :ref:`Build real-time Linux image <sectio
 
 .. _section_qct_b5g_s1c_vinayjk_03-12-24-127-51-384:
 
-How to migrate from previous release to next release?
+Migrate from previous release to the next release
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This depends on the development, branching, and integration workflows at
 your end. However, the following steps must be performed:
 
-1. Integrate changes for the sources branched at your end:
+1. Integrate changes for the sources that you have branched:
 
    a. Skip this step if you have not forked any underlying source code
       used by Qualcomm Yocto layers and are applying only ``.patch``
-      files on top.
-   #. Qualcomm is providing git history to all the source repositories.
+      files.
+   #. Qualcomm provides git history to all the source repositories.
       A reference list of repositories is provided in the `Release
       Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
       For Qualcomm repositories that are branched and modified at your
@@ -55,7 +55,7 @@ your end. However, the following steps must be performed:
 
 .. _section_rvz_b5g_s1c_vinayjk_03-12-24-127-55-935:
 
-How to build a Qualcomm Linux kernel?
+Build a Qualcomm Linux kernel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 See `building the
@@ -63,7 +63,7 @@ kernel <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-3/yocto-
 
 .. _section_lb1_c5g_s1c_vinayjk_03-12-24-127-56-85:
 
-How to customize Qualcomm Yocto layers?
+Customize Qualcomm Yocto layers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 See `user
@@ -71,10 +71,8 @@ customizations <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-
 
 .. _section_l2s_5qj_ybc_vinayjk_07-04-24-2052-5-755:
 
-How to download layers for the QIMP SDK build using the manifest release tag
+Download layers for the QIMP SDK build using the manifest release tag
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Download layers for the QIMP SDK:
 
 .. note:: For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
@@ -92,10 +90,8 @@ Download layers for the QIMP SDK:
 
 .. _section_bgr_hfk_ybc_vinayjk_07-04-24-2242-31-273:
 
-How to download layers for the QIRP SDK build by using manifest release tag
+Download layers for the QIRP SDK build by using manifest release tag
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Download layers for the QIRP SDK:
 
 .. note:: 
    For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release  Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
@@ -110,14 +106,12 @@ Download layers for the QIRP SDK:
    repo sync
 
 .. note:: 
-   For the steps to set up environment and build software images, see :ref:`Build QIRP SDK image <section_gv3_czl_qbc_vinayjk_06-06-24-1402-32-392>`.
+   For the steps to set up the environment and build software images, see :ref:`Build QIRP SDK image <section_gv3_czl_qbc_vinayjk_06-06-24-1402-32-392>`.
 
 .. _section_jpw_mfk_ybc_vinayjk_07-04-24-2244-2-775:
 
-How to download layers for the real-time Linux build by using manifest release tag
+Download layers for the real-time Linux build by using manifest release tag
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Download layers for the real-time Linux:
 
 .. note:: For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
@@ -131,16 +125,15 @@ Download layers for the real-time Linux:
    repo sync
 
 .. note:: 
-   For the steps to set up environment and build software images, see :ref:`Build real-time Linux image <section_k51_23b_wbc_vinayjk_06-26-24-1344-54-418>`.
+   For the steps to set up the environment and build software images, see :ref:`Build real-time Linux image <section_k51_23b_wbc_vinayjk_06-26-24-1344-54-418>`.
 
 .. _section_xxm_fk3_v1c_vinayjk_03-23-24-014-37-829:
 
-How to build a meta-qcom-qim-product-sdk layer as an add-on layer
+Build a meta-qcom-qim-product-sdk layer as an add-on layer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you have completed a base image build using GitHub standalone
-commands and already have an existing ``<WORKSPACE DIR>``, you can
-follow these steps to build ``meta-qcom-qim-product-sdk``:
+commands and already have an existing ``<WORKSPACE DIR>``, follow these steps to build ``meta-qcom-qim-product-sdk``:
 
 1. Download the latest ``<meta-qcom-qim-product-sdk release tag>``:
 

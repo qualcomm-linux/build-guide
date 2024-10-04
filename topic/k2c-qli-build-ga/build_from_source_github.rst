@@ -8,7 +8,7 @@ Build with standalone commands
 Ubuntu host setup
 ^^^^^^^^^^^^^^^^^^^^^
 
-The Ubuntu host machine needs a few setup operations to ensure that the required software tools are ready.
+The Ubuntu host machine must be setup to ensure that the required software tools are installed and configured for use.
 
 1. Install the following packages to prepare your host environment for
    Yocto build:
@@ -142,16 +142,16 @@ The following table shows an example mapping of the Yocto layers to the manifest
 
 .. note::
    
-   - For more information on the Yocto layers, see `Qualcomm Linux metadata layers and descriptions <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-27/platform_software_features.html#id7>`__.
+   - For information on the Yocto layers, see `Qualcomm Linux metadata layers and descriptions <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-27/platform_software_features.html#id7>`__.
    
-   - For more information on building the ``meta-qcom-extras`` add-on layer and select firmware sources, see :doc:`GitHub workflow (firmware and extras) <build_addn_info>`.
+   - For information on building the ``meta-qcom-extras`` add-on layer and select firmware sources, see :doc:`GitHub workflow (firmware and extras) <build_addn_info>`.
 
 .. _section_sk2_xk2_fbc:
 
 Build BSP image
 ^^^^^^^^^^^^^^^^^^^^^
 
-1. Download Qualcomm Yocto and supporting layers:
+1. Download Qualcomm Yocto and the supporting layers:
 
    ::
 
@@ -179,7 +179,7 @@ Build BSP image
 #. Build the software image:
 
    .. note:: 
-      For supported image recipes, see :ref:`What are the image recipes supported in the GitHub workflow? <section_x3c_n5l_zbc_vinayjk_07-08-24-1744-58-455>`.
+      For supported image recipes, see :ref:`Image recipes supported in the GitHub workflow <section_x3c_n5l_zbc_vinayjk_07-08-24-1744-58-455>`.
 
    ::
 
@@ -198,7 +198,7 @@ Build BSP image
 Build QIMP SDK image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Download Qualcomm Yocto and supporting layers:
+1. Download Qualcomm Yocto and the supporting layers:
 
    .. note:: The ``<manifest release tag>`` for QIMP SDK build is the
              same as the BSP build. Clone the QIMP SDK layer on top of the BSP build.
@@ -237,7 +237,7 @@ Build QIMP SDK image
       # and enters into build-qcom-wayland directory.
 
    .. note::
-      To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
+      For information about the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
 #. Build the software image:
 
@@ -259,7 +259,7 @@ Build QIMP SDK image
 Build QIRP SDK image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Download Qualcomm Yocto and supporting layers:
+1. Download Qualcomm Yocto and the supporting layers:
 
    .. note:: The ``<manifest release tag>`` for QIRP SDK build is the
              same as the BSP build. Clone the QIRP SDK layer  on top of the BSP build.
@@ -300,7 +300,7 @@ Build QIRP SDK image
    .. note::
       For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
 
-#. Build the robotics image and QIRP SDK artifacts:
+#. Build the robotics image and the QIRP SDK artifacts:
 
    ::
 
@@ -319,7 +319,7 @@ Build QIRP SDK image
 Build real-time Linux image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Download Qualcomm Yocto and supporting layers:
+1. Download Qualcomm Yocto and the supporting layers:
 
    .. note:: The ``<manifest release tag>`` for real-time Linux image is the same as the BSP build. Clone the Real-time Linux on top of the BSP build.
 
@@ -365,7 +365,7 @@ Build real-time Linux image
 
       bitbake qcom-multimedia-image
 
-   After a successful build, you can verify if ``system.img`` is present in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image`` directory:
+   After a successful build, check that the ``system.img`` file is in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image`` directory:
 
    ::
 
