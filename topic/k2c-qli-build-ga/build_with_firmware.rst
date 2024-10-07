@@ -36,11 +36,11 @@ The following table describes the Qualcomm Yocto layers and release tags:
    * - Licensed developers with authorized access
      - ``meta-qcom-extras``
      - meta-qcom-extras release tag
-     - r1.0_00046.0 
+     - r1.0_00049.0 
    * - See :ref:`Mapping access levels <build_mapping_access_levels>`
      - NA
      - firmware release tag
-     - r1.0_00044.0
+     - r1.0_00049.0
 
 The following tables describe the firmware distributions that can be downloaded according to the need and entitlements:
 
@@ -206,7 +206,7 @@ The following ``git clone`` command downloads the selected firmware components i
    mkdir -p <FIRMWARE_ROOT>
    cd <FIRMWARE_ROOT>
    git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk.git
-   # Example, <firmware release tag> is r1.0_00044.0
+   # Example, <firmware release tag> is r1.0_00049.0
 
 .. note:: 
    - The ``git clone`` command clones the content into the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk`` directory.
@@ -412,7 +412,7 @@ Build firmware
 
             ::
 
-               cd <FIRMWARE_ROOT>/TZ.XF.5.29/trustzone_images/build/ms/
+               cd <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/TZ.XF.5.29/trustzone_images/build/ms/
                vi build_config_deploy_kodiak.xml
                # Edit all the occurrences of /pkg/qct/software/llvm/release/arm/16.0.7/ to <FIRMWARE_ROOT>/llvm/16.0.7/
 
@@ -426,7 +426,7 @@ Build firmware
 
             ::
 
-               cd <FIRMWARE_ROOT>/TZ.XF.5.29/trustzone_images/build/ms/
+               cd <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/TZ.XF.5.29/trustzone_images/build/ms/
                python build_all.py -b TZ.XF.5.0 CHIPSET=kodiak --cfg=build_config_deploy_kodiak.xml
 
          .. rubric:: AOP firmware
@@ -442,7 +442,7 @@ Build firmware
 
             ::
 
-               cd <FIRMWARE_ROOT>/AOP.HO.3.6/aop_proc/build/
+               cd <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/AOP.HO.3.6/aop_proc/build/
 
          2. Build the image:
 
@@ -653,7 +653,7 @@ Build firmware
 
             ::
 
-               cd <FIRMWARE_ROOT>/TZ.XF.5.29/trustzone_images/build/ms/
+               cd <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/TZ.XF.5.29/trustzone_images/build/ms/
                vi build_config_deploy_lemans.xml
                # Edit all the occurrences of /pkg/qct/software/llvm/release/arm/16.0.7/ to <FIRMWARE_ROOT>/llvm/16.0.7/
 
@@ -667,7 +667,7 @@ Build firmware
 
             ::
 
-               cd <FIRMWARE_ROOT>/TZ.XF.5.29/trustzone_images/build/ms/
+               cd <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/TZ.XF.5.29/trustzone_images/build/ms/
                python build_all.py -b TZ.XF.5.0 CHIPSET=lemans --cfg=build_config_deploy_lemans.xml
 
          .. rubric:: AOP firmware
@@ -724,7 +724,7 @@ Build BSP image with extras
       # Example, <manifest release tag> is qcom-6.6.38-QLI.1.2-Ver.1.1.xml
       repo sync
       git clone https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_hlos_oem_metadata.git -b <meta-qcom-extras release tag> --depth 1
-      # Example, <meta-qcom-extras release tag> is r1.0_00046.0
+      # Example, <meta-qcom-extras release tag> is r1.0_00049.0
       mkdir -p layers/meta-qcom-extras
       cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/<product>/common/config/meta-qcom-extras/* layers/meta-qcom-extras/
       # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/).
@@ -810,7 +810,7 @@ Build QIMP SDK image with extras
       # Example, <manifest release tag> is qcom-6.6.38-QLI.1.2-Ver.1.1.xml
       repo sync
       git clone https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_hlos_oem_metadata.git -b <meta-qcom-extras release tag> --depth 1
-      # Example, <meta-qcom-extras release tag> is r1.0_00046.0
+      # Example, <meta-qcom-extras release tag> is r1.0_00049.0
       mkdir -p layers/meta-qcom-extras
       cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/<product>/common/config/meta-qcom-extras/* layers/meta-qcom-extras/
       # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/).
@@ -905,7 +905,7 @@ Build QIRP SDK image with extras
       # Example, <manifest release tag> is qcom-6.6.38-QLI.1.2-Ver.1.1.xml
       repo sync
       git clone https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_hlos_oem_metadata.git -b <meta-qcom-extras release tag> --depth 1
-      # Example, <meta-qcom-extras release tag> is r1.0_00046.0
+      # Example, <meta-qcom-extras release tag> is r1.0_00049.0
       mkdir -p layers/meta-qcom-extras
       mkdir -p layers/meta-qcom-robotics-extras
       cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/<product>/common/config/meta-qcom-extras/* layers/meta-qcom-extras/

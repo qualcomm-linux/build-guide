@@ -146,7 +146,7 @@ Build QIMP SDK image
       ::
 
          git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b <meta-qcom-qim-product-sdk release tag> layers/meta-qcom-qim-product-sdk
-         # Example, <meta-qcom-qim-product-sdk release tag> is qcom-6.6.38-QLI.1.2-Ver.1.1_qim-product-sdk-1.1.1
+         # Example, <meta-qcom-qim-product-sdk release tag> is qcom-6.6.38-QLI.1.2-Ver.1.1_qim-product-sdk-1.1.2
 
       To build a QIMP SDK layer, the following export is required:
 

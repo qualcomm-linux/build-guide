@@ -281,19 +281,19 @@ Download the Platform eSDK
 
          ::
 
-            wget https://artifacts.codelinaro.org/artifactory/qli-ci/flashable-binaries/qimpsdk/qcs6490-rb3gen2-core-kit/x86/qcom-6.6.38-QLI.1.2-Ver.1.1_qim-product-sdk-1.1.1.zip
+            wget https://artifacts.codelinaro.org/artifactory/qli-ci/flashable-binaries/qimpsdk/qcs6490-rb3gen2-core-kit/x86/qcom-6.6.38-QLI.1.2-Ver.1.1_qim-product-sdk-1.1.2.zip
 
       -  For an Arm architecture-based host machine:
 
          ::
 
-            wget https://artifacts.codelinaro.org/artifactory/qli-ci/flashable-binaries/qimpsdk/qcs6490-rb3gen2-core-kit/arm/qcom-6.6.38-QLI.1.2-Ver.1.1_qim-product-sdk-1.1.1.zip
+            wget https://artifacts.codelinaro.org/artifactory/qli-ci/flashable-binaries/qimpsdk/qcs6490-rb3gen2-core-kit/arm/qcom-6.6.38-QLI.1.2-Ver.1.1_qim-product-sdk-1.1.2.zip
 
    #. Unzip the QIMP SDK to a directory of your choice:
 
       ::
 
-         unzip qcom-6.6.38-QLI.1.2-Ver.1.1_qim-product-sdk-1.1.1.zip
+         unzip qcom-6.6.38-QLI.1.2-Ver.1.1_qim-product-sdk-1.1.2.zip
 
       After unzipping, ensure that the eSDK installer is located at
       ``<unzip_location>/target/qcm6490/sdk/``:
