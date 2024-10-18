@@ -20,7 +20,8 @@ Install QSC CLI
 
    ::
 
-      sudo dpkg -i qsc_installer.deb
+      sudo apt update
+      sudo apt install ./qsc_installer.deb
 
 4. Log in to ``qsc-cli``:
 
