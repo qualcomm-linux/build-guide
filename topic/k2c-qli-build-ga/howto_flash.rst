@@ -64,40 +64,8 @@ Universal Flash Storage (UFS) provisioning helps to divide the storage into mult
 Flash Qualcomm configuration data table (CDT) with QDL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For the Qualcomm hardware, the source of platform information on a device is the CDT, which is a blob that contains information about the current platform and its subvariants. You can update CDT by flashing a CDT binary:
 
-1. Download the CDT binary.
-
-   -  For the Core Kit, download the following file:
-
-      ::
-
-         wget https://artifacts.codelinaro.org/artifactory/codelinaro-le/qcom-device-config/CORE_KIT_CDT.bin
-
-   -  For the Vision Kit, download the following file:
-
-      ::
-
-         wget https://artifacts.codelinaro.org/artifactory/codelinaro-le/qcom-device-config/VISION_KIT_CDT.bin
-
-   -  For the IQ-9100 Kit, download the following file:
-
-      ::
-
-         wget https://codelinaro.jfrog.io/artifactory/codelinaro-le/qcom-device-config/QCS9100/IQ-9100_KIT_CDT.bin
-
-2. Use the CDT binary.
-
-   Copy the downloaded CDT binary to a compiled build location. The
-   following is a sample command:
-
-   ::
-
-      cp <the downloaded CDT bin file> <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image/
-
-   .. note:: ``<workspace_path>`` is the directory where you created the Yocto build.
-
-3. Update the CDT section in ``rawprogram3.xml`` with the intended CDT filename. The following is a sample command:
+#. Flash CDT:
 
    ::
 

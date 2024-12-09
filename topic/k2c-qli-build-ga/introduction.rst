@@ -4,11 +4,19 @@ Introduction
 
 This guide describes how to configure, download, compile, and flash Qualcomm\ :sup:`®` Linux\ :sup:`®` and the associated firmware on supported devices.
 
-..
-  **This information is also available in** `Simplified Chinese <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-254Y>`__.
-
 Qualcomm recommends that you read the `Qualcomm Linux Yocto
 Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-27>`__ before starting your build.
+
+Users can download prebuilt flashable images or sync and build as described in the following sections.
+
+Download images
+----------------
+
+- Download prebuilt flashable images (includes Platform eSDK) from the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/ReleaseNote.html#prebuilt-flashable-images-along-with-esdk>`__.
+
+- The Platform eSDK is an installer generated from the Qualcomm Linux software. It provides a complete Yocto environment that allows you to sync, modify, compile, and install applications and open-source plug-ins. For more information, see :ref:`Download the Platform eSDK <section_imr_xc4_1cc_vinayjk_07-12-24-1513-38-780>`.
+
+- To flash the prebuilt flashable images, see :doc:`Flash images <flash_images>`.
 
 Sync and build
 ---------------
@@ -45,14 +53,5 @@ Registered users can use any one of the following three methods to sync and buil
 
 .. figure:: ../../media/k2c-qli-build-ga/explore_QSC.svg
    :align: center
-
-Download images
-----------------
-
-- Download prebuilt flashable binaries (includes Platform eSDK) from the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/ReleaseNote.html#prebuilt-flashable-images-along-with-esdk>`__.
-
-- The Platform eSDK is an installer generated from the Qualcomm Linux software. It provides a complete Yocto environment that allows you to sync, modify, compile, and install applications and open-source plug-ins. For more information, see :ref:`Download the Platform eSDK <section_imr_xc4_1cc_vinayjk_07-12-24-1513-38-780>`.
-
-- To flash the prebuilt flashable binaries, see :doc:`Flash images <flash_images>`.
 
 .. note:: See `hardware SoCs <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-115/soc.html>`__ that are supported on Qualcomm Linux.

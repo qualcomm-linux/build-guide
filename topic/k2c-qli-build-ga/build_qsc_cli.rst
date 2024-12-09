@@ -167,10 +167,4 @@ To build your own configuration, you must compile the build for default machine 
 
         For example, ``<Base Workspace Path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-core-kit/qcom-multimedia-image``.
 
-Connect to UART shell and Network
-----------------------------------
-After flashing and booting the device, follow these steps to connect to UART shell, Network and Login via SSH.
- 
-* :ref:`Connect to UART shell <section_ags_ssh_p1c_vinayjk_03-01-24-1109-49-684>`
-* :ref:`Connect to Network <section_hmw_vsh_p1c_vinayjk_03-01-24-1110-45-279>`
-* :ref:`Login via SSH <howto_login_via_ssh>`
+To establish UART and network connections, see :ref:`Connect to UART and network <connect_uart_network>`.

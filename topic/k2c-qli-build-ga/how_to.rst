@@ -11,6 +11,4 @@ How to
 
 .. include:: developer_workflow.rst
 
-.. include:: howto_flash.rst
-
 .. include:: howto_setup.rst

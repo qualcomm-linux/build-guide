@@ -110,61 +110,41 @@ Connect to the network
 
 Wi-Fi is operational in Station mode. The Wi-Fi host driver and the authentication for network management are initialized during the device boot up.
 
-To update the Wi-Fi configuration, perform the following from the debug :ref:`UART serial console <section_ags_ssh_p1c_vinayjk_03-01-24-1109-49-684>`:
-
-1. Stop the ``wpa_supplicant``:
+1. Connect to the Wireless Access Point (Wi-Fi Router):
 
    ::
 
-      killall wpa_supplicant
+      nmcli dev wifi connect <WiFi-SSID> password <WiFi-password>
 
-#. Open the default ``/etc/wpa_supplicant.conf`` file using your preferred text editor and modify the content of the file to match the SSID and password of your router:
-
-   .. note:: Check the configurations of security types specified in the default ``/etc/wpa_supplicant.conf`` file to add your required router configurations.
+   **Example**
 
    ::
 
-      # Only WPA-PSK is used. Any valid cipher combination is accepted.
-      ctrl_interface=/var/run/sockets
+      root@qcs6490-rb3gen2-vision-kit:~# nmcli dev wifi connect Qualcomm password 1234567890
 
-      network={
-      #Open
-      #       ssid="example open network"
-      #       key_mgmt=NONE
-      #WPA-PSK-Configuration
-      #  Update the SSID to match the Wi-Fi SSID of your router. 
-      ssid="QSoftAP"
-      #       proto=WPA RSN
-      #       key_mgmt=WPA-PSK
-      #       pairwise=TKIP CCMP
-      #       group=TKIP CCMP
-      # Update the password to match the Wi-Fi password of your router.
-      psk="1234567890"
-      #WEP-Configuration
-      #       ssid="example wep network"
-      #       key_mgmt=NONE
-      #       wep_key0="abcde"
-      #       wep_key1=0102030405
-      #       wep_tx_keyidx=0
-      }
+   .. container:: screenoutput
 
-#. Save the modified ``wpa_supplicant.conf`` file and verify its
-   content:
+      .. line-block:: 
+
+         Device ‘wlan0’ successfully activated with ‘d7b990bd-3b77-4b13-b239-b706553abaf8’.
+
+#. Check the connection and device status:
 
    ::
 
-      cat /etc/wpa_supplicant.conf
+      execute <nmcli -p device>
+   
+   .. container:: screenoutput
 
-#. Reboot or power cycle the device. Wait for approximately one minute
-   to establish a WLAN connection with the updated SSID and password.
+      .. line-block:: 
 
-#. **(Optional)** If you prefer not to reboot the device, run the
-   following commands:
-
-   ::
-
-      wpa_supplicant -Dnl80211 -iwlan0 -ddd -c /etc/wpa_supplicant.conf -f /tmp/wpa_supplicant-log.txt &
-      dhcpcd wlan0
+         Status of devices
+         DEVICE  TYPE      STATE        CONNECTION
+         wlan0   wifi      connected    Qualcomm
+         eth0    ethernet  unavailable  –
+         eth1    ethernet  unavailable  –
+         can0    can       unmanaged    –
+         lo      loopback  unmanaged    –
 
 #. Check the WLAN connection status and IP address:
 
@@ -172,13 +152,73 @@ To update the Wi-Fi configuration, perform the following from the debug :ref:`UA
 
       ifconfig wlan0
 
-   .. image:: ../../media/k2c-qli-build-ga/setup_wifi_2.png
+   .. container:: screenoutput
 
-#. Ping the router to confirm the connection:
+      .. line-block:: 
+
+         wlan0 Link encap:Ethernet  HWaddr 00:03:7F:12:F7:F7
+         inet addr:192.168.117.130  Bcast:192.168.117.255  Mask:255.255.255.0
+         inet6 addr: 2401:4900:658c:d8b0:3213:94e9:a421:a15e/64 Scope:Global
+         inet6 addr: fe80::b91:3f50:78fc:855a/64 Scope:Link
+         inet6 addr: fe80::e17e:9961:c1a6:4524/64 Scope:Link
+         inet6 addr: 2401:4900:658c:d8b0:3280:ef33:8f01:843d/64 Scope:Global
+         UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+         RX packets:38 errors:0 dropped:0 overruns:0 frame:0
+         TX packets:99 errors:0 dropped:0 overruns:0 carrier:0
+         collisions:0 txqueuelen:1000
+         RX bytes:4361 (4.2 KiB)  TX bytes:15141 (14.7 KiB)
+
+#. Ensure that the connection is active by pinging any website:
 
    ::
 
-      ping qualcomm.com
+      ping google.com
+
+**Switching networks**
+
+If you are already connected to a network and need to reconnect to another network, do the following:
+
+1. Disconnect from the current network:
+
+   ::
+
+      nmcli c down Qualcomm
+
+   .. container:: screenoutput
+
+      .. line-block:: 
+         
+         Connection ‘Qualcomm’ successfully deactivated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/1)
+
+#. Check the disconnect status:
+
+   ::
+
+      nmcli -p device
+
+   .. container:: screenoutput
+
+      .. line-block:: 
+         
+         Status of devices
+         DEVICE  TYPE      STATE           CONNECTION
+         wlan0   wifi      disconnected    Qualcomm
+         eth0    ethernet  unavailable     –
+         eth1    ethernet  unavailable     –
+         can0    can       unmanaged       –
+         lo      loopback  unmanaged       –
+
+#. Connect to a different Wi-Fi network:
+
+   ::
+
+      nmcli dev wifi connect QualcommAP password XXXXXXXXX
+
+   .. container:: screenoutput
+
+      .. line-block:: 
+         
+         Device ‘wlan0’ successfully activated with ‘6159ac7c-58c2-44fa-938f-45dcb544fac3’.
 
 .. _use-ssh:
 

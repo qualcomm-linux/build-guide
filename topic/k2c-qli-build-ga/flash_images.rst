@@ -53,7 +53,7 @@ Configure the ``udev`` USB rules for the Qualcomm manufacturing vendor ID **05c6
 
 If the USB cable is already connected to the host, unplug and reconnect the cable for the updated rules to take effect.
 
-.. _section_vgg_mly_v1c:
+.. _move_to_EDL:
 
 Move to EDL mode
 ------------------
@@ -182,11 +182,114 @@ The device must be in the EDL mode before you flash the software. The Qualcomm s
 
 Provision UFS
 ---------------
-See :ref:`Provision UFS <ufs_provisioning>`.
+Universal Flash Storage (UFS) provisioning helps to divide the storage into multiple LUNS allowing different types of data to be stored separately. This improves access efficiency and system organization.
+
+.. note::
+    - This procedure is available for registered users only.
+    - UFS is provisioned by default. If there are any changes in LUNs, UFS re-provisioning must be done again. To download the provision XML file and to check the applicability of UFS provisioning for different SoCs, see *UFS Provisioning* table in `Release Specific Information <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/ReleaseNote.html#release-specific-information>`__.
+
+1. :ref:`Install QSC CLI <one_time_host_setup>`.
+#. Install PCAT and QUD on the host machine using qpm-cli:
+
+   ::
+
+      qpm-cli --login
+      qpm-cli --install quts --activate-default-license
+      qpm-cli --install qud --activate-default-license
+      qpm-cli --install pcat --activate-default-license
+
+   .. note::
+   
+      - The ``qpm-cli --help`` command lists the help options.
+      - For Ubuntu 22.04, you might encounter an issue when installing QUD. To ensure a successful installation, you may need to enroll the public key on your Linux host. For additional details, follow the steps outlined in the ``signReadme.txt`` file available at ``/opt/QCT/sign/``.
+
+#. Verify whether PCAT can detect the device in EDL mode:
+
+   ::
+
+      PCAT -DEVICES
+   
+   **Sample output**
+
+   ::
+
+      Searching devices in Device Manager, please wait for a moment…
+      ID | DEVICE TYPE | DEVICE STATE | SERIAL NUMBER | ADB SERIAL NUMBER | DESCRIPTION
+      NA | NA          | EDL          | BE116704      | be116704          | Qualcomm USB Composite Device:QUSB_BULK_CID:042F_SN:BE116704
+
+#. Download the provision file:
+
+   Based on the required SoC, download the respective ‘provision’ from the "UFS Provisioning" table of the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/ReleaseNote.html#release-specific-information>`__.
+
+   ::
+
+      wget <provision_download_link>
+      unzip <downloaded_zip_file>
+
+   Example:
+
+   ::
+
+      mkdir <provision_download_path>
+      cd <provision_download_path>
+      wget https://artifacts.codelinaro.org/artifactory/codelinaro-le/Qualcomm_Linux/QCS6490/provision.zip
+      unzip provision.zip
+      
+#. Provision UFS:
+
+   ::
+
+      PCAT -PLUGIN SD -DEVICE [PCAT SERIAL NUMBER] -DEVICEPROG [DEVICE PROGRAMMER] - MEMORYTYPE UFS -UFSPROV TRUE -UFSPROVXML [UFS PROVISION XML]
+   
+   For example:
+
+   ::
+
+      PCAT -PLUGIN SD -DEVICE [PCAT SERIAL NUMBER] -DEVICEPROG <provision_download_path>/prog_firehose_ddr.elf - MEMORYTYPE UFS -UFSPROV TRUE -UFSPROVXML <provision_download_path>/provision_1_3.xml
 
 Flash CDT
 ----------
-See :ref:`Flash CDT <flash_CDT>`.
+.. note:: Ensure that the device is in :ref:`EDL mode <move_to_EDL>`.
+
+CDT provides platform/device-dependent data such as platform ID, subtype, version. Various Software(drivers/firmware) modules can make use of this information to perform dynamic detection and initialization of the platform. You can update CDT by flashing a CDT binary:
+
+1. Download the CDT binary.
+
+   Based on the required reference kit, download the respective CDT from the “Flash CDT" table of the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/ReleaseNote.html#release-specific-information>`__.
+
+   ::
+
+      wget <CDT_download_link>
+      unzip <downloaded_zip_file>
+
+   Example:
+
+   ::
+
+      mkdir <cdt_download_path>
+      cd <cdt_download_path>
+      wget https://artifacts.codelinaro.org/artifactory/codelinaro-le/Qualcomm_Linux/QCS6490/cdt/rb3gen2-core-kit.zip
+      unzip rb3gen2-core-kit.zip
+
+#. Download the QDL tool.
+
+   QDL is a software tool that communicates with the Qualcomm USB devices to upload a flash loader and flash software images.
+
+   ::
+
+      mkdir <qdl_tool_path>
+      cd <qdl_tool_path>
+      curl -L  https://softwarecenter.qualcomm.com/api/download/software/tool/Qualcomm_Device_Loader/1.0.1/Windows/Qualcomm_Device_Loader.Core.1.0.1.Windows-AnyCPU.zip -o qdl_all.zip
+      unzip qdl_all.zip
+
+#. Flash the CDT:
+
+   ::
+
+      cd <cdt_download_path>
+      <qdl_tool_path>/qdl_1.0.1/QDL_Linux_x64/qdl prog_firehose_ddr.elf rawprogram3.xml patch3.xml
+
+   .. note:: Use QDL binary based on the host machine architecture. For example, linux_x64 supported qdl binary is ``qdl_1.0.1/QDL_Linux_x64/qdl``.
 
 .. _section_byn_pdj_x1c:
 
@@ -207,9 +310,11 @@ Flash software using QDL
   
 #. Download the QDL tool:
 
+   Qualcomm Device Loader (QDL) is a software tool that communicates with Qualcomm USB devices to upload a flash loader and flash software images.
+
    a. Using GUI
 
-      Download QDL tool from https://softwarecenter.qualcomm.com/api/download/software/tool/Qualcomm_Device_Loader/1.0.1/Windows/Qualcomm_Device_Loader.Core.1.0.1.Windows-AnyCPU.zip and unzip the contents of the downloaded folder.
+      Download QDL tool from https://softwarecenter.qualcomm.com/#/catalog/item/Qualcomm_Device_Loader and unzip the contents of the downloaded folder.
 
    #. Using CLI
 
@@ -217,7 +322,7 @@ Flash software using QDL
 
          mkdir <qdl_tool_path>
          cd <qdl_tool_path>
-         curl -L https://apigwx-aws.qualcomm.com/qsc/public/v1/api/download/software/tool/Qualcomm_Device_Loader/1.0.1/Windows/Qualcomm_Device_Loader.Core.1.0.1.Windows-AnyCPU.zip -o qdl_all.zip
+         curl -L https://softwarecenter.qualcomm.com/api/download/software/tool/Qualcomm_Device_Loader/1.0.1/Windows/Qualcomm_Device_Loader.Core.1.0.1.Windows-AnyCPU.zip -o qdl_all.zip
          unzip qdl_all.zip
 
 #. Flash the images:
@@ -264,6 +369,8 @@ Flash software using QDL
           2. Disconnect from the host.
           3. Reboot the host.
 
+To establish UART and network connections, see :ref:`Connect to UART and network <connect_uart_network>`.
+
 Flash software using PCAT
 ------------------------------------
 .. note:: This procedure is available for registered users only.
@@ -272,9 +379,9 @@ Flash software using PCAT
 
    ::
 
-    qpm-cli --login
-    qpm-cli --install pcat --activate-default-license
-    qpm-cli --install qud --activate-default-license
+      qpm-cli --login
+      qpm-cli --install pcat --activate-default-license
+      qpm-cli --install qud --activate-default-license
 
    .. note:: For Ubuntu 22.04, you may encounter an issue while installing QUD, where you might be asked to enroll the public key on your Linux host for a successful QUD installation. For additional details, follow the steps provided in the README file available in the ``/opt/QTI/sign/signReadme.txt`` directory.
 
@@ -354,10 +461,12 @@ Flash software using PCAT
 
    The device reboots after the flashing procedure is completed successfully. To verify the updated software version, see `Check software version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-253/ubuntu_host.html#check-software-version>`__.
 
-Connect to UART shell and Network
+.. _connect_uart_network:
+
+Connect to UART shell and network
 ----------------------------------
-After flashing and booting the device, follow these steps to connect to UART shell, Network and Login via SSH.
+After flashing and booting the device, follow these steps to connect to UART shell, network, and log in using SSH.
  
 * :ref:`Connect to UART shell <section_ags_ssh_p1c_vinayjk_03-01-24-1109-49-684>`
-* :ref:`Connect to Network <section_hmw_vsh_p1c_vinayjk_03-01-24-1110-45-279>`
-* :ref:`Login via SSH <howto_login_via_ssh>`
+* :ref:`Connect to network <section_hmw_vsh_p1c_vinayjk_03-01-24-1110-45-279>`
+* :ref:`Log in using SSH <howto_login_via_ssh>`

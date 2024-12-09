@@ -81,7 +81,7 @@ Download layers for the QIMP SDK build using the manifest release tag
    mkdir <WORKSPACE_DIR>
    cd <WORKSPACE_DIR>
    repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m <manifest release tag>
-   # Example, <manifest release tag> is qcom-6.6.38-QLI.1.2-Ver.1.1_qim-product-sdk-1.1.2.xml
+   # Example, <manifest release tag> is qcom-6.6.52-QLI.1.3-Ver.1.0_qim-product-sdk-1.1.1.xml
    repo sync
 
 .. note:: 
@@ -120,7 +120,7 @@ Download layers for the real-time Linux build by using the manifest release tag
    mkdir <WORKSPACE_DIR>
    cd <WORKSPACE_DIR>
    repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m <manifest release tag>
-   # Example, <manifest release tag> is qcom-6.6.38-QLI.1.2-Ver.1.1_realtime-linux-1.0.xml
+   # Example, <manifest release tag> is qcom-6.6.52-QLI.1.3-Ver.1.0_realtime-linux-1.0.xml
    repo sync
 
 .. note:: 
@@ -144,7 +144,7 @@ commands and already have an existing ``<WORKSPACE DIR>``, follow these steps to
 
    .. note:: For more information on 
              ``<meta-qcom-qim-product-sdk release tag>``, see https://github.com/quic-yocto/meta-qcom-qim-product-sdk/tags. An
-             example ``<meta-qcom-qim-product-sdk release tag>`` is ``qcom-6.6.38-QLI.1.2-Ver.1.1_qim-product-sdk-1.1.2.xml``.
+             example ``<meta-qcom-qim-product-sdk release tag>`` is ``qcom-6.6.52-QLI.1.3-Ver.1.0_qim-product-sdk-1.1.1.xml``.
 
 2. Set up the build environment:
 
