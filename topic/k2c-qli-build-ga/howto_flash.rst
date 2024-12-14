@@ -29,7 +29,7 @@ Universal Flash Storage (UFS) provisioning helps to divide the storage into mult
 .. note::
    
    - The ``qpm-cli --help`` command lists the help options.
-   - For Ubuntu 22.04, you might encounter an issue when installing QUD. To ensure a successful installation, you may need to enroll the public key on your Linux host. For additional details, follow the steps outlined in the ``signReadme.txt`` file available at ``/opt/QCT/sign/``.
+   - For Ubuntu 22.04, you might encounter an issue when installing QUD. To ensure a successful installation, you may need to enroll the public key on your Linux host. For additional details, follow the steps outlined in the ``signReadme.txt`` file available at ``/opt/QTI/sign/``.
 
 **Procedure**
 
@@ -51,7 +51,7 @@ Universal Flash Storage (UFS) provisioning helps to divide the storage into mult
 
    ::
 
-      PCAT -PLUGIN SD -DEVICE [PCAT SERIAL NUMBER] -DEVICEPROG [DEVICE PROGRAMMER] - MEMORYTYPE UFS -UFSPROV TRUE -UFSPROVXML [UFS PROVISION XML]
+      PCAT -PLUGIN SD -DEVICE [PCAT SERIAL NUMBER] -DEVICEPROG [DEVICE PROGRAMMER] -MEMORYTYPE UFS -UFSPROV TRUE -UFSPROVXML [UFS PROVISION XML]
    
    For example:
 

@@ -239,13 +239,13 @@ Universal Flash Storage (UFS) provisioning helps to divide the storage into mult
 
    ::
 
-      PCAT -PLUGIN SD -DEVICE [PCAT SERIAL NUMBER] -DEVICEPROG [DEVICE PROGRAMMER] - MEMORYTYPE UFS -UFSPROV TRUE -UFSPROVXML [UFS PROVISION XML]
+      PCAT -PLUGIN SD -DEVICE [PCAT SERIAL NUMBER] -DEVICEPROG [DEVICE PROGRAMMER] -MEMORYTYPE UFS -UFSPROV TRUE -UFSPROVXML [UFS PROVISION XML]
    
    For example:
 
    ::
 
-      PCAT -PLUGIN SD -DEVICE [PCAT SERIAL NUMBER] -DEVICEPROG <provision_download_path>/prog_firehose_ddr.elf - MEMORYTYPE UFS -UFSPROV TRUE -UFSPROVXML <provision_download_path>/provision_1_3.xml
+      PCAT -PLUGIN SD -DEVICE [PCAT SERIAL NUMBER] -DEVICEPROG <provision_download_path>/prog_firehose_ddr.elf -MEMORYTYPE UFS -UFSPROV TRUE -UFSPROVXML <provision_download_path>/provision_1_3.xml
 
 Flash CDT
 ----------
