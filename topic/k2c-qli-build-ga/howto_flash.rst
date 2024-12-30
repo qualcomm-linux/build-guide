@@ -12,7 +12,7 @@ Universal Flash Storage (UFS) provisioning helps to divide the storage into mult
 
 .. note::
     - This procedure is available for registered users only.
-    - UFS is provisioned by default. If there are any changes in LUNs, UFS re-provisioning must be done again. To download the provision XML file and to check the applicability of UFS provisioning for different SoCs, see *UFS Provisioning* table in `Release Specific Information <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/ReleaseNote.html#release-specific-information>`__.
+    - UFS is provisioned by default. If there are any changes in LUNs, UFS re-provisioning must be done again. To download the provision XML file and to check the applicability of UFS provisioning for different SoCs, see *UFS Provision* table in `Release Specific Information <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/ReleaseNote.html#release-specific-information>`__.
 
 **Prerequisites**
 

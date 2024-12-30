@@ -126,7 +126,7 @@ Create a Yocto Docker image and build:
          # Example, bash docker/docker_run.sh -t qcom-6.6.52-qli.1.3-ver.1.1_22.04 -r qcom-6.6.52-QLI.1.3-Ver.1.1 -M qcs6490-rb3gen2-vision-kit --build-override custom --alternate-repo true 
 
    .. note::
-      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
 
    The build workspace is available in
    ``<qcom-download-utils download path>/<release>/build-qcom-wayland``.
@@ -188,7 +188,7 @@ Build QIMP SDK image
             # and enters into build-qcom-wayland directory.
 
       .. note::
-          For the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+          For the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
 
    #. Build the software image:
 
@@ -251,7 +251,7 @@ To rebuild after any modifications to the software release, use your existing wo
          # and enters into build-qcom-wayland directory.
 
    .. note::
-      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
 
 #. Build the software image:
 

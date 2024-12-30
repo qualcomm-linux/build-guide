@@ -212,7 +212,7 @@ The following ``git clone`` command downloads the selected firmware components i
 
 .. note:: 
    - The ``git clone`` command clones the content into the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk`` directory.
-   - For the latest ``<firmware release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+   - For the latest ``<firmware release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
 
 .. _section_v5m_4gq_p1c_vinayjk_03-02-24-1519-24-381:
 
@@ -1148,9 +1148,9 @@ For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com
          # Example, <meta-qcom-extras release tag> is r1.0_00059.0
          mkdir -p layers/meta-qcom-extras
          cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/<product>/common/config/meta-qcom-extras/* layers/meta-qcom-extras/
-         # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/).
+         # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/).
 
-   .. note:: For the ``<manifest release tag>`` and ``<meta-qcom-extras release tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+   .. note:: For the ``<manifest release tag>`` and ``<meta-qcom-extras release tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
 
 #. Set up the Yocto build:
 
@@ -1178,7 +1178,7 @@ For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com
          # QCM6490_dspso.zip, and QCM6490_fw.zip. 
          # Set the environment variable to pick up the prebuilts:
          export FWZIP_PATH="<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/<product>/common/build/ufs/bin"
-         # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/).
+         # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/).
 
 #. Set up the build environment:
 
@@ -1191,8 +1191,7 @@ For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com
          # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
          # and enters into build-qcom-wayland directory.
 
-   .. note::
-      To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+   .. note:: To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
 
 #. Compile the Yocto build:
 
@@ -1248,12 +1247,10 @@ For more details, see `QIMP SDK Quick Start Guide <https://docs.qualcomm.com/bun
          # Example, <meta-qcom-extras release tag> is r1.0_0005.0
          mkdir -p layers/meta-qcom-extras
          cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/<product>/common/config/meta-qcom-extras/* layers/meta-qcom-extras/
-         # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/).
+         # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/).
          git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b qcom-6.6.52-QLI.1.3-Ver.1.1_qim-product-sdk-1.1.2 layers/meta-qcom-qim-product-sdk
 
-   .. note:: For the ``<manifest release tag>`` and
-            ``<meta-qcom-extras release tag>`` information, see the section *Build-critical release tags* in the `Release
-            Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+   .. note:: For the ``<manifest release tag>`` and ``<meta-qcom-extras release tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
 
 #. Set up the Yocto build:
 
@@ -1281,7 +1278,7 @@ For more details, see `QIMP SDK Quick Start Guide <https://docs.qualcomm.com/bun
          # QCM6490_dspso.zip, and QCM6490_fw.zip. 
          # Set the environment variable to pick up the prebuilts:
          export FWZIP_PATH="<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/<product>/common/build/ufs/bin"
-         # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/).
+         # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/).
 
 #. Set up the build environment:
 
@@ -1295,7 +1292,7 @@ For more details, see `QIMP SDK Quick Start Guide <https://docs.qualcomm.com/bun
          # and enters into build-qcom-wayland directory.
 
    .. note::
-      To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+      To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
 
 #. Compile the QIMP SDK build:
 
@@ -1360,7 +1357,7 @@ For more details, see `QIRP SDK 2.0 User Guide <https://docs.qualcomm.com/bundle
          mkdir -p layers/meta-qcom-robotics-extras
          cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/<product>/common/config/meta-qcom-extras/* layers/meta-qcom-extras/
          cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/<product>/common/config/meta-qcom-robotics-extras/* layers/meta-qcom-robotics-extras/
-         # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/).
+         # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/).
 
          git clone https://github.com/ros/meta-ros -b kirkstone layers/meta-ros
          git clone https://github.com/quic-yocto/meta-qcom-robotics.git layers/meta-qcom-robotics
@@ -1398,7 +1395,7 @@ For more details, see `QIRP SDK 2.0 User Guide <https://docs.qualcomm.com/bundle
          # QCM6490_dspso.zip, and QCM6490_fw.zip.
          # Set the environment variable to pick up the prebuilts:
          export FWZIP_PATH="<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qirpsdk/<product>/common/build/ufs/bin"
-         # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/).
+         # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/).
 
 #. Compile the QIRP SDK build:
 
@@ -1415,7 +1412,7 @@ For more details, see `QIRP SDK 2.0 User Guide <https://docs.qualcomm.com/bundle
          ../qirp-build qcom-robotics-full-image
 
    .. note::
-      To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+      To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
 
    After a successful build, check that the QIRP SDK build artifacts are at the following paths:
 

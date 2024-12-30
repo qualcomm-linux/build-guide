@@ -71,8 +71,7 @@ Set up the environment and generate eSDK:
          bitbake -c do_populate_sdk_ext <image>
          # Example, bitbake -c do_populate_sdk_ext qcom-multimedia-image
 
-   .. note::
-      To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.    
+   .. note:: To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.    
 
 2. After building with ``meta-qcom-extras`` and firmware sources with
    QSC CLI:
@@ -192,8 +191,7 @@ Run the commands to connect to Docker for your environment setup and then use th
          # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
          bitbake qcom-multimedia-image
 
-   .. note::
-      To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+   .. note:: To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
 
 -  Build image ``qcom-multimedia-test-image``:
 

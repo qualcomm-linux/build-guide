@@ -180,7 +180,7 @@ For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com
          # Example, <manifest release tag> is qcom-6.6.52-QLI.1.3-Ver.1.1.xml
          repo sync
 
-   .. note:: For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+   .. note:: For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
 
 #. Set up the build environment:
 
@@ -194,7 +194,7 @@ For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com
          # and enters into build-qcom-wayland directory.
 
    .. note::
-      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
 
 #. Build the software image:
 
@@ -240,7 +240,7 @@ For more details, see `QIMP SDK Quick Start Guide <https://docs.qualcomm.com/bun
          # Example, <manifest release tag> is qcom-6.6.52-QLI.1.3-Ver.1.1.xml
          repo sync
 
-   .. note:: For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+   .. note:: For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
 
 #. Clone the QIMP SDK layer into the workspace:
 
@@ -270,8 +270,7 @@ For more details, see `QIMP SDK Quick Start Guide <https://docs.qualcomm.com/bun
          # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
          # and enters into build-qcom-wayland directory.
 
-   .. note::
-      For information about the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+   .. note:: For information about the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
 
 #. Build the software image:
 
@@ -316,7 +315,7 @@ For more details, see `QIRP SDK 2.0 User Guide <https://docs.qualcomm.com/bundle
          # Example, <manifest release tag> is qcom-6.6.52-QLI.1.3-Ver.1.1.xml
          repo sync
 
-   .. note::  For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+   .. note::  For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
 
 #. Download the QIRP SDK layers into the BSP build ``<WORKSPACE DIR>``
    directory:
@@ -344,8 +343,7 @@ For more details, see `QIRP SDK 2.0 User Guide <https://docs.qualcomm.com/bundle
          # source setup-robotics-environment: Sets the environment, creates the build directory build-qcom-robotics-ros2-humble,
          # and enters into build-qcom-robotics-ros2-humble directory.
 
-   .. note::
-      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+   .. note:: For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
 
 #. Build the robotics image and the QIRP SDK artifacts:
 
@@ -388,7 +386,7 @@ For more details, see `Real-time kernel <https://docs.qualcomm.com/bundle/public
          # Example, <manifest release tag> is qcom-6.6.52-QLI.1.3-Ver.1.1.xml
          repo sync
 
-   .. note::  For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+   .. note::  For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
 
 #. Clone the real-time Linux layer into the workspace:
 
@@ -418,8 +416,7 @@ For more details, see `Real-time kernel <https://docs.qualcomm.com/bundle/public
          # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
          # and enters into build-qcom-wayland directory.
 
-   .. note::
-      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+   .. note:: For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
 
 #. Build the software image:
 

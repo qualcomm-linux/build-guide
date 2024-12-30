@@ -156,8 +156,7 @@ This includes the following steps:
          repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m <release tag>
          repo sync
 
-   .. note:: For the ``<manifest release tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
-             An example ``<manifest release tag>`` is ``qcom-6.6.52-QLI.1.3-Ver.1.1.xml``.
+   .. note:: For the ``<manifest release tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__. An example ``<manifest release tag>`` is ``qcom-6.6.52-QLI.1.3-Ver.1.1.xml``.
 
 2. Set up the build environment:
 
@@ -168,8 +167,7 @@ This includes the following steps:
          MACHINE=<machine> DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
          # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
 
-   .. note::
-      To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+   .. note:: To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
 
 3. Build the software image:
 

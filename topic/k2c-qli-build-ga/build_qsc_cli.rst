@@ -21,7 +21,7 @@ Software download
 
    .. note::
       - If you are downloading more than one distribution, create a new workspace for each distribution that you download.
-      - For the Product_ID, Distribution, and Release_ID values, see the table *QSC-CLI Input Parameters* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+      - For the Product_ID, Distribution, and Release_ID values, see the table *QSC-CLI Input Parameters* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
       - For more information on the Yocto layers, see `Qualcomm Linux metadata layers and descriptions <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-27/platform_software_features.html#qualcomm-linux-metadata-layers-overview>`__.
 
 .. _section_yhy_11w_q1c_vinayjk_03-07-24-006-28-270:
@@ -33,7 +33,7 @@ Build default configuration
 
 Compile
 ''''''''
-.. note:: For information on the default configurations, see the table *Default values of MACHINE and QCOM_SELECTED_BSP parameters for QSC* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+.. note:: For information on the default configurations, see the table *Default values of MACHINE and QCOM_SELECTED_BSP parameters for QSC* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
 
 Start the compilation process after the download is complete:
 
@@ -66,7 +66,7 @@ To recompile after any modifications to the software release, use your existing 
       
       # Example, qsc-cli compile --image LE.QCLINUX.1.0.r1 --workspace-path '/local/mnt/workspace/sample_workspace'
 
-.. note:: For information on software image names (``--image``), see the table *QSC-CLI Input Parameters* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+.. note:: For information on software image names (``--image``), see the table *QSC-CLI Input Parameters* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
 
 .. _section_x2k_vnf_w1c:
 
@@ -143,7 +143,7 @@ To build your own configuration, you must compile the build for default machine 
    
 2. Compile the ``LE.QCLINUX.1.0.r1`` image with your own MACHINE and QCOM_SELECTED_BSP parameter values.
    
-   .. note:: For information on the supported machine configurations of the development kit, see the table *MACHINE and QCOM_SELECTED_BSP parameter value* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+   .. note:: For information on the supported machine configurations of the development kit, see the table *Default values of MACHINE and QCOM_SELECTED_BSP parameters for QSC* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
    
    a. Run the build commands for a specific configuration:
 

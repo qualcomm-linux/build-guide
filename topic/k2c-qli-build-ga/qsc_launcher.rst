@@ -58,7 +58,7 @@ Software download
 
       .. note::
          
-         - For information on the supported distributions for your hardware SoCs, see the table *Access Controlled Distribution* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+         - For information on the supported distributions for your hardware SoCs, see the table *Access Controlled Distribution* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
          - For information on the Yocto layers, see `Qualcomm Linux metadata layers and descriptions <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-27/platform_software_features.html#qualcomm-linux-metadata-layers-overview>`__.        
          - For information on the QIMP and QIRP SDKs, see the following guides:
 
@@ -85,7 +85,7 @@ Build and flash default configuration
 
 1. Compile the default build.
 
-   .. note:: For information on the default configurations, see the table *Default values of "MACHINE" and "QCOM_SELECTED_BSP" parameters for QSC* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+   .. note:: For information on the default configurations, see the table *Default values of "MACHINE" and "QCOM_SELECTED_BSP" parameters for QSC* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
 
    .. _launcher_compile_step:
 
@@ -134,7 +134,7 @@ To build your own configuration, compile the build for default machine configura
 
 2. Compile the `LE.QCLINUX.1.0.r1` image with your own MACHINE and QCOM_SELECTED_BSP parameter values.
    
-   .. note:: For information on the supported machine configurations of the development kit, see the table *MACHINE and QCOM_SELECTED_BSP parameter value* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
+   .. note:: For information on the supported machine configurations of the development kit, see the table *Default values of "MACHINE" and "QCOM_SELECTED_BSP" parameters for QSC* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
 
    a. To run the build commands for a specific configuration, click **Compile using terminal**.
 
