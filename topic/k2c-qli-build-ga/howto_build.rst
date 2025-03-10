@@ -74,7 +74,7 @@ Set up the environment and generate eSDK:
 2. After building with ``meta-qcom-extras`` and firmware sources with
    QSC CLI:
 
-   .. note:: This step is not applicable for public developers (unregistered).
+   .. note:: This step isn't applicable for public developers (unregistered).
 
    .. container:: nohighlight
       
@@ -150,7 +150,7 @@ Set up the environment and generate eSDK:
 
    .. line-block::
 
-      ERROR: When reparsing /local/mnt/workspace/extras/DEV/LE.QCLINUX.1.0.r1/build-qcom-wayland/conf/../../layers/meta-qcom-distro/recipes-products/images/qcom-multimedia-image.bb:do_populate_sdk_ext, the basehash value changed from 7bce27b0510cb666f1bba1d03f055cfef48f9db2eabc17d490e14bbe4c632eba to 48ccd9d7370e0bf2435aa8b5067162932e07a3832adfa6ca037aa0ddb765c8de. The metadata is not deterministic and this needs to be fixed.
+      ERROR: When reparsing /local/mnt/workspace/extras/DEV/LE.QCLINUX.1.0.r1/build-qcom-wayland/conf/../../layers/meta-qcom-distro/recipes-products/images/qcom-multimedia-image.bb:do_populate_sdk_ext, the basehash value changed from 7bce27b0510cb666f1bba1d03f055cfef48f9db2eabc17d490e14bbe4c632eba to 48ccd9d7370e0bf2435aa8b5067162932e07a3832adfa6ca037aa0ddb765c8de. The metadata isn't deterministic and this needs to be fixed.
       ERROR: The following commands may help:
       ERROR: $ bitbake qcom-multimedia-image -cdo_populate_sdk_ext -Snone
       ERROR: Then:
@@ -314,7 +314,7 @@ Download the Platform eSDK
       
             ::
 
-               wget https://artifacts.codelinaro.org/artifactory/qli-ci/flashable-binaries/qimpsdk/qcs6490-rb3gen2-core-kit/x86/qcom-6.6.52-QLI.1.3-Ver.1.1_qim-product-sdk-1.1.2.zip
+               wget https://artifacts.codelinaro.org/artifactory/qli-ci/flashable-binaries/qimpsdk/qcs6490-rb3gen2-core-kit/x86/qcom-6.6.65-QLI.1.4-Ver.1.0_qim-product-sdk-1.1.1.zip
 
       -  For an Arm architecture-based host computer:
 
@@ -322,7 +322,7 @@ Download the Platform eSDK
       
             ::
 
-               wget https://artifacts.codelinaro.org/artifactory/qli-ci/flashable-binaries/qimpsdk/qcs6490-rb3gen2-core-kit/arm/qcom-6.6.52-QLI.1.3-Ver.1.1_qim-product-sdk-1.1.2.zip
+               wget https://artifacts.codelinaro.org/artifactory/qli-ci/flashable-binaries/qimpsdk/qcs6490-rb3gen2-core-kit/arm/qcom-6.6.65-QLI.1.4-Ver.1.0_qim-product-sdk-1.1.1.zip
 
    #. Unzip the QIMP SDK to a directory of your choice:
 
@@ -330,7 +330,7 @@ Download the Platform eSDK
       
          ::
 
-            unzip qcom-6.6.52-QLI.1.3-Ver.1.1_qim-product-sdk-1.1.2.zip
+            unzip qcom-6.6.65-QLI.1.4-Ver.1.0_qim-product-sdk-1.1.1.zip
 
       After unzipping, ensure that the eSDK installer is located at
       ``<unzip_location>/target/qcm6490/sdk/``:

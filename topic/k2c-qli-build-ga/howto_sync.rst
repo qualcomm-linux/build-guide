@@ -29,7 +29,7 @@ If the previous steps do not work, install Repo using the following commands:
       
    ::
 
-      # Install curl (if it is not installed)
+      # Install curl (if it isn't installed)
       sudo apt install curl bc
       
       # Latest Repo version works with python3
@@ -146,7 +146,7 @@ This includes the following steps:
          repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-scarthgap -m <release tag>
          repo sync
 
-   .. note:: For the ``<manifest release tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__. An example ``<manifest release tag>`` is ``qcom-6.6.52-QLI.1.3-Ver.1.1.xml``.
+   .. note:: For the ``<manifest release tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__. An example ``<manifest release tag>`` is ``qcom-6.6.65-QLI.1.4-Ver.1.0.xml``.
 
 2. Set up the build environment:
 

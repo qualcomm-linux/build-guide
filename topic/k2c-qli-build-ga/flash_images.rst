@@ -37,7 +37,7 @@ Configure the ``udev`` USB rules for the Qualcomm manufacturing vendor ID **05c6
 
          ls
 
-   -  If the ``51-qcom-usb.rules`` file is not present, use the ``sudo vi 51-qcom-usb.rules`` file to create it and add the following content to the file:
+   -  If the ``51-qcom-usb.rules`` file isn't present, use the ``sudo vi 51-qcom-usb.rules`` file to create it and add the following content to the file:
 
       .. container:: nohighlight
       
@@ -359,7 +359,7 @@ CDT provides platform/device-dependent data such as platform ID, subtype, versio
 Flash software using QDL
 ------------------------------------
 
-1. Ensure that the ModemManager tool is not running.
+1. Ensure that the ModemManager tool isn't running.
 
    Some Linux distributions include the ModemManager tool, which allows you to configure the mobile broadband. When the device is connected in the USB mode, it is identified as a Qualcomm modem, and the ModemManager tries to configure the device. As this interferes with the QDL flashing, you must disable the ModemManager before connecting your device.
    

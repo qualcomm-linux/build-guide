@@ -76,7 +76,7 @@ Create a Yocto Docker image and build:
    (**qcom-6.6.52-qli.1.3-ver.1.1_22.04**). This Docker image is used to
    create the container environment to run the Yocto build.
 
-   **Dockertag**: Use lowercase letters for the release folder followed by the Dockerfile OS version to identify the release build with the Dockerfile since Docker does not permit uppercase letters in the Dockertag.
+   **Dockertag**: Use lowercase letters for the release folder followed by the Dockerfile OS version to identify the release build with the Dockerfile since Docker doesn't permit uppercase letters in the Dockertag.
 
    .. note:: 
       To troubleshoot Docker issues, see :ref:`Troubleshoot Docker <troubleshoot_docker>`.
@@ -133,7 +133,7 @@ Create a Yocto Docker image and build:
 .. note:: 
    - **# ERROR: error.GitError: git config (‘–replace-all’,‘color.ui’, ‘auto’): error: could not write config file /home/$USER/.gitconfig: Device or resource busy**
      
-     This error is triggered when your gitconfig does not set the UI color configuration as Git 1.8.4 is enabled by default. To enable color display in your account, run the following command: ``git config --global color.ui auto``.
+     This error is triggered when your gitconfig doesn't set the UI color configuration as Git 1.8.4 is enabled by default. To enable color display in your account, run the following command: ``git config --global color.ui auto``.
 
    - If a build error is triggered and fixed, run the commands in :ref:`Rebuild <build_with_docker_rebuild>`.
 
@@ -161,7 +161,7 @@ Build QIMP SDK image
          ::
 
             git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b <meta-qcom-qim-product-sdk release tag> layers/meta-qcom-qim-product-sdk
-            # Example, <meta-qcom-qim-product-sdk release tag> is qcom-6.6.52-QLI.1.3-Ver.1.1_qim-product-sdk-1.1.2
+            # Example, <meta-qcom-qim-product-sdk release tag> is qcom-6.6.65-QLI.1.4-Ver.1.0_qim-product-sdk-1.1.1
 
       To build a QIMP SDK layer, the following export is required:
 

@@ -87,7 +87,7 @@ Docker
    socket at unix:///var/run/docker.sock**
 
    This happens when ``qsc-cli`` is already installed on the machine and
-   the user is not part of the Docker group:
+   the user isn't part of the Docker group:
 
    .. container:: nohighlight
       
@@ -191,7 +191,7 @@ Sync
    error: could not write config file /home/$USER/.gitconfig: Device or
    resource busy**
 
-   This error occurs when your gitconfig does not set the UI color
+   This error occurs when your gitconfig doesn't set the UI color
    configuration. This configuration is set by default in Git 1.8.4 and
    later versions. Run the following command to enable the color display
    in your account:
@@ -290,9 +290,9 @@ Sync
       ::
 
          # Replace the following command
-         repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linuxSTXkirkstone -m qcom-6.6.52-QLI.1.3-Ver.1.1.xml
+         repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linuxSTXkirkstone -m qcom-6.6.65-QLI.1.4-Ver.1.0.xml
          # with
-         repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-scarthgap -m qcom-6.6.52-QLI.1.3-Ver.1.1.xml
+         repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-scarthgap -m qcom-6.6.65-QLI.1.4-Ver.1.0.xml
 
 -  **pull access denied for 032693710300.dkr.ecr.us-west-2.amazonaws.com/stormchaser/ql-tool**
 
@@ -300,7 +300,7 @@ Sync
 
    **Error excerpt**
    Unable to find image '032693710300.dkr.ecr.us-west-2.amazonaws.com/stormchaser/ql-tool:20.04.20231220102843864.9' locally
-   docker: Error response from daemon: pull access denied for 032693710300.dkr.ecr.us-west-2.amazonaws.com/stormchaser/ql-tool, repository does not exist or may require 'docker login': denied: Your authorization token has expired. Reauthenticate and try again.
+   docker: Error response from daemon: pull access denied for 032693710300.dkr.ecr.us-west-2.amazonaws.com/stormchaser/ql-tool, repository doesn't exist or may require 'docker login': denied: Your authorization token has expired. Reauthenticate and try again.
 
    **Solution**
       
@@ -437,7 +437,7 @@ Build
    see :ref:`BitBake Fetcher Error <do_fetch_error_1>`. You can triage it further by
    following the subsequent instructions to dump verbose logs during fetch.
 
-   By default, verbose logging is not enabled for Yocto git fetch. To
+   By default, verbose logging isn't enabled for Yocto git fetch. To
    enable the same for all git projects, edit the ``local.conf`` file and
    change the ``BB_GIT_VERBOSE_FETCH`` value to **1**. Verbose logging can
    also be enabled for each recipe. For example, to enable verbose
@@ -503,7 +503,7 @@ Build
 
    -  Git clone of ``meta-qcom-qim-product-sdk`` did not complete
       successfully.
-   -  ``meta-qcom-qim-product-sdk`` layer is not exported to
+   -  ``meta-qcom-qim-product-sdk`` layer isn't exported to
       EXTRALAYERS.
       
    **Error excerpt**

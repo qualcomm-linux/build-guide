@@ -37,7 +37,7 @@ The Ubuntu host computer must be setup to ensure that the required software tool
 
 #. Use your preferred text editor to edit the ``~/.netrc`` file and add the following entries:
 
-   .. note:: Create the ``~/.netrc`` file if it does not exist.
+   .. note:: Create the ``~/.netrc`` file if it doesn't exist.
 
    .. container:: nohighlight
       

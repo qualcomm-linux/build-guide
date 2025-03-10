@@ -69,7 +69,7 @@ Connect to a UART shell
 
          sudo minicom -s
 
-4. Press the Down arrow key to select the **Serial port setup** option. Use the Up and Down arrow keys to navigate through the menu.
+4. Use the Down arrow key to select the **Serial port setup** option. Use the Up and Down arrow keys to navigate through the menu.
 
    .. image:: ../../media/k2c-qli-build-ga/serial_port_setup.jpg
       :align: center
@@ -78,42 +78,42 @@ Connect to a UART shell
 
    .. note:: Ensure that the letters are in uppercase.
 
-   a. Press **A** on your keyboard to set up the serial device name such as ``/dev/ttyUSB0``.
+   a. Select **A** on your keyboard to set up the serial device name such as ``/dev/ttyUSB0``.
 
-   #. Press **Enter** to save the changes.
+   #. Select **Enter** to save the changes.
 
-   #. Press **E** on your keyboard to set the baud rate and 8N1 configuration:
+   #. Select **E** on your keyboard to set the baud rate and 8N1 configuration:
    
-      i. Press the **E** key again if the baud rate is not set to **115200**.
+      i. Select the **E** key again if the baud rate isn't set to **115200**.
 
-      #. Press the **Q** key if the configuration is not set to **8N1**.
+      #. Select the **Q** key if the configuration isn't set to **8N1**.
 
          .. image:: ../../media/k2c-qli-build-ga/option_Q.png
             :align: center
 
-   #. Press **Enter** to save the changes.
+   #. Select **Enter** to save the changes.
 
-   #. Press **F** on your keyboard to set the **Hardware Flow Control**
+   #. Select **F** on your keyboard to set the **Hardware Flow Control**
       to ``No``.
 
       .. image:: ../../media/k2c-qli-build-ga/serial_device_configuration.png
          :align: center
 
-   #. Press **Enter** to save the changes.
+   #. Select **Enter** to save the changes.
 
-6. Select the **Save setup as dfl** option and press **Enter**.
+6. Select the **Save setup as dfl** option and then select **Enter**.
 
    .. image:: ../../media/k2c-qli-build-ga/save_setup_as_dfl.png
       :align: center
 
-7. Select **Exit** to open the UART console and press the ENTER key.
+7. Select **Exit** to open the UART console and then select ENTER.
 
-8. Log in to the UART console:
+8. Sign in to the UART console:
 
    -  Login: ``root``
    -  Password: ``oelinux123`` 
      
-      .. note:: If the login console does not display as expected, verify the USB connection. If the issue persists, disconnect and then reconnect the micro-USB.
+      .. note:: If the login console doesn't display as expected, verify the USB connection. If the issue persists, disconnect and then reconnect the micro-USB.
 
 .. note:: 
     If you want to run sample applications from the UART shell, remount the root file system with write permissions:
@@ -233,9 +233,9 @@ If you are already connected to a network and need to reconnect to another netwo
 
 .. _use-ssh:
 
-**Log in using SSH**
+**Sign in using SSH**
 
-Ensure that the :ref:`network connectivity <connect_to_network>` is established before connecting to SSH.
+Establish the :ref:`network connectivity <connect_to_network>` before connecting to SSH.
 
 1. Locate the IP address of the RB3 Gen 2 device according to the type of network connection, using the UART console on the Linux host:
 
@@ -277,7 +277,7 @@ Ensure that the :ref:`network connectivity <connect_to_network>` is established 
 
 .. note:: 
    
-   - Ensure that the remote host is connected to the same Wi-Fi access point as the device.
+   - Connect the remote host to the same Wi-Fi access point as the device.
    - To create a non-root user account, see `Create a non-root user account <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-253/additional_setup.html#non-root-acc>`__.
 
 Configure Ethernet with RJ45 port
@@ -286,7 +286,7 @@ Configure Ethernet with RJ45 port
 Ethernet/RJ45 port is enabled as a downstream port of PCIe to USB controller (``renesas``). Ensure that the ``renesas_usb_fw.mem`` file is available at the ``var/usbfw`` directory.
 
 .. note:: 
-   - If the ``renesas_usb_fw.mem`` firmware is not available at the ``var/usbfw`` directory, then :ref:`update USB and Ethernet controller firmware <update_usb_eth_controller>`.
+   - If the ``renesas_usb_fw.mem`` firmware isn't available at the ``var/usbfw`` directory, then :ref:`update USB and Ethernet controller firmware <update_usb_eth_controller>`.
 
 To check if the USB to ETH controller is enumerated, run the following command:
 
@@ -336,16 +336,16 @@ To check the Ethernet IP address, run the following command:
 Update USB and Ethernet controller firmware
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you encounter USB or Ethernet connectivity issues on the RB3 Gen 2 device, consider updating the firmware for the USB controller.
+If you face USB or Ethernet connectivity issues on the RB3 Gen 2 device, consider updating the firmware for the USB controller.
 
 .. rubric:: Prerequisites
 
-- Ensure that the software is upgraded as described in `Update Software <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-253/set_up_the_device.html#ubuntu-up-sw>`__ before updating the Renesas firmware.
-- The device should be connected to the Linux host through the USB Type-C cable.
+- Upgrade the software as described in `Update Software <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-253/set_up_the_device.html#ubuntu-up-sw>`__ before updating the Renesas firmware.
+- Connect the device to the Linux host through the USB Type-C cable.
 
 .. note:: The following procedure is applicable only to Ubuntu 22.04 host. If you are using a Windows or macOS host, set up an Ubuntu virtual machine by following the instructions described in the `Virtual Machine Setup Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-41/getting-started.html>`__.
 
-1. Register and log in to `Renesas <https://www.renesas.com/>`__.
+1. Register and sign in to `Renesas <https://www.renesas.com/>`__.
 
 #. `Download the firmware <https://www.renesas.com/en/products/interface/usb-switches-hubs/upd720201-usb-30-host-controller#design_development>`__.
 
@@ -399,7 +399,7 @@ If you encounter USB or Ethernet connectivity issues on the RB3 Gen 2 device, co
    .. container:: screenoutput
 
       c:\>fastboot erase usb_fw
-      Erasing 'usb_fw'                                   FAILED (remote: 'Check device console.')
+      Erasing 'usb_fw' FAILED (remote: 'Check device console.')
       fastboot: error: Command failed
 
 #. Verify if the firmware is successfully updated:
