@@ -1,6 +1,7 @@
+.. _intro:
 
 Introduction
-========================================
+==============
 
 Qualcomm recommends that you read the `Qualcomm Linux Yocto
 Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-27>`__ before starting your build.
@@ -46,7 +47,7 @@ Registered users can use any one of the following three methods to sync and buil
      - Simple QSC command-line interface (CLI).
      - Instructions to use GitHub based workflow.
    * - .. centered:: :doc:`Build with QSC Launcher <build_from_source_qsc_gui_intro>` 
-     - .. centered:: :doc:`Build with QSC CLI <build_from_source_qsc_cli>`
+     - .. centered:: :doc:`Build with QSC CLI <build_frm_source_qsc_cli>`
      - .. centered:: :doc:`Build with GitHub for registered users <build_from_source_github_intro>`
 
 .. only:: html

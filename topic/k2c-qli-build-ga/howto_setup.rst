@@ -108,7 +108,7 @@ Connect to a UART shell
 
 7. Select **Exit** to open the UART console and then select ENTER.
 
-8. Sign in to the UART console:
+8. Log in to the UART console:
 
    -  Login: ``root``
    -  Password: ``oelinux123`` 
@@ -345,7 +345,7 @@ If you face USB or Ethernet connectivity issues on the RB3 Gen 2 device, conside
 
 .. note:: The following procedure is applicable only to Ubuntu 22.04 host. If you are using a Windows or macOS host, set up an Ubuntu virtual machine by following the instructions described in the `Virtual Machine Setup Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-41/getting-started.html>`__.
 
-1. Register and sign in to `Renesas <https://www.renesas.com/>`__.
+1. Register and log in to `Renesas <https://www.renesas.com/>`__.
 
 #. `Download the firmware <https://www.renesas.com/en/products/interface/usb-switches-hubs/upd720201-usb-30-host-controller#design_development>`__.
 

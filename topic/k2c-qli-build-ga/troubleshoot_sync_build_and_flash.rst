@@ -123,7 +123,7 @@ Sync
 -  **repo init or sync failure with except ManifestInvalidRevisionError,
    e:**
 
-   You might encounter this issue after installing the Repo package:
+   You might get this issue after installing the Repo package:
 
    -  If you have redirection in your ``/etc/gitconfig`` or
       ``~/.gitconfig`` to an internal mirror.
@@ -358,7 +358,7 @@ Build
    from any source’)**
 
    These are intermittent fetch failures. Check if there is a
-   network/host issue at your end, else it may be the server creating
+   network/host issue at your end, else check if the server is creating
    this issue. You could increase ``postBuffer`` and
    ``maxRequestBuffer`` settings in your ``.gitconfig`` file if the
    errors occur while fetching the git repositories. If you are using
@@ -524,7 +524,7 @@ Build
 
 -  **failed: database disk image is malformed. abort()ing pseudo client by server request**
 
-   The Pseudo tool encounters path mismatch and corrupt database issues when processing the file system operations. When Pseudo simulates the file system operations in a Yocto project, problems might occur in the process of handling file paths and permissions.
+   The Pseudo tool gets path mismatch and corrupt database issues when processing the file system operations. When Pseudo simulates the file system operations in a Yocto project, problems might occur in the process of handling file paths and permissions.
 
    This is a known issue in the `Yocto community <https://wiki.yoctoproject.org/wiki/Pseudo_Abort>`__.
 

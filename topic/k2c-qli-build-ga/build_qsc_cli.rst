@@ -11,7 +11,7 @@ Software download
 -  Download a software release by specifying the absolute workspace path, product ID, distribution, and release ID as shown in the following example:
 
    .. container:: nohighlight
-      
+
       ::
 
          qsc-cli download --workspace-path '<Base_Workspace_Path>' --product '<Product_ID>' --distribution '<Distribution>' --release '<Release_ID>'
@@ -45,7 +45,7 @@ Start the compilation process after the download is complete:
 
 This process builds the necessary Qualcomm firmware and completes the Qualcomm Linux build.
 
-.. note:: If you encounter a BitBake fetcher error, try recompiling to resolve the issue. If the issue persists, see :ref:`BitBake Fetcher Error <do_fetch_error_1>` for a solution.
+.. note:: If you get a BitBake fetcher error, try recompiling to resolve the issue. If the issue persists, see :ref:`BitBake Fetcher Error <do_fetch_error_1>` for a solution.
 
 Recompile
 '''''''''''
@@ -78,7 +78,7 @@ Flash
 
 The ``qpm-cli --help`` command lists the help options.
 
-For Ubuntu 22.04, you may encounter an issue while installing QUD, where you might be asked to enroll the public key on your Linux host for a successful QUD installation. For more information, see the ``signReadme.txt`` file in the ``/opt/QTI/sign/`` directory.
+For Ubuntu 22.04, you may get an issue while installing QUD, where you might be asked to enroll the public key on your Linux host for a successful QUD installation. For more information, see the ``signReadme.txt`` file in the ``/opt/QTI/sign/`` directory.
 
 .. note:: Before you flash the software, ensure the following:
 
@@ -103,7 +103,7 @@ For Ubuntu 22.04, you may encounter an issue while installing QUD, where you mig
       ::
 
          qsc-cli flash --workspace-path <workspace path> --list-buildflavor
-
+..code
    .. note::
       - To find the `<serial number>`, run the following command on the host computer:
 

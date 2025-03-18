@@ -28,7 +28,7 @@ Software download
 
       The ``qpm-cli --help`` command lists the help options.
 
-      For Ubuntu 22.04, you may encounter an issue while installing QUD where you are asked to enroll the public key on your Linux host for a
+      For Ubuntu 22.04, you may get an issue while installing QUD where you are asked to enroll the public key on your Linux host for a
       successful QUD installation. For more details, follow the steps provided in the ``signReadme.txt`` file available at the ``/opt/QTI/sign/`` directory.
 
 2. Use your registered email ID to log in to the QSC desktop application. The QSC Launcher dashboard page (for example, when QCS6490 development kit is connected) appears as shown in the following image:

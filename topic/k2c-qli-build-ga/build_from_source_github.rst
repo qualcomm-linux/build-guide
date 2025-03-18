@@ -8,7 +8,7 @@ Build with standalone commands
 Ubuntu host setup
 ^^^^^^^^^^^^^^^^^^^^^
 
-The Ubuntu host computer must be setup to ensure that the required software tools are installed and configured for use.
+The Ubuntu host computer must be setup to install the required software tools and configure them for use.
 
 1. Install the following packages to prepare your host environment for
    Yocto build:
@@ -20,7 +20,7 @@ The Ubuntu host computer must be setup to ensure that the required software tool
          sudo apt update
          sudo apt install repo gawk wget git diffstat unzip texinfo gcc build-essential chrpath socat cpio python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev pylint xterm python3-subunit mesa-common-dev zstd liblz4-tool locales tar python-is-python3 file libxml-opml-simplegen-perl vim whiptail g++ libacl1
 
-#. Add your Qualcomm login ID with Personalized Access Token (PAT) to the ``~/.netrc`` file in your home directory:
+#. Add your Qualcomm Log in ID with Personalized Access Token (PAT) to the ``~/.netrc`` file in your home directory:
 
    .. container:: nohighlight
       
@@ -102,7 +102,7 @@ Sync
 
 This section uses the Repo tool installed in :ref:`Ubuntu host setup <ubuntu_host_setup>` to download a list of git repositories and additional attributes from the `Qualcomm manifest <https://github.com/quic-yocto/qcom-manifest>`__. The Repo tool downloads the manifests using the ``repo init`` command.
 
-The following table shows an example mapping of the Yocto layers to the manifest release tags, and this mapping is used to download and build Qualcomm Linux:
+The following table shows an example mapping of the Yocto layers to the manifest release tags. Use this mapping to download and build Qualcomm Linux:
 
   .. list-table:: Mapping Yocto layers to manifest release tags
      :header-rows: 1
@@ -159,7 +159,7 @@ The following table shows an example mapping of the Yocto layers to the manifest
 
 Build BSP image
 ^^^^^^^^^^^^^^^^^^^^^
-BSP image build contains software components for Qualcomm device support and value-added software features applicable to Qualcomm SoCs. It includes a reference distribution configuration for Qualcomm development kits.
+BSP image build has software components for Qualcomm device support and value-added software features applicable to Qualcomm SoCs. It includes a reference distribution configuration for Qualcomm development kits.
 
 For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-27/platform_software_features.html#qualcomm-linux-metadata-layers-overview>`__.
 
@@ -294,7 +294,7 @@ For more details, see `QIRP SDK 2.0 User Guide <https://docs.qualcomm.com/bundle
 1. Download Qualcomm Yocto and the supporting layers:
 
    .. note:: The ``<manifest release tag>`` for QIRP SDK build is the
-             same as the BSP build. Clone the QIRP SDK layer  on top of the BSP build.
+             same as the BSP build. Clone the QIRP SDK layer on top of the BSP build.
 
    .. container:: nohighlight
       

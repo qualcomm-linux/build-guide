@@ -1159,7 +1159,7 @@ For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com
          # CUST_ID must be initialized to <PARTY_ID> for "Licensed developers (contact Qualcomm for access)".
          # For example, for distributions like "Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|" and "Qualcomm_Linux.SPF.1.0|AMSS|Standard|OEM|",
          # <PARTY_ID> is provided while signing up for distributions mapping to "Licensed developers (contact Qualcomm for access)".
-         # To find <PARTY_ID>, sign in to your account at qualcomm.com.
+         # To find <PARTY_ID>, log in to your account at qualcomm.com.
          # Click the profile icon, select Account Settings, and then scroll down to the Company Information section.
          # Use the number specified for Export ID as <PARTY_ID>.
          export CUST_ID="213195"
@@ -1257,7 +1257,7 @@ For more details, see `QIMP SDK Quick Start Guide <https://docs.qualcomm.com/bun
          # CUST_ID must be initialized to <PARTY_ID> for "Licensed developers (contact Qualcomm for access)".
          # For example, for distributions like "Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|" and "Qualcomm_Linux.SPF.1.0|AMSS|Standard|OEM|",
          # <PARTY_ID> is provided while signing up for distributions mapping to "Licensed developers (contact Qualcomm for access)".
-         # To find <PARTY_ID>, sign in to your account at qualcomm.com.
+         # To find <PARTY_ID>, log in to your account at qualcomm.com.
          # Click the profile icon, select Account Settings, and then scroll down to the Company Information section.
          # Use the number specified for Export ID as <PARTY_ID>.
          export CUST_ID="213195"
@@ -1372,7 +1372,7 @@ For more details, see `QIRP SDK 2.0 User Guide <https://docs.qualcomm.com/bundle
          # CUST_ID must be initialized to <PARTY_ID> for "Licensed developers (contact Qualcomm for access)".
          # For example, for distributions like "Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|" and "Qualcomm_Linux.SPF.1.0|AMSS|Standard|OEM|",
          # <PARTY_ID> is provided while signing up for distributions mapping to "Licensed developers (contact Qualcomm for access)".
-         # To find <PARTY_ID>, sign in to your account at qualcomm.com.
+         # To find <PARTY_ID>, log in to your account at qualcomm.com.
          # Click the profile icon, select Account Settings, and then scroll down to the Company Information section.
          # Use the number specified for Export ID as <PARTY_ID>.
          export CUST_ID="213195"

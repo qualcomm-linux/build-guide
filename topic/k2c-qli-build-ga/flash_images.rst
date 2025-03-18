@@ -471,7 +471,7 @@ Flash software using PCAT
          qpm-cli --install qud --activate-default-license
          qpm-cli --install pcat --activate-default-license
 
-   .. note:: For Ubuntu 22.04, you may encounter an issue while installing QUD, where you might be asked to enroll the public key on your Linux host for a successful QUD installation. For additional details, follow the steps provided in the README file available in the ``/opt/QTI/sign/signReadme.txt`` directory.
+   .. note:: For Ubuntu 22.04, you may get an issue while installing QUD, where you might be asked to enroll the public key on your Linux host for a successful QUD installation. For additional details, follow the steps provided in the README file available in the ``/opt/QTI/sign/signReadme.txt`` directory.
 
 #. Check if the ``QTI_HS-USB_QDLoader`` driver is available in the installed directory:
 

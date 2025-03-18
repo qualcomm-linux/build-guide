@@ -10,11 +10,11 @@ Introduction
     :gutter: 4
     :class-container: get-started-cards
 
-    .. grid-item-card::  |icn-book-blue|  Build guide introduction
+    .. grid-item-card::  |icn-book-blue|  Introduction
         :class-card: card-base-line
         :class-title: font-link
         :class-body: font-gray-60
-        :link: flash_images
+        :link: intro
         :link-type: ref
 
         Provides overview on the various options to sync, build, and flash the software.
@@ -98,11 +98,11 @@ Troubleshoot
     :gutter: 4
     :class-container: get-started-cards
 
-    .. grid-item-card::  |icn-book-blue|  Troubleshoot issues
+    .. grid-item-card::  |icn-book-blue|  Troubleshoot
         :class-card: card-base-line
         :class-title: font-link
         :class-body: font-gray-60
-        :link: flash_images
+        :link: troubleshoot_sync_build_and_flash
         :link-type: ref
 
         Provides steps to troubleshoot docker, sync, build, and flash issues.
@@ -114,17 +114,13 @@ How to
     :gutter: 4
     :class-container: get-started-cards
 
-    .. grid-item-card::  |icn-book-blue|  Troubleshoot issues
+    .. grid-item-card::  |icn-book-blue|  How to
         :class-card: card-base-line
         :class-title: font-link
         :class-body: font-gray-60
-        :link: flash_images
+        :link: how_to
         :link-type: ref
 
         Get answers to FAQs on how to sync, build, set up the network, and set up the overall developer workflow.
 
-.. |icn-sparkles| image:: ../../media/k2c-qli-build-ga/icn-sparkles.svg
-
 .. |icn-book-blue| image:: ../../media/k2c-qli-build-ga/icn-book-blue.svg
-
-.. |icn-arrow-right| image:: ../../media/k2c-qli-build-ga/icn-arrow-right.svg

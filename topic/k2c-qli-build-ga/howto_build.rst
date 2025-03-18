@@ -127,7 +127,7 @@ Set up the environment and generate eSDK:
             cd /local/mnt/workspace/qcom-download-utils/<release>
 
             # Example
-            cd /local/mnt/workspace/qcom-download-utils/qcom-6.6.52-QLI.1.3-Ver.1.1
+            cd /local/mnt/workspace/qcom-download-utils/qcom-6.6.65-QLI.1.4-Ver.1.0
 
    #. Set up the environment and issue an eSDK build:
 
