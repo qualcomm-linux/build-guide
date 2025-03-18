@@ -23,7 +23,7 @@ The latest Repo works with python3. If your default Python is pointed to python2
       git checkout -b v2.41
       export PATH=~/bin/repo_tool:$PATH
 
-If the previous steps do not work, install Repo using the following commands:
+If the previous steps don't work, install Repo using the following commands:
 
 .. container:: nohighlight
       

@@ -6,7 +6,7 @@ Introduction
 Qualcomm recommends that you read the `Qualcomm Linux Yocto
 Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-27>`__ before starting your build.
 
-Users can do any of the following:
+You can do any of the following:
  
 - Download prebuilt images and flash the software
 - Sync, build, and flash the software

@@ -68,7 +68,7 @@ If the USB cable is already connected to the host, unplug and reconnect the cabl
 Move to EDL mode
 ------------------
 
-The device must be in the EDL mode before you flash the software. The Qualcomm supported device by default enters the EDL mode if there is no image on the device after power up or if it is corrupted. To force the device into the EDL mode, use any one of the following methods.
+The device must be in the EDL mode before you flash the software. The Qualcomm supported device by default enters the EDL mode if there is no image on the device after power up or if it's corrupted. To force the device into the EDL mode, use any one of the following methods.
 
 **Using UART**
 
@@ -377,7 +377,7 @@ Flash software using QDL
 
 1. Ensure that the ModemManager tool isn't running.
 
-   Some Linux distributions include the ModemManager tool, which allows you to configure the mobile broadband. When the device is connected in the USB mode, it is identified as a Qualcomm modem, and the ModemManager tries to configure the device. As this interferes with the QDL flashing, you must disable the ModemManager before connecting your device.
+   Some Linux distributions include the ModemManager tool, which allows you to configure the mobile broadband. When the device is connected in the USB mode, it's identified as a Qualcomm modem, and the ModemManager tries to configure the device. As this interferes with the QDL flashing, you must disable the ModemManager before connecting your device.
    
    If you are using a Linux distribution with ``systemd``, stop the ModemManager tool using the following command:
 
@@ -411,8 +411,8 @@ Flash software using QDL
       ::
 
          # Built images are under <workspace_path>/build-<DISTRO>/tmp-glibc/deploy/images/<MACHINE>/<IMAGE>
-         # build_path: For DISTRO=qcom-wayland, it is build-qcom-wayland. 
-         #             For DISTRO=qcom-robotics-ros2-humble, it is build-qcom-robotics-ros2-humble
+         # build_path: For DISTRO=qcom-wayland, it's build-qcom-wayland. 
+         #             For DISTRO=qcom-robotics-ros2-humble, it's build-qcom-robotics-ros2-humble
          # qdl <prog.mbn> [<program> <patch> ...]
          # Example: build_path is build-qcom-wayland
          cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image

@@ -152,7 +152,7 @@ To build your own configuration, you must compile the build for default machine 
 
       This command opens the terminal.
    
-      .. note:: An environment is setup to run your own build commands for a specific software image. QSC will not track the status of input workspaces in the future releases and flash using ``qsc-cli`` will not be supported for these workspaces.
+      .. note:: An environment is setup to run your own build commands for a specific software image. QSC won't track the status of input workspaces in the future releases and flash using ``qsc-cli`` won't be supported for these workspaces.
 
    b. Update the highlighted command according to your own machine configuration and run it on the terminal:
 

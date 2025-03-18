@@ -412,6 +412,7 @@ Build firmware
                ::
 
                   python -m pip install -r boot_images/boot_tools/dtschema_tools/oss/requirements.txt
+                  pip install json-schema-for-humans
 
          #. Clean the build:
 
@@ -704,6 +705,7 @@ Build firmware
                ::
 
                   python -m pip install -r boot_images/boot_tools/dtschema_tools/oss/requirements.txt
+                  pip install json-schema-for-humans
 
          #. Clean the build:
 
@@ -995,6 +997,7 @@ Build firmware
                ::
 
                   python -m pip install -r boot_images/boot_tools/dtschema_tools/oss/requirements.txt
+                  pip install json-schema-for-humans
 
          #. Clean the build:
 
@@ -1347,11 +1350,11 @@ For more details, see `QIRP SDK 2.0 User Guide <https://docs.qualcomm.com/bundle
          cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/<product>/common/config/meta-qcom-robotics-extras/* layers/meta-qcom-robotics-extras/
          # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/).
 
-         git clone https://github.com/ros/meta-ros -b kirkstone layers/meta-ros
-         git clone https://github.com/quic-yocto/meta-qcom-robotics.git layers/meta-qcom-robotics
-         git clone https://github.com/quic-yocto/meta-qcom-robotics-distro.git layers/meta-qcom-robotics-distro
-         git clone https://github.com/quic-yocto/meta-qcom-robotics-sdk.git layers/meta-qcom-robotics-sdk
-         git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b <meta-qcom-qim-product-sdk release tag> layers/meta-qcom-qim-product-sdk
+         git clone https://github.com/ros/meta-ros -b scarthgap layers/meta-ros && cd layers/meta-ros && git checkout c560699e810e60a9526f4226c2c23f8d877280c8 && cd ../../
+         git clone https://github.com/quic-yocto/meta-qcom-robotics.git -b qcom-6.6.65-QLI.1.4-Ver.1.0_robotics-product-sdk-1.0 layers/meta-qcom-robotics
+         git clone https://github.com/quic-yocto/meta-qcom-robotics-distro.git -b qcom-6.6.65-QLI.1.4-Ver.1.0_robotics-product-sdk-1.0 layers/meta-qcom-robotics-distro
+         git clone https://github.com/quic-yocto/meta-qcom-robotics-sdk.git -b qcom-6.6.65-QLI.1.4-Ver.1.0_robotics-product-sdk-1.0 layers/meta-qcom-robotics-sdk
+         git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b qcom-6.6.65-QLI.1.4-Ver.1.0_qim-product-sdk-1.1.1 layers/meta-qcom-qim-product-sdk
          # Example, <meta-qcom-qim-product-sdk release tag> is qcom-6.6.65-QLI.1.4-Ver.1.0_qim-product-sdk-1.1.1
 
    .. note:: 

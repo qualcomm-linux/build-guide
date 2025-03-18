@@ -40,7 +40,7 @@ The Ubuntu host computer must be setup to ensure that the required software tool
          git config --get user.email
          git config --get user.name
 
-         # Run the following commands if you do not have your account identity set in .gitconfig
+         # Run the following commands if you don't have your account identity set in .gitconfig
          git config --global user.email <Your email ID>
          git config --global user.name <"Your Name">
 
@@ -302,11 +302,11 @@ For more details, see `QIRP SDK 2.0 User Guide <https://docs.qualcomm.com/bundle
       
       ::
 
-         git clone https://github.com/ros/meta-ros -b kirkstone layers/meta-ros
-         git clone https://github.com/quic-yocto/meta-qcom-robotics.git layers/meta-qcom-robotics
-         git clone https://github.com/quic-yocto/meta-qcom-robotics-distro.git layers/meta-qcom-robotics-distro
-         git clone https://github.com/quic-yocto/meta-qcom-robotics-sdk.git layers/meta-qcom-robotics-sdk
-         git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk layers/meta-qcom-qim-product-sdk
+         git clone https://github.com/ros/meta-ros -b scarthgap layers/meta-ros && cd layers/meta-ros && git checkout c560699e810e60a9526f4226c2c23f8d877280c8 && cd ../../
+         git clone https://github.com/quic-yocto/meta-qcom-robotics.git -b qcom-6.6.65-QLI.1.4-Ver.1.0_robotics-product-sdk-1.0 layers/meta-qcom-robotics
+         git clone https://github.com/quic-yocto/meta-qcom-robotics-distro.git -b qcom-6.6.65-QLI.1.4-Ver.1.0_robotics-product-sdk-1.0 layers/meta-qcom-robotics-distro
+         git clone https://github.com/quic-yocto/meta-qcom-robotics-sdk.git -b qcom-6.6.65-QLI.1.4-Ver.1.0_robotics-product-sdk-1.0 layers/meta-qcom-robotics-sdk
+         git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b qcom-6.6.65-QLI.1.4-Ver.1.0_qim-product-sdk-1.1.1 layers/meta-qcom-qim-product-sdk
 
 #. Set up the build environment:
 

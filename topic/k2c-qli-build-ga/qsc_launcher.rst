@@ -37,7 +37,7 @@ Software download
 
    .. image:: ../../media/k2c-qli-build-ga/start_launcher_ab.png
 
-   -  If you do not have a connected device, click **Start Launcher** (A) on the top panel.
+   -  If you don't have a connected device, click **Start Launcher** (A) on the top panel.
    -  If you have a connected device, click **Start Launcher** (B) for the appropriate device in the **Connected devices** panel.
 
 3. On the **Specify Environment** page, select the appropriate values for **Category**, **Chipset**, **Host Operating System**, and **Target Operating System**.
@@ -72,7 +72,7 @@ Software download
    
    .. note:: You can also track the download progress through the **Downloads** option in the top menu bar.
 
-   You do not have to compile flashable binaries. If you have selected a flashable binary, follow the on-screen instructions to flash to a connected device.
+   You don't have to compile flashable binaries. If you have selected a flashable binary, follow the on-screen instructions to flash to a connected device.
 
    .. image:: ../../media/k2c-qli-build-ga/prebuilt_compile.png
 
@@ -144,7 +144,7 @@ To build your own configuration, compile the build for default machine configura
 
       .. image:: ../../media/k2c-qli-build-ga/compile_terminal_page.png
 
-      .. note:: Compilations initiated through the terminal are not tracked by the Qualcomm Software Center, making it impossible to track their progress on the Download page.
+      .. note:: Compilations initiated through the terminal aren't tracked by the Qualcomm Software Center, making it impossible to track their progress on the Download page.
 
          .. image:: ../../media/k2c-qli-build-ga/compile_terminal_dialog.png
       

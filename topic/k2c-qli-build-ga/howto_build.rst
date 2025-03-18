@@ -337,7 +337,7 @@ Download the Platform eSDK
       
       |imageunzipESDK|
 
-   #. If you do not have the necessary write permissions for the
+   #. If you don't have the necessary write permissions for the
       directory where you are trying to install the eSDK, the installer
       alerts you and then terminates. If this occurs, set up the
       permissions in the directory appropriately by using the following

@@ -72,7 +72,7 @@ The Ubuntu host computer must be setup to install the required software tools an
          git config --get user.email
          git config --get user.name
 
-         # Run the following commands if you do not have your account identity set in .gitconfig
+         # Run the following commands if you don't have your account identity set in .gitconfig
          git config --global user.email <Your email ID>
          git config --global user.name <"Your Name">
 

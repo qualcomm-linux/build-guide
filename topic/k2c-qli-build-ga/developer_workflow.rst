@@ -8,7 +8,7 @@ Sync and build with real-time Linux
 
 ``PREEMPT_RT`` patches for the Qualcomm Linux kernel are provided in the
 ``meta-qcom-realtime`` layer. This layer is available in the Qualcomm
-`GitHub <https://github.com/quic-yocto/meta-qcom-realtime>`__ and it is
+`GitHub <https://github.com/quic-yocto/meta-qcom-realtime>`__ and it's
 built on top of the BSP build image. For more information on this layer,
 see
 `meta-qcom-realtime <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-27/platform_software_features.html#meta-qcom-realtime>`__
@@ -24,7 +24,7 @@ The migration process depends on the development, branching, and integration wor
 
 1. Integrate changes for the sources that you have branched:
 
-   a. Skip this step if you have not forked any underlying source code
+   a. Skip this step if you haven't forked any underlying source code
       used by Qualcomm Yocto layers and are applying only ``.patch``
       files.
    #. Qualcomm provides git history to all the source repositories.

@@ -27,7 +27,7 @@ Docker
 
    .. note::
 
-      Do not include # comments in the JSON configuration file. Using a tab instead of space and other invisible whitespace characters might break the functionality of JSON configuration files and might also lead to ``docker.service`` failing to start.
+      don't include # comments in the JSON configuration file. Using a tab instead of space and other invisible whitespace characters might break the functionality of JSON configuration files and might also lead to ``docker.service`` failing to start.
 
    .. container:: nohighlight
       
@@ -86,8 +86,7 @@ Docker
 -  **Permission denied while trying to connect to the Docker daemon
    socket at unix:///var/run/docker.sock**
 
-   This happens when ``qsc-cli`` is already installed on the machine and
-   the user isn't part of the Docker group:
+   This happens when ``qsc-cli`` is already installed on the machine and you aren't part of the Docker group:
 
    .. container:: nohighlight
       
@@ -242,7 +241,7 @@ Sync
 
          # Find your workspace within the Qlauncher UI
          # Take a backup of the following metadata file if you want to preserve the older workspace created with Qlauncher.
-         # These will work only with Qlauncher app. You can reinstall the app at a later time again to access. If you do not 
+         # These will work only with Qlauncher app. You can reinstall the app at a later time again to access. If you don't 
          # need the workspaces, you can delete this file using:
          mv /var/lib/qcom/data/qualcomm_launcher/workspaces2.json /var/lib/qcom/data/qualcomm_launcher/workspaces2.json.bak
          # Uninstall Qlauncher with the following command:
@@ -372,7 +371,7 @@ Build
          git config --global http.postBuffer 1048576000
          git config --global http.maxRequestBuffer 1048576000
 
-   If these configurations do not work, you can retry the compile to get
+   If these configurations don't work, you can retry the compile to get
    past these intermittent errors for the first time.
 
    A few large git projects may show this error. For such projects, a
@@ -399,7 +398,7 @@ Build
 
    After creating the ``.done`` file, proceed with the
    ``bitbake <image recipe>`` command. After completing the initial build,
-   it is recommended to set up your own `download directory <https://docs.yoctoproject.org/4.0.16/singleindex.html#term-DL_DIR>`__.
+   it's recommended to set up your own `download directory <https://docs.yoctoproject.org/4.0.16/singleindex.html#term-DL_DIR>`__.
 
 -  **make[4]: /bin/sh: Argument list too long**
 
@@ -455,7 +454,7 @@ Build
    5. Share ``log.do_fetch`` from this path with the Qualcomm support team. 
       
    .. note:: Enabling git verbose logging for all recipes
-             can significantly increase the build time. It is recommended to
+             can significantly increase the build time. It's recommended to
              enable it only in required recipes on a need basis.
 
 -  **Failed SP Download with error: <> Sp Download failed. ExitCode: 128 Signal: 0 with errorcode 4**
@@ -501,7 +500,7 @@ Build
 
    This error occurs due to one of the following reasons:
 
-   -  Git clone of ``meta-qcom-qim-product-sdk`` did not complete
+   -  Git clone of ``meta-qcom-qim-product-sdk`` didn't complete
       successfully.
    -  ``meta-qcom-qim-product-sdk`` layer isn't exported to
       EXTRALAYERS.

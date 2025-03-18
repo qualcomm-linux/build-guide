@@ -13,7 +13,7 @@ The Ubuntu host computer must be setup to ensure that the required software tool
       
       ::
 
-         # Install git if you have not already installed
+         # Install git if you haven't already installed
          sudo apt install git
 
 -  Clone the ``qcom-download-utils`` git repository, which provides a Dockerfile for Qualcomm public Yocto layers and a few helper scripts:
@@ -36,7 +36,7 @@ The Ubuntu host computer must be setup to ensure that the required software tool
          sudo groupadd docker
          sudo usermod -aG docker $USER
          newgrp docker
-         # To check if user is part of a Docker group, run the following command:
+         # To check if you are part of a Docker group, run the following command:
          sudo grep /etc/group -e "docker"
 
 Check the host computer configuration
