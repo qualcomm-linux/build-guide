@@ -144,7 +144,7 @@ Build BSP image
 ^^^^^^^^^^^^^^^^^^
 Board support package (BSP) image build has software components for Qualcomm device support and value-added software features applicable to Qualcomm SoCs. It includes a reference distribution configuration for Qualcomm development kits.
 
-For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-27/platform_software_features.html#qualcomm-linux-metadata-layers-overview>`__.
+For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-27/qualcomm_linux_metadata_layers_overview.html#qualcomm-linux-metadata-layers>`__.
 
 1. Download Qualcomm Yocto and the supporting layers:
 
@@ -347,7 +347,7 @@ Build real-time Linux image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The real-time layer provides recipes and configurations required to run the Qualcomm Linux kernel as a real-time kernel. The real-time kernel runs with preemption fully enabled through a configuration, ``CONFIG_PREEMPT_RT=y``. This layer supports ``linux-kernel-qcom-rt`` recipe that fetches and builds the Qualcomm Linux kernel for the supported machine. This layer appends to the kernel and the upstream ``PREEMPT_RT`` patches based on the kernel version, and enables real-time configurations.
 
-For more details, see `Real-time kernel <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-3/features.html#real-time-rt-kernel-overview>`__.
+For more details, see `Real-time kernel <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-3/real_time_kernel_overview.html>`__.
 
 1. Download Qualcomm Yocto and the supporting layers:
 

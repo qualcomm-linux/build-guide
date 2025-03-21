@@ -126,7 +126,7 @@ Connect to a UART shell
 
 Connect to ADB
 ^^^^^^^^^^^^^^^^
-See `Install and connect to ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-253/additional_setup.html#install-adb>`__.
+See `Install and connect to ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-253/faqs.html>`__.
 
 .. _connect_to_network:
 
@@ -278,7 +278,7 @@ Establish the :ref:`network connectivity <connect_to_network>` before connecting
 .. note:: 
    
    - Connect the remote host to the same Wi-Fi access point as the device.
-   - To create a non-root user account, see `Create a non-root user account <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-253/additional_setup.html#non-root-acc>`__.
+   - To create a non-root user account, see `Create a non-root user account <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-253/faqs.html>`__.
 
 Configure Ethernet with RJ45 port
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -340,7 +340,7 @@ If you face USB or Ethernet connectivity issues on the RB3 Gen 2 device, conside
 
 .. rubric:: Prerequisites
 
-- Upgrade the software as described in `Update Software <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-253/set_up_the_device.html#ubuntu-up-sw>`__ before updating the Renesas firmware.
+- Upgrade the software as described in `Update Software <hhttps://docs.qualcomm.com/bundle/publicresource/topics/80-70018-253/qsg-landing-page.html#update-the-softwarew>`__ before updating the Renesas firmware.
 - Connect the device to the Linux host through the USB Type-C cable.
 
 .. note:: The following procedure is applicable only to Ubuntu 22.04 host. If you are using a Windows or macOS host, set up an Ubuntu virtual machine by following the instructions described in the `Virtual Machine Setup Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-41/getting-started.html>`__.

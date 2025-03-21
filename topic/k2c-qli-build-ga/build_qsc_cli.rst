@@ -121,9 +121,9 @@ For Ubuntu 22.04, you may see an issue while installing QUD, where you must enro
            ID | DEVICE TYPE | DEVICE STATE | SERIAL NUMBER | ADB SERIAL NUMBER | DESCRIPTION
            NA | NA          | EDL          | BE116704      | be116704          | Qualcomm USB Composite Device:QUSB_BULK_CID:042F_SN:BE116704
 
-      - The device reboots after the flashing procedure completes successfully. To verify the updated software version, see `Check Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-253/set_up_the_device.html#check-qualcomm-linux-version>`__.
+      - The device reboots after the flashing procedure completes successfully. To verify the updated software version, see `Verify the Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-253/set_up_the_device.html#verify-the-qualcomm-linux-version>`__.
 
-2. To establish UART and network connections, see :ref:`Connect to UART and network <connect_uart_network>`.
+2. To establish UART and network connections, see :ref:`Connect to UART shell and network <connect_uart_network>`.
 
 .. _build_own_config:
 
@@ -181,4 +181,4 @@ To build your own configuration, you must compile the build for default machine 
 
         For example, ``<Base Workspace Path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-core-kit/qcom-multimedia-image``.
 
-4. To establish UART and network connections, see :ref:`Connect to UART and network <connect_uart_network>`.
+4. To establish UART and network connections, see :ref:`Connect to UART shell and network <connect_uart_network>`.

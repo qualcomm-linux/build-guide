@@ -122,9 +122,9 @@ Build and flash default configuration
 
    e. Select :guilabel:`Done`.
 
-      .. note:: The device reboots after the flashing procedure completes successfully. To verify the updated software version, see `Check Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-253/set_up_the_device.html#check-qualcomm-linux-version>`__.
+      .. note:: The device reboots after the flashing procedure completes successfully. To verify the updated software version, see `Verify the Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-253/set_up_the_device.html#verify-the-qualcomm-linux-version>`__.
 
-   f. To establish UART and network connections, see :ref:`Connect to UART and network <connect_uart_network>`.
+   f. To establish UART and network connections, see :ref:`Connect to UART shell and network <connect_uart_network>`.
 
 .. _launcher_build_own_config:
 
@@ -173,4 +173,4 @@ To build your own configuration, compile the build for default machine configura
 
         For example, ``<Base Workspace Path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-core-kit/qcom-multimedia-image``.
 
-4. To establish UART and network connections, see :ref:`Connect to UART and network <connect_uart_network>`.
+4. To establish UART and network connections, see :ref:`Connect to UART shell and network <connect_uart_network>`.

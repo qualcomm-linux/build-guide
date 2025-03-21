@@ -1125,7 +1125,7 @@ Build BSP image with extras
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 BSP image build has the software components for Qualcomm device support and value-added software features applicable to Qualcomm SoCs. It includes a reference distribution configuration for Qualcomm development kits. The ``meta-qcom-extras`` layer enables source compilation of select components, which are otherwise present as binary.
 
-For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-27/platform_software_features.html#qualcomm-linux-metadata-layers-overview>`__.
+For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-27/qualcomm_linux_metadata_layers_overview.html#qualcomm-linux-metadata-layers>`__.
 
 1. Download Qualcomm Yocto and the supporting layers with extras:
 

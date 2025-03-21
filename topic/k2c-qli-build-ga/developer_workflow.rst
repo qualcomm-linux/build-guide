@@ -7,7 +7,7 @@ Sync and build with real-time Linux
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``meta-qcom-realtime`` layer provides ``PREEMPT_RT`` patches for the Qualcomm Linux kernel. This layer is available in the Qualcomm `GitHub <https://github.com/quic-yocto/meta-qcom-realtime>`__ and it's built on top of the BSP build image. For more information on this layer, see
-`meta-qcom-realtime <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-27/platform_software_features.html#meta-qcom-realtime>`__
+`meta-qcom-realtime <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-27/qualcomm_linux_metadata_layers_overview.html#meta-qcom-realtime>`__
 from the `Qualcomm Linux Yocto Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-27>`__.
 
 To sync and build real-time Linux, see :ref:`Build real-time Linux image <build_real_time_linux_image_unreg>`.
@@ -46,7 +46,7 @@ The migration process depends on the development, branching, and integration wor
 Build a Qualcomm Linux kernel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-See `building kernel image <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-3/yocto-kernel-support.html#build-kernel-image>`__.
+See `building kernel image <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-3/yocto-kernel-support.html#build-the-kernel-image>`__.
 
 Customize Qualcomm Yocto layers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -39,6 +39,9 @@ Related documents
    * - `Qualcomm Software Center User Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-72780-2/>`__
      - 80-72780-2
 
+   * - `QCS615.LE.1.0 Software User Guide <https://docs.qualcomm.com/bundle/resource/topics/80-70018-75/introduction_1.html>`__
+     - 80-70018-75 
+
    * - :cspan:`1` **Resources**      
 
    * - Qualcomm manifest
