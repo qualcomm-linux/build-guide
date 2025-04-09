@@ -67,40 +67,32 @@ Images directory structure after successful build
 
    The following table describes the files in the images directory:
    
-   +-----------------------------+----------------------------------------+
-   | Filename                    | Description                            |
-   +=============================+========================================+
-   | ``.mbn`` and ``*.elf``      | Boot critical images                   |
-   +-----------------------------+----------------------------------------+
-   | ``gpt_main*.bin``           | GUID partition table binaries for the  |
-   |                             | primary partition table                |
-   +-----------------------------+----------------------------------------+
-   | ``gpt_backup*.bin``         | GUID partition table binaries for the  |
-   |                             | secondary partition table              |
-   +-----------------------------+----------------------------------------+
-   | ``system.img``              | Rootfs image                           |
-   +-----------------------------+----------------------------------------+
-   | ``rawprogram*.xml``         | Image ``lun`` and start sector ``lba`` |
-   |                             | values                                 |
-   +-----------------------------+----------------------------------------+
-   | ``efi.bin``                 | EFI system partition image. For more   |
-   |                             | information, see `Qualcomm Linux Yocto |
-   |                             | Guide <ht                              |
-   |                             | tps://docs.qualcomm.com/bundle/publicr |
-   |                             | esource/topics/80-70018-27/platform_so |
-   |                             | ftware_features.html#partitioning>`__. |
-   +-----------------------------+----------------------------------------+
-   | ``qdl``                     | Flashing tool binary                   |
-   +-----------------------------+----------------------------------------+
-   | ``dtb.bin``                 | Binary image that bundles all DTB      |
-   |                             | binaries generated during build        |
-   +-----------------------------+----------------------------------------+
-   | ``vmlinux``                 | Compile kernel ``elf`` binary          |
-   +-----------------------------+----------------------------------------+
-   | ``Image``                   | Linux kernel ARM64 boot executable     |
-   |                             | image                                  |
-   +-----------------------------+----------------------------------------+
+   .. list-table:: 
+      :header-rows: 1
+      :align: center
 
+      * - Filename
+        - Description
+      * - ``.mbn`` and ``*.elf``
+        - Boot critical images
+      * - ``gpt_main*.bin``
+        - GUID partition table binaries for the primary partition table
+      * - ``gpt_backup*.bin``
+        - GUID partition table binaries for the secondary partition table
+      * - ``system.img``
+        - Rootfs image
+      * - ``rawprogram*.xml``
+        - Image ``lun`` and start sector ``lba`` values
+      * - ``efi.bin``
+        - EFI system partition image. For more information, see `Qualcomm Linux Yocto Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-27/qualcomm_linux_software_components.html#managing-partitions-in-qualcomm-linux>`__.
+      * - ``qdl``
+        - Flashing tool binary
+      * - ``dtb.bin``
+        - Binary image that bundles all DTB binaries generated during build
+      * - ``vmlinux``
+        - Compile kernel ``elf`` binary
+      * - ``Image``
+        - Linux kernel ARM64 boot executable image
 
 .. |ws_standalone_3| image:: ../../media/k2c-qli-build-ga/ws_standalone_3.png
 .. |ws_standalone_4| image:: ../../media/k2c-qli-build-ga/ws_standalone_4.png

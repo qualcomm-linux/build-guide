@@ -259,25 +259,20 @@ Provide an absolute path for ``<TOOLS_DIR>`` in ``qpm-cli`` and export commands 
 Image recipes supported in the GitHub workflow
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+------------------------------------+------------------------------------------+
-| Image recipe                       | Description                              |
-+====================================+==========================================+
-| ``qcom-minimal-image``             | A minimal rootfs image that              |
-|                                    | boots to shell                           |
-+------------------------------------+------------------------------------------+
-| ``qcom-console-image``             | Boot to shell with package               |
-|                                    | group to bring in all the basic          |
-|                                    | packages                                 |
-+------------------------------------+------------------------------------------+
-| ``qcom-multimedia-image``          | Image recipe includes recipes            |
-|                                    | for multimedia software                  |
-|                                    | components, such as, audio,              |
-|                                    | Bluetooth\ :sup:`®`, camera, computer    |
-|                                    | vision, display, and video.              |
-+------------------------------------+------------------------------------------+
-| ``qcom-multimedia-test-image``     | Image recipe that includes               |
-|                                    | tests                                    |
-+------------------------------------+------------------------------------------+
+.. list-table:: 
+   :header-rows: 1
+   :align: center
+
+   * - Image recipe
+     - Description
+   * - ``qcom-minimal-image``
+     - A minimal rootfs image that boots to shell
+   * - ``qcom-console-image``   
+     - Boot to shell with package group to bring in all the basic packages
+   * - ``qcom-multimedia-image``  
+     - Image recipe includes recipes for multimedia software components, such as, audio, Bluetooth\ :sup:`®`, camera, computer vision, display, and video.
+   * - ``qcom-multimedia-test-image`` 
+     - Image recipe that includes tests
 
 .. _download_platform_esdk:
 
