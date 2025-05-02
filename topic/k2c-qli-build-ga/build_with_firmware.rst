@@ -713,7 +713,7 @@ Build firmware
       
                ::
 
-                  python -u boot_images/boot_tools/buildex.py -t lemans,QcomToolsPkg - v LAA -r RELEASE --build_flags=cleanall
+                  python -u boot_images/boot_tools/buildex.py -t lemans,QcomToolsPkg -v LAA -r RELEASE --build_flags=cleanall
 
          #. Build the image:
 
@@ -721,7 +721,7 @@ Build firmware
       
                ::
 
-                  python -u boot_images/boot_tools/buildex.py -t lemans,QcomToolsPkg - v LAA -r RELEASE
+                  python -u boot_images/boot_tools/buildex.py -t lemans,QcomToolsPkg -v LAA -r RELEASE
 
             .. note:: 
                For debug variant builds, replace ``RELEASE`` with ``DEBUG``.
@@ -1006,7 +1006,7 @@ Build firmware
       
                ::
 
-                  python -u boot_images/boot_tools/buildex.py -t monaco,QcomToolsPkg - v LAA -r RELEASE --build_flags=cleanall
+                  python -u boot_images/boot_tools/buildex.py -t monaco,QcomToolsPkg -v LAA -r RELEASE --build_flags=cleanall
 
          #. Build the image:
 
@@ -1014,7 +1014,7 @@ Build firmware
       
                ::
 
-                  python -u boot_images/boot_tools/buildex.py -t monaco,QcomToolsPkg - v LAA -r RELEASE
+                  python -u boot_images/boot_tools/buildex.py -t monaco,QcomToolsPkg -v LAA -r RELEASE
 
             .. note:: 
                For debug variant builds, replace ``RELEASE`` with ``DEBUG``.
