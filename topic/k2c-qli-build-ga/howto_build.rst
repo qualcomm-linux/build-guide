@@ -222,7 +222,6 @@ Build a standalone QDL
 
          git clone --branch master https://github.com/linux-msm/qdl
          cd qdl
-         git checkout cbd46184d33af597664e08aff2b9181ae2f87aa6
          make
 
 2. Flash using the generated QDL:
@@ -231,7 +230,16 @@ Build a standalone QDL
       
       ::
 
-         ./qdl --storage ufs --include <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image/prog_firehose_ddr.elf <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image/rawprogram*.xml <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image/patch*.xml
+         # Built images are under <workspace_path>/build-<DISTRO>/tmp-glibc/deploy/images/<MACHINE>/<IMAGE>
+         # build_path: For DISTRO=qcom-wayland, it's build-qcom-wayland. 
+         #             For DISTRO=qcom-robotics-ros2-humble, it's build-qcom-robotics-ros2-humble
+         # qdl <prog.mbn> [<program> <patch> ...]
+         # Example: build_path is build-qcom-wayland
+         cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image
+         # For UFS storage
+         <qdl_download_path>/qdl_<version>/QDL_Linux_x64/qdl --storage ufs prog_firehose_ddr.elf rawprogram*.xml patch*.xml
+         # For EMMC storage
+         <qdl_download_path>/qdl_<version>/QDL_Linux_x64/qdl --storage emmc prog_firehose_ddr.elf rawprogram0.xml patch0.xml
 
 .. _change_hex_tool_install_path:
 
@@ -251,7 +259,7 @@ Provide an absolute path for ``<TOOLS_DIR>`` in ``qsc-cli`` and export commands 
       # Example
       
       mkdir -p <TOOLS_DIR>
-      qsc-cli tool extract hexagon8.4 --version 8.4.07 --path <TOOLS_DIR>/8.4.07
+      qsc-cli tool extract --name hexagon8.4 --required-version 8.4.07 --path <TOOLS_DIR>/8.4.07
       export HEXAGON_ROOT=<TOOLS_DIR>
 
 .. _image_recipes_github_workflow:

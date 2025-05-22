@@ -132,7 +132,7 @@ Connect to a UART shell
 
 Connect to ADB
 ^^^^^^^^^^^^^^^^
-See `Install and connect to ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-253/faqs.html>`__.
+See `Install and connect to ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-253/faqs.html#install-adb>`__.
 
 .. _connect_to_network:
 

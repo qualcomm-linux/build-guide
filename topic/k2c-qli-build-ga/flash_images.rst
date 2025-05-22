@@ -444,7 +444,7 @@ CDT provides platform/device-dependent data such as platform ID, subtype, versio
          # For UFS storage
          <qdl_download_path>/qdl_<version>/QDL_Linux_x64/qdl --storage ufs prog_firehose_ddr.elf rawprogram3.xml patch3.xml
          # For EMMC storage
-         <qdl_download_path>/qdl_<version>/QDL_Linux_x64/qdl --storage emmc prog_firehose_ddr.elf rawprogram3.xml patch3.xml
+         <qdl_download_path>/qdl_<version>/QDL_Linux_x64/qdl --storage emmc prog_firehose_ddr.elf rawprogram*.xml patch*.xml
 
    .. note:: Use QDL binary based on the host computer architecture. For example, linux_x64 supported qdl binary is ``qdl_<version>/QDL_Linux_x64/qdl``.
 
@@ -495,7 +495,7 @@ Flash software using QDL
          # For UFS storage
          <qdl_download_path>/qdl_<version>/QDL_Linux_x64/qdl --storage ufs prog_firehose_ddr.elf rawprogram*.xml patch*.xml
          # For EMMC storage
-         <qdl_download_path>/qdl_<version>/QDL_Linux_x64/qdl --storage emmc prog_firehose_ddr.elf rawprogram*.xml patch*.xml
+         <qdl_download_path>/qdl_<version>/QDL_Linux_x64/qdl --storage emmc prog_firehose_ddr.elf rawprogram0.xml patch0.xml
 
    .. note:: Use QDL binary based on the host computer architecture. For example, linux_x64 supported qdl binary is ``qdl_<version>/QDL_Linux_x64/qdl``.
 

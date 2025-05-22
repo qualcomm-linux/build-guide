@@ -276,6 +276,7 @@ For more details, see `QIMP SDK Quick Start Guide <https://docs.qualcomm.com/bun
 .. _build_qirp_sdk_image_unreg:
 
 Build QIRP SDK image
+^^^^^^^^^^^^^^^^^^^^^
 .. note:: This is not applicable for QCS615.
 
 The Qualcomm® Intelligent Robotics Product (QIRP) SDK 2.0 is a collection of components that enable you to develop robotic features on Qualcomm platforms.    This SDK is applicable to the Qualcomm Linux releases.

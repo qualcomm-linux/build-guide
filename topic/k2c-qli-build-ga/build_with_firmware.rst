@@ -257,14 +257,14 @@ Build firmware
 
                   # Log in to qsc-cli and activate the license
                   qsc-cli --login
-                  qsc-cli tool activate-license sdllvm_arm
+                  qsc-cli tool activate-license --name sdllvm_arm
 
                   # LLVM requirement for boot compilation is 14.0.4
-                  qsc-cli tool install sdllvm_arm --version 14.0.4 --path <FIRMWARE_ROOT>/llvm/14.0.4
+                  qsc-cli tool install --name sdllvm_arm --required-version 14.0.4 --path <FIRMWARE_ROOT>/llvm/14.0.4
                   chmod -R 777 <FIRMWARE_ROOT>/llvm/14.0.4
 
                   # LLVM requirement for Qualcomm TEE compilation is 16.0.7
-                  qsc-cli tool install sdllvm_arm --version 16.0.7 --path <FIRMWARE_ROOT>/llvm/16.0.7
+                  qsc-cli tool install --name sdllvm_arm --required-version 16.0.7 --path <FIRMWARE_ROOT>/llvm/16.0.7
                   chmod -R 777 <FIRMWARE_ROOT>/llvm/16.0.7
 
          -  Export the ``SECTOOLS`` variable and compile the firmware builds (``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk`` is the top-level directory):
@@ -282,7 +282,7 @@ Build firmware
       
                ::
 
-                  qsc-cli tool extract hexagon8.4 --version 8.4.07
+                  qsc-cli tool extract --name hexagon8.4 --required-version 8.4.07
                   export HEXAGON_ROOT=$HOME/Qualcomm/HEXAGON_Tools
                   echo $HEXAGON_ROOT
 
@@ -576,14 +576,14 @@ Build firmware
 
                   # Log in to qsc-cli and activate the license
                   qsc-cli --login
-                  qsc-cli tool activate-license sdllvm_arm
+                  qsc-cli tool activate-license --name sdllvm_arm
 
                   # LLVM requirement for boot compilation is 14.0.4
-                  qsc-cli tool install sdllvm_arm --version 14.0.4 --path <FIRMWARE_ROOT>/llvm/14.0.4
+                  qsc-cli tool install --name sdllvm_arm --required-version 14.0.4 --path <FIRMWARE_ROOT>/llvm/14.0.4
                   chmod -R 777 <FIRMWARE_ROOT>/llvm/14.0.4
 
                   # LLVM requirement for Qualcomm TEE compilation is 16.0.7
-                  qsc-cli tool install sdllvm_arm --version 16.0.7 --path <FIRMWARE_ROOT>/llvm/16.0.7
+                  qsc-cli tool install --name sdllvm_arm --required-version 16.0.7 --path <FIRMWARE_ROOT>/llvm/16.0.7
                   chmod -R 777 <FIRMWARE_ROOT>/llvm/16.0.7
 
          -  Export the ``SECTOOLS`` variable and compile the firmware builds (``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk`` is the top-level directory):
@@ -601,7 +601,7 @@ Build firmware
       
                ::
 
-                  qsc-cli tool extract hexagon8.6 --version 8.6.05.2
+                  qsc-cli tool extract --name hexagon8.6 --required-version 8.6.05.2
                   export HEXAGON_ROOT=$HOME/Qualcomm/HEXAGON_Tools
                   echo $HEXAGON_ROOT
 
@@ -870,14 +870,14 @@ Build firmware
 
                   # Log in to qsc-cli and activate the license
                   qsc-cli --login
-                  qsc-cli tool activate-license sdllvm_arm
+                  qsc-cli tool activate-license --name sdllvm_arm
 
                   # LLVM requirement for boot compilation is 14.0.4
-                  qsc-cli tool install sdllvm_arm --version 14.0.4 --path <FIRMWARE_ROOT>/llvm/14.0.4
+                  qsc-cli tool install --name sdllvm_arm --required-version 14.0.4 --path <FIRMWARE_ROOT>/llvm/14.0.4
                   chmod -R 777 <FIRMWARE_ROOT>/llvm/14.0.4
 
                   # LLVM requirement for Qualcomm TEE compilation is 16.0.7
-                  qsc-cli tool install sdllvm_arm --version 16.0.7 --path <FIRMWARE_ROOT>/llvm/16.0.7
+                  qsc-cli tool install --name sdllvm_arm --required-version 16.0.7 --path <FIRMWARE_ROOT>/llvm/16.0.7
                   chmod -R 777 <FIRMWARE_ROOT>/llvm/16.0.7
 
          -  Export the ``SECTOOLS`` variable and compile the firmware builds (``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk`` is the top-level directory):
@@ -895,8 +895,8 @@ Build firmware
       
                ::
 
-                  qsc-cli tool extract hexagon8.6 --version 8.6.05.2
-                  qsc-cli tool extract hexagon8.7 --version 8.7.02.1
+                  qsc-cli tool extract --name hexagon8.6 --required-version 8.6.05.2
+                  qsc-cli tool extract --name hexagon8.7 --required-version 8.7.02.1
                   export HEXAGON_ROOT=$HOME/Qualcomm/HEXAGON_Tools
                   echo $HEXAGON_ROOT
 
@@ -1162,18 +1162,18 @@ Build firmware
 
                   # Log in to qsc-cli and activate the license
                   qsc-cli --login
-                  qsc-cli tool activate-license sdllvm_arm
+                  qsc-cli tool activate-license --name sdllvm_arm
 
                   # LLVM requirement for boot compilation is 14.0.4
-                  qsc-cli tool install sdllvm_arm --version 14.0.4 --path <FIRMWARE_ROOT>/llvm/14.0.4
+                  qsc-cli tool install --name sdllvm_arm --required-version 14.0.4 --path <FIRMWARE_ROOT>/llvm/14.0.4
                   chmod -R 777 <FIRMWARE_ROOT>/llvm/4.0.2
 
                   # LLVM requirement for Qualcomm TEE compilation is 16.0.7
-                  qsc-cli tool install sdllvm_arm --version 16.0.7 --path <FIRMWARE_ROOT>/llvm/16.0.7
+                  qsc-cli tool install --name sdllvm_arm --required-version 16.0.7 --path <FIRMWARE_ROOT>/llvm/16.0.7
                   chmod -R 777 <FIRMWARE_ROOT>/llvm/16.0.7
 
                   # LLVM requirement for AOP is 3.9.3
-                  qsc-cli tool install sdllvm_arm --version 3.9.3 --path <FIRMWARE_ROOT>/llvm/3.9.3
+                  qsc-cli tool install --name sdllvm_arm --required-version 3.9.3 --path <FIRMWARE_ROOT>/llvm/3.9.3
                   chmod -R 777 <FIRMWARE_ROOT>/llvm/3.9.3
 
          -  Export the ``SECTOOLS`` variable and compile the firmware builds (``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk`` is the top-level directory):
@@ -1191,7 +1191,7 @@ Build firmware
       
                ::
 
-                  qsc-cli tool extract hexagon8.2 --version 8.2.05.1
+                  qsc-cli tool extract --name hexagon8.2 --required-version 8.2.05.1
                   export HEXAGON_ROOT=$HOME/Qualcomm/HEXAGON_Tools
                   echo $HEXAGON_ROOT
 
