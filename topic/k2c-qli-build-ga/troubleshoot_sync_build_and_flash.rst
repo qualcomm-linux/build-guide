@@ -22,8 +22,7 @@ Docker
 
 -  **Error response from daemon: Get “https://registry-1.docker.io/v2/”: http: server gave HTTP response to HTTPS client**
 
-   Add an internal Docker registry mirror (internal setting for Qualcomm
-   network).
+   Add an internal Docker registry mirror (internal setting for the Qualcomm network).
 
    .. note::
 

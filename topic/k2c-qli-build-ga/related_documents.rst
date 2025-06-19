@@ -18,13 +18,13 @@ Related documents
    * - `Qualcomm Linux Yocto Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-27>`__
      - 80-70020-27
 
-   * - `Qualcomm Linux Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/>`__
-     - RNO-250403001134
+   * - `Qualcomm Linux Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__
+     - RNO-250617225208
 
    * - `Qualcomm Linux Kernel Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-3>`__
      - 80-70020-3
 
-   * - `RB3 Gen 2 Quick Start Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-253>`__
+   * - `Qualcomm Dragonwing RB3 Gen 2 Quick Start Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-253>`__
      - 80-70020-253
 
    * - `Qualcomm® Intelligent Multimedia (IM SDK) Quick Start Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-51>`__

@@ -3,11 +3,11 @@
 Build with Dockerfile
 -------------------------
 
-Ubuntu host setup
-^^^^^^^^^^^^^^^^^^^^^
+Set up the Ubuntu host computer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Install and configure the required software tools on the Ubuntu host computer.
 
--  Install git:
+1. Install git:
 
    .. container:: nohighlight
       
@@ -16,7 +16,7 @@ Install and configure the required software tools on the Ubuntu host computer.
          # Install git if you haven't already installed
          sudo apt install git
 
--  Clone the ``qcom-download-utils`` git repository, which provides a Dockerfile for Qualcomm public Yocto layers and a few helper scripts:
+#. Clone the ``qcom-download-utils`` git repository, which provides a Dockerfile for the Qualcomm public Yocto layers and a few helper scripts:
 
    .. container:: nohighlight
       
@@ -27,7 +27,7 @@ Install and configure the required software tools on the Ubuntu host computer.
          git clone https://git.codelinaro.org/clo/le/qcom-download-utils.git
          cd qcom-download-utils
 
--  Add the user to the Docker group:
+#. Add the user to the Docker group:
 
    .. container:: nohighlight
       
@@ -39,10 +39,7 @@ Install and configure the required software tools on the Ubuntu host computer.
          # To check if you are part of a Docker group, run the following command:
          sudo grep /etc/group -e "docker"
 
-Check the host computer configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
--  Configure your host computer:
+#. Configure your host computer:
 
    .. container:: nohighlight
       
@@ -51,7 +48,7 @@ Check the host computer configuration
          bash utils/check_config.sh
          # Resolve the errors and run this command until no errors show up
 
--  Install Docker:
+#. Install Docker:
 
    .. container:: nohighlight
       
@@ -69,12 +66,9 @@ Check the host computer configuration
 Build a BSP image
 ^^^^^^^^^^^^^^^^^^^^^
 
-Create a Yocto Docker image and build:
+Create and build a Yocto Docker image:
 
-1. Run ``docker_build.sh`` to create the Docker image with Dockerfile
-   (**Dockerfile_22.04**) and Dockertag
-   (**qcom-6.6.65-qli.1.4-ver.1.1_22.04**). Use this Docker image to
-   create the container environment and run the Yocto build.
+1. Run ``docker_build.sh`` to create the Docker image with Dockerfile (*Dockerfile_22.04*) and Dockertag (``qcom-6.6.65-qli.1.4-ver.1.1_22.04``). Use this Docker image to create the container environment and run the Yocto build.
 
    **Dockertag**: Use lowercase letters for the release folder followed by the Dockerfile OS version, to identify the release build with the Dockerfile. Docker doesn't allow uppercase letters in the Dockertag.
 
@@ -122,8 +116,7 @@ Create a Yocto Docker image and build:
          bash docker/docker_run.sh -t qcom-6.6.65-qli.1.4-ver.1.1_22.04 -r qcom-6.6.90-QLI.1.5-Ver.1.0 -M <machine> --build-override <override> --alternate-repo true
          # Example, bash docker/docker_run.sh -t qcom-6.6.65-qli.1.4-ver.1.1_22.04 -r qcom-6.6.90-QLI.1.5-Ver.1.0 -M qcs6490-rb3gen2-vision-kit --build-override custom --alternate-repo true 
 
-   .. note::
-      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/>`__.
+   For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__.
 
    The build workspace is available in
    ``<qcom-download-utils download path>/<release>/build-qcom-wayland``.
@@ -141,6 +134,7 @@ Build Qualcomm IM SDK image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. :ref:`Build a BSP image <build_with_docker_bsp_image>` using Docker.
+ 
 #. Build Qualcomm IM SDK on top of the base image using Docker:
 
    a. Run the ``docker run`` command:
@@ -163,7 +157,7 @@ Build Qualcomm IM SDK image
             git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b <meta-qcom-qim-product-sdk release tag> layers/meta-qcom-qim-product-sdk
             # Example, <meta-qcom-qim-product-sdk release tag> is qcom-6.6.90-QLI.1.5-Ver.1.0_qim-product-sdk-2.0.0
 
-      Build the Qualcomm IM SDK layer:
+   #. Export the Qualcomm IM SDK layer:
 
       .. container:: nohighlight
       
@@ -182,8 +176,7 @@ Build Qualcomm IM SDK image
             # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
             # and enters into build-qcom-wayland directory.
 
-      .. note::
-          For the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/>`__.
+      For the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__.
 
    #. Build the software image:
 
@@ -245,8 +238,7 @@ To rebuild after any modifications to the software release, use your existing wo
          # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
          # and enters into build-qcom-wayland directory.
 
-   .. note::
-      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/>`__.
+   For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__.
 
 #. Build the software image:
 

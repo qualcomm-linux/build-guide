@@ -206,9 +206,7 @@ The following ``git clone`` command downloads the selected firmware components i
       git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk.git
       # Example, <firmware release tag> is r1.0_00090.0
 
-.. note:: 
-   - The ``git clone`` command clones the content into the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk`` directory.
-   - For the latest ``<firmware release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/>`__.
+The ``git clone`` command clones the content into the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk`` directory. For the latest ``<firmware release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__.
 
 Build firmware
 ^^^^^^^^^^^^^^^^^^^^^
@@ -263,7 +261,7 @@ Build firmware
                   qsc-cli tool install --name sdllvm_arm --required-version 14.0.4 --path <FIRMWARE_ROOT>/llvm/14.0.4
                   chmod -R 777 <FIRMWARE_ROOT>/llvm/14.0.4
 
-                  # LLVM requirement for Qualcomm TEE compilation is 16.0.7
+                  # LLVM requirement for the Qualcomm TEE compilation is 16.0.7
                   qsc-cli tool install --name sdllvm_arm --required-version 16.0.7 --path <FIRMWARE_ROOT>/llvm/16.0.7
                   chmod -R 777 <FIRMWARE_ROOT>/llvm/16.0.7
 
@@ -582,7 +580,7 @@ Build firmware
                   qsc-cli tool install --name sdllvm_arm --required-version 14.0.4 --path <FIRMWARE_ROOT>/llvm/14.0.4
                   chmod -R 777 <FIRMWARE_ROOT>/llvm/14.0.4
 
-                  # LLVM requirement for Qualcomm TEE compilation is 16.0.7
+                  # LLVM requirement for the Qualcomm TEE compilation is 16.0.7
                   qsc-cli tool install --name sdllvm_arm --required-version 16.0.7 --path <FIRMWARE_ROOT>/llvm/16.0.7
                   chmod -R 777 <FIRMWARE_ROOT>/llvm/16.0.7
 
@@ -815,7 +813,7 @@ Build firmware
 
          Create an integrated firmware binary from the individual components that you compiled:
 
-         .. note:: Apply all the changes from the section *Additional information* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/ReleaseNote.html#additional-information>`__.
+         .. note:: Apply all the changes from the section *Additional information* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/ReleaseNote.html#additional-information>`__.
 
          .. container:: nohighlight
       
@@ -876,7 +874,7 @@ Build firmware
                   qsc-cli tool install --name sdllvm_arm --required-version 14.0.4 --path <FIRMWARE_ROOT>/llvm/14.0.4
                   chmod -R 777 <FIRMWARE_ROOT>/llvm/14.0.4
 
-                  # LLVM requirement for Qualcomm TEE compilation is 16.0.7
+                  # LLVM requirement for the Qualcomm TEE compilation is 16.0.7
                   qsc-cli tool install --name sdllvm_arm --required-version 16.0.7 --path <FIRMWARE_ROOT>/llvm/16.0.7
                   chmod -R 777 <FIRMWARE_ROOT>/llvm/16.0.7
 
@@ -1124,11 +1122,9 @@ Build firmware
 
 Build a BSP image with extras
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-BSP image build has the software components for Qualcomm device support and software features applicable to Qualcomm SoCs. This build includes a reference distribution configuration for Qualcomm development kits. The ``meta-qcom-extras`` layer enables source compilation of select components, which are otherwise present as binary.
+The BSP image build has software components for the Qualcomm device support and software features applicable to the Qualcomm SoCs. This build includes a reference distribution configuration for the Qualcomm development kits. The ``meta-qcom-extras`` layer enables source compilation of select components, which are otherwise present as binary. For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-27/qualcomm_linux_metadata_layers_overview.html#qualcomm-linux-metadata-layers>`__.
 
-For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-27/qualcomm_linux_metadata_layers_overview.html#qualcomm-linux-metadata-layers>`__.
-
-1. Download Qualcomm Yocto and the supporting layers with extras:
+1. Download Qualcomm Yocto and the supporting layers with extras. For the ``<manifest release tag>`` and ``<meta-qcom-extras release tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__.
 
    .. container:: nohighlight
       
@@ -1144,9 +1140,7 @@ For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com
          # Example, <meta-qcom-extras release tag> is r1.0_00092.0
          mkdir -p layers/meta-qcom-extras
          cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/<product>/common/config/meta-qcom-extras/* layers/meta-qcom-extras/
-         # An example <product> is QCM6490.LE.1.0. For more information about <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/).
-
-   .. note:: For the ``<manifest release tag>`` and ``<meta-qcom-extras release tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/>`__.
+         # An example <product> is QCM6490.LE.1.0. For more information about <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/).
 
 #. Set up the Yocto build:
 
@@ -1173,7 +1167,7 @@ For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com
          # Example, for QCM6490, the directory path must contain QCM6490_bootbinaries.zip, QCM6490_dspso.zip, and QCM6490_fw.zip. 
          # Set the environment variable to pick up the prebuilts:
          export FWZIP_PATH="<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/<product>/common/build/ufs/bin"
-         # An example <product> is QCM6490.LE.1.0. For more information about <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/).
+         # An example <product> is QCM6490.LE.1.0. For more information about <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/).
 
 #. Set up the build environment:
 
@@ -1186,7 +1180,7 @@ For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com
          # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
          # and enters into build-qcom-wayland directory.
 
-   .. note:: To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/>`__.
+   .. note:: To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__.
 
 #. Compile the Yocto build:
 
@@ -1206,7 +1200,7 @@ For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com
             bitbake -fc cleansstate qcom-multimedia-image
             bitbake -fc cleanall qcom-multimedia-image
 
-   After a successful build, check that the ``system.img`` file is in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image`` directory:
+#. After a successful build, check that the ``system.img`` file is in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image`` directory:
 
    .. container:: nohighlight
       
@@ -1219,12 +1213,9 @@ For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com
 
 Build Qualcomm IM SDK image with extras
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The Qualcomm IM SDK is a collection of four standalone function SDKs: Qualcomm IM SDK, Qualcomm Neural Processing SDK, Qualcomm AI Engine direct SDK, and LiteRT. It also includes reference applications that you can use to develop use cases. The ``meta-qcom-extras`` layer enables source compilation of select components, which are otherwise present as binary.
+The Qualcomm IM SDK is a collection of four standalone function SDKs: Qualcomm IM SDK, Qualcomm Neural Processing SDK, Qualcomm AI Engine direct SDK, and LiteRT. This SDK also includes reference applications that you can use to develop use cases. The ``meta-qcom-extras`` layer enables source compilation of select components, which are otherwise present as binary. For more details, see `Qualcomm IM SDK Quick Start Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-51>`__.
 
-For more details, see `Qualcomm IM SDK Quick Start Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-51>`__.
-
-1. Download the Qualcomm IM SDK layers, Qualcomm Yocto layer, and the supporting layers with
-   extras:
+1. Download the Qualcomm IM SDK layers, Qualcomm Yocto layer, and the supporting layers with extras. For the ``<manifest release tag>`` and ``<meta-qcom-extras release tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__.
 
    .. container:: nohighlight
       
@@ -1237,13 +1228,11 @@ For more details, see `Qualcomm IM SDK Quick Start Guide <https://docs.qualcomm.
          # Example, <manifest release tag> is qcom-6.6.90-QLI.1.5-Ver.1.0.xml
          repo sync
          git clone https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_hlos_oem_metadata.git -b <meta-qcom-extras release tag> --depth 1
-         # Example, <meta-qcom-extras release tag> is r1.0_0005.0
+         # Example, <meta-qcom-extras release tag> is r1.0_00092.0
          mkdir -p layers/meta-qcom-extras
          cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/<product>/common/config/meta-qcom-extras/* layers/meta-qcom-extras/
-         # An example <product> is QCM6490.LE.1.0. For more information about <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/).
+         # An example <product> is QCM6490.LE.1.0. For more information about <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/).
          git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b qcom-6.6.90-QLI.1.5-Ver.1.0_qim-product-sdk-2.0.0 layers/meta-qcom-qim-product-sdk
-
-   .. note:: For the ``<manifest release tag>`` and ``<meta-qcom-extras release tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/>`__.
 
 #. Set up the Yocto build:
 
@@ -1270,7 +1259,7 @@ For more details, see `Qualcomm IM SDK Quick Start Guide <https://docs.qualcomm.
          # Example, for QCM6490, the directory path must contain QCM6490_bootbinaries.zip, QCM6490_dspso.zip, and QCM6490_fw.zip.
          # Set the environment variable to pick up the prebuilts:
          export FWZIP_PATH="<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/<product>/common/build/ufs/bin"
-         # An example <product> is QCM6490.LE.1.0. For more information about <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/).
+         # An example <product> is QCM6490.LE.1.0. For more information about <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/).
 
 #. Set up the build environment:
 
@@ -1283,8 +1272,7 @@ For more details, see `Qualcomm IM SDK Quick Start Guide <https://docs.qualcomm.
          # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
          # and enters into build-qcom-wayland directory.
 
-   .. note::
-      To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/>`__.
+   To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__.
 
 #. Compile the Qualcomm IM SDK build:
 
@@ -1309,7 +1297,7 @@ For more details, see `Qualcomm IM SDK Quick Start Guide <https://docs.qualcomm.
             bitbake -fc cleansstate qcom-qim-product-sdk
             bitbake -fc cleanall qcom-qim-product-sdk
 
-   After a successful build, check that the ``system.img`` file is in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image`` directory:
+#. After a successful build, check that the ``system.img`` file is in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image`` directory:
 
    .. container:: nohighlight
       
@@ -1322,14 +1310,11 @@ For more details, see `Qualcomm IM SDK Quick Start Guide <https://docs.qualcomm.
 
 Build QIR SDK image with extras
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The QIR SDK 2.0 is a collection of components that enable you to develop robotic features on Qualcomm Linux releases. The ``meta-qcom-extras`` layer enables source compilation of select components, which are otherwise available as binaries.
-
-For more details, see `QIR SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-265>`__.
+The QIR SDK 2.0 is a collection of components that let you develop robotic features on Qualcomm Linux releases. The ``meta-qcom-extras`` layer enables source compilation of select components, which are otherwise available as binaries. For more details, see `QIR SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-265>`__.
 
 .. note:: Before you begin, clone the respective firmware for QIR SDK, for example, ``qualcomm-linux-spf-1-0_ap_standard_oem_nm-qirpsdk``.
 
-1. Download QIR SDK layers, Qualcomm Yocto, and supporting layers with
-   extras:
+1. Download QIR SDK layers, Qualcomm Yocto, and supporting layers with extras. For the ``<manifest release tag>``, ``<meta-qcom-extras release tag>``, and ``<meta-qcom-qim-product-sdk release tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
 
    .. container:: nohighlight
       
@@ -1347,7 +1332,7 @@ For more details, see `QIR SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/
          mkdir -p layers/meta-qcom-robotics-extras
          cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/<product>/common/config/meta-qcom-extras/* layers/meta-qcom-extras/
          cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/<product>/common/config/meta-qcom-robotics-extras/* layers/meta-qcom-robotics-extras/
-         # An example <product> is QCM6490.LE.1.0. For more information about <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/).
+         # An example <product> is QCM6490.LE.1.0. For more information about <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/).
 
          git clone https://github.com/ros/meta-ros -b scarthgap layers/meta-ros && cd layers/meta-ros && git checkout c560699e810e60a9526f4226c2c23f8d877280c8 && cd ../../
          git clone https://github.com/quic-yocto/meta-qcom-robotics.git -b qcom-6.6.90-QLI.1.5-Ver.1.0_robotics-product-sdk-1.0 layers/meta-qcom-robotics
@@ -1355,9 +1340,6 @@ For more details, see `QIR SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/
          git clone https://github.com/quic-yocto/meta-qcom-robotics-sdk.git -b qcom-6.6.90-QLI.1.5-Ver.1.0_robotics-product-sdk-1.0 layers/meta-qcom-robotics-sdk
          git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b qcom-6.6.90-QLI.1.5-Ver.1.0_qim-product-sdk-2.0.0 layers/meta-qcom-qim-product-sdk
          # Example, <meta-qcom-qim-product-sdk release tag> is qcom-6.6.90-QLI.1.5-Ver.1.0_qim-product-sdk-2.0.0
-
-   .. note:: 
-       For the ``<manifest release tag>``, ``<meta-qcom-extras release tag>``, and ``<meta-qcom-qim-product-sdk release tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
 
 #. Set up the Yocto build:
 
@@ -1384,7 +1366,7 @@ For more details, see `QIR SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/
          # Example, for QCM6490, the directory path must contain QCM6490_bootbinaries.zip, QCM6490_dspso.zip, and QCM6490_fw.zip.
          # Set the environment variable to pick up the prebuilts:
          export FWZIP_PATH="<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qirpsdk/<product>/common/build/ufs/bin"
-         # An example <product> is QCM6490.LE.1.0. For more information about <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/).
+         # An example <product> is QCM6490.LE.1.0. For more information about <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/).
 
 #. Compile the QIR SDK build:
 
@@ -1400,10 +1382,9 @@ For more details, see `QIR SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/
          # and enters into build-qcom-robotics-ros2-humble directory.
          ../qirp-build qcom-robotics-full-image
 
-   .. note::
-      To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/>`__.
+   To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__.
 
-   After a successful build, check that the QIR SDK build artifacts are at the following paths:
+#. After a successful build, check that the QIR SDK build artifacts are at the following paths:
 
    .. container:: nohighlight
       

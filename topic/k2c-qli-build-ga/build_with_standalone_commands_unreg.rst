@@ -5,8 +5,8 @@ Build with standalone commands
 
 .. _ubuntu_host_setup_github_unreg:
 
-Ubuntu host setup
-^^^^^^^^^^^^^^^^^^^^^
+Set up the Ubuntu host computer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Install and configure the required software tools on the Ubuntu host computer.
 
@@ -117,8 +117,8 @@ The following table shows an example mapping of the Yocto layers to the manifest
     
      For example, the manifest release tag ``qcom-6.6.90-QLI.1.5-Ver.1.0.xml`` denotes the following:
      
-     - 6.6.65: Qualcomm Linux kernel
-     - QLI.1.4: Qualcomm Linux v1.4
+     - 6.6.90: Qualcomm Linux kernel
+     - QLI.1.5: Qualcomm Linux v1.5
      - 1.0: Milestone release
 
    - Syntax for the additional productization manifest release tag:
@@ -127,26 +127,24 @@ The following table shows an example mapping of the Yocto layers to the manifest
 
      For example, the additional productization manifest release tag ``qcom-6.6.90-QLI.1.5-Ver.1.0_qim-product-sdk-2.0.0.xml`` denotes the following:
      
-     - 6.6.65: Qualcomm Linux kernel
-     - QLI.1.4: Qualcomm Linux v1.4
-     - qim-product-sdk-1.1.1: Qualcomm IM SDK release on top of QLI.1.4
+     - 6.6.90: Qualcomm Linux kernel
+     - QLI.1.5: Qualcomm Linux v1.5
+     - qim-product-sdk-2.0.0: Qualcomm IM SDK release on top of QLI.1.5
 
        Other product/customization examples:
 
        - *realtime-linux-1.0*
        - *robotics-product-sdk-1.1*
      - 1.0: Milestone release
-     - 1.1.1: Patch release associated with the milestone release
+     - 2.0.0: Patch release associated with the milestone release
 
    - For more information about the Yocto layers, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-27/qualcomm_linux_metadata_layers_overview.html#qualcomm-linux-metadata-layers>`__.
 
 Build a BSP image
 ^^^^^^^^^^^^^^^^^^
-Board support package (BSP) image build has software components for Qualcomm device support and software features applicable to Qualcomm SoCs. This build includes a reference distribution configuration for Qualcomm development kits.
+The board support package (BSP) image build has software components for the Qualcomm device support and software features applicable to Qualcomm SoCs. This build includes a reference distribution configuration for the Qualcomm development kits. For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-27/qualcomm_linux_metadata_layers_overview.html#qualcomm-linux-metadata-layers>`__.
 
-For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-27/qualcomm_linux_metadata_layers_overview.html#qualcomm-linux-metadata-layers>`__.
-
-1. Download Qualcomm Yocto and the supporting layers:
+1. Download Qualcomm Yocto and the supporting layers. For the latest ``<manifest release tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__.
 
    .. container:: nohighlight
       
@@ -159,8 +157,6 @@ For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com
          # Example, <manifest release tag> is qcom-6.6.90-QLI.1.5-Ver.1.0.xml
          repo sync
 
-   .. note:: For the latest ``<manifest release tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/>`__.
-
 #. Set up the build environment:
 
    .. container:: nohighlight
@@ -172,13 +168,9 @@ For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com
          # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
          # and enters into build-qcom-wayland directory.
 
-   .. note::
-      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/>`__.
+   For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__.
 
-#. Build the software image:
-
-   .. note::
-      For supported image recipes, see :ref:`Image recipes supported in the GitHub workflow <image_recipes_github_workflow>`.
+#. Build the software image. For supported image recipes, see :ref:`Image recipes supported in the GitHub workflow <image_recipes_github_workflow>`.
 
    .. container:: nohighlight
       
@@ -187,7 +179,7 @@ For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com
          bitbake <image recipe>
          # Example, bitbake qcom-multimedia-image
 
-   After a successful build, check that the ``system.img`` file is in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image`` directory:
+#. After a successful build, check that the ``system.img`` file is in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image`` directory:
 
    .. container:: nohighlight
       
@@ -200,15 +192,9 @@ For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com
 
 Build Qualcomm IM SDK image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The Qualcomm® Intelligent Multimedia SDK (IM SDK) is a collection of four standalone function SDKs: Qualcomm IM SDK, Qualcomm® Neural Processing SDK, Qualcomm® AI Engine direct SDK, and Lite Runtime (LiteRT). It also includes reference applications that you can use to develop use cases. 
+The Qualcomm® Intelligent Multimedia SDK (IM SDK) is a collection of four standalone function SDKs: Qualcomm IM SDK, Qualcomm® Neural Processing SDK, Qualcomm® AI Engine direct SDK, and Lite Runtime (LiteRT). This SDK also includes reference applications that you can use to develop use cases. For more details, see `Qualcomm IM SDK Quick Start Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-51>`__.
 
-For more details, see `Qualcomm IM SDK Quick Start Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-51>`__.
-
-1. Download Qualcomm Yocto and the supporting layers:
-
-   .. note:: 
-      - The ``<manifest release tag>`` for the Qualcomm IM SDK build is the same as the BSP build. Clone the Qualcomm IM SDK layer on top of the BSP build. 
-      - For the latest ``<manifest release tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/>`__.
+1. Download Qualcomm Yocto and the supporting layers. The ``<manifest release tag>`` for the Qualcomm IM SDK build is the same as the BSP build. Clone the Qualcomm IM SDK layer on top of the BSP build. For the latest ``<manifest release tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__.
 
    .. container:: nohighlight
       
@@ -230,7 +216,7 @@ For more details, see `Qualcomm IM SDK Quick Start Guide <https://docs.qualcomm.
          git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b <meta-qcom-qim-product-sdk release tag> layers/meta-qcom-qim-product-sdk
          # Example, <meta-qcom-qim-product-sdk release tag> is qcom-6.6.90-QLI.1.5-Ver.1.0_qim-product-sdk-2.0.0
 
-   Build the Qualcomm IM SDK layer:
+#. Export the Qualcomm IM SDK layer:
 
    .. container:: nohighlight
       
@@ -249,8 +235,7 @@ For more details, see `Qualcomm IM SDK Quick Start Guide <https://docs.qualcomm.
          # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
          # and enters into build-qcom-wayland directory.
 
-   .. note::
-      To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/>`__.
+   To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__.
 
 #. Build the software image:
 
@@ -262,7 +247,7 @@ For more details, see `Qualcomm IM SDK Quick Start Guide <https://docs.qualcomm.
          # Build SDK image
          bitbake qcom-qim-product-sdk
 
-   After a successful build, check that the ``system.img`` file is in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image`` directory:
+#. After a successful build, check that the ``system.img`` file is in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image`` directory:
 
    .. container:: nohighlight
       
@@ -275,13 +260,9 @@ For more details, see `Qualcomm IM SDK Quick Start Guide <https://docs.qualcomm.
 
 Build QIR SDK image
 ^^^^^^^^^^^^^^^^^^^^^
-The Qualcomm® Intelligent Robotics (QIR) SDK 2.0 is a collection of components that enable you to develop robotic features on Qualcomm platforms. This SDK is applicable to the Qualcomm Linux releases.
+The Qualcomm® Intelligent Robotics (QIR) SDK 2.0 is a collection of components that let you develop robotic features on Qualcomm platforms. This SDK is applicable to the Qualcomm Linux releases. For more details, see `QIR SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-265>`__.
 
-For more details, see `QIR SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-265>`__.
-
-1. Download Qualcomm Yocto and the supporting layers:
-
-   .. note:: The ``<manifest release tag>`` for QIR SDK build is the same as the BSP build. Clone the QIR SDK layers on top of the BSP build.
+1. Download Qualcomm Yocto and the supporting layers. The ``<manifest release tag>`` for QIR SDK build is the same as the BSP build. Clone the QIR SDK layers on top of the BSP build. For the latest ``<manifest release tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__.
 
    .. container:: nohighlight
       
@@ -293,8 +274,6 @@ For more details, see `QIR SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/
          repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-scarthgap -m <manifest release tag>
          # Example, <manifest release tag> is qcom-6.6.90-QLI.1.5-Ver.1.0.xml
          repo sync
-
-   .. note:: For the latest ``<manifest release tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/>`__.
 
 #. Download the QIR SDK layers into the BSP build ``<WORKSPACE DIR>`` directory:
 
@@ -321,7 +300,7 @@ For more details, see `QIR SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/
          # source setup-robotics-environment: Sets the environment, creates the build directory build-qcom-robotics-ros2-humble,
          # and enters into build-qcom-robotics-ros2-humble directory.
 
-   .. note:: For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/>`__.
+   For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__.
 
 #. Build the robotics image and the QIR SDK artifacts:
 
@@ -331,7 +310,7 @@ For more details, see `QIR SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/
 
          ../qirp-build qcom-robotics-full-image
 
-   After a successful build, check that the QIR SDK build artifacts are at the following paths:
+#. After a successful build, check that the QIR SDK build artifacts are at the following paths:
 
    .. container:: nohighlight
       
@@ -345,13 +324,9 @@ For more details, see `QIR SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/
 
 Build real-time Linux image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The real-time layer provides recipes and configurations required to run the Qualcomm Linux kernel as a real-time kernel. The real-time kernel runs with preemption fully enabled through a configuration, ``CONFIG_PREEMPT_RT=y``. This layer supports ``linux-kernel-qcom-rt`` recipe that fetches and builds the Qualcomm Linux kernel for the supported machine. This layer appends to the kernel and the upstream ``PREEMPT_RT`` patches based on the kernel version, and enables real-time configurations.
+The real-time layer provides recipes and configurations required to run the Qualcomm Linux kernel as a real-time kernel. The real-time kernel runs with preemption fully enabled through a configuration, ``CONFIG_PREEMPT_RT=y``. This layer supports ``linux-kernel-qcom-rt`` recipe that fetches and builds the Qualcomm Linux kernel for the supported machine. This layer appends to the kernel and the upstream ``PREEMPT_RT`` patches based on the kernel version, and enables real-time configurations. For more details, see `Real-time kernel <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-3/real_time_kernel_overview.html>`__.
 
-For more details, see `Real-time kernel <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-3/real_time_kernel_overview.html>`__.
-
-1. Download Qualcomm Yocto and the supporting layers:
-
-   .. note:: The ``<manifest release tag>`` for real-time Linux image is the same as the BSP build. Clone the real-time Linux on top of the BSP build.
+1. Download Qualcomm Yocto and the supporting layers. The ``<manifest release tag>`` for real-time Linux image is the same as the BSP build. Clone the real-time Linux on top of the BSP build. For the latest ``<manifest release tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__.
 
    .. container:: nohighlight
       
@@ -364,8 +339,6 @@ For more details, see `Real-time kernel <https://docs.qualcomm.com/bundle/public
          # Example, <manifest release tag> is qcom-6.6.90-QLI.1.5-Ver.1.0.xml
          repo sync
 
-   .. note:: For the latest ``<manifest release tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/>`__.
-
 #. Clone the real-time Linux layer into the workspace:
 
    .. container:: nohighlight
@@ -375,7 +348,7 @@ For more details, see `Real-time kernel <https://docs.qualcomm.com/bundle/public
          git clone https://github.com/quic-yocto/meta-qcom-realtime -b <meta-qcom-realtime release tag> layers/meta-qcom-realtime
          # Example, <meta-qcom-realtime release tag> is qcom-6.6.90-QLI.1.5-Ver.1.0_realtime-linux-1.1
 
-   Build the real-time layer:
+#. Build the real-time layer:
 
    .. container:: nohighlight
       
@@ -394,8 +367,7 @@ For more details, see `Real-time kernel <https://docs.qualcomm.com/bundle/public
          # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
          # and enters into build-qcom-wayland directory.
 
-   .. note::
-      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/>`__.
+   For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__.
 
 #. Build the software image:
 
@@ -405,7 +377,7 @@ For more details, see `Real-time kernel <https://docs.qualcomm.com/bundle/public
 
          bitbake qcom-multimedia-image
 
-   After a successful build, check that the ``system.img`` file is in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image`` directory:
+#. After a successful build, check that the ``system.img`` file is in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image`` directory:
 
    .. container:: nohighlight
       

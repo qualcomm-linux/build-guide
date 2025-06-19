@@ -1,5 +1,5 @@
-Ubuntu host setup
--------------------------
+Set up the Ubuntu host computer
+--------------------------------
 
 Install and configure the required software tools on the Ubuntu host computer.
 
@@ -35,9 +35,7 @@ Install and configure the required software tools on the Ubuntu host computer.
          | [Info]: Starting qsc-cli version 0.0.0.9
          | **5LThNlklb55mMVLB5C2KqUGU2jCF**
 
-#. Use your preferred text editor to edit the ``~/.netrc`` file and add the following entries:
-
-   .. note:: Create the ``~/.netrc`` file if it doesn't exist.
+#. Use your preferred text editor to edit the ``~/.netrc`` file and add the following entries. Create the ``~/.netrc`` file if it doesn't exist.
 
    .. container:: nohighlight
       
