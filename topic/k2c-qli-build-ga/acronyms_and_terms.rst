@@ -12,6 +12,8 @@ Acronyms and terms
      - Advanced digital signal processor
    * - cDSP
      - Compute digital signal processor
+   * - CDT
+     - Configuration data table 
    * - ADB
      - Android debug bridge
    * - AOP 
@@ -54,5 +56,7 @@ Acronyms and terms
      - Safety Island
    * - SDK
      - Software development kit
+   * - UFS 
+     - Universal flash storage
    * - WSL 
      - Windows Subsystem for Linux

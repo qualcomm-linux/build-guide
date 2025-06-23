@@ -40,7 +40,7 @@ Generate an eSDK
          032693710300.dkr.ecr.us-west-2.amazonaws.com/stormchaser/ql-tool     20.04.20231220102843864.9   864b345bd707   2 months ago   715MB
          032693710300.dkr.ecr.us-west-2.amazonaws.com/stormchaser/le.um-k2c   20.04.20231215014450998.7   4678dda58a91   2 months ago   929MB
 
-2. Attach the container:
+#. Attach the container:
 
    .. container:: nohighlight
       
@@ -51,12 +51,9 @@ Generate an eSDK
          # Example
          WORKSPACE=/local/mnt/workspace/Qworkspace/DEV && SRC_DIR=LE.QCLINUX.1.0.r1 && docker run --rm  -it -v ~/.qualcomm_launcher_workspace_config:/var/tmp/.docker_qualcomm_launcher_setup/ -v $WORKSPACE:$WORKSPACE -e LOCAL_USER_NAME=`id -u -n` -e LOCAL_USER_ID=`id -u` -e USER=`id -u` -e WORKSPACE=$WORKSPACE -w $WORKSPACE/$SRC_DIR 032693710300.dkr.ecr.us-west-2.amazonaws.com/stormchaser/le.um-k2c:20.04.20231215014450998.7 bash
 
-Check if you are in a workspace that has ``.repo`` in it.
+#. Check if you are in a workspace that has ``.repo`` in it.
 
-Set up the environment and generate eSDK:
-
-.. note:: When the eSDK generation is complete, you can see the images
-          in the following directory: ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/sdk``.
+**Set up the environment and generate eSDK**
 
 1. After building the ``meta-qcom-hwe`` with QSC CLI:
 
@@ -69,9 +66,9 @@ Set up the environment and generate eSDK:
          bitbake -c do_populate_sdk_ext <image>
          # Example, bitbake -c do_populate_sdk_ext qcom-multimedia-image
 
-   .. note:: To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__.    
+   To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__.    
 
-2. After building with ``meta-qcom-extras`` and firmware sources with
+#. After building with ``meta-qcom-extras`` and firmware sources with
    QSC CLI:
 
    .. note:: This step isn't applicable for public developers (unregistered).
@@ -88,7 +85,7 @@ Set up the environment and generate eSDK:
          # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
          bitbake -c do_populate_sdk_ext qcom-multimedia-image
 
-3. After building standalone instructions within the same shell (shell
+#. After building standalone instructions within the same shell (shell
    where the build is successful):
 
    .. container:: nohighlight
@@ -100,7 +97,7 @@ Set up the environment and generate eSDK:
          # Example
          bitbake -c do_populate_sdk_ext qcom-multimedia-image
 
-4. After building with standalone instructions and with a new shell
+#. After building with standalone instructions and with a new shell
    (assuming the build workspace exists):
 
    .. container:: nohighlight
@@ -116,7 +113,7 @@ Set up the environment and generate eSDK:
          MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
          bitbake -c do_populate_sdk_ext qcom-multimedia-image
 
-5. After building with standalone instructions using Dockerfile.
+#. After building with standalone instructions using Dockerfile.
 
    a. Move the control to the workspace directory:
 
@@ -142,6 +139,8 @@ Set up the environment and generate eSDK:
             MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
             bitbake -c do_populate_sdk_ext qcom-multimedia-image
 
+When the eSDK generation is complete, you can see the images in the following directory: ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/sdk``.
+
 **Troubleshoot eSDK generation – basehash mismatch**
 
 **Error excerpt**
@@ -163,20 +162,19 @@ Rebuild the image and generate the eSDK again.
 Rebuild using a Docker environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Run the commands to connect to Docker for your environment setup and then use the BitBake commands to rebuild:
+1. Run the commands to connect to Docker for your environment setup and then use the BitBake commands to rebuild:
 
-.. container:: nohighlight
+   .. container:: nohighlight
       
-   ::
+      ::
 
-      cd <workspace_path>/DEV/<softwareimage>
-      # Example, cd /local/mnt/workspace/Qworkspace/DEV/LE.QCLINUX.1.0.r1 for making changes to Yocto layers
-      # Make code changes
+         cd <workspace_path>/DEV/<softwareimage>
+         # Example, cd /local/mnt/workspace/Qworkspace/DEV/LE.QCLINUX.1.0.r1 for making changes to Yocto layers
+         # Make code changes
 
-.. note:: 
-   Get to a Docker shell as mentioned in :ref:`Generate an eSDK <how_to_build_generate_sdk>`.
+#. Get to a Docker shell as mentioned in :ref:`Generate an eSDK <how_to_build_generate_sdk>`.
 
--  Rebuild using your source changes:
+#. Rebuild using your source changes:
 
    .. container:: nohighlight
       
@@ -187,9 +185,9 @@ Run the commands to connect to Docker for your environment setup and then use th
          # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
          bitbake qcom-multimedia-image
 
-   .. note:: To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__.
+   To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__.
 
--  Build image ``qcom-multimedia-test-image``:
+#. Build image ``qcom-multimedia-test-image``:
 
    .. container:: nohighlight
       

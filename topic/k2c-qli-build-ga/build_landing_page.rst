@@ -3,14 +3,14 @@ Software build documentation
 
 Configure, download, compile, and flash Qualcomm\ :sup:`®` Linux\ :sup:`®` and the associated firmware on supported devices.
 
-Introduction
--------------
+Build overview
+---------------
 
 .. grid:: 2 2 3 3
     :gutter: 4
     :class-container: get-started-cards
 
-    .. grid-item-card::  |icn-book-blue|  Introduction
+    .. grid-item-card::  |icn-book-blue|  Build overview
         :class-card: card-base-line
         :class-title: font-link
         :class-body: font-gray-60

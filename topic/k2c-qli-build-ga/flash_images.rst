@@ -8,7 +8,7 @@ Flash software images
 Follow these steps to flash the software images:
 
 1. Update the ``udev`` rules (one-time prerequisite).
-#. Move the device to Emergency Download (EDL) mode.
+#. Force the device into emergency download (EDL) mode.
 #. Provision UFS (one-time prerequisite).
 #. Flash SAIL (one-time prerequisite).
 #. Flash CDT.
@@ -19,8 +19,8 @@ Follow these steps to flash the software images:
 
 .. _update_udev_rules:
 
-Update ``udev`` rules
-------------------------
+Update ``udev`` rules (one-time prerequisite)
+-----------------------------------------------
 
 Configure the ``udev`` USB rules for the Qualcomm manufacturing vendor ID **05c6** on the Linux host:
 
@@ -32,7 +32,7 @@ Configure the ``udev`` USB rules for the Qualcomm manufacturing vendor ID **05c6
 
          cd /etc/udev/rules.d
 
-2. List the contents of the directory:
+#. List the contents of the directory:
 
    .. container:: nohighlight
       
@@ -56,7 +56,7 @@ Configure the ``udev`` USB rules for the Qualcomm manufacturing vendor ID **05c6
 
             cat 51-qcom-usb.rules
 
-3. Restart ``udev``:
+#. Restart ``udev``:
 
    .. container:: nohighlight
       
@@ -64,22 +64,22 @@ Configure the ``udev`` USB rules for the Qualcomm manufacturing vendor ID **05c6
 
          sudo systemctl restart udev
 
-If the USB cable is already connected to the host, unplug and reconnect the cable for the updated rules to take effect.
+#. If the USB cable is already connected to the host, unplug and reconnect the cable for the updated rules to take effect.
 
 .. _move_to_EDL:
 
-Move to EDL mode
-------------------
+Force the device into EDL mode
+--------------------------------
 
-The device must be in the EDL mode before you flash the software. The Qualcomm supported device by default enters the EDL mode if there is no image on the device after power up or if it's corrupted. To force the device into the EDL mode, use any one of the following methods.
+The device must be in the EDL mode before you flash the software. The Qualcomm supported device by default enters EDL mode if there is no image on the device after power up or if it's corrupted. To force the device into EDL mode, use any one of the following methods.
 
-**Using UART**
+**Use UART**
 
-.. note:: Use UART only if the device has a preloaded build.
+Use UART only if the device has a preloaded build. This procedure applies to the Ubuntu host environment.
 
 1. :ref:`Connect the device to a UART shell <connect_uart>`.
 
-2. Move the device to the EDL mode by running the following command on the UART shell:
+2. In the UART shell, move the device into EDL mode:
 
    .. container:: nohighlight
       
@@ -87,7 +87,7 @@ The device must be in the EDL mode before you flash the software. The Qualcomm s
 
          reboot edl
 
-3. Verify if the device has entered the Qualcomm Download mode (QDL mode) by running the following command on the host computer:
+3. Verify if the device is in EDL mode:
 
    .. container:: nohighlight
       
@@ -95,19 +95,17 @@ The device must be in the EDL mode before you flash the software. The Qualcomm s
 
          lsusb
 
-   **Sample output**
-
+   If the output says QDL mode, the device is in EDL mode:
+   
    .. container:: screenoutput
 
       .. line-block::
 
           Bus 002 Device 014: ID 05c6:9008 Qualcomm, Inc. Gobi Wireless Modem (QDL mode)
 
-.. note:: This procedure applies to the Ubuntu host environment.
+**Use ADB**
 
-**Using ADB**
-
-.. note:: Use ADB only if the device has a preloaded build.
+This procedure applies to the Ubuntu host environment. Use ADB only if the device has a preloaded build. 
 
 1. `Install
    QUD <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-253/faqs.html#install-qud>`__
@@ -121,7 +119,7 @@ The device must be in the EDL mode before you flash the software. The Qualcomm s
    ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-253/faqs.html#install-adb>`__
    to the device.
 
-4. Move the device to EDL mode by running the following command on the host computer:
+4. Move the device into EDL mode in a terminal on the host computer:
 
    .. container:: nohighlight
       
@@ -129,7 +127,7 @@ The device must be in the EDL mode before you flash the software. The Qualcomm s
 
          adb shell reboot edl
 
-5. Verify whether the device has entered the QDL mode by running the following command on the host computer:
+5. Verify if the device is in EDL mode:
 
    .. container:: nohighlight
       
@@ -137,15 +135,13 @@ The device must be in the EDL mode before you flash the software. The Qualcomm s
 
          lsusb
 
-   **Sample output**
+   If the output says QDL mode, the device is in EDL mode:
 
    .. container:: screenoutput
 
       .. line-block::
 
           Bus 002 Device 014: ID 05c6:9008 Qualcomm, Inc. Gobi Wireless Modem (QDL mode)
-
-.. note:: This procedure applies to the Ubuntu host environment.
 
 **Manual**
 
@@ -159,13 +155,13 @@ The device must be in the EDL mode before you flash the software. The Qualcomm s
 
             .. image:: ../../media/k2c-qli-build-ga/RB3Gen2_device.jpg
 
-         #. Connect the device to a +12 V wall power supply.
+         #. Connect the device to a **+12 V wall power supply**.
 
          #. Connect the device to the host system using a Type-C cable through the USB Type-C connector.
          
-         #. Release the **F_DL** button. The device should now be in the Qualcomm Download mode (QDL mode). For this task, QDL is used interchangeably with EDL.
+         #. Release the **F_DL** button. The device is now EDL mode.
          
-         #. Verify whether the device has entered the QDL mode:
+         #. Verify if the device is in EDL mode:
 
             .. container:: nohighlight
       
@@ -173,7 +169,7 @@ The device must be in the EDL mode before you flash the software. The Qualcomm s
 
                   lsusb
 
-            **Sample output**
+            If the output says QDL mode, the device is in EDL mode:
 
             .. container:: screenoutput
 
@@ -191,7 +187,7 @@ The device must be in the EDL mode before you flash the software. The Qualcomm s
 
                   .. image:: ../../media/k2c-qli-build-ga/qcs9075_qdl_mode_manual.png
 
-               #. Verify whether the device has entered the QDL mode:
+               #. Verify if the device is in EDL mode:
 
                   .. container:: nohighlight
       
@@ -215,7 +211,7 @@ The device must be in the EDL mode before you flash the software. The Qualcomm s
 
                   .. image:: ../../media/k2c-qli-build-ga/IQ_9075_EVK.png
 
-               #. Verify whether the device has entered the QDL mode:
+               #. Verify if the device is in EDL mode:
 
                   .. container:: nohighlight
       
@@ -223,7 +219,7 @@ The device must be in the EDL mode before you flash the software. The Qualcomm s
 
                         lsusb
 
-                  **Sample output**
+                  If the output says QDL mode, the device is in EDL mode:
 
                   .. container:: screenoutput
 
@@ -243,7 +239,7 @@ The device must be in the EDL mode before you flash the software. The Qualcomm s
 
                   .. image:: ../../media/k2c-qli-build-ga/qcs9075_qdl_mode_manual.png
 
-               #. Verify whether the device has entered the QDL mode:
+               #. Verify if the device is in EDL mode:
 
                   .. container:: nohighlight
       
@@ -251,7 +247,7 @@ The device must be in the EDL mode before you flash the software. The Qualcomm s
 
                         lsusb
 
-                  **Sample output**
+                  If the output says QDL mode, the device is in EDL mode:
 
                   .. container:: screenoutput
 
@@ -267,7 +263,7 @@ The device must be in the EDL mode before you flash the software. The Qualcomm s
 
                   .. image:: ../../media/k2c-qli-build-ga/IQ_9075_EVK.png
 
-               #. Verify whether the device has entered the QDL mode:
+               #. Verify if the device is in EDL mode:
 
                   .. container:: nohighlight
       
@@ -289,9 +285,9 @@ The device must be in the EDL mode before you flash the software. The Qualcomm s
 
 Provision UFS
 ---------------
-Universal Flash Storage (UFS) provisioning helps to divide the storage into many LUNs, which stores different types of data separately. This improves access efficiency and system organization.
+Universal flash storage (UFS) provisioning helps to divide the storage into many LUNs, which stores different types of data separately. This improves access efficiency and system organization.
 
-.. note:: UFS is provisioned by default. If there are any changes in LUNs, UFS must be re-provisioned. To download the provision XML file and to check the applicability of UFS provisioning for different SoCs, see the table *UFS Provision* in `Release Specific Information <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/ReleaseNote.html#release-specific-information>`__.
+UFS is provisioned by default. If there are any changes in LUNs, UFS must be re-provisioned. To download the provision XML file and to check the applicability of UFS provisioning for different SoCs, see the table *UFS Provision* in `Release Specific Information <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/ReleaseNote.html#release-specific-information>`__.
 
 1. Download the provision file.
 
@@ -301,23 +297,14 @@ Universal Flash Storage (UFS) provisioning helps to divide the storage into many
       
       ::
 
-         wget <provision_download_link>
-         unzip <downloaded_zip_file>
-
-   Example:
-
-   .. container:: nohighlight
-      
-      ::
-
          mkdir <provision_download_path>
          cd <provision_download_path>
-         wget https://artifacts.codelinaro.org/artifactory/codelinaro-le/Qualcomm_Linux/QCS6490/provision.zip
-         unzip provision.zip
+         wget <provision_download_link>
+         # Example, wget https://artifacts.codelinaro.org/artifactory/codelinaro-le/Qualcomm_Linux/QCS6490/provision.zip
+         unzip <downloaded_zip_file>
+         # Example, unzip provision.zip   
 
-#. Download the QDL tool.
-
-   Qualcomm Device Loader (QDL) is a software tool that communicates with the Qualcomm USB devices to upload a flash loader and flash software images.
+#. Download the Qualcomm Device Loader (QDL). QDL is a software tool that communicates with the Qualcomm USB devices to upload a flash loader and flash software images.
 
    Acquire the latest version of the QDL tool using one of the following methods:
    
@@ -354,48 +341,40 @@ Universal Flash Storage (UFS) provisioning helps to divide the storage into many
 
 Flash SAIL
 -----------
-.. note:: Safety Island (SAIL) is applicable only for the Qualcomm Dragonwing™ IQ-9075 and the Qualcomm Dragonwing™ IQ-8275 development kits.
+Safety Island (SAIL) is applicable only for the Qualcomm Dragonwing™ IQ-9075 and the Qualcomm Dragonwing™ IQ-8275 development kits. If you're not using one of these development kits, skip to :ref:`Flash CDT <flash_cdt>`.
 
-.. container:: persistenttab-soc
+1. Download the QDL tool. QDL is a software tool that communicates with the Qualcomm USB devices to upload a flash loader and flash software images.
 
-   .. tabs::
-
-      .. group-tab:: IQ-9075/IQ-8275
-         
-         1. Download the QDL tool.
-
-            QDL is a software tool that communicates with the Qualcomm USB devices to upload a flash loader and flash software images.
-
-            Acquire the latest version of the QDL tool using one of the following methods:
+   Acquire the latest version of the QDL tool using one of the following methods:
    
-            - Download the tool from https://softwarecenter.qualcomm.com/#/catalog/item/Qualcomm_Device_Loader and unzip the contents of the downloaded folder.
-            - Run the following command to download using CLI:
+   - Download the tool from https://softwarecenter.qualcomm.com/#/catalog/item/Qualcomm_Device_Loader and unzip the contents of the downloaded folder.
+   - Run the following command to download using CLI:
 
-              .. container:: nohighlight
-      
-                 ::
+     .. container:: nohighlight
      
-                    wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Windows/Latest.zip
-
-         #. Flash the SAIL.
-
-            .. container:: nohighlight
+        ::
       
-               ::
+          wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Windows/Latest.zip
 
-                  # SAIL image is under <workspace_path>/build-<DISTRO>/tmp-glibc/deploy/images/<MACHINE>/<IMAGE>/sail_nor
-                  # build_path: For DISTRO=qcom-wayland, it's build-qcom-wayland. 
-                  #             For DISTRO=qcom-robotics-ros2-humble, it's build-qcom-robotics-ros2-humble
-                  # qdl --storage spinor <prog.mbn> [<program> <patch> ...]
-                  # Example: build_path is build-qcom-wayland
-                  cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs9075-rb8-core-kit/qcom-multimedia-image/sail_nor
-                  <qdl_download_path>/qdl_<version>/QDL_Linux_x64/qdl --storage spinor prog_firehose_ddr.elf rawprogram0.xml patch0.xml
+#. Flash the SAIL.
+
+   .. container:: nohighlight
+      
+      ::
+
+        # SAIL image is under <workspace_path>/build-<DISTRO>/tmp-glibc/deploy/images/<MACHINE>/<IMAGE>/sail_nor
+        # build_path: For DISTRO=qcom-wayland, it's build-qcom-wayland. 
+        #             For DISTRO=qcom-robotics-ros2-humble, it's build-qcom-robotics-ros2-humble
+        # qdl --storage spinor <prog.mbn> [<program> <patch> ...]
+        # Example: build_path is build-qcom-wayland
+        cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs9075-rb8-core-kit/qcom-multimedia-image/sail_nor
+        <qdl_download_path>/qdl_<version>/QDL_Linux_x64/qdl --storage spinor prog_firehose_ddr.elf rawprogram0.xml patch0.xml
          
 .. _flash_cdt:
 
 Flash CDT
 ----------
-CDT provides platform/device-dependent data such as platform ID, subtype, version. Various Software (drivers/firmware) modules can use this information to perform dynamic detection and initialization of the platform. You can update CDT by flashing a CDT binary:
+Configuration data table (CDT) provides platform/device-dependent data such as platform ID, subtype, version. Various Software (drivers/firmware) modules can use this information to perform dynamic detection and initialization of the platform. You can update CDT by flashing a CDT binary:
 
 1. Download the CDT binary.
 
@@ -405,25 +384,14 @@ CDT provides platform/device-dependent data such as platform ID, subtype, versio
       
       ::
 
-         wget <CDT_download_link>
-         unzip <downloaded_zip_file>
-
-   Example:
-
-   .. container:: nohighlight
-      
-      ::
-
          mkdir <cdt_download_path>
          cd <cdt_download_path>
-         wget https://artifacts.codelinaro.org/artifactory/codelinaro-le/Qualcomm_Linux/QCS6490/cdt/rb3gen2-core-kit.zip
-         unzip rb3gen2-core-kit.zip
+         wget <CDT_download_link>
+         # Example, wget https://artifacts.codelinaro.org/artifactory/codelinaro-le/Qualcomm_Linux/QCS6490/cdt/rb3gen2-core-kit.zip
+         unzip <downloaded_zip_file>
+         # Example, unzip rb3gen2-core-kit.zip        
 
-#. Download the QDL tool.
-
-   QDL is a software tool that communicates with the Qualcomm USB devices to upload a flash loader and flash software images.
-
-   Acquire the latest version of the QDL tool using one of the following methods:
+#. Download the QDL tool. QDL is a software tool that communicates with the Qualcomm USB devices to upload a flash loader and flash software images. Acquire the latest version of the QDL tool using one of the following methods:
    
    - Download the tool from https://softwarecenter.qualcomm.com/#/catalog/item/Qualcomm_Device_Loader and unzip the contents of the downloaded folder.
    - Run the following command to download using CLI:
@@ -453,7 +421,7 @@ Flash software using QDL
 
 1. Ensure that the ModemManager tool isn't running.
 
-   Some Linux distributions include the ModemManager tool, which allows you to configure the mobile broadband. When you connect the device in the USB mode, it's identified as a Qualcomm modem, and the ModemManager tries to configure the device. As this interferes with the QDL flashing, you must disable the ModemManager before connecting your device.
+   Some Linux distributions include the ModemManager tool, which allows you to configure the mobile broadband. When you connect the device in the USB mode, it's identified as a Qualcomm modem, and the ModemManager tries to configure the device. Because this interferes with the QDL flashing, you must disable the ModemManager before connecting your device.
    
    If you are using a Linux distribution with ``systemd``, stop the ModemManager tool using the following command:
 
@@ -465,11 +433,7 @@ Flash software using QDL
 
    If you need the ModemManager, you can restart it after the flashing is complete.
   
-#. Download the QDL tool.
-
-   QDL is a software tool that communicates with Qualcomm USB devices to upload a flash loader and flash software images.
-
-   Acquire the latest version of the QDL tool using one of the following methods:
+#. Download the QDL tool. QDL is a software tool that communicates with Qualcomm USB devices to upload a flash loader and flash software images. Acquire the latest version of the QDL tool using one of the following methods:
    
    - Download the tool from https://softwarecenter.qualcomm.com/#/catalog/item/Qualcomm_Device_Loader and unzip the contents of the downloaded folder.
    - Run the following command to download using CLI:
@@ -512,7 +476,7 @@ Flash software using QDL
          LOG: INFO: Will issue reset/power off 100 useconds, if this hangs check if watchdog is enabled
          LOG: INFO: bsp_target_reset() 1
 
-   After a successful flashing operation, run the ``lsusb`` command to see the device information on the terminal window as shown in line 4 of the following message:
+#. After a successful flashing operation, run the ``lsusb`` command to see the device information on the terminal window as shown in line 4 of the following message:
    
    .. container:: screenoutput
 
@@ -537,7 +501,7 @@ Flash software using PCAT
 
 1. :ref:`Install QSC CLI <install_qsc_cli>`.
  
-#. To detect the connected devices and flash the software builds, install the Qualcomm PCAT and QUD tools on the host computer. Run the following commands to use ``qsc-cli`` to install PCAT and QUD:
+#. To detect the connected devices and flash the software builds, install the Qualcomm PCAT and QUD tools on the host computer:
 
    .. container:: nohighlight
       
@@ -566,7 +530,7 @@ Flash software using PCAT
 
           crw-rw-rw- 1 root 242 0 Dec 10 10:51 /dev/QTI_HS-USB_QDLoader_9008_3-8:1.0
 
-#. Verify if the device entered the QDL mode:
+#. Verify if the device is in EDL mode:
 
    .. container:: nohighlight
       
@@ -574,7 +538,7 @@ Flash software using PCAT
 
          lsusb
 
-   **Sample output**
+   If the output says QDL mode, the device is in EDL mode:
 
    .. container:: screenoutput
 
@@ -618,7 +582,7 @@ Flash software using PCAT
          
          # Example, PCAT –PLUGIN SD -DEVICE be116704 -BUILD "<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image" -MEMORYTYPE EMMC -FLAVOR asic -RAWPROG "<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image/rawprogram0.xml" -PATCHPROG "<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image/patch0.xml"
 
-   If flashing the software is successful, you will see the following message:
+   If flashing the software is successful, the outputs is as follows:
 
    .. container:: screenoutput
 
@@ -628,7 +592,7 @@ Flash software using PCAT
          xxxx INFO] Status   - TRUE
          xxxx INFO] Response - Downloading software images completed on the device Qualcomm USB Composite Device:QUSB_BULK_CID:042F_SN:BE116704
 
-   After a successful flashing operation, run the ``lsusb`` command to see the device information on the terminal window as shown in line 4 of the following message:
+#. After a successful flashing operation, run the ``lsusb`` command to see the device information on the terminal window as shown in line 4 of the following message:
 
    .. container:: screenoutput
 

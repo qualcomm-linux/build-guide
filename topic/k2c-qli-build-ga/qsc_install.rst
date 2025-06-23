@@ -1,5 +1,5 @@
-Install QSC using a GUI
------------------------------
+Install QSC Launcher
+-----------------------
 
 1. Go to the `Qualcomm Software Center <https://softwarecenter.qualcomm.com/#/catalog/item/Qualcomm_Software_Center>`__, and then select :guilabel:`Download`.
 

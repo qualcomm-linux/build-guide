@@ -137,13 +137,12 @@ Build Qualcomm IM SDK image
  
 #. Build Qualcomm IM SDK on top of the base image using Docker:
 
-   a. Run the ``docker run`` command:
+   a. Run the following commands inside the base image build location:
 
       .. container:: nohighlight
       
          ::
 
-            # Run the following commands inside the base image build location
             cd <workspace_path>/qcom-download-utils/qcom-6.6.90-QLI.1.5-Ver.1.0
             bash
             docker run -it -v "${HOME}/.gitconfig":"/home/${USER}/.gitconfig" -v "${HOME}/.netrc":"/home/${USER}/.netrc" -v $(pwd):$(pwd) -w $(pwd) qcom-6.6.90-qli.1.5-ver.1.0_22.04 /bin/bash
@@ -210,13 +209,12 @@ To rebuild after any modifications to the software release, use your existing wo
        REPOSITORY                                               TAG                         IMAGE ID       CREATED        SIZE
        qcom-6.6.90-qli.1.5-ver.1.0_22.04                        latest                      8fcea388d8ca   2 days ago     1.47GB
 
-#. Attach the container:
+#. Run the following commands outside the Docker container:
 
    .. container:: nohighlight
       
       ::
 
-         # Run the following commands outside the Docker container
          cd <workspace_path>/qcom-download-utils/qcom-6.6.90-QLI.1.5-Ver.1.0
 
          # Run the following commands inside the base image build location
@@ -248,7 +246,7 @@ To rebuild after any modifications to the software release, use your existing wo
 
          bitbake qcom-multimedia-image
 
-.. note:: Close Docker before you flash the images.
+Close Docker before you flash the images.
 
 Flash
 ^^^^^^^

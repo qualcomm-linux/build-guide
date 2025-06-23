@@ -8,35 +8,35 @@ Sync
 Alternative methods to install Repo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The latest Repo works with python3. If your default Python is python2, then install ``python-is-python3`` to make python3 as the default Python.
+- The latest Repo works with python3. If your default Python is python2, then install ``python-is-python3`` to make python3 as the default Python.
 
-.. container:: nohighlight
+   .. container:: nohighlight
       
-   ::
+      ::
 
-      mkdir -p ~/bin
-      cd ~/bin
-      # If you already have a previous directory of repo_tool, you can delete it
-      rm -rf ~/bin/repo_tool
-      git clone https://android.googlesource.com/tools/repo.git -b v2.41 repo_tool
-      cd repo_tool
-      git checkout -b v2.41
-      export PATH=~/bin/repo_tool:$PATH
+         mkdir -p ~/bin
+         cd ~/bin
+         # If you already have a previous directory of repo_tool, you can delete it
+         rm -rf ~/bin/repo_tool
+         git clone https://android.googlesource.com/tools/repo.git -b v2.41 repo_tool
+         cd repo_tool
+         git checkout -b v2.41
+         export PATH=~/bin/repo_tool:$PATH
 
-If the earlier steps didn't work, install Repo using the following commands:
+- If the earlier steps didn't work, install Repo using the following commands:
 
-.. container:: nohighlight
+   .. container:: nohighlight
       
-   ::
+      ::
 
-      # Install curl (if it isn't installed)
-      sudo apt install curl bc
+         # Install curl (if it isn't installed)
+         sudo apt install curl bc
       
-      # Latest Repo version works with python3
+         # Latest Repo version works with python3
       
-      mkdir -p ~/bin
-      curl https://raw.githubusercontent.com/GerritCodeReview/git-repo/v2.41/repo -o ~/bin/repo && chmod +x ~/bin/repo
-      export PATH=~/bin:$PATH
+         mkdir -p ~/bin
+         curl https://raw.githubusercontent.com/GerritCodeReview/git-repo/v2.41/repo -o ~/bin/repo && chmod +x ~/bin/repo
+         export PATH=~/bin:$PATH
 
 How does QSC CLI work?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -135,10 +135,9 @@ This option is supported only for the ``LE.QCLINUX.1.0.r1`` image, which
 syncs the Yocto layers and prepares to build the Yocto workspace.
 This includes the following steps:
 
-.. note::
-     Get to a Docker shell as mentioned in :ref:`Generate an eSDK <how_to_build_generate_sdk>`.
+1. Get to a Docker shell as mentioned in :ref:`Generate an eSDK <how_to_build_generate_sdk>`.
 
-1. Download a new release:
+#. Download a new release. For the ``<manifest release tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__. An example ``<manifest release tag>`` is ``qcom-6.6.90-QLI.1.5-Ver.1.0.xml``.
 
    .. container:: nohighlight
       
@@ -147,9 +146,7 @@ This includes the following steps:
          repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-scarthgap -m <release tag>
          repo sync
 
-   .. note:: For the ``<manifest release tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__. An example ``<manifest release tag>`` is ``qcom-6.6.90-QLI.1.5-Ver.1.0.xml``.
-
-2. Set up the build environment:
+#. Set up the build environment:
 
    .. container:: nohighlight
       
@@ -158,16 +155,15 @@ This includes the following steps:
          MACHINE=<machine> DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
          # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
 
-   .. note:: To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__.
+   To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__.
 
-3. Build the software image:
+#. Build the software image:
 
    .. container:: nohighlight
       
       ::
 
          bitbake qcom-multimedia-image
-
 
 .. |YoctoLEQCLinux| image:: ../../media/k2c-qli-build-ga/ws_qsc_cli_2.png
 .. |ws_qsc_cli_4| image:: ../../media/k2c-qli-build-ga/ws_qsc_cli_4.png

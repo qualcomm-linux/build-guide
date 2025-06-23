@@ -1,7 +1,7 @@
 Set up the Ubuntu host computer
 --------------------------------
 
-Install and configure the required software tools on the Ubuntu host computer.
+Install and configure the software tools on the Ubuntu host computer.
 
 1. Install the following packages:
 

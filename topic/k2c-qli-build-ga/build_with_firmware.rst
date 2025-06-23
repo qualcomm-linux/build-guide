@@ -38,7 +38,7 @@ The following table describes the Qualcomm Yocto layers and release tags:
      - firmware release tag
      - r1.0_00090.0
 
-The following tables describe the firmware distributions you can download according to the need and entitlements:
+The following tables describe the firmware distributions that you can download:
 
 .. _build_mapping_access_levels:
 
@@ -193,7 +193,7 @@ The following tables describe the firmware distributions you can download accord
 
 .. note:: Commands in the following sections are based on the binary and source for firmware images without modem and GPS (see the command in :ref:`Mapping firmware distributions to git repositories <Mapping_firmware_table>`). Hence, ``qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk`` is used. If you use any other distribution, then update the directory accordingly.
 
-The **Git command** column (see :ref:`Mapping firmware distributions to git repositories <Mapping_firmware_table>`) provides information about the git repositories that contain the firmware sources. Qualcomm servers host these repositories. Clone the appropriate repositories based on your access profile and use case.
+The **Git command** column (in the :ref:`Mapping firmware distributions to git repositories <Mapping_firmware_table>` table) provides information about the git repositories that contain the firmware sources. Qualcomm servers host these repositories. Clone the appropriate repositories based on your access profile and use case.
 
 The following ``git clone`` command downloads the selected firmware components in source, except the modem:
 
@@ -274,7 +274,7 @@ Build firmware
                   export SECTOOLS=<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCM6490.LE.1.0/common/sectoolsv2/ext/Linux/sectools
                   export SECTOOLS_DIR=<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCM6490.LE.1.0/common/sectoolsv2/ext/Linux
 
-         -  Install and set up Qualcomm\ :sup:`®` Hexagon\ :sup:`™` Processor:
+         -  Install and set up Qualcomm\ :sup:`®` Hexagon\ :sup:`™` Processor. Set the environment variable HEXAGON_ROOT to the path where the Hexagon SDK is installed. To change the install path when using ``qsc-cli``, see :ref:`Change the Hexagon tool install path <change_hex_tool_install_path>`.
 
             .. container:: nohighlight
       
@@ -283,8 +283,6 @@ Build firmware
                   qsc-cli tool extract --name hexagon8.4 --required-version 8.4.07
                   export HEXAGON_ROOT=$HOME/Qualcomm/HEXAGON_Tools
                   echo $HEXAGON_ROOT
-
-            .. note:: Set the environment variable HEXAGON_ROOT to the path where the Hexagon SDK is installed. To change the install path when using ``qsc-cli``, see :ref:`Change the Hexagon tool install path <change_hex_tool_install_path>`.
 
          .. rubric:: Build cDSP 
 
@@ -296,7 +294,7 @@ Build firmware
          
          **Build steps**
 
-         1. Navigate to the following directory:
+         1. Go to the following directory:
 
             .. container:: nohighlight
       
@@ -341,7 +339,7 @@ Build firmware
 
          **Build steps**
 
-         1. Navigate to the following directory:
+         1. Go to the following directory:
 
             .. container:: nohighlight
       
@@ -395,7 +393,7 @@ Build firmware
                   sudo apt-get install device-tree-compiler
                   export DTC=/usr/bin
 
-         #. Navigate to the following directory:
+         #. Go to the following directory:
 
             .. container:: nohighlight
       
@@ -431,7 +429,7 @@ Build firmware
             .. note:: 
                For debug variant builds, replace ``RELEASE`` with ``DEBUG``.
 
-         .. rubric:: Qualcomm TEE firmware
+         .. rubric:: Build Qualcomm TEE firmware
 
          **Tools required**
 
@@ -467,7 +465,7 @@ Build firmware
                   cd <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/TZ.XF.5.29.1/trustzone_images/build/ms/
                   python build_all.py -b TZ.XF.5.0 CHIPSET=kodiak --cfg=build_config_deploy_kodiak.xml
 
-         .. rubric:: AOP firmware
+         .. rubric:: Build AOP firmware
 
          **Tools required**
 
@@ -476,7 +474,7 @@ Build firmware
             
          **Build steps**
 
-         1. Navigate to the following directory:
+         1. Go to the following directory:
 
             .. container:: nohighlight
       
@@ -518,17 +516,16 @@ Build firmware
 
          .. rubric:: Generate firmware prebuilds (boot-critical and split-firmware binaries)
 
-         Create an integrated firmware binary from the individual components that you compiled:
+         - Create an integrated firmware binary from the individual components that you compiled:
 
-         .. container:: nohighlight
+           .. container:: nohighlight
       
-            ::
+              ::
 
-               cd <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCM6490.LE.1.0/common/build
-               python build.py --imf
+                cd <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCM6490.LE.1.0/common/build
+                python build.py --imf
 
-         .. note:: 
-            Firmware prebuild is successful if the following zip files are generated in the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCM6490.LE.1.0/common/build/ufs/bin`` directory:
+         - Firmware prebuild is successful if the following zip files are generated in the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCM6490.LE.1.0/common/build/ufs/bin`` directory:
 
             -  ``QCM6490_bootbinaries.zip``
             -  ``QCM6490_dspso.zip``
@@ -593,7 +590,7 @@ Build firmware
                   export SECTOOLS=<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCS9100.LE.1.0/common/sectoolsv2/ext/Linux/sectools
                   export SECTOOLS_DIR=<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCS9100.LE.1.0/common/sectoolsv2/ext/Linux
 
-         -  Install and set up Qualcomm\ :sup:`®` Hexagon\ :sup:`™` Processor:
+         -  Install and set up Qualcomm\ :sup:`®` Hexagon\ :sup:`™` Processor. Set the environment variable HEXAGON_ROOT to the path where the Hexagon SDK is installed. To change the install path when using ``qsc-cli``, see :ref:`Change the Hexagon tool install path <change_hex_tool_install_path>`.
 
             .. container:: nohighlight
       
@@ -602,8 +599,6 @@ Build firmware
                   qsc-cli tool extract --name hexagon8.6 --required-version 8.6.05.2
                   export HEXAGON_ROOT=$HOME/Qualcomm/HEXAGON_Tools
                   echo $HEXAGON_ROOT
-
-            .. note:: Set the environment variable HEXAGON_ROOT to the path where the Hexagon SDK is installed. To change the install path when using ``qsc-cli``, see :ref:`Change the Hexagon tool install path <change_hex_tool_install_path>`.
 
          .. rubric:: Build DSP      
 
@@ -633,7 +628,7 @@ Build firmware
                   pip install dtschema==2021.10
                   pip install jsonschema==4.0.0
 
-         #. Navigate to the following directory:
+         #. Go to the following directory:
 
             .. container:: nohighlight
       
@@ -688,7 +683,7 @@ Build firmware
                   sudo apt-get install device-tree-compiler
                   export DTC=/usr/bin
 
-         #. Navigate to the following directory:
+         #. Go to the following directory:
 
             .. container:: nohighlight
       
@@ -724,7 +719,7 @@ Build firmware
             .. note:: 
                For debug variant builds, replace ``RELEASE`` with ``DEBUG``.
 
-         .. rubric:: Qualcomm TEE firmware
+         .. rubric:: Build Qualcomm TEE firmware
 
          **Tools required**
 
@@ -760,7 +755,7 @@ Build firmware
                   cd <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/TZ.XF.5.29.1/trustzone_images/build/ms/
                   python build_all.py -b TZ.XF.5.0 CHIPSET=lemans --cfg=build_config_deploy_lemans.xml
 
-         .. rubric:: AOP firmware
+         .. rubric:: Build AOP firmware
 
          **Tools required**
 
@@ -769,7 +764,7 @@ Build firmware
             
          **Build steps**
 
-         1. Navigate to the following directory:
+         1. Go to the following directory:
 
             .. container:: nohighlight
       
@@ -811,22 +806,22 @@ Build firmware
 
          .. rubric:: Generate firmware prebuilds (boot-critical and split-firmware binaries)
 
-         Create an integrated firmware binary from the individual components that you compiled:
+         - Create an integrated firmware binary from the individual components that you compiled:
 
-         .. note:: Apply all the changes from the section *Additional information* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/ReleaseNote.html#additional-information>`__.
+           .. note:: Apply all the changes from the section *Additional information* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/ReleaseNote.html#additional-information>`__.
 
-         .. container:: nohighlight
+           .. container:: nohighlight
       
-            ::
+              ::
 
-               cd <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCS9100.LE.1.0/common/build
-               python build.py --imf
+                cd <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCS9100.LE.1.0/common/build
+                python build.py --imf
 
-         .. note::
-            Firmware prebuild is successful if the following zip files are generated in the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCS9100.LE.1.0/common/build/ufs/bin`` directory:
-             -  ``QCS9100_bootbinaries.zip``
-             -  ``QCS9100_dspso.zip``
-             -  ``QCS9100_fw.zip``
+         - Firmware prebuild is successful if the following zip files are generated in the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCM6490.LE.1.0/common/build/ufs/bin`` directory:
+
+            -  ``QCS9100_bootbinaries.zip``
+            -  ``QCS9100_dspso.zip``
+            -  ``QCS9100_fw.zip``
 
       .. group-tab:: IQ-8275
 
@@ -887,8 +882,7 @@ Build firmware
                   export SECTOOLS=<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCS8300.LE.1.0/common/sectoolsv2/ext/Linux/sectools
                   export SECTOOLS_DIR=<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCS8300.LE.1.0/common/sectoolsv2/ext/Linux               
 
-         -  Install and set up Qualcomm\ :sup:`®` Hexagon\ :sup:`™` Processor:
-
+         -  Install and set up Qualcomm\ :sup:`®` Hexagon\ :sup:`™` Processor. Set the environment variable HEXAGON_ROOT to the path where the Hexagon SDK is installed. To change the install path when using ``qsc-cli``, see :ref:`Change the Hexagon tool install path <change_hex_tool_install_path>`.
             .. container:: nohighlight
       
                ::
@@ -897,8 +891,6 @@ Build firmware
                   qsc-cli tool extract --name hexagon8.7 --required-version 8.7.02.1
                   export HEXAGON_ROOT=$HOME/Qualcomm/HEXAGON_Tools
                   echo $HEXAGON_ROOT
-
-            .. note:: Set the environment variable HEXAGON_ROOT to the path where the Hexagon SDK is installed. To change the install path when using ``qsc-cli``, see :ref:`Change the Hexagon tool install path <change_hex_tool_install_path>`.
 
          .. rubric:: Build DSP      
 
@@ -928,7 +920,7 @@ Build firmware
                   pip install dtschema==2021.10
                   pip install jsonschema==4.0.0
 
-         #. Navigate to the following directory:
+         #. Go to the following directory:
 
             .. container:: nohighlight
       
@@ -981,7 +973,7 @@ Build firmware
                   sudo apt-get install device-tree-compiler
                   export DTC=/usr/bin
 
-         #. Navigate to the following directory:
+         #. Go to the following directory:
 
             .. container:: nohighlight
       
@@ -1017,7 +1009,7 @@ Build firmware
             .. note:: 
                For debug variant builds, replace ``RELEASE`` with ``DEBUG``.
 
-         .. rubric:: Qualcomm TEE firmware
+         .. rubric:: Build Qualcomm TEE firmware
 
          **Tools required**
 
@@ -1053,7 +1045,7 @@ Build firmware
                   cd <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/TZ.XF.5.29.1/trustzone_images/build/ms/
                   python build_all.py -b TZ.XF.5.0 CHIPSET=monaco --cfg=build_config_deploy_monaco.xml
 
-         .. rubric:: AOP firmware
+         .. rubric:: Build AOP firmware
 
          **Tools required**
 
@@ -1062,7 +1054,7 @@ Build firmware
             
          **Build steps**
 
-         1. Navigate to the following directory:
+         1. Go to the following directory:
 
             .. container:: nohighlight
       
@@ -1104,21 +1096,20 @@ Build firmware
 
          .. rubric:: Generate firmware prebuilds (boot-critical and split-firmware binaries)
 
-         Create an integrated firmware binary from the individual components that you compiled:
+         - Create an integrated firmware binary from the individual components that you compiled:
 
-         .. container:: nohighlight
-      
-            ::
+           .. container:: nohighlight
+         
+              ::
 
-               cd <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCS8300.LE.1.0/common/build
-               python build.py --imf
+                 cd <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCS8300.LE.1.0/common/build
+                 python build.py --imf
 
-         .. note:: 
-            Firmware prebuild is successful if the following zip files are generated in the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCS8300.LE.1.0/common/build/ufs/bin`` directory:
-                     
-            -  ``QCS8300_bootbinaries.zip``
-            -  ``QCS8300_dspso.zip``
-            -  ``QCS8300_fw.zip``
+         - Firmware prebuild is successful if the following zip files are generated in the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCS8300.LE.1.0/common/build/ufs/bin`` directory:
+                        
+           -  ``QCS8300_bootbinaries.zip``
+           -  ``QCS8300_dspso.zip``
+           -  ``QCS8300_fw.zip``
 
 Build a BSP image with extras
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1180,7 +1171,7 @@ The BSP image build has software components for the Qualcomm device support and 
          # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
          # and enters into build-qcom-wayland directory.
 
-   .. note:: To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__.
+   To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250617225208/>`__.
 
 #. Compile the Yocto build:
 
@@ -1284,18 +1275,16 @@ The Qualcomm IM SDK is a collection of four standalone function SDKs: Qualcomm I
          # Build SDK image
          bitbake qcom-qim-product-sdk
 
-   .. note:: 
-      Clean the Qualcomm IM SDK build:
+#. Clean the Qualcomm IM SDK build:
       
-      .. container:: nohighlight
+   .. container:: nohighlight
       
-         ::
+      ::
 
-            bitbake -fc cleansstate qcom-multimedia-image
-            bitbake -fc cleanall qcom-multimedia-image
-
-            bitbake -fc cleansstate qcom-qim-product-sdk
-            bitbake -fc cleanall qcom-qim-product-sdk
+         bitbake -fc cleansstate qcom-multimedia-image
+         bitbake -fc cleanall qcom-multimedia-image
+         bitbake -fc cleansstate qcom-qim-product-sdk
+         bitbake -fc cleanall qcom-qim-product-sdk
 
 #. After a successful build, check that the ``system.img`` file is in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image`` directory:
 

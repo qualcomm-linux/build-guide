@@ -9,10 +9,10 @@ Troubleshoot
 Docker
 --------
 
--  **docker: Cannot connect to the Docker daemon at
-   unix:///var/run/docker.sock. Is the docker daemon running?**
+-  "docker: Cannot connect to the Docker daemon at
+   unix:///var/run/docker.sock. Is the docker daemon running?"
 
-   Run the following command to start Docker:
+   Start Docker:
 
    .. container:: nohighlight
       
@@ -20,43 +20,35 @@ Docker
 
          sudo systemctl start docker
 
--  **Error response from daemon: Get “https://registry-1.docker.io/v2/”: http: server gave HTTP response to HTTPS client**
+-  "Error response from daemon: Get “https://registry-1.docker.io/v2/”: http: server gave HTTP response to HTTPS client"
 
-   Add an internal Docker registry mirror (internal setting for the Qualcomm network).
+   1. Add an internal Docker registry mirror (internal setting for the Qualcomm network). Don't include # comments in the JSON configuration file. Using a tab instead of space and other invisible whitespace characters may break the functionality of JSON configuration files and can also lead to ``docker.service`` failing to start.
 
-   .. note::
-
-      Don't include # comments in the JSON configuration file. Using a tab instead of space and other invisible whitespace characters may break the functionality of JSON configuration files and can also lead to ``docker.service`` failing to start.
-
-   .. container:: nohighlight
+      .. container:: nohighlight
       
-      ::
+         ::
 
-         sudo vim /etc/docker/daemon.json
-         # Add an entry similar to the following in /etc/docker/daemon.json:
-         {
-            "registry-mirrors": ["https://docker-registry.qualcomm.com"]
-         }
+            sudo vim /etc/docker/daemon.json
+            # Add an entry similar to the following in /etc/docker/daemon.json:
+            {
+               "registry-mirrors": ["https://docker-registry.qualcomm.com"]
+            }
 
-   .. note::
+      .. note:: As an alternative, you can add the following entry in ``/etc/docker/daemon.json``:
 
-      As an alternative, you can add the following entry in ``/etc/docker/daemon.json``:
+                ``"registry-mirrors": ["https://ccr.ccs.tencentyun.com"]``
 
-      ``"registry-mirrors": ["https://ccr.ccs.tencentyun.com"]``
+   #. Restart the Docker service to take the new settings.
 
-   Restart the Docker service to take the new settings.
-
-   .. container:: nohighlight
+      .. container:: nohighlight
       
-      ::
+         ::
 
-         sudo systemctl restart docker
+            sudo systemctl restart docker
 
--  **Failed to download from https://download.docker.com**
+-  "Failed to download from https://download.docker.com"
 
-   .. note::
-
-      If you are unable to access or download from https://download.docker.com, run the following commands to install docker:
+    If you are unable to access or download from https://download.docker.com, run the following commands to install docker:
 
       .. container:: nohighlight
       
@@ -67,7 +59,7 @@ Docker
             curl -fsSL http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add –
             sudo add-apt-repository "deb [arch=amd64] http://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
 
--  **Docker failure due to Virtualization not enabled**
+-  "Docker failure due to Virtualization not enabled"
 
    Enable virtualization from the BIOS to resolve this error.
    Follow the specific instructions from the system provider to enable
@@ -80,46 +72,46 @@ Docker
    4. Save and exit.
    5. Restart the system.
 
--  **Permission denied while trying to connect to the Docker daemon
-   socket at unix:///var/run/docker.sock**
+-  "Permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock"
 
-   This happens when ``qsc-cli`` is already installed on the machine and you aren't part of the Docker group:
+   This happens when ``qsc-cli`` is already installed on the machine and you aren't part of the Docker group.
 
-   .. container:: nohighlight
+   1. Add to the Docker group:
+
+      .. container:: nohighlight
       
-      ::
+         ::
 
-         sudo groupadd docker
-         sudo usermod -aG docker $USER
-         newgrp docker
+            sudo groupadd docker
+            sudo usermod -aG docker $USER
+            newgrp docker
 
-   To confirm that you are part of the Docker group, run the following
-   command:
+   #. Confirm that you are part of the Docker group:
 
-   .. container:: nohighlight
+      .. container:: nohighlight
       
-      ::
+         ::
 
-         sudo grep /etc/group -e "docker"
-         # This command shows a list of users who are part of the Docker group; must include your user ID
+            sudo grep /etc/group -e "docker"
+            # This command shows a list of users who are part of the Docker group; must include your user ID
 
-   Sign out and sign in again for the access to take effect.
+   #. Sign out and sign in again for the access to take effect.
 
-   .. container:: nohighlight
+      .. container:: nohighlight
       
-      ::
+         ::
 
-         # You can run the following command to check if you are part of the Docker group
-         id -a
-         # This command returns an output string which should include 'docker'
+            # You can run the following command to check if you are part of the Docker group
+            id -a
+            # This command returns an output string which should include 'docker'
 
 Sync
 -------
 
--  **repo init or sync failure with except ManifestInvalidRevisionError,
-   e:**
+-  "repo init or sync failure with except ManifestInvalidRevisionError,
+   e:"
 
-   You may see this issue after installing the Repo package:
+   You might see this issue after installing the Repo package:
 
    -  If you have redirection in your ``/etc/gitconfig`` or
       ``~/.gitconfig`` to an internal mirror.
@@ -148,44 +140,44 @@ Sync
 
    The steps to resolve this error are as follows:
 
-   .. container:: nohighlight
+   1. Remove the older ``.repo`` folder. This will be in the directory where you ran ``repo init`` command earlier.
+
+      .. container:: nohighlight
       
-      ::
+         ::
 
-         # Remove the older .repo folder. This will be in the directory where you ran 'repo init' command earlier
-         rm -rf .repo
+            rm -rf .repo
 
-         # Export and run the repo commands to fix the repo issues. The REPO_REV must point to the mirrored
-         # branch from upstream 'stable' branch of https://gerrit.googlesource.com/git-repo
-         export REPO_REV='aosp/stable'
+   #. Export and run the repo commands to fix the repo issues. The REPO_REV must point to the mirrored branch from upstream 'stable' branch of https://gerrit.googlesource.com/git-repo.
 
--  **Install repo “Server certificate verification failed”**
-
-   If you see a certificate error such as ‘Server certificate
-   verification failed. CAfile: none CRLfile: none’, configure git to
-   disable SSL certificate verification with git configuration. Discuss
-   with your IT administration for further guidance. You can use either
-   of the following commands to disable SSL:
-
-   .. container:: nohighlight
+      .. container:: nohighlight
       
-      ::
+         ::
 
-         export GIT_SSL_NO_VERIFY=1
-         git config --global http.sslverify false
+            export REPO_REV='aosp/stable'
 
-   If your region is blocking access to ``android.googlesource``, try
-   the following configuration to fetch Repo from CodeLinaro Mirror:
+-  "Install repo “Server certificate verification failed”"
 
-   .. container:: nohighlight
+   - If you see a certificate error such as "Server certificate verification failed. CAfile: none CRLfile: none", configure git to disable SSL certificate verification with git configuration. Discuss with your IT administration for further guidance. You can use either of the following commands to disable SSL:
+
+     .. container:: nohighlight
       
-      ::
+        ::
 
-         git config --global url.https://git.codelinaro.org/clo/la/tools/repo.insteadOf https://android.googlesource.com/tools/repo
+           export GIT_SSL_NO_VERIFY=1
+           git config --global http.sslverify false
 
--  **error.GitError: git config (‘–replace-all’, ‘color.ui’, ‘auto’):
+   - If your region is blocking access to ``android.googlesource``, try the following configuration to fetch Repo from CodeLinaro Mirror:
+
+     .. container:: nohighlight
+      
+        ::
+
+           git config --global url.https://git.codelinaro.org/clo/la/tools/repo.insteadOf https://android.googlesource.com/tools/repo
+
+-  "error.GitError: git config (‘–replace-all’, ‘color.ui’, ‘auto’):
    error: could not write config file /home/$USER/.gitconfig: Device or
-   resource busy**
+   resource busy"
 
    This error occurs when your gitconfig doesn't set the UI color
    configuration. This configuration is set by default in Git 1.8.4 and
@@ -198,17 +190,16 @@ Sync
 
          git config --global color.ui auto
 
--  **[Error]: Failed preparing build for compilation. Error: Error
+-  "[Error]: Failed preparing build for compilation. Error: Error
    setting docker credentials. Error: “Error saving credentials: error
    closing temp file: close
    /usr2/<userid>/.docker/config.json3322274803: disk quota
-   exceeded\\n”**
+   exceeded\\n”"
 
    QSC CLI uses the home directory only for a few kilo bytes (kB). Clear
    a few MBs from your home directory.
 
--  **[Error]: The “path” argument must be of type string. Received
-   undefined**
+-  "[Error]: The “path” argument must be of type string. Received undefined"
 
    **Error excerpt**
 
@@ -227,10 +218,7 @@ Sync
 
    **Solution**
 
-   This error may occur if QSC CLI is incompatible with Qlauncher.
-   Qlauncher will be deprecated and replaced with a new
-   application from the QSC. If you have Qlauncher in the workspace, you
-   can run the following commands:
+   This error occurs if QSC CLI is incompatible with Qlauncher. Qlauncher will be deprecated and replaced with a new application from the QSC. If you have Qlauncher in the workspace, you can run the following commands:
 
    .. container:: nohighlight
       
@@ -244,9 +232,9 @@ Sync
          # Uninstall Qlauncher with the following command:
          qsc-cli tool uninstall qualcomm_launcher
 
--  **docker: Error response from daemon: error while creating mount
+-  "docker: Error response from daemon: error while creating mount
    source path ‘/usr2/<userid>/.netrc’: mkdir /usr2/<userid>/.netrc:
-   permission denied**
+   permission denied"
 
    **Error excerpt**
 
@@ -268,16 +256,15 @@ Sync
 
    **Solution**
 
-   This could happen due to the way IT has set up your home directory.
+   This might happen due to the way IT has set up your home directory.
    Work with your IT administrator for any further changes to your home
    directory.
 
--  **fatal: couldn’t find remote ref refs/heads/qcom-linuxSTXscarthgap**
+-  "fatal: couldn’t find remote ref refs/heads/qcom-linuxSTXscarthgap"
 
-   If you see any junk characters while copying commands from the PDF,
-   remove or replace the junk characters with appropriate symbols and
-   rerun the command. You can also open the guide in HTML mode
-   and use the copy command option.
+   If you see any stray characters while copying commands from the PDF,
+   remove or replace the stray characters with appropriate symbols and
+   rerun the command.
 
    **Example**
 
@@ -290,9 +277,9 @@ Sync
          # with
          repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-scarthgap -m qcom-6.6.90-QLI.1.5-Ver.1.0.xml
 
--  **pull access denied for 032693710300.dkr.ecr.us-west-2.amazonaws.com/stormchaser/ql-tool**
+-  "pull access denied for 032693710300.dkr.ecr.us-west-2.amazonaws.com/stormchaser/ql-tool"
 
-   This error may occur while running the ``qsc-cli`` download command.
+   This error can occur while running the ``qsc-cli`` download command.
 
    **Error excerpt**
 
@@ -316,8 +303,8 @@ Sync
 Build
 --------
 
--  **ERROR: linux-kernel-qcom-6.6-r0 do_menuconfig: No valid terminal
-   found, unable to open devshell**
+-  "ERROR: linux-kernel-qcom-6.6-r0 do_menuconfig: No valid terminal
+   found, unable to open devshell"
 
    This error can trigger while running a
    ``bitbake linux-kernel-qcom -c menuconfig`` command.
@@ -344,7 +331,7 @@ Build
          sudo apt install screen
          sudo apt install tmux
 
--  **NOTE: No reply from server in 30s**
+-  "NOTE: No reply from server in 30s"
 
    If you are seeing this error during the build on the rerun of
    ``qsc-cli chip-software compile`` or ``bitbake`` commands, you can try to delete
@@ -355,8 +342,8 @@ Build
 
 .. _do_fetch_error_1:
 
--  **do_fetch: BitBake Fetcher Error: FetchError(‘Unable to fetch URL
-   from any source’)**
+-  "do_fetch: BitBake Fetcher Error: FetchError(‘Unable to fetch URL
+   from any source’)"
 
    These are intermittent fetch failures. Check if there is a
    network/host issue at your end, else check if the server is creating
@@ -376,8 +363,7 @@ Build
    If these configurations don't work, you can retry the compile to get
    past these intermittent errors for the first time.
 
-   A few large git projects may show this error. For such projects, a
-   feasible option is to manually clone as follows:
+   A few large git projects can generate this error. In such scenarios, manually clone the projects:
 
    .. container:: nohighlight
       
@@ -388,8 +374,7 @@ Build
          touch <workspace_path>/downloads/git2/<local-name>.git.done
 
    For example, when ``do_fetch`` fails for
-   ``qualcomm_linux-spf-1-0-le-qclinux-1-0-r1_api-linux_history_prebuilts.git``,
-   run the following command:
+   ``qualcomm_linux-spf-1-0-le-qclinux-1-0-r1_api-linux_history_prebuilts.git``, run the following command:
 
    .. container:: nohighlight
       
@@ -398,47 +383,34 @@ Build
          git clone --bare --mirror https://qpm-git.qualcomm.com/home2/git/revision-history/qualcomm_linux-spf-1-0-le-qclinux-1-0-r1_api-linux_history_prebuilts.git <workspace_path>/downloads/git2/qpm-git.qualcomm.com.home2.git.revision-history.qualcomm_linux-spf-1-0-le-qclinux-1-0-r1_api-linux_history_prebuilts.git
          touch <workspace_path>/downloads/git2/qpm-git.qualcomm.com.home2.git.revision-history.qualcomm_linux-spf-1-0-le-qclinux-1-0-r1_api-linux_history_prebuilts.git.done
 
-   After creating the ``.done`` file, proceed with the
-   ``bitbake <image recipe>`` command. After completing the initial build,
+   After creating the ``.done`` file, proceed with the ``bitbake <image recipe>`` command. After completing the initial build,
    it's recommended to set up your own `download directory <https://docs.yoctoproject.org/4.0.16/singleindex.html#term-DL_DIR>`__.
 
--  **make[4]: /bin/sh: Argument list too long**
+-  "make[4]: /bin/sh: Argument list too long"
 
-   This happens when the path of the workspace exceeds 90 characters.
-   Reduce the workspace path length to avoid this failure.
+   This happens when the path of the workspace exceeds 90 characters. Reduce the workspace path length to avoid this failure.
 
--  **kernel-source/arch/arm64/boot/dts/qcom/qcm6490-idp.dts:8:10: fatal
-   error: dt-bindings/iio/qcom,spmi-adc7-pmk8350.h: No such file or
-   directory**
+-  "kernel-source/arch/arm64/boot/dts/qcom/qcm6490-idp.dts:8:10: fatal error: dt-bindings/iio/qcom,spmi-adc7-pmk8350.h: No such file or directory"
 
-   The file in question ``qcom,spmi-adc7-pmk8350.h`` is part of the
-   kernel source
-   ``<kernel-src>/include/dt-bindings/iio/qcom,spmi-adc7-pmk8350.h``.
+   The ``qcom,spmi-adc7-pmk8350.h`` file is part of the kernel source ``<kernel-src>/include/dt-bindings/iio/qcom,spmi-adc7-pmk8350.h``.
 
-   Check the workspace for this file and initialize the environment to pick this file. While compiling dtbs, the kernel build system runs a GCC preprocessor to replace the macros in dts files by its definition. The mentioned path is one such place where several ``includes`` reside.
+   1. Check the workspace for this file and initialize the environment to pick this file. While compiling dtbs, the kernel build system runs a GCC preprocessor to replace the macros in dts files by its definition. The mentioned path is one such place where several ``includes`` reside.
 
-   Check if you have ``core.symlinks`` set to ``false`` in your git
-   configuration. If yes, set it to true:
+   #. Check if you have ``core.symlinks`` set to ``false`` in your git configuration. If yes, set it to true:
 
-   .. container:: nohighlight
+      .. container:: nohighlight
       
-      ::
+         ::
 
-         git config --global core.symlinks true
+            git config --global core.symlinks true
 
--  **qpm-git.qualcomm.com.home2.git.revision-history.qualcomm_linux-spf-1-0-le-qclinux-1-0-r1_api-linux_history_prebuilts.git
-   –progress failed with exit code 128, no output**
+-  "qpm-git.qualcomm.com.home2.git.revision-history.qualcomm_linux-spf-1-0-le-qclinux-1-0-r1_api-linux_history_prebuilts.git
+   –progress failed with exit code 128, no output"
 
    128 is a masking error and this error needs further triage as it can be a network issue at your end or a genuine issue accessing
-   Qualcomm or upstream mirrors. As a workaround for this error, 
-   see :ref:`BitBake Fetcher Error <do_fetch_error_1>`. You can triage it further by
-   following the subsequent instructions to dump verbose logs during fetch.
+   Qualcomm or upstream mirrors. As a workaround for this error, see :ref:`BitBake Fetcher Error <do_fetch_error_1>`. You can triage it further by following the subsequent instructions to dump verbose logs during fetch.
 
-   By default, verbose logging isn't enabled for Yocto git fetch. To
-   enable the same for all git projects, edit the ``local.conf`` file and
-   change the ``BB_GIT_VERBOSE_FETCH`` value to **1**. You can also enable verbose logging for each recipe. For example, to enable verbose
-   logging and debug a ``do_fetch()`` failure in a diag recipe, perform
-   the following steps:
+   By default, verbose logging isn't enabled for Yocto git fetch. Enabling git verbose logging for all recipes can significantly increase the build time. It's recommended to enable it only in required recipes on a need basis. To enable the same for all git projects, edit the ``local.conf`` file and change the ``BB_GIT_VERBOSE_FETCH`` value to **1**. You can also enable verbose logging for each recipe. For example, to enable verbose logging and debug a ``do_fetch()`` failure in a diag recipe, perform the following steps:
 
    1. Edit ``layers/meta-qcom-hwe/recipes-bsp/diag/daig_15.0.bb`` and
       add the line ``BB_GIT_VERBOSE_FETCH = "1"``.
@@ -450,11 +422,7 @@ Build
       ``build-qcom-wayland/tmp-glibc/work/qcm6490-qcom-linux/diag/15.0-r0/temp``.
    5. Share ``log.do_fetch`` from this path with the Qualcomm support team. 
       
-   .. note:: Enabling git verbose logging for all recipes
-             can significantly increase the build time. It's recommended to
-             enable it only in required recipes on a need basis.
-
--  **Failed SP Download with error: <> Sp Download failed. ExitCode: 128 Signal: 0 with errorcode 4**
+-  "Failed SP Download with error: <> Sp Download failed. ExitCode: 128 Signal: 0 with errorcode 4"
 
    **Error excerpt**
 
@@ -473,14 +441,12 @@ Build
 
    **Solution**
 
-   Error log indicates that there is no space on the device **“fatal:
-   write error: No space left on device”**.
+   Error log indicates that there is no space on the device "fatal:
+   write error: No space left on device".
 
    Clean up the space and retrigger.
 
--  **File “/usr/lib/python3.10/locale.py”, line 620, in setlocale return
-   \_setlocale(category, locale)locale.Error: unsupported locale
-   setting**
+-  "File “/usr/lib/python3.10/locale.py”, line 620, in setlocale return \_setlocale(category, locale)locale.Error: unsupported locale setting"
 
    To resolve this error, run the following commands and recompile:
 
@@ -493,7 +459,7 @@ Build
          export LC_ALL=en_US.UTF-8
          export LANG=en_US.UTF-8
 
--  **layer directories do not exist build-qcom-wayland/conf/../../layers/meta-qcom-qim-product-sdk**
+-  "layer directories do not exist build-qcom-wayland/conf/../../layers/meta-qcom-qim-product-sdk"
 
    This error occurs due to one of the following reasons:
 
@@ -515,10 +481,10 @@ Build
 
    **Solution**
 
-   -  Remove the ``build-qcom-wayland`` directory.
-   -  Rerun the commands in :ref:`Build Qualcomm IM SDK image <build_qimp_sdk_image_unreg>`.
+   1. Remove the ``build-qcom-wayland`` directory.
+   #. Rerun the commands in :ref:`Build Qualcomm IM SDK image <build_qimp_sdk_image_unreg>`.
 
--  **failed: database disk image is malformed. abort()ing pseudo client by server request**
+-  "failed: database disk image is malformed. abort()ing pseudo client by server request"
 
    The Pseudo tool gets path mismatch and corrupt database issues when processing the file system operations. When Pseudo simulates the file system operations in a Yocto project, problems can occur while handling file paths and permissions.
 
@@ -536,7 +502,7 @@ Build
          bitbake -c cleanall pseudo-native & bitbake pseudo-native
          ../qirp-build qcom-robotics-full-image
 
--  **pyinotify.WatchManagerError: No space left on device (ENOSPC)**
+-  "pyinotify.WatchManagerError: No space left on device (ENOSPC)"
 
    Compilation triggers this error.
 

@@ -30,22 +30,20 @@ Download the software
 
       For Ubuntu 22.04, you might see an issue while installing QUD where you must enroll the public key on your Linux host for a successful QUD installation. For more details, follow the steps provided in the ``signReadme.txt`` file available at the ``/opt/QTI/sign/`` directory.
 
-2. Use your registered email ID to sign in to the QSC desktop application. The QSC Launcher dashboard page (for example, when you connect the QCS6490 Qualcomm Dragonwing\ :sup:`™` RB3 Gen 2 Core Development Kit) appears as shown in the following image:
-
-   .. note:: To register, go to https://www.qualcomm.com/support/working-with-qualcomm.
+#. Use your registered email ID to sign in to the QSC desktop application. To register your email ID, go to `Qualcomm support page <https://www.qualcomm.com/support/working-with-qualcomm>`__.
 
    .. image:: ../../media/k2c-qli-build-ga/start_launcher_ab.png
 
    -  If you don't have a connected device, click :guilabel:`Start Launcher` (A).
    -  If you have a connected device, select :guilabel:`Start Launcher` (B) for the appropriate device in the :guilabel:`Connected devices` panel.
 
-3. On the :guilabel:`Specify Environment` page, select the appropriate values for :guilabel:`Category`, :guilabel:`Chipset`, :guilabel:`Host Operating System`, :guilabel:`Target Operating System`, and then select :guilabel:`Next`.
+#. On the :guilabel:`Specify Environment` page, select the appropriate values for :guilabel:`Category`, :guilabel:`Chipset`, :guilabel:`Host Operating System`, :guilabel:`Target Operating System`, and then select :guilabel:`Next`.
 
    .. note:: See `chipsets (hardware SoCs) <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-115/soc.html>`__ that are supported on Qualcomm Linux.
 
    .. image:: ../../media/k2c-qli-build-ga/specify_env.png
 
-4. In the :guilabel:`Select Resources` window, do the following:
+#. In the :guilabel:`Select Resources` window, do the following:
    
    .. image:: ../../media/k2c-qli-build-ga/select_resource_page.png
 
@@ -64,10 +62,9 @@ Download the software
            - `Qualcomm IM SDK Quick Start Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-51>`__
            - `QIR SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-265>`__
 
-5. To download the selected compilable distribution or flashable binary, select :guilabel:`Download`. After the software download is successful, a *Download complete* status appears.
+#. To download the selected compilable distribution or flashable binary, select :guilabel:`Download`. After the software download is successful, a *Download complete* status appears.
 
    .. image:: ../../media/k2c-qli-build-ga/software_download_complete.png
-
    
    .. note:: You can also track the download progress through the :guilabel:`Downloads` option in the top menu bar.
 
@@ -102,9 +99,9 @@ Build and flash default configuration
 
    .. note:: Before you flash the software, ensure the following:
 
-      1. Device is in :ref:`Emergency Download (EDL) mode <move_to_EDL>`.
-      #. :ref:`Provision UFS <provision_ufs>`.
-      #. :ref:`Flash CDT <flash_CDT>`.
+      1. Device is in :ref:`Emergency download (EDL) mode <move_to_EDL>`.
+      #. :ref:`Provision universal flash storage (UFS) <provision_ufs>`.
+      #. :ref:`Flash configuration data table (CDT) <flash_CDT>`.
       #. :ref:`Flash SAIL <flash_sail>`.
 
    a. Flash the software by selecting the device on which you want to flash the compiled software. If you connected many devices, then select the correct target device.
