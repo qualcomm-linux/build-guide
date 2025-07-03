@@ -61,4 +61,4 @@ If you're a registered user, you can use any one of the following three methods 
 .. note:: 
   
    - See `Hardware SoCs <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-115/soc.html>`__ that are supported on Qualcomm Linux.
-   - For IQ-615 build instructions, see `Qualcomm IQ-6 Quick Start Guide` [DOC NOT PUBLISHED YET].
+   - For IQ-615 build instructions, see `Qualcomm Dragonwing™ IQ-615 Beta Evaluation Kit (EVK) Quick Start Guide`.
