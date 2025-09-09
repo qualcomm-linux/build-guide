@@ -275,9 +275,9 @@ Sync
       ::
 
          # Replace the following command
-         repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linuxSTXscarthgap -m qcom-6.6.90-QLI.1.5-Ver.1.1.xml
+         repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linuxSTXscarthgap -m qcom-6.6.97-QLI.1.6-Ver.1.0.xml
          # with
-         repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-scarthgap -m qcom-6.6.90-QLI.1.5-Ver.1.1.xml
+         repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-scarthgap -m qcom-6.6.97-QLI.1.6-Ver.1.0.xml
 
 -  "pull access denied for 032693710300.dkr.ecr.us-west-2.amazonaws.com/stormchaser/ql-tool"
 
@@ -518,6 +518,44 @@ Build
 
          sudo su
          echo 1048576 > /proc/sys/fs/inotify/max_user_watches
+
+-  "fatal: repository 'https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk.g… not found"
+   
+   This error can occur when you download the distribution from Qualcomm ChipCode\ :sup:`™` Portal.
+
+   **Error excerpt**
+
+   .. container:: nohighlight
+      
+      ::
+
+         git clone -b r1.0_00100.0 --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk.g…
+         Cloning into 'qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk'...
+         fatal: repository 'https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk.g… not found
+
+   **Solution**
+
+   Run the following command with debug flags:
+
+   .. container:: nohighlight
+
+      ::
+
+         export GIT_CURL_VERBOSE=true ; time GIT_SSL_NO_VERIFY=true <git command>
+
+   If you see this error, run the following command and clone again:
+
+   .. container:: screenoutput
+
+      | Connection #2 to host chipmaster2.qti.qualcomm.com left intact
+	   | error: RPC failed; HTTP 302 curl 22 The requested URL returned error: 302
+	   | fatal: The remote end hung up unexpectedly
+
+   .. container:: nohighlight
+
+      ::
+
+         git config --global http."https://qpm-git.qualcomm.com".followRedirects true
 
 Flash
 -----------

@@ -114,7 +114,7 @@ The following table shows an example mapping of the Yocto layers to the manifest
          - ``meta-qcom-distro``
        - BSP build: High-level OS and prebuilt firmware (GPS only)
          
-         ``qcom-6.6.90-QLI.1.5-Ver.1.1.xml``
+         ``qcom-6.6.97-QLI.1.6-Ver.1.0.xml``
        - ``qcom-wayland``
      * - 
          - ``meta-qcom``
@@ -123,7 +123,7 @@ The following table shows an example mapping of the Yocto layers to the manifest
          - ``meta-qcom-qim-product-sdk``
        - BSP build + Qualcomm IM SDK build:
          
-         ``qcom-6.6.90-QLI.1.5-Ver.1.1_qim-product-sdk-2.0.1.xml``
+         ``qcom-6.6.97-QLI.1.6-Ver.1.0_qim-product-sdk-2.1.0.xml``
        - ``qcom-wayland``
      * - 
          - ``meta-qcom``
@@ -132,7 +132,7 @@ The following table shows an example mapping of the Yocto layers to the manifest
          - ``meta-qcom-realtime``
        - BSP build + Real-time kernel build:
          
-         ``qcom-6.6.90-QLI.1.5-Ver.1.1_realtime-linux-1.1.xml``
+         ``qcom-6.6.97-QLI.1.6-Ver.1.0_realtime-linux-1.0.xml``
        - ``qcom-wayland``
      * - 
          - ``meta-qcom``
@@ -145,7 +145,7 @@ The following table shows an example mapping of the Yocto layers to the manifest
          - ``meta-qcom-qim-product-sdk``
        - BSP build + QIR SDK build:
          
-         ``qcom-6.6.90-QLI.1.5-Ver.1.1_robotics-product-sdk-1.1.xml``
+         ``qcom-6.6.97-QLI.1.6-Ver.1.0_robotics-sdk-1.0.xml``
        - ``qcom-robotics-ros2-humble``
 
 For more information about the Yocto layers, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-27/qualcomm_bsp_metadata_layers.html>`__.
@@ -166,7 +166,7 @@ The BSP image build has software components for the Qualcomm device support and 
          mkdir <WORKSPACE_DIR>
          cd <WORKSPACE_DIR>
          repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-scarthgap -m <manifest release tag>
-         # Example, <manifest release tag> is qcom-6.6.90-QLI.1.5-Ver.1.1.xml
+         # Example, <manifest release tag> is qcom-6.6.97-QLI.1.6-Ver.1.0.xml
          repo sync
 
 #. Set up the build environment:
@@ -214,7 +214,7 @@ The Qualcomm IM SDK is a collection of four standalone function SDKs: Qualcomm I
          mkdir <WORKSPACE_DIR>
          cd <WORKSPACE_DIR>
          repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-scarthgap -m <manifest release tag>
-         # Example, <manifest release tag> is qcom-6.6.90-QLI.1.5-Ver.1.1.xml
+         # Example, <manifest release tag> is qcom-6.6.97-QLI.1.6-Ver.1.0.xml
          repo sync
 
 #. Clone the Qualcomm IM SDK layer into the workspace:
@@ -224,7 +224,7 @@ The Qualcomm IM SDK is a collection of four standalone function SDKs: Qualcomm I
       ::
 
          git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b <meta-qcom-qim-product-sdk release tag> layers/meta-qcom-qim-product-sdk
-         # Example, <meta-qcom-qim-product-sdk release tag> is qcom-6.6.90-QLI.1.5-Ver.1.1_qim-product-sdk-2.0.1
+         # Example, <meta-qcom-qim-product-sdk release tag> is qcom-6.6.97-QLI.1.6-Ver.1.0_qim-product-sdk-2.1.0
 
 #. Export the Qualcomm IM SDK layer:
 
@@ -280,7 +280,7 @@ The Qualcomm® Intelligent Robotics (QIR) SDK 2.0 is a collection of components 
          mkdir <WORKSPACE_DIR>
          cd <WORKSPACE_DIR>
          repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-scarthgap -m <manifest release tag>
-         # Example, <manifest release tag> is qcom-6.6.90-QLI.1.5-Ver.1.1.xml
+         # Example, <manifest release tag> is qcom-6.6.97-QLI.1.6-Ver.1.0.xml
          repo sync
 
 #. Download the QIR SDK layers into the BSP build ``<WORKSPACE DIR>``
@@ -291,10 +291,10 @@ The Qualcomm® Intelligent Robotics (QIR) SDK 2.0 is a collection of components 
       ::
 
          git clone https://github.com/ros/meta-ros -b scarthgap layers/meta-ros && cd layers/meta-ros && git checkout c560699e810e60a9526f4226c2c23f8d877280c8 && cd ../../
-         git clone https://github.com/quic-yocto/meta-qcom-robotics.git -b qcom-6.6.90-QLI.1.5-Ver.1.1_robotics-product-sdk-1.1 layers/meta-qcom-robotics
-         git clone https://github.com/quic-yocto/meta-qcom-robotics-distro.git -b qcom-6.6.90-QLI.1.5-Ver.1.1_robotics-product-sdk-1.1 layers/meta-qcom-robotics-distro
-         git clone https://github.com/quic-yocto/meta-qcom-robotics-sdk.git -b qcom-6.6.90-QLI.1.5-Ver.1.1_robotics-product-sdk-1.1 layers/meta-qcom-robotics-sdk
-         git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b qcom-6.6.90-QLI.1.5-Ver.1.1_qim-product-sdk-2.0.1 layers/meta-qcom-qim-product-sdk
+         git clone https://github.com/quic-yocto/meta-qcom-robotics.git -b qcom-6.6.97-QLI.1.6-Ver.1.0_robotics-sdk-1.0 layers/meta-qcom-robotics
+         git clone https://github.com/quic-yocto/meta-qcom-robotics-distro.git -b qcom-6.6.97-QLI.1.6-Ver.1.0_robotics-sdk-1.0 layers/meta-qcom-robotics-distro
+         git clone https://github.com/quic-yocto/meta-qcom-robotics-sdk.git -b qcom-6.6.97-QLI.1.6-Ver.1.0_robotics-sdk-1.0 layers/meta-qcom-robotics-sdk
+         git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b qcom-6.6.97-QLI.1.6-Ver.1.0_qim-product-sdk-2.1.0 layers/meta-qcom-qim-product-sdk
 
 #. Set up the build environment:
 
@@ -343,7 +343,7 @@ The real-time layer provides recipes and configurations required to run the Qual
          mkdir <WORKSPACE_DIR>
          cd <WORKSPACE_DIR>
          repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-scarthgap -m <manifest release tag>
-         # Example, <manifest release tag> is qcom-6.6.90-QLI.1.5-Ver.1.1.xml
+         # Example, <manifest release tag> is qcom-6.6.97-QLI.1.6-Ver.1.0.xml
          repo sync
 
 #. Clone the real-time Linux layer into the workspace:
@@ -353,7 +353,7 @@ The real-time layer provides recipes and configurations required to run the Qual
       ::
 
          git clone https://github.com/quic-yocto/meta-qcom-realtime -b <meta-qcom-realtime release tag> layers/meta-qcom-realtime
-         # Example, <meta-qcom-realtime release tag> is qcom-6.6.90-QLI.1.5-Ver.1.1_realtime-linux-1.1
+         # Example, <meta-qcom-realtime release tag> is qcom-6.6.97-QLI.1.6-Ver.1.0_realtime-linux-1.0
 
 #. Export the real-time layer:
 
