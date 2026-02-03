@@ -7,25 +7,14 @@ Set up the Ubuntu host computer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Install and configure the required software tools on the Ubuntu host computer.
 
-1. Install git:
+1. Install the following packages to prepare your host environment for the Yocto build:
 
    .. container:: nohighlight
       
       ::
 
-         # Install git if you haven't already installed
-         sudo apt install git
-
-#. Clone the ``qcom-download-utils`` git repository, which provides a Dockerfile for the Qualcomm public Yocto layers and a few helper scripts:
-
-   .. container:: nohighlight
-      
-      ::
-
-         mkdir <workspace_path>
-         cd <workspace_path>
-         git clone https://git.codelinaro.org/clo/le/qcom-download-utils.git
-         cd qcom-download-utils
+         sudo apt update
+         sudo apt install git docker
 
 #. Add the user to the Docker group:
 
@@ -39,27 +28,14 @@ Install and configure the required software tools on the Ubuntu host computer.
          # To check if you are part of a Docker group, run the following command:
          sudo grep /etc/group -e "docker"
 
-#. Configure your host computer:
+# Clone the ``siemens/kas`` git repository, which provides a Dockerfile for the build: 
 
    .. container:: nohighlight
       
       ::
 
-         bash utils/check_config.sh
-         # Resolve the errors and run this command until no errors show up
+         git clone https://github.com/siemens/kas
 
-#. Install Docker:
-
-   .. container:: nohighlight
-      
-      ::
-
-         bash docker/docker_setup.sh
-
-.. note:: 
-   The following sample figure shows the directory structure of ``qcom-download-utils`` in relation to the Docker setup:
-
-   .. image:: ../../media/k2c-qli-build-ga/qcom-download-utils-folder.png
 
 .. _build_with_docker_bsp_image:
 
@@ -70,46 +46,32 @@ Dockertag uses lowercase letters for the release folder followed by the Dockerfi
 
 Create and build a Yocto Docker image:
 
-1. Run ``docker_build.sh`` to create the Docker image with Dockerfile (``Dockerfile_22.04``) and Dockertag (``qcom-6.6.116-qli.1.7-ver.1.1_22.04``). Use this Docker image to create the container environment and run the Yocto build.
-
-   
+1. Download Qualcomm Yocto and the supporting meta-layers. For the latest ``<meta-qcom-release-tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
 
    .. container:: nohighlight
       
       ::
 
-         bash docker/docker_build.sh -f ./docker/dockerfiles/Dockerfile_22.04 -t qcom-6.6.116-qli.1.7-ver.1.1_22.04
+         # cd to directory where you have 300 GB of free storage space to create your workspaces
+         mkdir <workspace-dir>
+         cd <workspace-dir>
+         git clone https://github.com/qualcomm-linux/meta-qcom-releases -b <meta-qcom-release-tag>
+         kas/kas-container checkout meta-qcom-releases/lock.yml
 
-   If you face any issues while running ``docker_build.sh``, see the
-   following solution:
+#. Build the software image. Build targets are defined based on machine and distro combinations. 
 
    .. container:: nohighlight
       
       ::
 
-         # Error 1: Cache-related issue.
-            # If you are facing issues with the docker build command, try using --no-cache option. This option forces rebuilding of the layers that are already available
-            bash docker/docker_build.sh -n --no-cache -f ./docker/dockerfiles/Dockerfile_22.04 -t qcom-6.6.116-qli.1.7-ver.1.1_22.04
+         kas/kas-container build --skip repos_checkout meta-qcom/ci/<machine>:meta-qcom/ci/<distro>
 
-         # Error2: Response from daemon: Get "https://registry-1.docker.io/v2/": http: server gave HTTP response to HTTPS client
-            # Check with your IT administrator to acquire ``registry-mirrors`` URL and replace <docker-mirror-host>`` in the following solution 
-            # Using a tab instead of space and other invisible white-space characters may break the proper functioning of the JSON configuration files
-            # and later may lead to the Docker service failing to start
+   For various ``<machine>`` and ``<distro>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
 
-            # Solution:
-            sudo vim /etc/docker/daemon.json
-            # Add an entry similar to the following in /etc/docker/daemon.json:
-            {
-               "registry-mirrors": ["https://<docker-mirror-host>"]
-            }
-            # Restart the Docker service to take the new settings
-            sudo systemctl restart docker
-
-#. Sync and build the Yocto image in a Docker container with the Docker
-   tag and release parameters:
+#. After a successful build, check that the ``rootfs.img`` file is in the build artifacts:
 
    .. container:: nohighlight
-      
+
       ::
 
          bash docker/docker_run.sh -t qcom-6.6.116-qli.1.7-ver.1.1_22.04 -r qcom-6.6.116-QLI.1.7-Ver.1.1 -M <machine> --build-override <override> --alternate-repo true
