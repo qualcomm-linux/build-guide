@@ -2,7 +2,7 @@
 
 .. rst_class:: flattenforhtml
 
-Build with GitHub using firmware and extras
+Build from Source (with firmware and extras)
 ============================================
 
 Use this information to build various Qualcomm Linux Yocto layers including the ``meta-qcom-hwe``, ``meta-qcom-extras``, ``meta-qcom-qim-product-sdk``,

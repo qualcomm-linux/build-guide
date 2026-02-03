@@ -2,7 +2,7 @@
 
 .. rst_class:: flattenforhtml
 
-Build with GitHub for registered users
+Build with Docker 
 =========================================
 
 Create a build using the prebuilt proprietary binaries/images available on GitHub.

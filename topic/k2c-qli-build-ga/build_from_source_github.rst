@@ -150,7 +150,7 @@ The following table shows an example mapping of the Yocto layers to the manifest
 
 For more information about the Yocto layers, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-27/qualcomm_linux_metadata_layers.html>`__.
    
-For information on building the ``meta-qcom-extras`` add-on layer and select firmware sources, see :doc:`Build with GitHub using firmware and extras <build_addn_info>`.
+For information on building the ``meta-qcom-extras`` add-on layer and select firmware sources, see :doc:`Build from Source (with firmware and extras) <build_addn_info>`.
 
 Build a BSP image
 ^^^^^^^^^^^^^^^^^^^^^

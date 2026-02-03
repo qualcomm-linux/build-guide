@@ -2,7 +2,7 @@
 
 .. rst_class:: flattenforhtml
 
-Build with GitHub for unregistered users
+Build from Source 
 =============================================
 
 Use GitHub and make a build using the prebuilt proprietary binaries/images.
