@@ -19,10 +19,4 @@ For more details on the hardware SoCs supported in this build method, see the ta
 
 .. include:: build_bsp_image_unreg.rst
 
-.. include:: build_qim_sdk_image_unreg.rst
-
-.. include:: build_qir_sdk_unreg.rst
-
-.. include:: build_realtime_image_unreg.rst
-
 .. include:: flash_unreg.rst

@@ -1,87 +1,14 @@
 Sync
 -----
 
-Use the Repo tool that was installed during the :ref:`Ubuntu host setup <ubuntu_host_setup_github_unreg>` to download git repositories and other attributes from the `Qualcomm manifest <https://github.com/quic-yocto/qcom-manifest>`__. The Repo tool downloads the manifests using the ``repo init`` command.
+QLI uses the kas tool that was installed during the :ref:`Ubuntu host setup <ubuntu_host_setup_github_unreg>` to download the dependency metalayer repositories for the build. Lock files recording the metalayer repository information are stored in `meta-qcom-releases <https://github.com/qualcomm-linux/meta-qcom-releases>`__ for each critical release. 
 
-The following table shows an example mapping of the Yocto layers to the manifest release tags. Use this mapping to download and build Qualcomm Linux.
+You can checkout the lock files for each release by the `meta-qcom-release-tag`. The meta-qcom release tag syntax is as follows:
 
-.. list-table:: Mapping Yocto layers to manifest release tags
-   :header-rows: 1
-   :class: longtable
-
-
-   * - Yocto layers
-     - Manifest release tag
-     - Reference distribution (``DISTRO``)
-
-   * - 
-        - ``meta-qcom``
-        - ``meta-qcom-hwe``
-        - ``meta-qcom-distro``
-     - BSP build: High-level OS and prebuilt firmware (GPS only)
-       
-       ``qcom-6.6.116-QLI.1.7-Ver.1.1.xml``
-     - ``qcom-wayland``
-
-   * - 
-        - ``meta-qcom``
-        - ``meta-qcom-hwe``
-        - ``meta-qcom-distro``
-        - ``meta-qcom-qim-product-sdk``
-     - BSP build + Qualcomm IM SDK build:
-       
-       ``qcom-6.6.116-QLI.1.7-Ver.1.1_qim-product-sdk-2.2.1.xml``
-     - ``qcom-wayland``
-   * - 
-        - ``meta-qcom``
-        - ``meta-qcom-hwe``
-        - ``meta-qcom-distro``
-        - ``meta-qcom-realtime``
-     - BSP build + Real-time kernel build:
-       
-       ``qcom-6.6.116-QLI.1.7-Ver.1.1_realtime-linux-1.1.xml``
-     - ``qcom-wayland``
-   * - 
-        - ``meta-qcom``
-        - ``meta-qcom-hwe``
-        - ``meta-qcom-distro``
-        - ``meta-ros``
-        - ``meta-qcom-robotics``
-        - ``meta-qcom-robotics-distro``
-        - ``meta-qcom-robotics-sdk``
-        - ``meta-qcom-qim-product-sdk``
-     - BSP build + QIR SDK build:
-       
-       ``qcom-6.6.116-QLI.1.7-Ver.1.1_robotics-sdk-1.1.xml``
-     - ``qcom-robotics-ros2-humble``
-
-The release tag syntax is as follows:
-
-- Manifest release tag:
-     
-  ``qcom-<Linux LTS Kernel Version>-QLI.<version>-Ver.<release>.xml``
-    
-  For example, the manifest release tag ``qcom-6.6.116-QLI.1.7-Ver.1.1.xml`` denotes the following:
-     
-  - 6.6.116: Qualcomm Linux kernel
-  - QLI.1.7: Qualcomm Linux v1.7
-  - 1.1: Milestone release
-
-- Additional productization manifest release tag:
+``qcom-<Linux LTS Kernel Version>-QLI.<version>-Ver.<release>``
+  
+For example, the meta-qcom release tag ``qcom-6.18-QLI.2.0-Ver.1.0`` denotes the following:
    
-  ``qcom-<Linux LTS Kernel version>-QLI.<version>-Ver.<milestone release>_<product/customization>-<patch release>.xml``
-
-  For example, the additional productization manifest release tag ``qcom-6.6.116-QLI.1.7-Ver.1.1_qim-product-sdk-2.2.1.xml`` denotes the following:
-     
-  - 6.6.116: Qualcomm Linux kernel
-  - QLI.1.7: Qualcomm Linux v1.7
-  - qim-product-sdk-2.2.1: Qualcomm IM SDK release on top of QLI.1.7
-
-    Other product/customization examples:
-
-    - *realtime-linux-1.1*
-    - *robotics-sdk-1.1*
-  - 1.1: Milestone release
-  - 2.2.1: Patch release associated with the milestone release
-
-For more information about the Yocto layers, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-27/qualcomm_linux_metadata_layers.html>`__.
+- 6.18: Qualcomm Linux kernel
+- QLI.2.0: Qualcomm Linux v2.0
+- 1.0: Milestone release
