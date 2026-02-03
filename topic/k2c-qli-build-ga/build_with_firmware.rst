@@ -1155,36 +1155,28 @@ Build firmware
            -  ``QCS8300_dspso.zip``
            -  ``QCS8300_fw.zip``
 
+
 Build a BSP image with extras
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The BSP image build has software components for the Qualcomm device support and software features applicable to the Qualcomm SoCs. This build includes a reference distribution configuration for the Qualcomm development kits. The ``meta-qcom-extras`` layer enables source compilation of select components, which are otherwise present as binary. For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-27/qualcomm_linux_metadata_layers.html>`__.
 
-1. Download Qualcomm Yocto and the supporting layers with extras. For the ``<manifest release tag>`` and ``<meta-qcom-extras release tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
+1. Download Qualcomm Yocto and the supporting layers with extras. For the ``<meta-qcom-extras-release-tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
 
    .. container:: nohighlight
       
       ::
 
          # cd to directory where you have 300 GB of free storage space to create your workspaces
-         mkdir <WORKSPACE_DIR>
-         cd <WORKSPACE_DIR>
-         repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-scarthgap -m <manifest release tag>
-         # Example, <manifest release tag> is qcom-6.6.116-QLI.1.7-Ver.1.1.xml
-         repo sync
-         git clone https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_hlos_oem_metadata.git -b <meta-qcom-extras release tag> --depth 1
-         # Example, <meta-qcom-extras release tag> is r1.0_00115.0
-         mkdir -p layers/meta-qcom-extras
-         cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/<product>/common/config/meta-qcom-extras/* layers/meta-qcom-extras/
-         # An example <product> is QCM6490.LE.1.0. For more information about <product>, see the latest Release Notes (https://docs.qualcomm.com/doc/80-70023-300/).
+         mkdir <workspace-dir>
+         cd <workspace-dir>
+         git clone https://github.com/qualcomm-linux/meta-qcom-extras-releases -b <meta-qcom-extras-release-tag>
+         kas checkout meta-qcom-extras-releases/lock.yml
 
 #. Set up the Yocto build:
 
    .. container:: nohighlight
       
       ::
-
-         # Export additional meta layers to EXTRALAYERS. Location is assumed under <WORKSPACE DIR>/layers.
-         export EXTRALAYERS="meta-qcom-extras"
 
          # CUST_ID is used to clone the proprietary source repositories downloaded by meta-qcom-extras.
          # It allows source compilation for the corresponding binaries present in meta-qcom-hwe.         
@@ -1204,20 +1196,22 @@ The BSP image build has software components for the Qualcomm device support and 
          export FWZIP_PATH="<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/<product>/common/build/ufs/bin"
          # An example <product> is QCM6490.LE.1.0. For more information about <product>, see the latest Release Notes (https://docs.qualcomm.com/doc/80-70023-300/).
 
-#. Set up the build environment:
+         # Populate meta-qcom-extras kas fragment
+         meta-qcom-extras/setup_extras_config.sh 
+
+         # Copy generated meta-qcom-extras kas fragment to meta-qcom
+         cp meta-qcom-extras/ci/extras.yml meta-qcom/ci/extras.yml
+
+#. Build the software image. Build targets are defined based on machine and distro combinations:
 
    .. container:: nohighlight
       
       ::
 
-         MACHINE=<machine> DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
-         # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
-         # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
-         # and enters into build-qcom-wayland directory.
+         kas build --skip repos_checkout meta-qcom/ci/<machine>:meta-qcom/ci/<distro>:meta-qcom/ci/extras.yml
 
-   To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
+   For various ``<machine>`` and ``<distro>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
 
-#. Compile the Yocto build:
 
    .. container:: nohighlight
       
