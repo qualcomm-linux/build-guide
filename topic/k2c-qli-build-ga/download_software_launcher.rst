@@ -25,7 +25,7 @@ Download the software
 
       The ``qsc-cli --help`` command lists the help options.
 
-      For Ubuntu 22.04, you might see an issue while installing QUD where you must enroll the public key on your Linux host for a successful QUD installation. For more details, follow the steps provided in the ``signReadme.txt`` file available at the ``/opt/QTI/sign/`` directory.
+      For Ubuntu 24.04, you might see an issue while installing QUD where you must enroll the public key on your Linux host for a successful QUD installation. For more details, follow the steps provided in the ``signReadme.txt`` file available at the ``/opt/QTI/sign/`` directory.
 
 #. Use your registered email ID to sign in to the QSC desktop application. To register your Qualcomm email ID, go to `Qualcomm support page <https://www.qualcomm.com/support/working-with-qualcomm>`__.
 

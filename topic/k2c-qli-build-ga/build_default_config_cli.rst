@@ -56,7 +56,7 @@ Flash
 
 The ``qsc-cli --help`` command lists the help options.
 
-For Ubuntu 22.04, you might see an issue while installing QUD, where you must enroll the public key on your Linux host for a successful QUD installation. For more information, see the ``signReadme.txt`` file in the ``/opt/QTI/sign/`` directory.
+For Ubuntu 24.04, you might see an issue while installing QUD, where you must enroll the public key on your Linux host for a successful QUD installation. For more information, see the ``signReadme.txt`` file in the ``/opt/QTI/sign/`` directory.
 
 .. note:: Before you flash the software, ensure the following:
 

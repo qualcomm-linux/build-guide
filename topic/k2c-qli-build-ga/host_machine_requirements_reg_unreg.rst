@@ -9,7 +9,7 @@ Host computer requirements
   - Quad-core CPU, for example, Intel i7-2600 at 3.4 GHz (equivalent or better)
   - 300 GB free disk space (swap partition > 32 GB)
   - 16 GB RAM
-  - Ubuntu 22.04
+  - Ubuntu 24.04
 
 - Tools
 
@@ -23,4 +23,4 @@ Host computer requirements
 
   - A ``sudo`` permission is required to run a few commands
 
-.. note:: Code compilation on a VM is a slow process and can take a few hours. Qualcomm recommends using an Ubuntu host computer for compilation. To set up a virtual machine (VM) running Ubuntu 22.04 on Microsoft\ :sup:`®` Windows\ :sup:`®` or Apple\ :sup:`®` macOS\ :sup:`®`, see `Qualcomm Linux Virtual Machine Setup Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-41/>`__.
+.. note:: Code compilation on a VM is a slow process and can take a few hours. Qualcomm recommends using an Ubuntu host computer for compilation. To set up a virtual machine (VM) running Ubuntu 24.04 on Microsoft\ :sup:`®` Windows\ :sup:`®` or Apple\ :sup:`®` macOS\ :sup:`®`, see `Qualcomm Linux Virtual Machine Setup Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-41/>`__.
