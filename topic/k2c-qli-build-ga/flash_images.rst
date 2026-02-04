@@ -17,7 +17,7 @@ Follow these steps to flash the software images:
 #. Force the device into emergency download (EDL) mode.
 #. Provision UFS (one-time prerequisite).
 #. Flash SAIL (one-time prerequisite).
-#. Flash CDT.
+#. Choose CDT based on reference kit.
 #. Flash the software:
 
    - Using QDL
@@ -420,79 +420,27 @@ Safety Island (SAIL) is applicable only for the Qualcomm Dragonwing™ IQ-9075 a
         <qdl_download_path>/QDL_<version>_<operating_system>_<architecture_type>/qdl --storage spinor prog_firehose_ddr.elf rawprogram0.xml patch0.xml
         # Example, <qdl_download_path>/QDL_2.3.9_Linux_x64/qdl --storage spinor prog_firehose_ddr.elf rawprogram0.xml patch0.xml
          
-.. _flash_cdt:
+.. _Choose_cdt:
 
-Flash CDT
+Choose CDT based on reference kit
 ----------
-Configuration data table (CDT) provides platform/device-dependent data such as platform ID, subtype, version. Various Software (drivers/firmware) modules can use this information to perform dynamic detection and initialization of the platform. You can update CDT by flashing a CDT binary:
+Configuration data table (CDT) provides platform/device-dependent data such as platform ID, subtype, version. Various Software (drivers/firmware) modules can use this information to perform dynamic detection and initialization of the platform.··
 
-1. Download the CDT binary.
-
-   Based on the required reference kit, download the respective CDT from the *CDT* table of the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/topic/release_specific_information.html>`__.
-
-   .. container:: nohighlight
-      
-      ::
-
-         mkdir <cdt_download_path>
-         cd <cdt_download_path>
-         wget <CDT_download_link>
-         # Example, wget https://artifacts.codelinaro.org/artifactory/codelinaro-le/Qualcomm_Linux/QCS6490/cdt/rb3gen2-core-kit.zip
-         unzip <downloaded_zip_file>
-         # Example, unzip rb3gen2-core-kit.zip        
-
-#. Download the QDL tool. QDL is a software tool that communicates with the Qualcomm USB devices to upload a flash loader and flash software images. Acquire the latest version of the QDL tool using one of the following methods:
+1. update CDT binary.
    
-   - Download the tool from https://softwarecenter.qualcomm.com/#/catalog/item/Qualcomm_Device_Loader.
-   - Download the latest QDL using CLI based on the required operating system and architecture type:
-   
-     .. container:: nohighlight
-      
-        ::
-            
-           # Linux X64
-           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Linux/Debian/latest.zip
-           # Linux ARM64
-           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Linux/ARM64/Debian/latest.zip           
-           # Windows X64     
-           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Windows/latest.zip
-           # Windows ARM64
-           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Windows/ARM64/latest.zip
-           # macOS X64
-           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/macOS/latest.zip
-           # macOS ARM64
-           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/macOS/ARM64/latest.zip
-
-#. Unzip QDL:
+   Based on the reference kit , rename the respective refernce kit CDT file as cdt.bin in flashable images path.
+   Note: Default core Kit CDT was set as cdt.bin , skip update CDT binary if reference kit was Core Kit.
 
    .. container:: nohighlight
-      
+······
       ::
-     
-         unzip <qdl_downloaded_file>.zip
-
-#. Run the following command to provide executable permission to QDL:
-
-   .. container:: nohighlight
-      
-      ::
-   
-         chmod -R 777 <qdl_download_path>   
-
-#. Flash the CDT:
-
-   .. container:: nohighlight
-      
-      ::
-
-         cd <cdt_download_path>
-         # For UFS storage
-         <qdl_download_path>/QDL_<version>_<operating_system>_<architecture_type>/qdl --storage ufs prog_firehose_ddr.elf rawprogram3.xml patch3.xml
-         # Example, <qdl_download_path>/QDL_2.3.9_Linux_x64/qdl --storage ufs prog_firehose_ddr.elf rawprogram3.xml patch3.xml
-         # For EMMC storage
-         <qdl_download_path>/QDL_<version>_<operating_system>_<architecture_type>/qdl --storage emmc prog_firehose_ddr.elf rawprogram*.xml patch*.xml
-         # Example, <qdl_download_path>/QDL_2.3.9_Linux_x64/qdl --storage emmc prog_firehose_ddr.elf rawprogram*.xml patch*.xml
-
+·········
+         #Flashable images Path <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/
+         cd <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/
+         # Example, for kodiak  rb3gen2-core-kit.bin cdt_vision_kit.bin cdt_industrial_kit.bin can be seen.
+         # If reference Kit is Kodiak vision mezzanine Kit , setup cdt_vision_kit.bin as cdt.bin
+         cp cdt_vision_kit.bin cdt.bin
+·········
 
 Flash software using QDL
 ------------------------------------
