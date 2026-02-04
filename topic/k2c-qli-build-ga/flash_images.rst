@@ -3,7 +3,7 @@
 Flash software images
 ======================
 
-.. note:: Before flashing, update the build images path to the compiled build images workspace at ``<Base_Workspace_Path>/DEV/LE.QCLINUX.1.0.r1/build-<DISTRO>/tmp-glibc/deploy/images/<MACHINE>/qcom-multimedia-image``. For example, ``<Base Workspace Path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-core-kit/qcom-multimedia-image``.
+.. note:: Before flashing, update the build images path to the compiled build images workspace at ``<Base_Workspace_Path>/DEV/LE.QCLINUX.1.0.r1/build/tmp/deploy/images/<MACHINE>/qcom-multimedia-image``. For example, ``<Base Workspace Path>/build-qcom-wayland/tmp/deploy/images/qcs6490-rb3gen2-core-kit/qcom-multimedia-image``.
 
 Follow these steps to flash the software images:
 
@@ -11,7 +11,7 @@ Follow these steps to flash the software images:
 #. Force the device into emergency download (EDL) mode.
 #. Provision UFS (one-time prerequisite).
 #. Flash SAIL (one-time prerequisite).
-#. Flash CDT.
+#. Choose CDT based on reference kit.
 #. Flash the software:
 
    - Using QDL
@@ -405,87 +405,36 @@ Safety Island (SAIL) is applicable only for the Qualcomm Dragonwing™ IQ-9075 a
       
       ::
 
-        # SAIL image is under <workspace_path>/build-<DISTRO>/tmp-glibc/deploy/images/<MACHINE>/<IMAGE>/sail_nor
+        # SAIL image is under <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>/sail_nor
         # build_path: For DISTRO=qcom-wayland, it's build-qcom-wayland. 
         #             For DISTRO=qcom-robotics-ros2-humble, it's build-qcom-robotics-ros2-humble
         # qdl --storage spinor <prog.mbn> [<program> <patch> ...]
         # Example, build_path is build-qcom-wayland
-        cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs9075-rb8-core-kit/qcom-multimedia-image/sail_nor
+        cd <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>/sail_nor
         <qdl_download_path>/QDL_<version>_<operating_system>_<architecture_type>/qdl --storage spinor prog_firehose_ddr.elf rawprogram0.xml patch0.xml
         # Example, <qdl_download_path>/QDL_2.3.9_Linux_x64/qdl --storage spinor prog_firehose_ddr.elf rawprogram0.xml patch0.xml
          
 .. _flash_cdt:
 
-Flash CDT
+Choose CDT based on reference kit
 ----------
-Configuration data table (CDT) provides platform/device-dependent data such as platform ID, subtype, version. Various Software (drivers/firmware) modules can use this information to perform dynamic detection and initialization of the platform. You can update CDT by flashing a CDT binary:
+Configuration data table (CDT) provides platform/device-dependent data such as platform ID, subtype, version. Various Software (drivers/firmware) modules can use this information to perform dynamic detection and initialization of the platform.  
 
-1. Download the CDT binary.
+1. update CDT binary.
 
-   Based on the required reference kit, download the respective CDT from the *CDT* table of the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/topic/release_specific_information.html>`__.
-
-   .. container:: nohighlight
-      
-      ::
-
-         mkdir <cdt_download_path>
-         cd <cdt_download_path>
-         wget <CDT_download_link>
-         # Example, wget https://artifacts.codelinaro.org/artifactory/codelinaro-le/Qualcomm_Linux/QCS6490/cdt/rb3gen2-core-kit.zip
-         unzip <downloaded_zip_file>
-         # Example, unzip rb3gen2-core-kit.zip        
-
-#. Download the QDL tool. QDL is a software tool that communicates with the Qualcomm USB devices to upload a flash loader and flash software images. Acquire the latest version of the QDL tool using one of the following methods:
-   
-   - Download the tool from https://softwarecenter.qualcomm.com/#/catalog/item/Qualcomm_Device_Loader.
-   - Download the latest QDL using CLI based on the required operating system and architecture type:
-   
-     .. container:: nohighlight
-      
-        ::
-            
-           # Linux X64
-           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Linux/Debian/latest.zip
-           # Linux ARM64
-           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Linux/ARM64/Debian/latest.zip           
-           # Windows X64     
-           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Windows/latest.zip
-           # Windows ARM64
-           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Windows/ARM64/latest.zip
-           # macOS X64
-           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/macOS/latest.zip
-           # macOS ARM64
-           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/macOS/ARM64/latest.zip
-
-#. Unzip QDL:
+   Based on the reference kit , rename the respective refernce kit CDT file as cdt.bin in flashable images path.
 
    .. container:: nohighlight
       
       ::
-     
-         unzip <qdl_downloaded_file>.zip
+         
+         #Flashable images Path <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>/
+         cd <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>/
+         # Example, for kodiak  rb3gen2-core-kit.zip cdt_vision_kit.bin cdt_industrial_kit.bin can be seen.
+         # If reference Kit is Kodiak vision mezzanine Kit , rename cdt_vision_kit.bin as cdt.bin
+         mv cdt_vision_kit.bin cdt.bin
+         
 
-#. Run the following command to provide executable permission to QDL:
-
-   .. container:: nohighlight
-      
-      ::
-   
-         chmod -R 777 <qdl_download_path>   
-
-#. Flash the CDT:
-
-   .. container:: nohighlight
-      
-      ::
-
-         cd <cdt_download_path>
-         # For UFS storage
-         <qdl_download_path>/QDL_<version>_<operating_system>_<architecture_type>/qdl --storage ufs prog_firehose_ddr.elf rawprogram3.xml patch3.xml
-         # Example, <qdl_download_path>/QDL_2.3.9_Linux_x64/qdl --storage ufs prog_firehose_ddr.elf rawprogram3.xml patch3.xml
-         # For EMMC storage
-         <qdl_download_path>/QDL_<version>_<operating_system>_<architecture_type>/qdl --storage emmc prog_firehose_ddr.elf rawprogram*.xml patch*.xml
-         # Example, <qdl_download_path>/QDL_2.3.9_Linux_x64/qdl --storage emmc prog_firehose_ddr.elf rawprogram*.xml patch*.xml
 
 Flash software using QDL
 ------------------------------------
@@ -548,12 +497,8 @@ Flash software using QDL
       
       ::
 
-         # Built images are under <workspace_path>/build-<DISTRO>/tmp-glibc/deploy/images/<MACHINE>/<IMAGE>
-         # build_path: For DISTRO=qcom-wayland, it's build-qcom-wayland. 
-         #             For DISTRO=qcom-robotics-ros2-humble, it's build-qcom-robotics-ros2-humble
+         # Built images are under <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>/
          # qdl <prog.mbn> [<program> <patch> ...]
-         # Example: build_path is build-qcom-wayland
-         cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image
          # For UFS storage
          cp ./partition_ufs/gpt_main*.bin ./partition_ufs/gpt_backup*.bin ./partition_ufs/rawprogram[0-9].xml ./partition_ufs/patch*.xml ./partition_ufs/zeros_*sectors.bin ./
          <qdl_download_path>/QDL_<version>_<operating_system>_<architecture_type>/qdl --storage ufs prog_firehose_ddr.elf rawprogram*.xml patch*.xml
@@ -668,21 +613,19 @@ Flash software using PCAT
       
       ::
 
-         cd <workspace_path>/build-<DISTRO>/tmp-glibc/deploy/images/<MACHINE>/<IMAGE>
-
-         # Example, cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image
+         cd <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>
  
          # For UFS storage
          cp ./partition_ufs/gpt_main*.bin ./partition_ufs/gpt_backup*.bin ./partition_ufs/rawprogram[0-9].xml ./partition_ufs/patch*.xml ./partition_ufs/zeros_*sectors.bin ./
          PCAT –PLUGIN SD -DEVICE <device_serial_number> -BUILD "<build_images_path>"" -MEMORYTYPE UFS -FLAVOR asic
          
-         # Example, PCAT –PLUGIN SD -DEVICE be116704 -BUILD "<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image" -MEMORYTYPE UFS -FLAVOR asic
+         # Example, PCAT –PLUGIN SD -DEVICE be116704 -BUILD "<workspace_path>/build-qcom-wayland/tmp/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image" -MEMORYTYPE UFS -FLAVOR asic
  
          # For EMMC storage
          cp ./partition_emmc/gpt_main*.bin ./partition_emmc/gpt_backup*.bin ./partition_emmc/rawprogram[0-9].xml ./partition_emmc/patch*.xml ./partition_emmc/zeros_*sectors.bin ./
          PCAT –PLUGIN SD -DEVICE <device_serial_number> -BUILD "<build_images_path>"" -MEMORYTYPE EMMC -FLAVOR asic -RAWPROG "<build_images_path>/rawprogram0.xml" -PATCHPROG "<build_images_path>/patch0.xml"
          
-         # Example, PCAT –PLUGIN SD -DEVICE be116704 -BUILD "<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image" -MEMORYTYPE EMMC -FLAVOR asic -RAWPROG "<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image/rawprogram0.xml" -PATCHPROG "<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image/patch0.xml"
+         # Example, PCAT –PLUGIN SD -DEVICE be116704 -BUILD "<workspace_path>/build-qcom-wayland/tmp/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image" -MEMORYTYPE EMMC -FLAVOR asic -RAWPROG "<workspace_path>/build-qcom-wayland/tmp/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image/rawprogram0.xml" -PATCHPROG "<workspace_path>/build-qcom-wayland/tmp/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image/patch0.xml"
 
    If flashing the software is successful, the outputs is as follows:
 
