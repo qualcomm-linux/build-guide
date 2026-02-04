@@ -9,6 +9,4 @@ How to
 
 .. include:: howto_build.rst
 
-.. include:: developer_workflow.rst
-
 .. include:: howto_setup.rst
