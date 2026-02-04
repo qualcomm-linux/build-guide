@@ -59,14 +59,18 @@ for syncing the Yocto meta layers needed for the build.
 Check if the build is complete
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If your build instruction is ``bitbake qcom-multimedia-image``, check if the ``system.img`` is present in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image`` directory:
+#. After a successful build, check that the ``rootfs.img`` file is in the build artifacts:
 
-.. container:: nohighlight
-      
-   ::
+   .. container:: nohighlight
 
-      cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image
-      ls -al system.img
+      ::
+
+         # meta-qcom uses qcomflash IMAGE_FSTYPE to create a single tarball
+         # containing all the relevant files to perform a full clean flash,
+         # including partition metadata, boot firmware, ESP # partition and
+         # the rootfs.
+         cd <workspace-dir>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs-<DATE>.qcomflash/
+         ls -al rootfs.img
 
 .. _how_to_build_generate_sdk:
 
@@ -332,6 +336,6 @@ Image recipes supported in the GitHub workflow
    * - ``qcom-console-image``   
      - Boot to shell with package group to bring in all the basic packages
    * - ``qcom-multimedia-image``  
-     - Image recipe includes recipes for multimedia software components, such as, audio, Bluetooth\ :sup:`®`, camera, computer vision, display, and video.
-   * - ``qcom-multimedia-test-image`` 
-     - Image recipe that includes tests
+     - Image recipe with upstream multimedia software components
+   * - ``qcom-multimedia-proprietary-image`` 
+     - Image recipe with proprietary multimedia software components
