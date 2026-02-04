@@ -3,7 +3,13 @@
 Flash software images
 ======================
 
-.. note:: Before flashing, update the build images path to the compiled build images workspace at ``<Base_Workspace_Path>/DEV/LE.QCLINUX.1.0.r1/build/tmp/deploy/images/<MACHINE>/qcom-multimedia-image``. For example, ``<Base Workspace Path>/build-qcom-wayland/tmp/deploy/images/qcs6490-rb3gen2-core-kit/qcom-multimedia-image``.
+.. note:: On completion of build, flashable images were part of ``<Base_Workspace_Path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>-<MACHINE>.rootfs.qcomflash.tar.gz``.
+#untar tar.gz to get ready with flashable iamges 
+cd <Base_Workspace_Path>/build/tmp/deploy/images/<MACHINE>/
+tar -xvf <IMAGE>-<MACHINE>-<MACHINE>.rootfs.qcomflash.tar.gz
+
+Software images are available to flash below:
+<Workspace_Path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>-<MACHINE>/
 
 Follow these steps to flash the software images:
 
@@ -405,12 +411,12 @@ Safety Island (SAIL) is applicable only for the Qualcomm Dragonwing™ IQ-9075 a
       
       ::
 
-        # SAIL image is under <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>/sail_nor
+        # SAIL image is under <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/sail_nor
         # build_path: For DISTRO=qcom-wayland, it's build-qcom-wayland. 
         #             For DISTRO=qcom-robotics-ros2-humble, it's build-qcom-robotics-ros2-humble
         # qdl --storage spinor <prog.mbn> [<program> <patch> ...]
         # Example, build_path is build-qcom-wayland
-        cd <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>/sail_nor
+        cd <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/sail_nor
         <qdl_download_path>/QDL_<version>_<operating_system>_<architecture_type>/qdl --storage spinor prog_firehose_ddr.elf rawprogram0.xml patch0.xml
         # Example, <qdl_download_path>/QDL_2.3.9_Linux_x64/qdl --storage spinor prog_firehose_ddr.elf rawprogram0.xml patch0.xml
          
@@ -428,8 +434,8 @@ Configuration data table (CDT) provides platform/device-dependent data such as p
       
       ::
          
-         #Flashable images Path <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>/
-         cd <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>/
+         #Flashable images Path <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/
+         cd <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/
          # Example, for kodiak  rb3gen2-core-kit.zip cdt_vision_kit.bin cdt_industrial_kit.bin can be seen.
          # If reference Kit is Kodiak vision mezzanine Kit , rename cdt_vision_kit.bin as cdt.bin
          mv cdt_vision_kit.bin cdt.bin
@@ -497,7 +503,7 @@ Flash software using QDL
       
       ::
 
-         # Built images are under <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>/
+         # Built images are under <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/
          # qdl <prog.mbn> [<program> <patch> ...]
          # For UFS storage
          cp ./partition_ufs/gpt_main*.bin ./partition_ufs/gpt_backup*.bin ./partition_ufs/rawprogram[0-9].xml ./partition_ufs/patch*.xml ./partition_ufs/zeros_*sectors.bin ./
@@ -613,7 +619,7 @@ Flash software using PCAT
       
       ::
 
-         cd <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>
+         cd <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>
  
          # For UFS storage
          cp ./partition_ufs/gpt_main*.bin ./partition_ufs/gpt_backup*.bin ./partition_ufs/rawprogram[0-9].xml ./partition_ufs/patch*.xml ./partition_ufs/zeros_*sectors.bin ./
