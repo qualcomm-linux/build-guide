@@ -26,12 +26,12 @@ When compiling a software image other than ``LE.QCLINUX.1.0.r1``, ensure that yo
 
       For example, to build for the Qualcomm Dragonwing™ RB3 Gen 2 Core Development Kit, change the value of ``MACHINE`` in the preceding build command to ``qcs6490-rb3gen2-core-kit``.
    
-   d. After a successful build, check that the ``system.img`` file is in the ``<Base Workspace Path>/DEV/LE.QCLINUX.1.0.r1/build-<DISTRO>/tmp-glibc/deploy/images/<MACHINE>/qcom-multimedia-image`` directory with an updated timestamp. For example:
+   d. After a successful build, check that the ``rootfs.img`` file is in the build artifacts:
 
       ::
 
-         cd <Base Workspace Path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-core-kit/qcom-multimedia-image
-         ls -al system.img
+         cd <workspace-dir>/build/tmp/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image-rb3gen2-core-kit.rootfs.qcomflash/
+         ls -al rootfs.img
 
 3. To flash your build, see :ref:`Flash software images <flash_images>`.
 

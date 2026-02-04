@@ -70,7 +70,7 @@ The following table describes the files in the images directory:
      - GUID partition table binaries for the primary partition table
    * - ``gpt_backup*.bin``
      - GUID partition table binaries for the secondary partition table
-   * - ``system.img``
+   * - ``rootfs.img``
      - Rootfs image
    * - ``rawprogram*.xml``
      - Image ``lun`` and start sector ``lba`` values

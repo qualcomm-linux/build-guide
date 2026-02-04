@@ -1235,14 +1235,14 @@ The BSP image build has software components for the Qualcomm device support and 
             bitbake -fc cleansstate qcom-multimedia-image
             bitbake -fc cleanall qcom-multimedia-image
 
-#. After a successful build, check that the ``system.img`` file is in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image`` directory:
+#. After a successful build, check that the ``rootfs.img`` file is in the build artifacts:
 
    .. container:: nohighlight
-      
+
       ::
 
-         cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image
-         ls -al system.img
+         cd <workspace-dir>/build/tmp/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image-rb3gen2-core-kit.rootfs.qcomflash/
+         ls -al rootfs.img
 
 #. Flash the generated build using :doc:`Flash software images <flash_images>`.
 
