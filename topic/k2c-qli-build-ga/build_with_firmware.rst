@@ -20,7 +20,7 @@ The following table describes the Qualcomm Yocto layers and release tags:
      - Example
 	 
    * - Public developers (unregistered)
-     - ``meta-qcom-hwe``
+     - ``meta-qcom``
      - manifest release tag
      - qcom-6.6.116-QLI.1.7-Ver.1.1.xml
    * - Licensed developers with authorized access
@@ -50,8 +50,6 @@ The following tables describe the firmware distributions that you can download. 
        ``Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NoModem``
      - 
        ``meta-qcom``
-       
-       ``meta-qcom-hwe``
 
        ``meta-qcom-distro``
        
@@ -63,8 +61,6 @@ The following tables describe the firmware distributions that you can download. 
      - 
        ``meta-qcom``
 
-       ``meta-qcom-hwe``
-
        ``meta-qcom-distro``
 
        ``meta-qcom-extras``
@@ -73,8 +69,6 @@ The following tables describe the firmware distributions that you can download. 
       
         ``Qualcomm_Linux.SPF.1.0|AMSS|Standard|OEM|``
      - ``meta-qcom``
-
-       ``meta-qcom-hwe``
 
        ``meta-qcom-distro``
 
@@ -1091,7 +1085,7 @@ The BSP image build has software components for the Qualcomm device support and 
       ::
 
          # CUST_ID is used to clone the proprietary source repositories downloaded by meta-qcom-extras.
-         # It allows source compilation for the corresponding binaries present in meta-qcom-hwe.         
+         # It allows source compilation for the corresponding binaries present in meta-qcom.         
          # CUST_ID must be set to "213195" for no-modem based distributions "qualcomm-linux-spf-1-0_ap_standard_oem_nm".         
          # For other modem based distributions, CUST_ID must be set based on the "Customer ID".
          # To find "Customer ID", sign in to your account at qualcomm.com.
