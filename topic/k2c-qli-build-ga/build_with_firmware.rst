@@ -21,12 +21,12 @@ The following table describes the Qualcomm Yocto layers and release tags:
 	 
    * - Public developers (unregistered)
      - ``meta-qcom``
-     - manifest release tag
-     - qcom-6.6.116-QLI.1.7-Ver.1.1.xml
+     - meta-qcom-releases tag
+     - qcom-6.18-QLI.2.0-Ver.1.0
    * - Licensed developers with authorized access
      - ``meta-qcom-extras``
-     - meta-qcom-extras release tag
-     - r1.0_00115.0 
+     - meta-qcom-extras-release tag
+     - qcom-6.18-QLI.2.0-Ver.1.0
    * - See :ref:`Mapping access levels to firmware distributions <build_mapping_access_levels>`
      - NA
      - firmware release tag
