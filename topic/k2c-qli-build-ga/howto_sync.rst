@@ -53,7 +53,7 @@ How does QSC CLI work?
 
    QSC CLI builds the necessary Qualcomm firmware and the Qualcomm Yocto layers.
 
-4. Internally, QSC CLI implements the standalone commands covered in the :doc:`Build from Source (with firmware and extras) <build_addn_info>` and leverages the prebuilt Docker images for the respective Qualcomm style software images. For example, ``LE.QCLINUX.1.0.r1``.
+4. Internally, QSC CLI implements the standalone commands covered in the :doc:`Build from Source (with firmware and extras) <build_addn_info>` and leverages the prebuilt Docker images for the respective Qualcomm style software images. For example, ``LE.QCLINUX.2.0``.
 
 View information about QSC CLI commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -99,17 +99,14 @@ To delete a workspace, run the following command:
 Find a Yocto workspace using QSC CLI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can install the ``tree`` command and run it on your workspace. The Yocto workspace is under the ``LE.QCLINUX.1.0.r1`` directory. These directories stay the same for future releases.
+You can install the ``tree`` command and run it on your workspace. The Yocto workspace is under the ``LE.QCLINUX.2.0`` directory. These directories stay the same for future releases.
 
 -  **QSC CLI workspace structure after ``Qualcomm_Linux.SPF.1.0|TEST|DEVICE|PB`` distribution
    build**
 
    The following is a sample view, in which:
 
-   -  ``LE.QCLINUX.1.0.r1`` has the Yocto workspace.
-   -  Ignore the remaining directories as all the necessary sources
-      and binaries are encoded in the Yocto layer recipes synced under
-      ``LE.QCLINUX.1.0.r1/layers``.       
+   -  ``LE.QCLINUX.2.0`` has the Yocto workspace.
       |YoctoLEQCLinux|
 
 -  **QSC CLI workspace structure after
@@ -118,7 +115,7 @@ You can install the ``tree`` command and run it on your workspace. The Yocto wor
 
    The following is a sample view, in which:
 
-   -  ``LE.QCLINUX.1.0.r1`` has the Yocto workspace.
+   -  ``LE.QCLINUX.2.0`` has the Yocto workspace.
    -  Few additional directories are for the Qualcomm firmware. While
       building with extras:
 
@@ -131,7 +128,7 @@ You can install the ``tree`` command and run it on your workspace. The Yocto wor
 Refresh the workspace with a new download using QSC CLI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This option is supported only for the ``LE.QCLINUX.1.0.r1`` image, which
+This option is supported only for the ``LE.QCLINUX.2.0`` image, which
 syncs the Yocto layers and prepares to build the Yocto workspace.
 This includes the following steps:
 

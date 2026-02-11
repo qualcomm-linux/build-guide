@@ -35,7 +35,7 @@ To recompile after any modifications to the software release, use your existing 
 
       qsc-cli chip-software compile --image '<Software_Image_Name>' --workspace-path '<Base_Workspace_Path>'
       
-      # Example, qsc-cli chip-software compile --image LE.QCLINUX.1.0.r1 --workspace-path '/local/mnt/workspace/sample_workspace'
+      # Example, qsc-cli chip-software compile --image LE.QCLINUX.2.0 --workspace-path '/local/mnt/workspace/sample_workspace'
 
 For information on software image names (``--image``), see the table *QSC-CLI Input Parameters* in the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
 

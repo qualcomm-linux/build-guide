@@ -2,9 +2,9 @@
 
 Build your own configuration
 -----------------------------
-To build your own configuration, you must compile the build for default machine configuration and compile the LE.QCLINUX.1.0.r1 image with your own MACHINE and QCOM_SELECTED_BSP parameter values.
+To build your own configuration, you must compile the build for default machine configuration and compile the LE.QCLINUX.2.0 image with your own MACHINE and QCOM_SELECTED_BSP parameter values.
 
-When compiling a software image other than ``LE.QCLINUX.1.0.r1``, ensure that you also compile both the software product and ``LE.QCLINUX.1.0.r1`` in the same order. For example, if you compile ``BOOT.MXF.1.0.c1``, ensure that you also compile the software product (such as ``QCM6490.LE.1.0``) and then ``LE.QCLINUX.1.0.r1``.
+When compiling a software image other than ``LE.QCLINUX.2.0``, ensure that you also compile both the software product and ``LE.QCLINUX.2.0`` in the same order. For example, if you compile ``BOOT.MXF.1.0.c1``, ensure that you also compile the software product (such as ``QCM6490.LE.1.0``) and then ``LE.QCLINUX.2.0``.
 
 1. Compile the build for the default machine configuration:
 
@@ -12,7 +12,7 @@ When compiling a software image other than ``LE.QCLINUX.1.0.r1``, ensure that yo
    
    #. :ref:`Compile the default build <compile_qsc_cli>`.
    
-2. Compile the ``LE.QCLINUX.1.0.r1`` image with your own MACHINE and QCOM_SELECTED_BSP parameter values.
+2. Compile the ``LE.QCLINUX.2.0`` image with your own MACHINE and QCOM_SELECTED_BSP parameter values.
    
    For information on the supported machine configurations of the development kit, see the table *Default values of MACHINE and QCOM_SELECTED_BSP parameters for QSC* in the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
    
@@ -23,7 +23,7 @@ When compiling a software image other than ``LE.QCLINUX.1.0.r1``, ensure that yo
          ::
 
             qsc-cli chip-software open-build-env --workspace-path <Base_Workspace_Path> --image <Software_Image_Name>
-            # Example, qsc-cli chip-software open-build-env --workspace-path '/local/mnt/workspace/sample_workspace' --image 'LE.QCLINUX.1.0.r1' 
+            # Example, qsc-cli chip-software open-build-env --workspace-path '/local/mnt/workspace/sample_workspace' --image 'LE.QCLINUX.2.0' 
 
       This command opens the terminal.
    
@@ -51,7 +51,7 @@ When compiling a software image other than ``LE.QCLINUX.1.0.r1``, ensure that yo
 3. To flash your build, see :ref:`Flash software images <flash_images>`.
 
    .. note::
-      - Before flashing, update the build images path to the compiled build images workspace at ``<Base_Workspace_Path>/DEV/LE.QCLINUX.1.0.r1/build-<DISTRO>/tmp-glibc/deploy/images/<MACHINE>/qcom-multimedia-image``.
+      - Before flashing, update the build images path to the compiled build images workspace at ``<Base_Workspace_Path>/DEV/LE.QCLINUX.2.0/build-<DISTRO>/tmp-glibc/deploy/images/<MACHINE>/qcom-multimedia-image``.
 
         For example, ``<Base Workspace Path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-core-kit/qcom-multimedia-image``.
 
