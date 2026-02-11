@@ -340,7 +340,7 @@ Build
    ``bitbake.lock``, ``bitbake.sock``, and ``hashserve.lock`` from your
    partially built workspace and retry the build. For example, if you
    are building with ``qsc-cli``, then these files are found under
-   ``<absoute_workspace_path>/DEV/LE.QCLINUX.1.0.r1/build-qcom-wayland``.
+   ``<absoute_workspace_path>/DEV/LE.QCLINUX.2.0/build``.
 
 .. _do_fetch_error_1:
 
