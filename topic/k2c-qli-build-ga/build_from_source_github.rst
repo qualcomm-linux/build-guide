@@ -72,6 +72,8 @@ Create and build a Yocto Docker image:
          cp meta-qcom-releases/lock.yml meta-qcom/ci/lock.yml
          kas build meta-qcom/ci/<machine>:meta-qcom/ci/<distro>:meta-qcom/ci/lock.yml
 
+         # eg. kas build meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro.yml:meta-qcom/ci/lock.yml
+
    For various ``<machine>`` and ``<distro>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
 
    .. note::
