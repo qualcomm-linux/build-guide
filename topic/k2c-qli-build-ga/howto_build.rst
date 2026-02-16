@@ -89,6 +89,27 @@ Generate an eSDK
 
 When the eSDK generation is complete, you can see the images in the following directory: ``<workspace-dir>/build/tmp/deploy/sdk``.
 
+Clean build artifacts
+^^^^^^^^^^^^^^^^^^^^^
+
+**Clean up the artifacts from the build""
+
+#. After building from source, run these commands from the same workspace:
+
+   .. container:: nohighlight
+      
+      ::
+
+         kas shell -c "bitbake -fc do_cleansstate <recipe>" meta-qcom/ci/<machine>:meta-qcom/ci/<distro>:meta-qcom/ci/lock.yml
+
+#. To rebuild the recipe after cleaning up the artifacts, run these commands: 
+
+   .. container:: nohighlight
+      
+      ::
+
+         kas shell -c "bitbake <recipe>" meta-qcom/ci/<machine>:meta-qcom/ci/<distro>:meta-qcom/ci/lock.yml
+
 Build a standalone QDL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
