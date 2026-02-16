@@ -74,6 +74,21 @@ Check if the build is complete
 
 .. _how_to_build_generate_sdk:
 
+Generate an SDK
+^^^^^^^^^^^^^^^^
+
+**Set up the environment and generate SDK**
+
+#. After building from source, run these commands from the same workspace:
+
+   .. container:: nohighlight
+      
+      ::
+
+         kas shell -c "bitbake -c do_populate_sdk <image>" meta-qcom/ci/<machine>:meta-qcom/ci/<distro>:meta-qcom/ci/lock.yml
+
+When the SDK generation is complete, you can see the images in the following directory: ``<workspace-dir>/build/tmp/deploy/sdk``.
+
 Generate an eSDK
 ^^^^^^^^^^^^^^^^
 
