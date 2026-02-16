@@ -1072,6 +1072,8 @@ The BSP image build has software components for the Qualcomm device support and 
       
       ::
 
+         # NETRC_FILE env variable needs to be set for kas to pickup netrc credentials
+         export NETRC_FILE="~/.netrc"
          # cd to directory where you have 300 GB of free storage space to create your workspaces
          mkdir <workspace-dir>
          cd <workspace-dir>
