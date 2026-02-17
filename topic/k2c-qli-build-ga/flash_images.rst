@@ -3,7 +3,7 @@
 Flash software images
 ======================
 
-.. On completion of build, flashable images can be seen as below 2 options
+.. On completion of build, flashable images can be seen as the following two options
    option 1) Folder with Flatten images to flash directly
    ``<Base_Workspace_Path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs.qcomflash``
    option 2) compressed flatten Images folder of option 1
