@@ -1111,7 +1111,7 @@ The BSP image build has software components for the Qualcomm device support and 
 
          # kas configuration files need to be part of the same repository
          # copy the kas lock file to meta-qcom repository
-         cp meta-qcom-releases/ci/lock.yml meta-qcom/ci/lock.yml
+         cp meta-qcom-extras-releases/lock.yml meta-qcom/ci/lock.yml
 
 #. Build the software image. Build targets are defined based on machine and distro combinations:
 
@@ -1119,7 +1119,7 @@ The BSP image build has software components for the Qualcomm device support and 
       
       ::
 
-         kas build meta-qcom/ci/<machine>:meta-qcom/ci/<distro>:meta-qcom/ci/extras.yml:meta-qcom/ci/lock.yml
+         kas build meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/extras.yml:meta-qcom/ci/lock.yml
 
          # eg. kas build meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro.yml:meta-qcom/ci/extras.yml:meta-qcom/ci/lock.yml
 
