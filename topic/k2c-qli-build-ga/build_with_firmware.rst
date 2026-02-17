@@ -450,19 +450,19 @@ Build firmware
 
          .. rubric:: CPUCP firmware
 
-         The CPUCP firmware is released as a binary and build compilation isn't required.
+         Qualcomm releases the CPUCP firmware as a binary and you don't need to compile the build.
 
          .. rubric:: CPUSYS.VM firmware
 
-         The CPUSYS.VM firmware is released as a binary and build compilation isn't required.
+         Qualcomm releases the CPUSYS.VM firmware as a binary and you don't need to compile the build.
 
          .. rubric:: BTFM firmware
 
-         The BTFM firmware is released as a binary and build compilation isn't required.
+         Qualcomm releases the BTFM firmware as a binary and you don't need to compile the build.
 
          .. rubric:: WLAN firmware
 
-         The WLAN firmware is released as a binary and build compilation isn't required.
+         Qualcomm releases the WLAN firmware as a binary and you don't need to compile the build.
 
          .. rubric:: Generate firmware prebuilds (boot-critical and split-firmware binaries)
 
@@ -740,19 +740,19 @@ Build firmware
 
          .. rubric:: CPUCP firmware
 
-         The CPUCP firmware is released as a binary and build compilation isn't required.
+         Qualcomm releases the CPUCP firmware as a binary and you don't need to compile the build.
 
          .. rubric:: CPUSYS.VM firmware
 
-         The CPUSYS.VM firmware is released as a binary and build compilation isn't required.
+         Qualcomm releases the CPUSYS.VM firmware as a binary and you don't need to compile the build.
 
          .. rubric:: BTFM firmware
 
-         The BTFM firmware is released as a binary and build compilation isn't required.
+         Qualcomm releases the BTFM firmware as a binary and you don't need to compile the build.
 
          .. rubric:: WLAN firmware
 
-         The WLAN firmware is released as a binary and build compilation isn't required.
+         Qualcomm releases the WLAN firmware as a binary and you don't need to compile the build.
 
          .. rubric:: Generate firmware prebuilds (boot-critical and split-firmware binaries)
 
@@ -767,7 +767,7 @@ Build firmware
                 cd <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm/QCS9100.LE.1.0/common/build
                 python build.py --imf
 
-         - Firmware prebuild is successful if the following zip files are generated in the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm/QCM6490.LE.1.0/common/build/ufs/bin`` directory:
+         - Firmware prebuild is successful if the following zip files are generated in the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm/QCS9100.LE.1.0/common/build/ufs/bin`` directory:
 
             -  ``QCS9100_bootbinaries.zip``
             -  ``QCS9100_dspso.zip``
@@ -1030,19 +1030,19 @@ Build firmware
 
          .. rubric:: CPUCP firmware
 
-         The CPUCP firmware is released as a binary and build compilation isn't required.
+         Qualcomm releases the CPUCP firmware as a binary and you don't need to compile the build.
 
          .. rubric:: CPUSYS.VM firmware
 
-         The CPUSYS.VM firmware is released as a binary and build compilation isn't required.
+         Qualcomm releases the CPUSYS.VM firmware as a binary and you don't need to compile the build.
 
          .. rubric:: BTFM firmware
 
-         The BTFM firmware is released as a binary and build compilation isn't required.
+         Qualcomm releases the BTFM firmware as a binary and you don't need to compile the build.
 
          .. rubric:: WLAN firmware
 
-         The WLAN firmware is released as a binary and build compilation isn't required.
+         Qualcomm releases the WLAN firmware as a binary and you don't need to compile the build.
 
          .. rubric:: Generate firmware prebuilds (boot-critical and split-firmware binaries)
 

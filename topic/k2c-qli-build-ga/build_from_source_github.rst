@@ -19,7 +19,7 @@ Install and configure the required software tools on the Ubuntu host computer.
          pipx ensurepath
          pipx install kas
 
-#. Optionally download the kas-container script. The kas package also provides a kas-container script for running kas in a container. If you prefer running the image builds in an isolated evironment, consider using kas-container instead.
+#. Optionally download the kas-container script. The kas package also provides a kas-container script for running kas in a container. If you prefer running the image builds in an isolated environment, consider using kas-container instead.
 
    .. container:: nohighlight
       
