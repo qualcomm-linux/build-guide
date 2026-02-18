@@ -426,20 +426,84 @@ Choose CDT based on reference kit
 ----------
 Configuration data table (CDT) provides platform/device-dependent data such as platform ID, subtype, version. Various Software (drivers/firmware) modules can use this information to perform dynamic detection and initialization of the platform.··
 
-1. update CDT binary.
-   
-   Based on the reference kit , rename the respective reference kit CDT file as cdt.bin in flashable images path.
-   Note: Default core Kit CDT was set as cdt.bin , skip update CDT binary if reference kit was Core Kit.
 
-   .. container:: nohighlight
-······
-      ::
-·········
-         #Flashable images Path <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/
-         cd <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/
-         # Example, for kodiak  rb3gen2-core-kit.bin cdt_vision_kit.bin cdt_industrial_kit.bin can be seen.
-         # If reference Kit is RB3Gen2 Vision Kit , setup cdt_vision_kit.bin as cdt.bin
-         cp cdt_vision_kit.bin cdt.bin
+Overview
+========
+
+The Configuration Data Table (CDT) provides platform/device-dependent data such as platform ID, subtype, and version. Various software modules (drivers/firmware) use this information to perform dynamic detection and initialization of the platform.
+
+Update CDT Binary
+=================
+
+Based on your reference kit, you need to rename the respective CDT file as ``cdt.bin`` in the flashable images path.
+
+.. note::
+   The default Core Kit CDT is already set as ``cdt.bin``. Skip this step if your reference kit is the Core Kit.
+
+Steps
+=====
+
+1. Navigate to Flashable Images Path
+------------------------------------
+
+.. code-block:: bash
+
+   cd <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/
+
+2. Identify Available CDT Files
+-------------------------------
+
+In this directory, you should see multiple CDT files. For example, for Kodiak RB3Gen2:
+
+* ``rb3gen2-core-kit.bin``
+* ``cdt_vision_kit.bin``
+* ``cdt_industrial_kit.bin``
+
+3. Copy the Appropriate CDT File
+--------------------------------
+
+Based on your reference kit, copy the corresponding CDT file as ``cdt.bin``:
+
+For RB3Gen2 Vision Kit
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   cp cdt_vision_kit.bin cdt.bin
+
+For RB3Gen2 Industrial Kit
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   cp cdt_industrial_kit.bin cdt.bin
+
+For RB3Gen2 Core Kit
+~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   # No action needed - cdt.bin is already configured
+
+Example Workflow
+================
+
+.. code-block:: bash
+
+   # Navigate to the images directory
+   cd ~/workspace/build/tmp/deploy/images/qcs6490/qcs-multimedia-image-qcs6490/
+
+   # List available CDT files
+   ls -l *.bin
+
+   # Copy the Vision Kit CDT (example)
+   cp cdt_vision_kit.bin cdt.bin
+
+   # Verify the copy
+   ls -l cdt.bin
+
+.. important::
+   Ensure you select the correct CDT file that matches your hardware reference kit to avoid platform initialization issues.
 ·········
 
 Flash software using QDL
