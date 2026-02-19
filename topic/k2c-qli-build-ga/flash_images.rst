@@ -3,16 +3,35 @@
 Flash software images
 ======================
 
-.. On completion of build, flashable images can be seen as below 2 options
-   option 1) Folder with Flatten images to flash directly
-   ``<Base_Workspace_Path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs.qcomflash``
-   option 2) compressed flatten Images folder of option 1
-   ``<Base_Workspace_Path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs.qcomflash.tar.gz``
-    #untar tar.gz ,
-    cd <Base_Workspace_Path>/build/tmp/deploy/images/<MACHINE>/
-    tar -xvf <IMAGE>-<MACHINE>.rootfs.qcomflash.tar.gz
-    <Base_Workspace_Path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE> can be used to flash.
-.. note:: if prebuilt flashable images tar.gz downaloded from CLO artifactory, use  option 2.
+Obtaining flashable binaries
+----------------------------
+
+On build completion, flashable images can be obtained from the following paths:
+
+1. This path contains the flattened image which can be flashed directly
+  ``<Base_Workspace_Path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs.qcomflash``
+
+2. This path contains the flashable image directory in compressed format. 
+  ``<Base_Workspace_Path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs.qcomflash.tar.gz``
+
+  If you are downloading the prebuilt flashable images from CLO artifactory, you'll need this option.
+
+.. note::
+
+  To unpack the compressed image directory, follow these commands
+
+  .. container:: nohighlight
+
+    ::
+
+     untar tar.gz
+     cd <Base_Workspace_Path>/build/tmp/deploy/images/<MACHINE>/
+     tar -xvf <IMAGE>-<MACHINE>.rootfs.qcomflash.tar.gz
+     <Base_Workspace_Path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE> can be used to flash.
+
+
+Flash Instructions
+------------------
 
 Follow these steps to flash the software images:
 
@@ -428,19 +447,20 @@ Configuration data table (CDT) provides platform/device-dependent data such as p
 
 1. update CDT binary.
    
-   Based on the reference kit , rename the respective reference kit CDT file as cdt.bin in flashable images path.
-   Note: Default core Kit CDT was set as cdt.bin , skip update CDT binary if reference kit was Core Kit.
+   Based on the reference kit, rename the respective reference kit CDT file as cdt.bin in flashable images path.
+   
+.. note:: Default CDT for Core Kit is cdt.bin. You don't need this update if the reference kit is Core Kit.
 
-   .. container:: nohighlight
-······
-      ::
-·········
-         #Flashable images Path <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/
-         cd <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/
-         # Example, for kodiak  rb3gen2-core-kit.bin cdt_vision_kit.bin cdt_industrial_kit.bin can be seen.
-         # If reference Kit is RB3Gen2 Vision Kit , setup cdt_vision_kit.bin as cdt.bin
-         cp cdt_vision_kit.bin cdt.bin
-·········
+.. container:: nohighlight
+
+  ::
+
+     #Flashable images Path <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/
+     cd <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/
+     # Example, for kodiak - cdt_core_kit.bin, cdt_vision_kit.bin, cdt_industrial_kit.bin can be found.
+     # If reference Kit is RB3Gen2 Vision Kit, setup cdt_vision_kit.bin as cdt.bin
+     cp cdt_vision_kit.bin cdt.bin
+
 
 Flash software using QDL
 ------------------------------------
