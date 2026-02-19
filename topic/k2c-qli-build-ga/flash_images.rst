@@ -12,7 +12,8 @@ Flash software images
     cd <Base_Workspace_Path>/build/tmp/deploy/images/<MACHINE>/
     tar -xvf <IMAGE>-<MACHINE>.rootfs.qcomflash.tar.gz
     <Base_Workspace_Path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE> can be used to flash.
-.. note:: if prebuilt flashable images tar.gz downaloded from CLO artifactory, use  option 2.
+
+.. note:: If prebuilt flashable images (tar.gz) are downloaded from CLO artifactory, then :ref:`force the device into EDL mode <move_to_edl>`.
 
 Follow these steps to flash the software images:
 
@@ -423,24 +424,25 @@ Safety Island (SAIL) is applicable only for the Qualcomm Dragonwing™ IQ-9075 a
 .. _Choose_cdt:
 
 Choose CDT based on reference kit
-----------
-Configuration data table (CDT) provides platform/device-dependent data such as platform ID, subtype, version. Various Software (drivers/firmware) modules can use this information to perform dynamic detection and initialization of the platform.··
+----------------------------------
 
-1. update CDT binary.
+Configuration data table (CDT) provides platform/device-dependent data such as platform ID, subtype, version. Various Software (drivers/firmware) modules can use this information to perform dynamic detection and initialization of the platform.
+
+1. Update CDT binary.
    
    Based on the reference kit , rename the respective reference kit CDT file as cdt.bin in flashable images path.
-   Note: Default core Kit CDT was set as cdt.bin , skip update CDT binary if reference kit was Core Kit.
+
+   .. note:: Default core kit CDT is set as ``cdt.bin``. Skip the CDT binary update if reference kit is core kit.
 
    .. container:: nohighlight
-······
+
       ::
-·········
-         #Flashable images Path <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/
+
+         # Flashable images path is <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/
          cd <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/
-         # Example, for kodiak  rb3gen2-core-kit.bin cdt_vision_kit.bin cdt_industrial_kit.bin can be seen.
-         # If reference Kit is RB3Gen2 Vision Kit , setup cdt_vision_kit.bin as cdt.bin
+         # Example, for Kodiak, rb3gen2-core-kit.bin, cdt_vision_kit.bin, and cdt_industrial_kit.bin are available
+         # If reference kit is RB3Gen2 Vision Kit, set up cdt_vision_kit.bin as cdt.bin
          cp cdt_vision_kit.bin cdt.bin
-·········
 
 Flash software using QDL
 ------------------------------------

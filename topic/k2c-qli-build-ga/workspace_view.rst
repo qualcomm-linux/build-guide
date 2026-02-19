@@ -21,7 +21,7 @@ The following figure shows the directory structure after building firmware of ``
 
 .. note::
     - ``qualcomm-linux-spf-1-0_ap_standard_oem_nomodem`` contains the downloaded select firmware sources.
-    - ``LE.QCLINUX.2.0` has the built Yocto workspace. 
+    - ``LE.QCLINUX.2.0`` has the built Yocto workspace. 
    
 |ws_standalone_3|
 
@@ -29,7 +29,7 @@ The following figure shows the directory structure after building firmware of ``
 
 .. note::
     - ``qualcomm-linux-spf-1-0_amss_standard_oem_nomodem`` contains the downloaded select firmware sources.
-    - ``LE.QCLINUX.2.0` has the built Yocto workspace. 
+    - ``LE.QCLINUX.2.0`` has the built Yocto workspace.
   
 |ws_standalone_4|
 

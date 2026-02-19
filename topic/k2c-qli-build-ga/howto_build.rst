@@ -3,13 +3,12 @@
 Build
 -------
 
-Alternative Build Instrucions via Manifest
+Alternative build instructions using Manifest
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Repo is a tool which can be used to download a list of git repositories from a `manifest <https://github.com/qualcomm-linux/qcom-manifest/>`__. Repo can be used
-for syncing the Yocto meta layers needed for the build.
+Repo is a tool that can download a list of git repositories from a `manifest <https://github.com/qualcomm-linux/qcom-manifest/>`__. Repo can be used to sync the Yocto meta layers that the build requires.
 
-1. Install these packages in addition to the base system requirements to perform a repo-manifest based build 
+1. Install these packages in addition to the base system requirements to perform a repo-manifest based build:
 
    .. container:: nohighlight
       
@@ -17,7 +16,7 @@ for syncing the Yocto meta layers needed for the build.
 
          sudo apt install repo python3-yaml
 
-#. Download Qualcomm Yocto and supporting layer
+#. Download Qualcomm Yocto and supporting layers:
 
    .. container:: nohighlight
       
@@ -77,39 +76,33 @@ Check if the build is complete
 Generate an SDK
 ^^^^^^^^^^^^^^^^
 
-**Set up the environment and generate SDK**
+After building from source, run these commands from the same workspace:
 
-#. After building from source, run these commands from the same workspace:
-
-   .. container:: nohighlight
+.. container:: nohighlight
       
-      ::
+   ::
 
-         kas shell -c "bitbake -c do_populate_sdk <image>" meta-qcom/ci/<machine>:meta-qcom/ci/<distro>:meta-qcom/ci/lock.yml
+      kas shell -c "bitbake -c do_populate_sdk <image>" meta-qcom/ci/<machine>:meta-qcom/ci/<distro>:meta-qcom/ci/lock.yml
 
 When the SDK generation is complete, you can see the images in the following directory: ``<workspace-dir>/build/tmp/deploy/sdk``.
 
 Generate an eSDK
 ^^^^^^^^^^^^^^^^
 
-**Set up the environment and generate eSDK**
+After building from source, run these commands from the same workspace:
 
-#. After building from source, run these commands from the same workspace:
-
-   .. container:: nohighlight
+.. container:: nohighlight
       
-      ::
+   ::
 
-         kas shell -c "bitbake -c do_populate_sdk_ext <image>" meta-qcom/ci/<machine>:meta-qcom/ci/<distro>:meta-qcom/ci/lock.yml
+      kas shell -c "bitbake -c do_populate_sdk_ext <image>" meta-qcom/ci/<machine>:meta-qcom/ci/<distro>:meta-qcom/ci/lock.yml
 
 When the eSDK generation is complete, you can see the images in the following directory: ``<workspace-dir>/build/tmp/deploy/sdk``.
 
 Clean build artifacts
 ^^^^^^^^^^^^^^^^^^^^^
 
-**Clean up the artifacts from the build""
-
-#. After building from source, run these commands from the same workspace:
+#. Clean the build artifacts after building from source:
 
    .. container:: nohighlight
       
@@ -117,7 +110,7 @@ Clean build artifacts
 
          kas shell -c "bitbake -fc do_cleansstate <recipe>" meta-qcom/ci/<machine>:meta-qcom/ci/<distro>:meta-qcom/ci/lock.yml
 
-#. To rebuild the recipe after cleaning up the artifacts, run these commands: 
+#. Rebuild the recipe after cleaning up the artifacts:
 
    .. container:: nohighlight
       
@@ -128,7 +121,7 @@ Clean build artifacts
 Build a standalone QDL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Prerequisites:**
+**Prerequisites**
 
   - The modules ``make`` and ``gcc`` must be available.
 

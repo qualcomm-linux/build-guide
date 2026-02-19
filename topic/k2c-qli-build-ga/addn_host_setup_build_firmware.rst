@@ -114,4 +114,4 @@ Install and configure the software tools on the Ubuntu host computer.
          export PYTHONPATH=/opt/python3/lib:$PYTHONPATH
 
 .. note::
-  The `kas <https://kas.readthedocs.io/en/latest/>`__ tool is used by Qualcomm Linux to sync the meta layers, configure the environment and execute the bitbake commands.
+  The `kas <https://kas.readthedocs.io/en/latest/>`__ tool is used by Qualcomm Linux to sync the meta layers, configure the environment and execute the BitBake commands.

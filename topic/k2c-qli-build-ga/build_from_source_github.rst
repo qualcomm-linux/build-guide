@@ -30,7 +30,7 @@ Install and configure the required software tools on the Ubuntu host computer.
          chmod +x kas-container
 
 .. note::
-  The `kas <https://kas.readthedocs.io/en/latest/>`__ tool is used by Qualcomm Linux to sync the meta layers, configure the environment and execute the bitbake commands.
+  The `kas <https://kas.readthedocs.io/en/latest/>`__ tool is used by Qualcomm Linux to sync the meta layers, configure the environment and execute the BitBake commands.
 
 Sync
 -----
