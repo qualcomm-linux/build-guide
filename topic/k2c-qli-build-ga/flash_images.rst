@@ -3,35 +3,46 @@
 Flash software images
 ======================
 
-Obtaining flashable binaries
-----------------------------
+Obtain flashable binaries
+-----------------------------
 
 On build completion, flashable images can be obtained from the following paths:
 
-1. This path contains the flattened image which can be flashed directly
-  ``<Base_Workspace_Path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs.qcomflash``
+* This path contains the flattened image that can be flashed directly:
+  
+  .. container:: nohighlight
 
-2. This path contains the flashable image directory in compressed format. 
-  ``<Base_Workspace_Path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs.qcomflash.tar.gz``
+     ::
 
-  If you are downloading the prebuilt flashable images from CLO artifactory, you'll need this option.
+         <Base_Workspace_Path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs.qcomflash
 
-.. note::
-
-  To unpack the compressed image directory, follow these commands
+* This path contains the flashable image directory in compressed format:
 
   .. container:: nohighlight
 
-    ::
+     ::
 
-     untar tar.gz
-     cd <Base_Workspace_Path>/build/tmp/deploy/images/<MACHINE>/
-     tar -xvf <IMAGE>-<MACHINE>.rootfs.qcomflash.tar.gz
-     <Base_Workspace_Path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE> can be used to flash.
+         <Base_Workspace_Path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs.qcomflash.tar.gz
 
+  If you are downloading the prebuilt flashable images from CLO artifactory, you'll need this option.
 
-Flash Instructions
-------------------
+.. note:: To unpack the compressed image directory, follow these commands:
+
+   .. container:: nohighlight
+
+      ::
+
+         untar tar.gz
+         cd <Base_Workspace_Path>/build/tmp/deploy/images/<MACHINE>/
+         tar -xvf <IMAGE>-<MACHINE>.rootfs.qcomflash.tar.gz
+         
+         # Command to flash
+         <Base_Workspace_Path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>
+
+Flash instructions
+-------------------
+
+.. note:: If prebuilt flashable images (tar.gz) are downloaded from CLO artifactory, then :ref:`force the device into EDL mode <move_to_edl>`.
 
 Follow these steps to flash the software images:
 
@@ -48,7 +59,7 @@ Follow these steps to flash the software images:
 .. _update_udev_rules:
 
 Update ``udev`` rules (one-time prerequisite)
------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Configure the ``udev`` USB rules for the Qualcomm manufacturing vendor ID **05c6** on the Linux host:
 
@@ -97,12 +108,12 @@ Configure the ``udev`` USB rules for the Qualcomm manufacturing vendor ID **05c6
 .. _move_to_EDL:
 
 Force the device into EDL mode
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The device must be in the EDL mode before you flash the software. The Qualcomm supported device by default enters EDL mode if there is no image on the device after power up or if it's corrupted. To force the device into EDL mode, use any one of the following methods.
 
 Use UART
-^^^^^^^^^
+''''''''''
 
 Use UART only if the device has a preloaded build. This procedure applies to the Ubuntu host environment.
 
@@ -133,7 +144,7 @@ Use UART only if the device has a preloaded build. This procedure applies to the
           Bus 002 Device 014: ID 05c6:9008 Qualcomm, Inc. Gobi Wireless Modem (QDL mode)
 
 Use ADB
-^^^^^^^^^
+''''''''
 
 This procedure applies to the Ubuntu host environment. Use ADB only if the device has a preloaded build. 
 
@@ -174,7 +185,7 @@ This procedure applies to the Ubuntu host environment. Use ADB only if the devic
           Bus 002 Device 014: ID 05c6:9008 Qualcomm, Inc. Gobi Wireless Modem (QDL mode)
 
 Manual
-^^^^^^^^
+''''''''
 
 .. container:: persistenttab-soc
 
@@ -315,7 +326,7 @@ Manual
 .. _provision_ufs:
 
 Provision UFS
----------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Universal flash storage (UFS) provisioning helps to divide the storage into many LUNs, which stores different types of data separately. This improves access efficiency and system organization.
 
 UFS is provisioned by default. If there are any changes in LUNs, UFS must be re-provisioned. To download the provision XML file and to check the applicability of UFS provisioning for different SoCs, see the table *UFS Provision* in `Release Specific Information <https://docs.qualcomm.com/doc/80-70023-300/topic/release_specific_information.html>`__.
@@ -386,7 +397,7 @@ UFS is provisioned by default. If there are any changes in LUNs, UFS must be re-
 .. _flash_sail:
 
 Flash SAIL
------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Safety Island (SAIL) is applicable only for the Qualcomm Dragonwing™ IQ-9075 and the Qualcomm Dragonwing™ IQ-8275 development kits. If you're not using one of these development kits, skip to :ref:`Flash CDT <flash_cdt>`.
 
 1. Download the QDL tool. QDL is a software tool that communicates with the Qualcomm USB devices to upload a flash loader and flash software images. Acquire the latest version of the QDL tool using one of the following methods:
@@ -442,28 +453,28 @@ Safety Island (SAIL) is applicable only for the Qualcomm Dragonwing™ IQ-9075 a
 .. _Choose_cdt:
 
 Choose CDT based on reference kit
-----------
-Configuration data table (CDT) provides platform/device-dependent data such as platform ID, subtype, version. Various Software (drivers/firmware) modules can use this information to perform dynamic detection and initialization of the platform.··
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. update CDT binary.
+Configuration data table (CDT) provides platform/device-dependent data such as platform ID, subtype, version. Various Software (drivers/firmware) modules can use this information to perform dynamic detection and initialization of the platform.
+
+1. Update CDT binary.
    
    Based on the reference kit, rename the respective reference kit CDT file as cdt.bin in flashable images path.
-   
-.. note:: Default CDT for Core Kit is cdt.bin. You don't need this update if the reference kit is Core Kit.
 
-.. container:: nohighlight
+   .. note:: Default core kit CDT is ``cdt.bin``. Skip the CDT binary update if the reference kit is core kit.
 
-  ::
+   .. container:: nohighlight
 
-     #Flashable images Path <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/
-     cd <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/
-     # Example, for kodiak - cdt_core_kit.bin, cdt_vision_kit.bin, cdt_industrial_kit.bin can be found.
-     # If reference Kit is RB3Gen2 Vision Kit, setup cdt_vision_kit.bin as cdt.bin
-     cp cdt_vision_kit.bin cdt.bin
+      ::
 
+         # Flashable images path is <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/
+         cd <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/
+         # Example, the following bin files are available for Kodiak: cdt_core_kit.bin, cdt_vision_kit.bin, and cdt_industrial_kit.bin
+         # If reference kit is RB3Gen2 Vision Kit, then set up cdt_vision_kit.bin as cdt.bin
+         cp cdt_vision_kit.bin cdt.bin
 
 Flash software using QDL
-------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Ensure that the ModemManager tool isn't running.
 
@@ -567,7 +578,7 @@ Flash software using QDL
           3. Restart the host.
 
 Flash software using PCAT
-------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. note:: This procedure is available for registered users only.
 
 1. :ref:`Install QSC CLI <install_qsc_cli>`.
@@ -677,7 +688,7 @@ Flash software using PCAT
    The device reboots after the flashing procedure completes successfully. To verify the updated software version, see `Verify the Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-251/set_up_the_device.html#verify-the-qualcomm-linux-version>`__.
 
 Related topics
----------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - :ref:`Connect to UART shell <connect_uart>`
 - :ref:`Connect to network <connect_to_network>`
 - :ref:`Sign in using SSH <use-ssh>`

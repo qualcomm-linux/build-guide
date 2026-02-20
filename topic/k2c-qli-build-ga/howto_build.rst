@@ -3,7 +3,7 @@
 Build
 -------
 
-Alternative Build Instrucions via Manifest
+Alternative build instrucions using Manifest
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Repo is a tool which can be used to download a list of git repositories from a `manifest <https://github.com/qualcomm-linux/qcom-manifest/>`__. Repo can be used
@@ -42,7 +42,7 @@ for syncing the Yocto meta layers needed for the build.
         # Run the script with --help to view all supported flags
         setup-environment --help
 
-        # machine and distro flags refer to machine and distro configuration files present in `meta-qcom/ci` directory.
+        # machine and distro flags refer to the machine and distro configuration files present in `meta-qcom/ci` directory.
         # setup-environment: Sets the environment settings, creates the build directory build,
         # and enters into build directory.
         source setup-environment --machine meta-qcom/ci/qcs9100-ride-sx.yml --distro meta-qcom/ci/qcom-distro.yml

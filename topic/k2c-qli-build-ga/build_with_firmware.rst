@@ -1121,7 +1121,7 @@ The BSP image build has software components for the Qualcomm device support and 
 
          kas build meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/extras.yml:meta-qcom/ci/lock.yml
 
-         # eg. kas build meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/extras.yml:meta-qcom/ci/lock.yml
+         # Example, kas build meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/extras.yml:meta-qcom/ci/lock.yml
 
    For various ``<machine>`` and ``<distro>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
 
@@ -1144,7 +1144,7 @@ The BSP image build has software components for the Qualcomm device support and 
 #. Flash the generated build using :doc:`Flash software images <flash_images>`.
 
 .. note::
-   For repo manifest based builds, refer to :ref:`Alternate Build Instructions via Manifest <howto_build>`
+   For repo manifest based builds, see :ref:`Alternative build instructions using Manifest <howto_build>`
 
 Next steps
 -----------
