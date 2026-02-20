@@ -571,6 +571,8 @@ Flash software using QDL
 
    To verify the updated software version, see `Verify the Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-251/set_up_the_device.html#verify-the-qualcomm-linux-version>`__.
 
+.. include:: enable_dtb_overlay.rst
+
 .. note:: If flashing fails, perform the following steps and retry the flashing procedure:
 
           1. Power off the device.
@@ -686,6 +688,8 @@ Flash software using PCAT
          Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
    The device reboots after the flashing procedure completes successfully. To verify the updated software version, see `Verify the Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-251/set_up_the_device.html#verify-the-qualcomm-linux-version>`__.
+
+.. include:: enable_dtb_overlay.rst
 
 Related topics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
