@@ -655,13 +655,13 @@ Flash software using PCAT
  
          # For UFS storage
          cp ./partition_ufs/gpt_main*.bin ./partition_ufs/gpt_backup*.bin ./partition_ufs/rawprogram[0-9].xml ./partition_ufs/patch*.xml ./partition_ufs/zeros_*sectors.bin ./
-         PCAT –PLUGIN SD -DEVICE <device_serial_number> -BUILD "<build_images_path>"" -MEMORYTYPE UFS -FLAVOR asic
+         PCAT -PLUGIN SD -DEVICE <device_serial_number> -BUILD "<build_images_path>"" -MEMORYTYPE UFS -FLAVOR asic
          
-         # Example, PCAT –PLUGIN SD -DEVICE be116704 -BUILD "<workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/" -MEMORYTYPE UFS -FLAVOR asic
+         # Example, PCAT -PLUGIN SD -DEVICE be116704 -BUILD "<workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/" -MEMORYTYPE UFS -FLAVOR asic
  
          # For EMMC storage
          cp ./partition_emmc/gpt_main*.bin ./partition_emmc/gpt_backup*.bin ./partition_emmc/rawprogram[0-9].xml ./partition_emmc/patch*.xml ./partition_emmc/zeros_*sectors.bin ./
-         PCAT –PLUGIN SD -DEVICE <device_serial_number> -BUILD "<build_images_path>"" -MEMORYTYPE EMMC -FLAVOR asic -RAWPROG "<build_images_path>/rawprogram0.xml" -PATCHPROG "<build_images_path>/patch0.xml"
+         PCAT -PLUGIN SD -DEVICE <device_serial_number> -BUILD "<build_images_path>"" -MEMORYTYPE EMMC -FLAVOR asic -RAWPROG "<build_images_path>/rawprogram0.xml" -PATCHPROG "<build_images_path>/patch0.xml"
          
 
    If flashing the software is successful, the outputs is as follows:
