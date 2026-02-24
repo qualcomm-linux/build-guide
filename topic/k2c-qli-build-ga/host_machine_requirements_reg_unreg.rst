@@ -18,6 +18,7 @@ Host computer requirements
   - Python 3.10.2 or later versions
   - GCC 10.1 or later versions
   - GNU Make 4.0 or later versions
+  - Kas 4.8 or later versions
 
 - Permissions 
 
