@@ -72,6 +72,23 @@ Check if the build is complete
          cd <workspace-dir>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs-<DATE>.qcomflash/
          ls -al rootfs.img
 
+Modifying Recipes
+^^^^^^^^^^^^^^^^^
+
+#. If you wish to modify and compile a recipe, run these commands from the same workspace: 
+
+   .. container:: nohighlight
+      
+      ::
+
+         # You can use devtool to modify the source-code used in any of the recipes
+         kas shell -c "devtool modify <recipe>" meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/lock.yml
+         # eg. kas shell -c "devtool modify linux-qcom" meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/lock.yml
+
+         # Once you are done with your changes, you can build the recipe with this command
+         kas shell -c "bitbake <recipe>" meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/lock.yml
+         # eg. kas shell -c "bitbake linux-qcom" meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/lock.yml
+
 .. _how_to_build_generate_sdk:
 
 Generate an SDK
