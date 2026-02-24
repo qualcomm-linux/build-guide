@@ -61,7 +61,7 @@ Create and build a Yocto Docker image:
          git clone https://github.com/qualcomm-linux/meta-qcom-releases -b <meta-qcom-release-tag>
          kas checkout meta-qcom-releases/lock.yml
 
-#. Build the software image. Build targets are defined based on machine and distro combinations. 
+#. Copy the kas lock file from meta-qcom-releases to meta-qcom. Make sure to run this step, otherwise the checked out meta layers may get updated to a newer commit. 
 
    .. container:: nohighlight
       
@@ -70,6 +70,13 @@ Create and build a Yocto Docker image:
          # kas configuration files need to be part of same repository
          # copy kas lock file to meta-qcom repository
          cp meta-qcom-releases/lock.yml meta-qcom/ci/lock.yml
+
+#. Build the software image. Build targets are defined based on machine and distro combinations. 
+
+   .. container:: nohighlight
+      
+      ::
+
          kas build meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/lock.yml
 
          # eg. kas build meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/lock.yml
