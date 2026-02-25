@@ -42,15 +42,7 @@ Sync
 
 QLI uses the kas tool to sync and build the Yocto meta layers. Kas lock files recording the meta layer repository information are stored in `meta-qcom-releases <https://github.com/qualcomm-linux/meta-qcom-releases>`__ for each critical release. 
 
-You can checkout the lock files for each release by the `meta-qcom-release-tag`. The meta-qcom release tag syntax is as follows:
-
-``qcom-<Linux LTS Kernel Version>-QLI.<version>-Ver.<release>``
-
-For example, the meta-qcom release tag ``qcom-6.18-QLI.2.0-Ver.1.0`` denotes the following:
-
-- 6.18: Qualcomm Linux kernel
-- QLI.2.0: Qualcomm Linux v2.0
-- 1.0: Milestone release
+You can checkout the lock files for each release by the `meta-qcom-release-tag`. The meta-qcom release tag follows the syntax ``qli-<version>``. For example, the meta-qcom release tag can be ``qli-2.0-rc1`` where ``2.0-rc1`` is the release version.
 
 Build a BSP image
 -----------------
