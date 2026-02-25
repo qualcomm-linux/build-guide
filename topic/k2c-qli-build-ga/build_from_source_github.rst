@@ -100,7 +100,7 @@ Create and build a Yocto Docker image:
          # containing all the relevant files to perform a full clean flash,
          # including partition metadata, boot firmware, ESP # partition and
          # the rootfs.
-         cd <workspace-dir>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs-<DATE>.qcomflash/
+         cd <workspace-dir>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs.qcomflash/
          ls -al rootfs.img
 
 .. note::

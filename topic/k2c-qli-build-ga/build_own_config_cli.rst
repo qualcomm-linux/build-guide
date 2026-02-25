@@ -45,7 +45,7 @@ When compiling a software image other than ``LE.QCLINUX.2.0``, ensure that you a
            # containing all the relevant files to perform a full clean flash,
            # including partition metadata, boot firmware, ESP # partition and
            # the rootfs.
-           cd <workspace-dir>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs-<DATE>.qcomflash/
+           cd <workspace-dir>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs.qcomflash/
            ls -al rootfs.img
          
 3. To flash your build, see :ref:`Flash software images <flash_images>`.

@@ -1138,7 +1138,7 @@ The BSP image build has software components for the Qualcomm device support and 
          # containing all the relevant files to perform a full clean flash,
          # including partition metadata, boot firmware, ESP # partition and
          # the rootfs.
-         cd <workspace-dir>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs-<DATE>.qcomflash/
+         cd <workspace-dir>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs.qcomflash/
          ls -al rootfs.img
 
 #. Flash the generated build using :doc:`Flash software images <flash_images>`.
