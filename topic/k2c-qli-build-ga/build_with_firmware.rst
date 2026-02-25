@@ -1062,18 +1062,15 @@ Build firmware
            -  ``QCS8300_fw.zip``
 
 
-Build a BSP image with extras
+Build a BSP image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The BSP image build has software components for the Qualcomm device support and software features applicable to the Qualcomm SoCs. This build includes a reference distribution configuration for the Qualcomm development kits. The ``meta-qcom-extras`` layer enables source compilation of select components, which are otherwise present as binary. For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-80020-27/qualcomm_linux_metadata_layers.html>`__.
+The BSP image build has software components for the Qualcomm device support and software features applicable to the Qualcomm SoCs. This build includes a reference distribution configuration for the Qualcomm development kits.
 
-1. Download Qualcomm Yocto and the supporting layers with extras. For the ``<meta-qcom-extras-release-tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
+1. Download Qualcomm Yocto and the supporting layers. For the ``<meta-qcom-release-tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
 
    .. container:: nohighlight
       
       ::
-
-         # NETRC_FILE env variable needs to be set for kas to pickup netrc credentials
-         export NETRC_FILE="~/.netrc"
 
          cd <FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem
 
@@ -1081,41 +1078,18 @@ The BSP image build has software components for the Qualcomm device support and 
          mkdir LE.QCLINUX.2.0
          cd LE.QCLINUX.2.0
 
-         git clone https://github.com/qualcomm-linux/meta-qcom-extras-releases -b <meta-qcom-extras-release-tag>
-         kas checkout meta-qcom-extras-releases/lock.yml
+         git clone https://github.com/qualcomm-linux/meta-qcom-releases -b <meta-qcom-release-tag>
 
-#. Set up the Yocto build:
+         kas checkout meta-qcom-releases/lock.yml
+
+#. Copy the kas lock file from meta-qcom-releases to meta-qcom. Make sure to run this step, otherwise the checked out meta layers may get updated to a newer commit. 
 
    .. container:: nohighlight
       
       ::
-
-         # CUST_ID is used to clone the proprietary source repositories downloaded by meta-qcom-extras.
-         # It allows source compilation for the corresponding binaries present in meta-qcom.         
-         # CUST_ID must be set to "213195" for no-modem based distributions "qualcomm-linux-spf-2-0_ap_standard_oem_nomodem".         
-         # For other modem based distributions, CUST_ID must be set based on the "Customer ID".
-         # To find "Customer ID", sign in to your account at qualcomm.com.
-         # Click the Profile icon, select Account Settings, and then scroll down to the Company Information section.
-         # export CUST_ID using the following command.
-         export CUST_ID=<Customer ID>
-
-         # The firmware recipe is compiled when the Yocto build is initiated. Firmware recipe expects the
-         # path of firmware. You have generated firmware prebuilts (boot-critical and split-firmware binaries)
-         # using the steps described in the previous section.
-         # Example, for QCM6490, the directory path must contain QCM6490_bootbinaries.zip, QCM6490_dspso.zip, and QCM6490_fw.zip. 
-         # Set the environment variable to pick up the prebuilts:
-         export FWZIP_PATH="<FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nm/<product>/common/build/ufs/bin"
-         # An example <product> is QCM6490.LE.2.0. For more information about <product>, see the latest Release Notes (https://docs.qualcomm.com/doc/80-80020-300/).
-
-         # Populate meta-qcom-extras kas fragment
-         meta-qcom-extras/setup_extras_config.sh 
-
-         # Copy generated meta-qcom-extras kas fragment to meta-qcom
-         cp meta-qcom-extras/ci/extras.yml meta-qcom/ci/extras.yml
-
          # kas configuration files need to be part of the same repository
          # copy the kas lock file to meta-qcom repository
-         cp meta-qcom-extras-releases/lock.yml meta-qcom/ci/lock.yml
+         cp meta-qcom-releases/lock.yml meta-qcom/ci/lock.yml
 
 #. Build the software image. Build targets are defined based on machine and distro combinations:
 
@@ -1123,9 +1097,9 @@ The BSP image build has software components for the Qualcomm device support and 
       
       ::
 
-         kas build meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/extras.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
+         kas build meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
 
-         # Example, kas build meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/extras.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
+         # Example, kas build meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
 
    For various ``<machine>`` and ``<distro>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
 
