@@ -1091,6 +1091,8 @@ The BSP image build has software components for the Qualcomm device support and 
          # copy the kas lock file to meta-qcom repository
          cp meta-qcom-releases/lock.yml meta-qcom/ci/lock.yml
 
+#. To use the locally compiled firmware in your Yocto build, refer to :doc:`Setting up local firmware <setup_local_firmware>`. 
+
 #. Build the software image. Build targets are defined based on machine and distro combinations:
 
    .. container:: nohighlight
