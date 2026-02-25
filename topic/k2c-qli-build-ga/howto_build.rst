@@ -79,7 +79,7 @@ Repo is a tool which can be used to download a list of git repositories from a `
 
         # machine and distro flags refer to the machine and distro configuration files present in `meta-qcom/ci` directory.
         # setup-environment sets the environment settings, creates the build directory build, and enters the build directory.
-        source setup-environment --machine meta-qcom/ci/qcs9100-ride-sx.yml --distro meta-qcom/ci/qcom-distro.yml
+        source setup-environment --machine meta-qcom/ci/qcs9100-ride-sx.yml --distro meta-qcom/ci/qcom-distro-prop-image.yml --kernel meta-qcom/ci/linux-qcom-6.18.yml
 
 #. Build the software image:
 
