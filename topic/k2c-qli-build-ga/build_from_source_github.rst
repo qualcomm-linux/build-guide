@@ -57,7 +57,7 @@ Build a BSP image
 
 Create and build a Yocto Docker image:
 
-1. Download Qualcomm Yocto and the supporting meta-layers. For the latest ``<meta-qcom-release-tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
+1. Download Qualcomm Yocto and the supporting meta-layers. For the latest ``<meta-qcom-release-tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
       
    .. container:: nohighlight
 
@@ -86,7 +86,7 @@ Create and build a Yocto Docker image:
 
          # Example, kas build meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/lock.yml
 
-   For various ``<machine>`` and ``<distro>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
+   For various ``<machine>`` and ``<distro>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
 
    .. note:: To build the images in a fully isolated environment, you can try out `kas-container <https://kas.readthedocs.io/en/latest/userguide/kas-container.html>`__ instead. 
 
@@ -104,7 +104,8 @@ Create and build a Yocto Docker image:
          ls -al rootfs.img
 
 .. note::
-   For repo manifest based builds, see :ref:`Alternative build instructions using Manifest <howto_build>`.
+   * To build meta-qcom tip, see :ref:`Build meta-qcom tip <build_tip>`.
+   * For repo manifest based builds, see :ref:`Alternative build instructions using Manifest <howto_build>`.
 
 Flash
 -----

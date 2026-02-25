@@ -3,6 +3,42 @@
 Build
 -------
 
+.. _build_tip:
+
+Build meta-qcom tip
+^^^^^^^^^^^^^^^^^^^^^^
+
+The :ref:`build from source <build_from_source_github>` instructions explain how to build a milestone release
+tag for ``meta-qcom``. The milestone release provides locked revisions for the well-tested dependent meta layers. If you wish to build ``meta-qcom`` with the branch tips for the dependent meta-layers, then follow these commands:
+
+.. note:: Ensure that all the packages defined in the :ref:`host computer requirements <host_machine_requirements_reg_unreg>` are installed on your computer.
+
+#. Clone the ``qualcomm-linux/meta-qcom`` repository. This holds the kas configuration files required to build.
+
+   .. container:: nohighlight
+      
+      ::
+
+         # cd to directory where you have 300 GB of free storage space to create your workspaces
+         mkdir <workspace-dir>
+         cd <workspace-dir>
+
+         git clone https://github.com/qualcomm-linux/meta-qcom -b master 
+
+#. Build the software image. Build targets are defined based on machine and distro combinations. 
+
+   .. container:: nohighlight
+      
+      ::
+
+         kas build meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>
+
+         # Example, kas build meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml
+
+   For various ``<machine>`` and ``<distro>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
+
+.. _build_manifest:
+
 Alternative build instructions using Manifest
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

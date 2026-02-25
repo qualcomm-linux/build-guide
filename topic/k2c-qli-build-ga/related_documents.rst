@@ -18,20 +18,20 @@ Related documents
    * - `Qualcomm Linux Yocto Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-80020-27>`__
      - 80-80020-27
 
-   * - `Qualcomm Linux Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__
+   * - `Qualcomm Linux Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__
      - 80-80020-300
 
    * - `Qualcomm Dragonwing™ IQ-615 Beta Evaluation Kit quickstart <https://docs.qualcomm.com/bundle/80-70020-293/resource/80-70020-293_REV_AA_Qualcomm_Dragonwing_IQ-615_Beta_Evaluation_Kit_Quick_Start_Guide.pdf>`__
      - 80-70020-293   
 
-   * - `Qualcomm Linux Kernel Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-3>`__
-     - 80-70023-3
+   * - `Qualcomm Linux Kernel Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-80020-3>`__
+     - 80-80020-3
 
-   * - `Qualcomm Dragonwing™ RB3 Gen 2 Development Kit user guide – Linux <https://docs.qualcomm.com/doc/80-70023-251/topic/landing-page.html>`__
-     - 80-70023-251
+   * - `Qualcomm Dragonwing™ RB3 Gen 2 Development Kit user guide – Linux <https://docs.qualcomm.com/doc/80-80020-251/topic/landing-page.html>`__
+     - 80-80020-251
 
-   * - `Qualcomm Linux Virtual Machine Setup Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-41/>`__
-     - 80-70023-41
+   * - `Qualcomm Linux Virtual Machine Setup Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-80020-41/>`__
+     - 80-80020-41
 
    * - `Qualcomm Software Center User Guide <https://docs.qualcomm.com/doc/80-72780-2/topic/overview.html>`__
      - 80-72780-2
