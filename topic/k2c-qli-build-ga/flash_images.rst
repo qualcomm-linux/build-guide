@@ -455,7 +455,7 @@ Safety Island (SAIL) is applicable only for the Qualcomm Dragonwing™ IQ-9075 a
 Choose CDT based on reference kit
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Configuration data table (CDT) provides platform/device-dependent data such as platform ID, subtype, version. Various Software (drivers/firmware) modules can use this information to perform dynamic detection and initialization of the platform.
+Configuration data table (CDT) provides platform/device-dependent data such as platform ID, subtype, version. Various software (drivers/firmware) modules can use this information to perform dynamic detection and initialization of the platform.
 
 1. Update CDT binary.
    
@@ -651,22 +651,23 @@ Flash software using PCAT
    .. container:: nohighlight
       
       ::
-         Note: <build_images_path> refering below for <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/
+         
+         # <build_images_path> is <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/
 
          cd <build_images_path>
  
          # For UFS storage
          cp ./partition_ufs/gpt_main*.bin ./partition_ufs/gpt_backup*.bin ./partition_ufs/rawprogram[0-9].xml ./partition_ufs/patch*.xml ./partition_ufs/zeros_*sectors.bin ./
-         PCAT -PLUGIN SD -DEVICE <device_serial_number> -BUILD "<build_images_path>"" -MEMORYTYPE UFS -FLAVOR asic
+         PCAT -PLUGIN SD -DEVICE <device_serial_number> -BUILD "<build_images_path>" -MEMORYTYPE UFS -FLAVOR asic
          
          # Example, PCAT -PLUGIN SD -DEVICE be116704 -BUILD "<workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/" -MEMORYTYPE UFS -FLAVOR asic
  
          # For EMMC storage
          cp ./partition_emmc/gpt_main*.bin ./partition_emmc/gpt_backup*.bin ./partition_emmc/rawprogram[0-9].xml ./partition_emmc/patch*.xml ./partition_emmc/zeros_*sectors.bin ./
-         PCAT -PLUGIN SD -DEVICE <device_serial_number> -BUILD "<build_images_path>"" -MEMORYTYPE EMMC -FLAVOR asic -RAWPROG "<build_images_path>/rawprogram0.xml" -PATCHPROG "<build_images_path>/patch0.xml"
+         PCAT -PLUGIN SD -DEVICE <device_serial_number> -BUILD "<build_images_path>" -MEMORYTYPE EMMC -FLAVOR asic -RAWPROG "<build_images_path>/rawprogram0.xml" -PATCHPROG "<build_images_path>/patch0.xml"
          
 
-   If flashing the software is successful, the outputs is as follows:
+   If flashing the software is successful, the output is as follows:
 
    .. container:: screenoutput
 

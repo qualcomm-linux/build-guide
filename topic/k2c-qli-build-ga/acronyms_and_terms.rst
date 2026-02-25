@@ -12,8 +12,6 @@ Acronyms and terms
      - Advanced digital signal processor
    * - cDSP
      - Compute digital signal processor
-   * - CDT
-     - Configuration data table 
    * - ADB
      - Android debug bridge
    * - AOP 

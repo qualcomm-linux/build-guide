@@ -13,7 +13,7 @@ Download prebuilt images and flash the software
 
 - In the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/topic/prebuilt_flashable_images_along_with_esdk.html>`__, go to the *Artifactory links to prebuilt flashable images and eSDK* table to download prebuilt flashable images and the Platform eSDK.
 
-.. note:: The Platform eSDK is an installer that allows you to synchronize, modify, compile, and install applications and open-source plug-ins within a complete Yocto environment. For more information, see :ref:`Download the Platform eSDK <download_platform_esdk>`.
+.. note:: The Platform eSDK is an installer that allows you to synchronize, modify, compile, and install applications and open-source plug-ins within a complete Yocto environment.
 
 - To flash the prebuilt images, see :ref:`Flash software images <flash_images>`.
 
@@ -28,20 +28,19 @@ Sync, build, and flash the software
 
   .. note:: You must `register with Qualcomm <https://www.qualcomm.com/support/working-with-qualcomm>`__ to sync and build Qualcomm Linux.
 
-  If you're a registered user, you can use the following method to sync and build Qualcomm Linux. This method use the Qualcomm Yocto layers and the supporting base Yocto layers. You can access the source of certain firmware components and Qualcomm tools, which lets you build and download the software.
+  If you're a registered user, you can use the following method to sync and build Qualcomm Linux. These methods use the Qualcomm Yocto layers and the supporting base Yocto layers. You can access the source of certain firmware components and Qualcomm tools, which lets you build and download the software.
 
   .. list-table:: 
      :header-rows: 1
      :align: center
      :class: longtable
   
-     * - Manual Build 
+     * - Manual build 
        - CLI
      * - Build using selective proprietary sources and binaries/libraries. 
        - QSC command-line interface (CLI).
-       - A Docker-based workflow.
-     * - .. centered:: :doc:`Build from Source (with firmware and extras) <build_addn_info>`
-       - .. centered:: :doc:`Build with QSC CLI <build_frm_source_qsc_cli>`
+     * - :ref:`Build from source (with firmware and extras) <build_addn_info>`
+       - :ref:`Build with QSC CLI <build_frm_source_qsc_cli>`
 
 .. only:: html
    

@@ -3,13 +3,12 @@
 Build
 -------
 
-Alternative build instrucions using Manifest
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Alternative build instructions using Manifest
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Repo is a tool which can be used to download a list of git repositories from a `manifest <https://github.com/qualcomm-linux/qcom-manifest/>`__. Repo can be used
-for syncing the Yocto meta layers needed for the build.
+Repo is a tool which can be used to download a list of git repositories from a `manifest <https://github.com/qualcomm-linux/qcom-manifest/>`__. Use the Repo to sync the Yocto meta layers that the build requires.
 
-1. Install these packages in addition to the base system requirements to perform a repo-manifest based build 
+1. Install these packages in addition to the base system requirements to perform a repo-manifest based build:
 
    .. container:: nohighlight
       
@@ -17,7 +16,7 @@ for syncing the Yocto meta layers needed for the build.
 
          sudo apt install repo python3-yaml
 
-#. Download Qualcomm Yocto and supporting layer
+#. Download the Qualcomm Yocto and supporting layers:
 
    .. container:: nohighlight
       
@@ -39,12 +38,11 @@ for syncing the Yocto meta layers needed for the build.
     ::
 
         # setup-environment provides a help section for instructions
-        # Run the script with --help to view all supported flags
+        # Run the script with --help to view all the supported flags
         setup-environment --help
 
         # machine and distro flags refer to the machine and distro configuration files present in `meta-qcom/ci` directory.
-        # setup-environment: Sets the environment settings, creates the build directory build,
-        # and enters into build directory.
+        # setup-environment sets the environment settings, creates the build directory build, and enters the build directory.
         source setup-environment --machine meta-qcom/ci/qcs9100-ride-sx.yml --distro meta-qcom/ci/qcom-distro.yml
 
 #. Build the software image:
@@ -72,10 +70,10 @@ Check if the build is complete
          cd <workspace-dir>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs-<DATE>.qcomflash/
          ls -al rootfs.img
 
-Modifying Recipes
-^^^^^^^^^^^^^^^^^
+Modifying recipes
+^^^^^^^^^^^^^^^^^^
 
-#. If you wish to modify and compile a recipe, run these commands from the same workspace: 
+#. Modify and compile a recipe from the same workspace:
 
    .. container:: nohighlight
       
@@ -83,58 +81,52 @@ Modifying Recipes
 
          # You can use devtool to modify the source-code used in any of the recipes
          kas shell -c "devtool modify <recipe>" meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/lock.yml
-         # eg. kas shell -c "devtool modify linux-qcom" meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/lock.yml
+         # Example, kas shell -c "devtool modify linux-qcom" meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/lock.yml
 
-         # Once you are done with your changes, you can build the recipe with this command
+         # Build your recipe
          kas shell -c "bitbake <recipe>" meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/lock.yml
-         # eg. kas shell -c "bitbake linux-qcom" meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/lock.yml
+         # Example, kas shell -c "bitbake linux-qcom" meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/lock.yml
 
 .. _how_to_build_generate_sdk:
 
 Generate an SDK
 ^^^^^^^^^^^^^^^^
 
-**Set up the environment and generate SDK**
+Set up the environment and generate SDK from the same workspace:
 
-#. After building from source, run these commands from the same workspace:
-
-   .. container:: nohighlight
+.. container:: nohighlight
       
-      ::
+   ::
 
-         kas shell -c "bitbake -c do_populate_sdk <image>" meta-qcom/ci/<machine>:meta-qcom/ci/<distro>:meta-qcom/ci/lock.yml
+      kas shell -c "bitbake -c do_populate_sdk <image>" meta-qcom/ci/<machine>:meta-qcom/ci/<distro>:meta-qcom/ci/lock.yml
 
-When the SDK generation is complete, you can see the images in the following directory: ``<workspace-dir>/build/tmp/deploy/sdk``.
+When the SDK generation is complete, you can see the images in the ``<workspace-dir>/build/tmp/deploy/sdk`` directory.
 
 Generate an eSDK
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
-**Set up the environment and generate eSDK**
+Set up the environment and generate eSDK from the same workspace:
 
-#. After building from source, run these commands from the same workspace:
-
-   .. container:: nohighlight
+.. container:: nohighlight
       
-      ::
+   ::
 
-         kas shell -c "bitbake -c do_populate_sdk_ext <image>" meta-qcom/ci/<machine>:meta-qcom/ci/<distro>:meta-qcom/ci/lock.yml
+      kas shell -c "bitbake -c do_populate_sdk_ext <image>" meta-qcom/ci/<machine>:meta-qcom/ci/<distro>:meta-qcom/ci/lock.yml
 
-When the eSDK generation is complete, you can see the images in the following directory: ``<workspace-dir>/build/tmp/deploy/sdk``.
+When the eSDK generation is complete, you can see the images in the ``<workspace-dir>/build/tmp/deploy/sdk`` directory.
 
 Clean build artifacts
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
-**Clean up the artifacts from the build""
-
-#. After building from source, run these commands from the same workspace:
+1. Clean the build artifacts:
 
    .. container:: nohighlight
-      
+
       ::
 
          kas shell -c "bitbake -fc do_cleansstate <recipe>" meta-qcom/ci/<machine>:meta-qcom/ci/<distro>:meta-qcom/ci/lock.yml
 
-#. To rebuild the recipe after cleaning up the artifacts, run these commands: 
+#. Rebuild the recipe after cleaning up the artifacts: 
 
    .. container:: nohighlight
       
@@ -145,7 +137,7 @@ Clean build artifacts
 Build a standalone QDL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Prerequisites:**
+**Prerequisites**
 
   - The modules ``make`` and ``gcc`` must be available.
 

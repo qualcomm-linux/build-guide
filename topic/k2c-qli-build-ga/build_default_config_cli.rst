@@ -6,7 +6,7 @@ Build the default configuration
 Compile
 ''''''''
 
-For information on the default configurations, see the table *Default values of MACHINE and DISTRO parameters for QSC* in the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
+For information on the default configurations, see the table *Default values of MACHINE and DISTRO parameters for QSC* in the `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
 
 When the download is complete, start the compilation process. Depending on the size of the software and the host computer configuration, the compilation process can take a few hours.
 
@@ -37,7 +37,7 @@ To recompile after any modifications to the software release, use your existing 
       
       # Example, qsc-cli chip-software compile --image LE.QCLINUX.2.0 --workspace-path '/local/mnt/workspace/sample_workspace'
 
-For information on software image names (``--image``), see the table *QSC-CLI Input Parameters* in the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
+For information on software image names (``--image``), see the table *QSC-CLI Input Parameters* in the `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
 
 Flash
 '''''''''
@@ -62,7 +62,7 @@ For Ubuntu 22.04, you might see an issue while installing QUD, where you must en
 
    1. Device is in :ref:`Emergency Download (EDL) mode <move_to_EDL>`.
    #. :ref:`Provision UFS <provision_ufs>`.
-   #. :ref:`Flash CDT <flash_cdt>`.
+   #. :ref:`Choose CDT <Choose_cdt>`.
    #. :ref:`Flash SAIL <flash_sail>`.
   
 Flash a device:
