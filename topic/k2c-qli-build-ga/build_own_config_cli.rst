@@ -14,7 +14,7 @@ When compiling a software image other than ``LE.QCLINUX.2.0``, ensure that you a
    
 2. Compile the ``LE.QCLINUX.2.0`` image with your own MACHINE and DISTRO parameter values.
    
-   For information on the supported machine configurations of the development kit, see the table *Default values of MACHINE and DISTRO parameters for QSC* in the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
+   For information on the supported machine configurations of the development kit, see the table *Default values of MACHINE and DISTRO parameters for QSC* in the `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
    
    a. Run the build commands for a specific configuration:
 

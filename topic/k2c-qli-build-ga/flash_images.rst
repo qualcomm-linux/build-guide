@@ -149,15 +149,15 @@ Use ADB
 This procedure applies to the Ubuntu host environment. Use ADB only if the device has a preloaded build. 
 
 1. `Install
-   QUD <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-251/faqs.html#install-qud>`__
+   QUD <https://docs.qualcomm.com/bundle/publicresource/topics/80-80020-251/faqs.html#install-qud>`__
    on the host device.
 
 2. `Install
-   ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-251/faqs.html#install-adb>`__
+   ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-80020-251/faqs.html#install-adb>`__
    on the host device.
 
 3. `Connect
-   ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-251/faqs.html#install-adb>`__
+   ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-80020-251/faqs.html#install-adb>`__
    to the device.
 
 4. Move the device into EDL mode in a terminal on the host computer:
@@ -329,11 +329,11 @@ Provision UFS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Universal flash storage (UFS) provisioning helps to divide the storage into many LUNs, which stores different types of data separately. This improves access efficiency and system organization.
 
-UFS is provisioned by default. If there are any changes in LUNs, UFS must be re-provisioned. To download the provision XML file and to check the applicability of UFS provisioning for different SoCs, see the table *UFS Provision* in `Release Specific Information <https://docs.qualcomm.com/doc/80-70023-300/topic/release_specific_information.html>`__.
+UFS is provisioned by default. If there are any changes in LUNs, UFS must be re-provisioned. To download the provision XML file and to check the applicability of UFS provisioning for different SoCs, see the table *UFS Provision* in `Release Specific Information <https://docs.qualcomm.com/doc/80-80020-300/topic/release_specific_information.html>`__.
 
 1. Download the provision file.
 
-   Based on the required SoC, download the respective ‘provision’ from the *UFS Provision* table of the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/topic/release_specific_information.html>`__.
+   Based on the required SoC, download the respective ‘provision’ from the *UFS Provision* table of the `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/topic/release_specific_information.html>`__.
 
    .. container:: nohighlight
       
@@ -569,7 +569,7 @@ Flash software using QDL
          Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
          Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
-   To verify the updated software version, see `Verify the Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-251/set_up_the_device.html#verify-the-qualcomm-linux-version>`__.
+   To verify the updated software version, see `Verify the Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-80020-251/set_up_the_device.html#verify-the-qualcomm-linux-version>`__.
 
 .. include:: enable_dtb_overlay.rst
 
@@ -688,7 +688,7 @@ Flash software using PCAT
          Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
          Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
-   The device reboots after the flashing procedure completes successfully. To verify the updated software version, see `Verify the Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-251/set_up_the_device.html#verify-the-qualcomm-linux-version>`__.
+   The device reboots after the flashing procedure completes successfully. To verify the updated software version, see `Verify the Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-80020-251/set_up_the_device.html#verify-the-qualcomm-linux-version>`__.
 
 .. include:: enable_dtb_overlay.rst
 
