@@ -101,7 +101,7 @@ Find a Yocto workspace using QSC CLI
 
 You can install the ``tree`` command and run it on your workspace. The Yocto workspace is under the ``LE.QCLINUX.2.0`` directory. These directories stay the same for future releases.
 
--  QSC CLI workspace structure after ``Qualcomm_Linux.SPF.1.0|TEST|DEVICE|PB`` distribution
+-  QSC CLI workspace structure after ``Qualcomm_Linux.SPF.2.0|TEST|DEVICE|PUBLIC`` distribution
    build
 
    The following is a sample view, in which:
@@ -110,7 +110,7 @@ You can install the ``tree`` command and run it on your workspace. The Yocto wor
       |YoctoLEQCLinux|
 
 -  QSC CLI workspace structure after
-   ``Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NoModem`` distribution build
+   ``Qualcomm_Linux.SPF.2.0|AP|Standard|OEM|NoModem`` distribution build
    with firmware and extras
 
    The following is a sample view, in which:

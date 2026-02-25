@@ -4,7 +4,7 @@ Build your own configuration
 -----------------------------
 To build your own configuration, you must compile the build for default machine configuration and compile the LE.QCLINUX.2.0 image with your own MACHINE and DISTRO parameter values.
 
-When compiling a software image other than ``LE.QCLINUX.2.0``, ensure that you also compile both the software product and ``LE.QCLINUX.2.0`` in the same order. For example, if you compile ``BOOT.MXF.1.0.c1``, ensure that you also compile the software product (such as ``QCM6490.LE.1.0``) and then ``LE.QCLINUX.2.0``.
+When compiling a software image other than ``LE.QCLINUX.2.0``, ensure that you also compile both the software product and ``LE.QCLINUX.2.0`` in the same order. For example, if you compile ``BOOT.MXF.1.0.c1``, ensure that you also compile the software product (such as ``QCM6490.LE.2.0``) and then ``LE.QCLINUX.2.0``.
 
 1. Compile the build for the default machine configuration:
 
@@ -51,9 +51,9 @@ When compiling a software image other than ``LE.QCLINUX.2.0``, ensure that you a
 3. To flash your build, see :ref:`Flash software images <flash_images>`.
 
    .. note::
-      - Before flashing, update the build images path to the compiled build images workspace at ``<Base_Workspace_Path>/DEV/LE.QCLINUX.2.0/build-<DISTRO>/tmp-glibc/deploy/images/<MACHINE>/qcom-multimedia-image``.
+      - Before flashing, update the build images path to the compiled build images workspace at ``<Base_Workspace_Path>/DEV/LE.QCLINUX.2.0/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs.qcomflash``.
 
-        For example, ``<Base Workspace Path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-core-kit/qcom-multimedia-image``.
+        For example, ``<Base Workspace Path>/DEV/LE.QCLINUX.2.0/build/tmp/deploy/images/qcs9100-ride-sx/qcom-multimedia-image-qcs9100-ride-sx.rootfs.qcomflash``.
 
 Related topics
 ---------------
