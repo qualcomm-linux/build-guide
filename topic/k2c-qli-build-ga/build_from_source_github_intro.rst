@@ -2,7 +2,7 @@
 
 .. rst_class:: flattenforhtml
 
-Build from Source
+Build from source
 =========================================
 
 Create a build using the prebuilt proprietary binaries/images available on GitHub.

@@ -1144,7 +1144,7 @@ The BSP image build has software components for the Qualcomm device support and 
 #. Flash the generated build using :doc:`Flash software images <flash_images>`.
 
 .. note::
-   For repo manifest based builds, see :ref:`Alternative build instructions using Manifest <howto_build>`
+   For repo manifest based builds, see :ref:`Alternative build instructions using Manifest <howto_build>`.
 
 Next steps
 -----------

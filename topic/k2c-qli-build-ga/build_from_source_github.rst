@@ -84,12 +84,11 @@ Create and build a Yocto Docker image:
 
          kas build meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/lock.yml
 
-         # eg. kas build meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/lock.yml
+         # Example, kas build meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/lock.yml
 
    For various ``<machine>`` and ``<distro>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
 
-   .. note::
-      To build the images in a fully isolated environment, you can try out `kas-container <https://kas.readthedocs.io/en/latest/userguide/kas-container.html>`__ instead. 
+   .. note:: To build the images in a fully isolated environment, you can try out `kas-container <https://kas.readthedocs.io/en/latest/userguide/kas-container.html>`__ instead. 
 
 #. After a successful build, check that the ``rootfs.img`` file is in the build artifacts:
 
@@ -105,10 +104,7 @@ Create and build a Yocto Docker image:
          ls -al rootfs.img
 
 .. note::
-   For repo manifest based builds, refer to :ref:`Alternate Build Instructions via Manifest <build_manifest>`
-
-.. note::
-   For building tip of meta-qcom, refer to :ref:`Building meta-qcom tip <build_tip>`
+   For repo manifest based builds, see :ref:`Alternative build instructions using Manifest <howto_build>`.
 
 Flash
 -----

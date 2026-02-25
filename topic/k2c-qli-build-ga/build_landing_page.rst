@@ -31,7 +31,7 @@ Build Qualcomm Linux Software
     :class-container: get-started-cards
 
 
-    .. grid-item-card::  |icn-book-blue|  Build from Source
+    .. grid-item-card::  |icn-book-blue|  Build from source
         :class-card: card-base-line
         :class-title: font-link
         :class-body: font-gray-60
@@ -40,7 +40,7 @@ Build Qualcomm Linux Software
 
         The build workflow provides a set of instructions to setup the host computer environment, sync, and compile. Firmware components are available as prebuilt binaries.
 
-    .. grid-item-card::  |icn-book-blue|  Build from Source (with firmware and extras) 
+    .. grid-item-card::  |icn-book-blue|  Build from source (with firmware and extras) 
         :class-card: card-base-line
         :class-title: font-link
         :class-body: font-gray-60
