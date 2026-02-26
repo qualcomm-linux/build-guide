@@ -543,7 +543,9 @@ Flash software using QDL
          # For EMMC storage
          <qdl_download_path>/QDL_<version>_<operating_system>_<architecture_type>/qdl --storage emmc prog_firehose_ddr.elf rawprogram0.xml patch0.xml
 
-   .. note:: Use QDL binary based on the host computer architecture. For example, linux_x64 supported qdl binary is ``qdl_<version>/QDL_Linux_x64/qdl``.
+   .. note::
+     * The machine configurations have either UFS or EMMC storage enabled by default. To check the default storage, see :ref:`Setting storage <set_storage>`.
+     * Use QDL binary based on the host computer architecture. For example, linux_x64 supported qdl binary is ``qdl_<version>/QDL_Linux_x64/qdl``.
 
    Flashing is successful if you see *partition 1 is now bootable* on the terminal window as shown in the following message:
 

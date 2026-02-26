@@ -96,11 +96,9 @@ Create and build a Yocto Docker image:
          ls -al rootfs.img
 
 .. note::
-   * The machine configurations have either UFS or EMMC storage enabled by default. UFS storage is enabled by default for qcs6490, iq-9075-evk
-     and iq-8275-evk. EMMC storage is enabled by default for iq-615-evk. To change the default storage, update the corresponding machine configuration
-     in meta-qcom.
+   * The machine configurations have either UFS or EMMC storage enabled by default. To change the default storage, see :ref:`Setting storage <set_storage>`.
    * To build meta-qcom tip, see :ref:`Build meta-qcom tip <build_tip>`.
-   * For repo manifest based builds, see :ref:`Alternative build instructions using Manifest <howto_build>`.
+   * For repo manifest based builds, see :ref:`Alternative build instructions using Manifest <build_manifest>`.
 
 Flash
 -----
