@@ -90,6 +90,29 @@ Repo is a tool which can be used to download a list of git repositories from a `
         # Build required image using bitbake `bitbake qcom-multimedia-image` 
         bitbake <image-recipe>
 
+.. _set_storage: 
+
+Setting Storage
+^^^^^^^^^^^^^^^^
+
+#. The machine configurations have either UFS or EMMC storage enabled by default. UFS storage is enabled by default for qcs6490, iq-9075-evk
+and iq-8275-evk. EMMC storage is enabled by default for iq-615-evk. To change the default storage, follow these commands: 
+
+  .. container:: nohighlight
+
+    ::
+      
+        cd meta-qcom/conf/machine
+
+        # check the machine configuration to figure out which storage is currently enabled
+        cat <machine>.conf | grep "QCOM_PARTITION_FILES_SUBDIR"
+
+
+        # Update QCOM_PARTITION_FILES_SUBDIR to set the correct storage
+        # Example,
+        # QCOM_PARTITION_FILES_SUBDIR ?= "partitions/iq-615-evk/emmc"
+        # QCOM_PARTITION_FILES_SUBDIR ?= "partitions/iq-615-evk/ufs"
+
 Check if the build is complete
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -206,10 +229,9 @@ Build a standalone QDL
          # qdl <prog.mbn> [<program> <patch> ...]
          cd <workspace_path>/build/tmp/deploy/images/qcs9100-ride-sx/qcom-multimedia-image-qcs9100-ride-sx.rootfs.qcomflash
          # For UFS storage
-         cp ./partition_ufs/gpt_main*.bin ./partition_ufs/gpt_backup*.bin ./partition_ufs/rawprogram[0-9].xml ./partition_ufs/patch*.xml ./partition_ufs/zeros_*sectors.bin ./
          <qdl_download_path>/qdl/qdl --storage ufs prog_firehose_ddr.elf rawprogram*.xml patch*.xml
+
          # For EMMC storage
-         cp ./partition_emmc/gpt_main*.bin ./partition_emmc/gpt_backup*.bin ./partition_emmc/rawprogram[0-9].xml ./partition_emmc/patch*.xml ./partition_emmc/zeros_*sectors.bin ./
          <qdl_download_path>/qdl/qdl --storage emmc prog_firehose_ddr.elf rawprogram0.xml patch0.xml
 
 .. _change_hex_tool_install_path:
