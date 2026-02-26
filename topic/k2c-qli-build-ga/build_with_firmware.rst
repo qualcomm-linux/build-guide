@@ -1087,6 +1087,7 @@ The BSP image build has software components for the Qualcomm device support and 
    .. container:: nohighlight
       
       ::
+
          # kas configuration files need to be part of the same repository
          # copy the kas lock file to meta-qcom repository
          cp meta-qcom-releases/lock.yml meta-qcom/ci/lock.yml
