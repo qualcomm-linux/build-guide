@@ -16,7 +16,7 @@ The appropriate paths for the other chipsets are documented in the `Release Note
         # The firmware recipe is compiled when the Yocto build is initiated.
         # Example, for QCS9100, the directory path must contain QCS9100_bootbinaries.zip, QCS9100_dspso.zip, and QCS9100_fw.zip.
         # Set the environment variable to pick up the prebuilts:
-        export FWZIP_PATH="<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nomodem/<product>/common/build/ufs/bin"
+        export FWZIP_PATH="<FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/<product>/common/build/ufs/bin"
 
 
 Overriding linux-firmware binaries
@@ -28,8 +28,18 @@ Overriding linux-firmware binaries
     
     ::
 
-        kas shell -c "echo 'SRCREV:pn-linux-firmware = \"<src-rev>\"' >> conf/local.conf && devtool modify linux-firmware" meta-qcom/ci/<machine.yml>:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
-        # Example, kas shell -c "echo 'SRCREV:pn-linux-firmware = \"06a743fd69999590e88199bb9edba9d5b73d6ad1\"' >> conf/local.conf && devtool modify linux-firmware" meta-qcom/ci/qcs9100-ride-sx:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
+        # Create a kas configuration file for overriding the default revision for linux-firmware.git
+        cat << EOF > meta-qcom/ci/firwmare.yml
+        header:
+          version: 14
+
+        local_conf_header:
+          firmware-build: |
+            "SRCREV:pn-linux-firmware = "06a743fd69999590e88199bb9edba9d5b73d6ad1"
+        EOF
+
+        kas shell -c "devtool modify linux-firmware" meta-qcom/ci/<machine.yml>:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml:meta-qcom/ci/firmware.yml
+        # Example, kas shell -c "devtool modify linux-firmware" meta-qcom/ci/qcs9100-ride-sx:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml:meta-qcom/ci/firmware.yml
 
   .. note::
   
