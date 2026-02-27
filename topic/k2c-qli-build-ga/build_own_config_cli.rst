@@ -2,7 +2,7 @@
 
 Build your own configuration
 -----------------------------
-To build your own configuration, you must compile the build for default machine configuration and compile the LE.QCLINUX.2.0 image with your own MACHINE and DISTRO parameter values.
+To build your own configuration, you must compile the build with the default machine configuration and then compile the software product with your own machine and distro configuration files. 
 
 When compiling a software image, ensure that you also compile the software product. For example, if you compile ``BOOT.MXF.1.0.c1``, ensure that you also compile the software product (such as ``QCS9100.LE.2.0``).
 
