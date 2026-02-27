@@ -27,8 +27,8 @@ When compiling a software image, ensure that you also compile the software produ
 
       This command opens the terminal.
    
-      .. note:: An environment is set up to run your own build commands for a specific software image. QSC won't track the status of input workspaces in the future releases and flash using ``qsc-cli`` won't be supported for these workspaces.
-
+      .. note:: An environment is set up to run your own build commands for a specific software image. QSC will not track the status of input workspaces in future releases, and you cannot flash these workspaces with ``qsc-cli``.
+         
    b. Update the highlighted command according to your own machine configuration and run it on the terminal:
 
       .. image:: ../../media/k2c-qli-build-ga/qsc-cli-open-build-terminal.png

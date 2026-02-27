@@ -692,9 +692,7 @@ Flash software using PCAT
 
    The device reboots after the flashing procedure completes successfully. To verify the updated software version, see `Verify the Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-80020-251/set_up_the_device.html#verify-the-qualcomm-linux-version>`__.
 
-.. note::
-   The correct camera driver and video driver may not be enabled by default for certain kits. To enable
-   them, see :doc:`this document <enable_dtb_overlay>`.
+.. note:: The correct camera driver and video driver may not be enabled by default for certain kits. To enable them, see :ref:`Enable camera overlays <enable_dtb_overlay>`.
 
 Related topics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

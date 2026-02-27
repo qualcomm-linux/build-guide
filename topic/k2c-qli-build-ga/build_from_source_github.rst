@@ -42,7 +42,7 @@ Install and configure the required software tools on the Ubuntu host computer.
 Sync
 -----
 
-QLI uses the kas tool to sync and build the Yocto meta layers. Kas lock files recording the meta layer repository information are stored in `meta-qcom-releases <https://github.com/qualcomm-linux/meta-qcom-releases>`__ for every critical release. 
+QLI uses the kas tool to sync and build the Yocto meta layers. For every critical release, Kas lock files record the meta-layer repository information in `meta-qcom-releases <https://github.com/qualcomm-linux/meta-qcom-releases>`__.
 
 You can checkout the lock files for each release using the `meta-qcom-release-tag`. The meta-qcom release tag follows the syntax ``qli-<version>``. For example, the meta-qcom release tag can be ``qli-2.0-rc1``, where ``2.0-rc1`` is the release version.
 

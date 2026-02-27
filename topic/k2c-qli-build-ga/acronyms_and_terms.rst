@@ -52,5 +52,7 @@ Acronyms and terms
      - Software development kit
    * - UFS 
      - Universal flash storage
+   * - VM 
+     - Virtual machine
    * - WSL 
      - Windows Subsystem for Linux
