@@ -2,7 +2,7 @@
 
 Build your own configuration
 -----------------------------
-To build your own configuration, you must compile the build with the default machine configuration and then compile the software product with your own machine and distro configuration files. 
+To build your own configuration, you must compile the build with the default machine configuration and then compile the software product with your own machine and distribution configuration files. 
 
 When compiling a software image, ensure that you also compile the software product. For example, if you compile ``BOOT.MXF.1.0.c1``, ensure that you also compile the software product (such as ``QCS9100.LE.2.0``).
 
@@ -12,9 +12,9 @@ When compiling a software image, ensure that you also compile the software produ
    
    #. :ref:`Compile the default build <compile_qsc_cli>`.
    
-2. Compile the software product with your own machine and distro configuration files. 
+2. Compile the software product with your own machine and distribution configuration files. 
    
-   For information on the supported machine configurations of the development kit, see the table *Default values of <machine.yml> and <distro.yml> parameters for QSC* in the `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
+   For information on the supported machine configurations of the development kit, see the table *Default values of Machine parameters for QSC CLI* in the `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
    
    a. Run the build commands for a specific configuration:
 
@@ -35,7 +35,7 @@ When compiling a software image, ensure that you also compile the software produ
 
       For example, to build qcom-multimedia-proprietary-image, change the value of <distro.yml> to ``qcom-distro-prop-image.yml``.
    
-   c. After a successful build, check that the ``rootfs.img`` file is in the build artifacts:
+   c. After a successful build, check if the ``rootfs.img`` file exists in the build artifacts:
 
       .. container:: nohighlight
       

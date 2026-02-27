@@ -38,7 +38,7 @@ Build Qualcomm Linux Software
         :link: build_from_source_github_intro
         :link-type: ref
 
-        The build workflow provides a set of instructions to setup the host computer environment, sync, and compile. Firmware components are available as prebuilt binaries.
+        The build workflow provides a set of instructions to set up the host computer environment, sync, and compile. Firmware components are available as prebuilt binaries.
 
     .. grid-item-card::  |icn-book-blue|  Build from source (with firmware and extras) 
         :class-card: card-base-line
@@ -47,7 +47,7 @@ Build Qualcomm Linux Software
         :link: build_addn_info
         :link-type: ref
 
-        The build workflow (firmware and extras) for registered users provide a set of instructions to setup the host computer environment, sync, and compile. A few of the firmware components are available as source.
+        The build workflow (firmware and extras) for registered users provide a set of instructions to set up the host computer environment, sync, and compile. A few of the firmware components are available as source.
 
     .. grid-item-card::  |icn-book-blue|  Build with QSC CLI
         :class-card: card-base-line
@@ -88,7 +88,7 @@ Troubleshoot
         :link: troubleshoot_sync_build_and_flash
         :link-type: ref
 
-        Provides steps to troubleshoot docker, sync, build, and flash issues.
+        Provides steps to troubleshoot Docker, sync, build, and flash issues.
 
 How to
 -------------

@@ -355,6 +355,8 @@ If you face USB or Ethernet connectivity issues on the device, consider updating
 
 .. note:: The following procedure is applicable only to Ubuntu 22.04 host. If you are using a Windows or macOS host, set up an Ubuntu virtual machine by following the instructions described in the `Virtual Machine Setup Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-80020-41/getting-started.html>`__.
 
+.. rubric:: Update the firmware
+
 1. Register and sign in to `Renesas <https://www.renesas.com/>`__.
 
 #. `Download the firmware <https://www.renesas.com/en/products/interface/usb-switches-hubs/upd720201-usb-30-host-controller#design_development>`__.

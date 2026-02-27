@@ -520,7 +520,7 @@ Flash software using QDL
      
          unzip <qdl_downloaded_file>.zip
 
-#. Run the following command to provide executable permission to QDL:
+#. Provide executable permission to QDL:
 
    .. container:: nohighlight
       
@@ -544,7 +544,7 @@ Flash software using QDL
          <qdl_download_path>/QDL_<version>_<operating_system>_<architecture_type>/qdl --storage emmc prog_firehose_ddr.elf rawprogram0.xml patch0.xml
 
    .. note::
-     * The machine configurations have either UFS or EMMC storage enabled by default. To check the default storage, see :ref:`Setting storage <set_storage>`.
+     * The machine configurations have either UFS or EMMC storage enabled by default. To check the default storage, see :ref:`Set storage <set_storage>`.
      * Use QDL binary based on the host computer architecture. For example, linux_x64 supported qdl binary is ``qdl_<version>/QDL_Linux_x64/qdl``.
 
    Flashing is successful if you see *partition 1 is now bootable* on the terminal window as shown in the following message:
@@ -573,9 +573,7 @@ Flash software using QDL
 
    To verify the updated software version, see `Verify the Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-80020-251/set_up_the_device.html#verify-the-qualcomm-linux-version>`__.
 
-.. note::
-   The correct camera driver and video driver may not be enabled by default for certain kits. To enable
-   them, see :doc:`this document <enable_dtb_overlay>`.
+.. note:: The correct camera driver and video driver may not be enabled by default for certain kits. To enable them, see :ref:`Enable camera overlays <enable_dtb_overlay>`.
 
 .. note:: If flashing fails, perform the following steps and retry the flashing procedure:
 
