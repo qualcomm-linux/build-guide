@@ -6,7 +6,7 @@ Build the default configuration
 Compile
 ''''''''
 
-For information on the default configurations, see the table *Default values of MACHINE and DISTRO parameters for QSC* in the `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
+For information on the default configurations, see the table *Default values of Machine parameters for QSC CLI* in the `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
 
 When the download is complete, start the compilation process. Depending on the size of the software and the host computer configuration, the compilation process can take a few hours.
 

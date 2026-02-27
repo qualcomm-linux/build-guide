@@ -25,7 +25,7 @@ tag for ``meta-qcom``. The milestone release provides locked revisions for the w
 
          git clone https://github.com/qualcomm-linux/meta-qcom -b master 
 
-#. Build the software image. Build targets are defined based on machine and distro combinations. 
+#. Build the software image. Build targets are defined based on machine and distribution combinations. 
 
    .. container:: nohighlight
       
@@ -69,82 +69,80 @@ Repo is a tool which can be used to download a list of git repositories from a `
 
 #. Set up the Yocto build environment:
 
-  .. container:: nohighlight
+   .. container:: nohighlight
     
-    ::
+      ::
 
-        # setup-environment provides a help section for instructions
-        # Run the script with --help to view all the supported flags
-        setup-environment --help
+         # setup-environment provides a help section for instructions
+         # Run the script with --help to view all the supported flags
+         setup-environment --help
 
-        # machine and distro flags refer to the machine and distro configuration files present in `meta-qcom/ci` directory.
-        # setup-environment sets the environment settings, creates the build directory build, and enters the build directory.
-        source setup-environment --machine meta-qcom/ci/qcs9100-ride-sx.yml --distro meta-qcom/ci/qcom-distro-prop-image.yml --kernel meta-qcom/ci/linux-qcom-6.18.yml
+         # machine and distribution flags refer to the machine and distribution configuration files present in `meta-qcom/ci` directory.
+         # setup-environment sets the environment settings, creates the build directory build, and enters the build directory.
+         source setup-environment --machine meta-qcom/ci/qcs9100-ride-sx.yml --distro meta-qcom/ci/qcom-distro-prop-image.yml --kernel meta-qcom/ci/linux-qcom-6.18.yml
 
 #. Build the software image:
 
-  .. container:: nohighlight
+   .. container:: nohighlight
     
-    ::
+      ::
 
-        # Build required image using bitbake `bitbake qcom-multimedia-image` 
-        bitbake <image-recipe>
+         # Build required image using bitbake `bitbake qcom-multimedia-image` 
+         bitbake <image-recipe>
 
 .. _set_storage: 
 
-Setting Storage
+Set storage
 ^^^^^^^^^^^^^^^^
 
-#. The machine configurations have either UFS or EMMC storage enabled by default. UFS storage is enabled by default for qcs6490, iq-9075-evk
-and iq-8275-evk. EMMC storage is enabled by default for iq-615-evk. To change the default storage, follow these commands: 
+The machine configurations have either UFS or EMMC storage enabled by default. UFS storage is enabled by default for QCS6490, IQ-9075 EVK, and IQ-8275 EVK. EMMC storage is enabled by default for IQ-615 EVK. To change the default storage, follow these commands: 
 
-  .. container:: nohighlight
+.. container:: nohighlight
 
-    ::
+   ::
       
-        cd meta-qcom/conf/machine
+      cd meta-qcom/conf/machine
 
-        # check the machine configuration to figure out which storage is currently enabled
-        cat <machine>.conf | grep "QCOM_PARTITION_FILES_SUBDIR"
+      # check the machine configuration to figure out which storage is currently enabled
+      cat <machine>.conf | grep "QCOM_PARTITION_FILES_SUBDIR"
 
-
-        # Update QCOM_PARTITION_FILES_SUBDIR to set the correct storage
-        # Example,
-        # QCOM_PARTITION_FILES_SUBDIR ?= "partitions/iq-615-evk/emmc"
-        # QCOM_PARTITION_FILES_SUBDIR ?= "partitions/iq-615-evk/ufs"
+      # Update QCOM_PARTITION_FILES_SUBDIR to set the correct storage
+      # Example,
+      # QCOM_PARTITION_FILES_SUBDIR ?= "partitions/iq-615-evk/emmc"
+      # QCOM_PARTITION_FILES_SUBDIR ?= "partitions/iq-615-evk/ufs"
 
 Check if the build is complete
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. After a successful build, check that the ``rootfs.img`` file is in the build artifacts:
+After a successful build, check if the ``rootfs.img`` file exists in the build artifacts:
 
-   .. container:: nohighlight
+.. container:: nohighlight
 
-      ::
+   ::
 
-         # meta-qcom uses qcomflash IMAGE_FSTYPE to create a single tarball
-         # containing all the relevant files to perform a full clean flash,
-         # including partition metadata, boot firmware, ESP # partition and
-         # the rootfs.
-         cd <workspace-dir>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs.qcomflash/
-         ls -al rootfs.img
+      # meta-qcom uses qcomflash IMAGE_FSTYPE to create a single tarball
+      # containing all the relevant files to perform a full clean flash,
+      # including partition metadata, boot firmware, ESP # partition and
+      # the rootfs.
+      cd <workspace-dir>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs.qcomflash/
+      ls -al rootfs.img
 
-Modifying recipes
+Modify recipe
 ^^^^^^^^^^^^^^^^^^
 
-#. Modify and compile a recipe from the same workspace:
+Modify and compile a recipe from the same workspace:
 
-   .. container:: nohighlight
+.. container:: nohighlight
       
-      ::
+   ::
 
-         # You can use devtool to modify the source-code used in any of the recipes
-         kas shell -c "devtool modify <recipe>" meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/lock.yml
-         # Example, kas shell -c "devtool modify linux-qcom" meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/lock.yml
+      # You can use devtool to modify the source-code used in any of the recipes
+      kas shell -c "devtool modify <recipe>" meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/lock.yml
+      # Example, kas shell -c "devtool modify linux-qcom" meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/lock.yml
 
-         # Build your recipe
-         kas shell -c "bitbake <recipe>" meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/lock.yml
-         # Example, kas shell -c "bitbake linux-qcom" meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/lock.yml
+      # Build your recipe
+      kas shell -c "bitbake <recipe>" meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/lock.yml
+      # Example, kas shell -c "bitbake linux-qcom" meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/lock.yml
 
 .. _how_to_build_generate_sdk:
 
@@ -196,17 +194,19 @@ Clean build artifacts
 Build a standalone QDL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Prerequisites**
+.. rubric:: Prerequisites
 
-  - The modules ``make`` and ``gcc`` must be available.
+- The modules ``make`` and ``gcc`` must be available.
 
-  - Install the following dependent packages:
+- Install the following dependent packages:
 
-    .. container:: nohighlight
+  .. container:: nohighlight
       
-       ::
+     ::
 
-         sudo apt-get install git libxml2-dev libusb-1.0-0-dev pkg-config
+       sudo apt-get install git libxml2-dev libusb-1.0-0-dev pkg-config
+
+.. rubric:: Steps to build QDL
 
 1. Download and compile the Linux flashing tool (QDL):
 

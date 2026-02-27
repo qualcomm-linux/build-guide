@@ -307,9 +307,9 @@ Build
 
 -  "ERROR: Executing event: bitbake-server might have died or been forcibly stopped, ie. OOM killed"
 
-  This error can trigger while running builds on systems with insufficient memory.
+   This error can trigger while running builds on systems with insufficient memory.
 
-  **Solution**
+   **Solution**
 
    .. container:: nohighlight
       
@@ -319,7 +319,7 @@ Build
           free -h
 
 
-  If the build fails due to an OOM error, try increasing the swap memory to more than 32GB.
+   If the build fails due to an OOM error, try increasing the swap memory to more than 32GB.
 
 -  "ERROR: linux-kernel-qcom-6.6-r0 do_menuconfig: No valid terminal
    found, unable to open devshell"
