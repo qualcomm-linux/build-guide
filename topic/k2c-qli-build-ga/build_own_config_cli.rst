@@ -2,7 +2,7 @@
 
 Build your own configuration
 -----------------------------
-To build your own configuration, you must compile the build for default machine configuration and compile the LE.QCLINUX.2.0 image with your own MACHINE and DISTRO parameter values.
+To build your own configuration, you must compile the build for default machine configuration and compile the LE.QCLINUX.2.0 image with your own machine and distribution parameter values.
 
 When compiling a software image other than ``LE.QCLINUX.2.0``, ensure that you also compile both the software product and ``LE.QCLINUX.2.0`` in the same order. For example, if you compile ``BOOT.MXF.1.0.c1``, ensure that you also compile the software product (such as ``QCM6490.LE.2.0``) and then ``LE.QCLINUX.2.0``.
 
@@ -12,9 +12,9 @@ When compiling a software image other than ``LE.QCLINUX.2.0``, ensure that you a
    
    #. :ref:`Compile the default build <compile_qsc_cli>`.
    
-2. Compile the ``LE.QCLINUX.2.0`` image with your own MACHINE and DISTRO parameter values.
+2. Compile the ``LE.QCLINUX.2.0`` image with your own machine and distribution parameter values.
    
-   For information on the supported machine configurations of the development kit, see the table *Default values of MACHINE and DISTRO parameters for QSC* in the `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
+   For information on the supported machine configurations of the development kit, see the table *Default values of Machine parameters for QSC CLI* in the `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
    
    a. Run the build commands for a specific configuration:
 
@@ -35,7 +35,7 @@ When compiling a software image other than ``LE.QCLINUX.2.0``, ensure that you a
 
       For example, to build for the Qualcomm Dragonwing™ RB3 Gen 2 Core Development Kit, change the value of ``MACHINE`` in the preceding build command to ``qcs6490-rb3gen2-core-kit``.
    
-   c. After a successful build, check that the ``rootfs.img`` file is in the build artifacts:
+   c. After a successful build, check if the ``rootfs.img`` file exists in the build artifacts:
 
       .. container:: nohighlight
       

@@ -14,20 +14,23 @@ Install and configure the software tools on the Ubuntu host computer.
          sudo apt-get install lib32stdc++6 libncurses5 checkinstall libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev curl
          sudo apt install pipx
 
-         # This command should add the kas binary location to your PATH.
-         # Restart your shell session after running this command for the changes to take effect.
+         # This command must add the kas binary location to your PATH
+         # Restart your shell session after running this command for the changes to take effect
          pipx ensurepath
 
          # The kas version is expected to be 4.8 or higher
          pipx install kas
 
-#. Optionally download the kas-container script. kas is the tool used by Qualcomm Linux to sync and build the Yocto meta layers. The kas package also provides a kas-container script for running kas in a container. If you prefer running the image builds in an isolated environment, consider using kas-container instead.
+#. (Optional) Download the ``kas-container`` script.  
+   Kas is the tool you use to sync and build Yocto meta layers.  
+   The kas package also includes the ``kas-container`` script, which runs kas inside a container.  
+   If you prefer building images in an isolated environment, use ``kas-container`` instead.
 
    .. container:: nohighlight
       
       ::
 
-         # kas-container can be run on any linux distribution with docker installed.
+         # kas-container can be run on any Linux distribution with Docker installed.
          wget -qO kas-container https://raw.githubusercontent.com/siemens/kas/refs/tags/5.1/kas-container
          chmod +x kas-container
 
@@ -37,13 +40,21 @@ Install and configure the software tools on the Ubuntu host computer.
       
       ::
 
-         # Log in to qsc-cli to generate PAT
+         # Sign in to qsc-cli to generate PAT
          qsc-cli login -u <username>
          # Run the following command to generate PAT
          qsc-cli show-access-token
          # This command gives output as shown in the following note
          # The last line in this output is the token, which can be used to access
          # Qualcomm Proprietary repositories. This token expires in two weeks.
+   
+   .. note::
+
+      .. container:: screenoutput
+
+         | user\@hostname:/local/mnt/workspace$ qsc-cli show-access-token
+         | [Info]: Starting qsc-cli version 0.0.0.9
+         | **5LThNlklb55mMVLB5C2KqUGU2jCF**
 
 #. Use your preferred text editor to edit the ``~/.netrc`` file and add the following entries. Create the ``~/.netrc`` file if it doesn't exist.
 
@@ -119,4 +130,4 @@ Install and configure the software tools on the Ubuntu host computer.
          export PYTHONPATH=/opt/python3/lib:$PYTHONPATH
 
 .. note::
-  The `kas <https://kas.readthedocs.io/en/latest/>`__ tool is used by Qualcomm Linux to sync the meta layers, configure the environment and execute the bitbake commands.
+  The `kas <https://kas.readthedocs.io/en/latest/>`__ tool is used by Qualcomm Linux to sync the meta layers, configure the environment, and execute the bitbake commands.

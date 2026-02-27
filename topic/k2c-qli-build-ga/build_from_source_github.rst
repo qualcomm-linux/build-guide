@@ -24,32 +24,34 @@ Install and configure the required software tools on the Ubuntu host computer.
          # The kas version is expected to be 4.8 or higher
          pipx install kas
 
-#. Optionally download the kas-container script. The kas package also provides a kas-container script for running kas in a container. If you prefer running the image builds in an isolated environment, consider using kas-container instead.
+#. (Optional) Download the ``kas-container`` script.
+   The ``kas`` package includes this script to run **kas** inside a container.  
+   If you prefer to build images in an isolated environment, use ``kas-container``.
 
    .. container:: nohighlight
       
       ::
 
-         # kas-container can be run on any linux distribution with docker installed.
+         # kas-container can be run on any Linux distribution with Docker installed.
          wget -qO kas-container https://raw.githubusercontent.com/siemens/kas/refs/tags/5.1/kas-container
          chmod +x kas-container
 
 .. note::
-  The `kas <https://kas.readthedocs.io/en/latest/>`__ tool is used by Qualcomm Linux to sync the meta layers, configure the environment and execute the bitbake commands.
+  The `kas <https://kas.readthedocs.io/en/latest/>`__ tool is used by Qualcomm Linux to sync the meta layers, configure the environment, and execute the bitbake commands.
 
 Sync
 -----
 
-QLI uses the kas tool to sync and build the Yocto meta layers. Kas lock files recording the meta layer repository information are stored in `meta-qcom-releases <https://github.com/qualcomm-linux/meta-qcom-releases>`__ for each critical release. 
+QLI uses the kas tool to sync and build the Yocto meta layers. Kas lock files recording the meta layer repository information are stored in `meta-qcom-releases <https://github.com/qualcomm-linux/meta-qcom-releases>`__ for every critical release. 
 
-You can checkout the lock files for each release by the `meta-qcom-release-tag`. The meta-qcom release tag follows the syntax ``qli-<version>``. For example, the meta-qcom release tag can be ``qli-2.0-rc1`` where ``2.0-rc1`` is the release version.
+You can checkout the lock files for each release using the `meta-qcom-release-tag`. The meta-qcom release tag follows the syntax ``qli-<version>``. For example, the meta-qcom release tag can be ``qli-2.0-rc1``, where ``2.0-rc1`` is the release version.
 
 Build a BSP image
 -----------------
 
-Create and build a Yocto Docker image:
+Create and build a Yocto image:
 
-1. Download Qualcomm Yocto and the supporting meta-layers. For the latest ``<meta-qcom-release-tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
+1. Download Qualcomm Yocto and the supporting meta layers. For the latest ``<meta-qcom-release-tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
       
    .. container:: nohighlight
 
@@ -58,17 +60,19 @@ Create and build a Yocto Docker image:
          git clone https://github.com/qualcomm-linux/meta-qcom-releases -b <meta-qcom-release-tag>
          kas checkout meta-qcom-releases/lock.yml
 
-#. Copy the kas lock file from meta-qcom-releases to meta-qcom. Make sure to run this step, otherwise the checked out meta layers may get updated to a newer commit. 
+#. Copy the kas lock file from ``meta-qcom-releases`` to ``meta-qcom``.  
+   Run this step, or the checked‑out meta layers may update to a newer commit.
 
    .. container:: nohighlight
       
       ::
 
-         # kas configuration files need to be part of same repository
+         # kas configuration files must be a part of the same repository
          # copy kas lock file to meta-qcom repository
          cp meta-qcom-releases/lock.yml meta-qcom/ci/lock.yml
 
-#. Build the software image. Build targets are defined based on machine and distro combinations. 
+#. Build the software image.
+   You define build targets based on machine and distribution combinations.
 
    .. container:: nohighlight
       
@@ -80,9 +84,9 @@ Create and build a Yocto Docker image:
 
    For various ``<machine>`` and ``<distro>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
 
-   .. note:: To build the images in a fully isolated environment, you can try out `kas-container <https://kas.readthedocs.io/en/latest/userguide/kas-container.html>`__ instead. 
+   .. note:: You can build the images in a fully isolated environment by using `kas-container <https://kas.readthedocs.io/en/latest/userguide/kas-container.html>`__.
 
-#. After a successful build, check that the ``rootfs.img`` file is in the build artifacts:
+#. After a successful build, check if the ``rootfs.img`` file exists in the build artifacts.
 
    .. container:: nohighlight
 
@@ -96,7 +100,7 @@ Create and build a Yocto Docker image:
          ls -al rootfs.img
 
 .. note::
-   * The machine configurations have either UFS or EMMC storage enabled by default. To change the default storage, see :ref:`Setting storage <set_storage>`.
+   * The machine configurations have either UFS or EMMC storage enabled by default. To change the default storage, see :ref:`Set storage <set_storage>`.
    * To build meta-qcom tip, see :ref:`Build meta-qcom tip <build_tip>`.
    * For repo manifest based builds, see :ref:`Alternative build instructions using Manifest <build_manifest>`.
 

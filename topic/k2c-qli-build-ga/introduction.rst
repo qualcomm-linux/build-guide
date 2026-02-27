@@ -28,16 +28,16 @@ Sync, build, and flash the software
 
   .. note:: You must `register with Qualcomm <https://www.qualcomm.com/support/working-with-qualcomm>`__ to sync and build Qualcomm Linux.
 
-  If you're a registered user, you can use the following method to sync and build Qualcomm Linux. These methods use the Qualcomm Yocto layers and the supporting base Yocto layers. You can access the source of certain firmware components and Qualcomm tools, which lets you build and download the software.
+  If you're a registered user, you can use any of the following methods to sync and build Qualcomm Linux. These methods use the Qualcomm Yocto layers and the supporting base Yocto layers. You can access the source of certain firmware components and Qualcomm tools, which lets you build and download the software.
 
   .. list-table:: 
      :header-rows: 1
      :align: center
      :class: longtable
   
-     * - Manual build 
+     * - Manual build
        - CLI
-     * - Build using selective proprietary sources and binaries/libraries. 
+     * - Selective proprietary sources and binaries/libraries.
        - QSC command-line interface (CLI).
      * - :ref:`Build from source (with firmware and extras) <build_addn_info>`
        - :ref:`Build with QSC CLI <build_frm_source_qsc_cli>`

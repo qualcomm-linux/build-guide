@@ -159,7 +159,7 @@ Build firmware
                   cd <FIRMWARE_ROOT>
                   mkdir llvm
 
-                  # Log in to qsc-cli and activate the license
+                  # Sign in to qsc-cli and activate the license
                   qsc-cli login
                   qsc-cli tool activate-license --name sdllvm_arm
 
@@ -519,7 +519,7 @@ Build firmware
                   cd <FIRMWARE_ROOT>
                   mkdir llvm
 
-                  # Log in to qsc-cli and activate the license
+                  # Sign in to qsc-cli and activate the license
                   qsc-cli login
                   qsc-cli tool activate-license --name sdllvm_arm
 
@@ -811,7 +811,7 @@ Build firmware
                   cd <FIRMWARE_ROOT>
                   mkdir llvm
 
-                  # Log in to qsc-cli and activate the license
+                  # Sign in to qsc-cli and activate the license
                   qsc-cli login
                   qsc-cli tool activate-license --name sdllvm_arm
 
@@ -1061,10 +1061,9 @@ Build firmware
            -  ``QCS8300_dspso.zip``
            -  ``QCS8300_fw.zip``
 
-
 Build a BSP image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The BSP image build has software components for the Qualcomm device support and software features applicable to the Qualcomm SoCs. This build includes a reference distribution configuration for the Qualcomm development kits.
+The BSP image build has software components to support the Qualcomm device and software features applicable to the Qualcomm SoCs. This build includes a reference distribution configuration for the Qualcomm development kits.
 
 1. Download Qualcomm Yocto and the supporting layers. For the ``<meta-qcom-release-tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
 
@@ -1082,19 +1081,21 @@ The BSP image build has software components for the Qualcomm device support and 
 
          kas checkout meta-qcom-releases/lock.yml
 
-#. Copy the kas lock file from meta-qcom-releases to meta-qcom. Make sure to run this step, otherwise the checked out meta layers may get updated to a newer commit. 
+#. Copy the kas lock file from ``meta-qcom-releases`` to ``meta-qcom``. You must run this step; otherwise, the checked‑out meta layers may update to a newer commit.
 
    .. container:: nohighlight
       
       ::
 
-         # kas configuration files need to be part of the same repository
+         # kas configuration files must be a part of the same repository
          # copy the kas lock file to meta-qcom repository
          cp meta-qcom-releases/lock.yml meta-qcom/ci/lock.yml
 
-#. To use the locally compiled firmware in your Yocto build, refer to :doc:`Setting up local firmware <setup_local_firmware>`. 
+#. :ref:`Set up local firmware binaries <setup_local_firmware>` in your Yocto build.
 
-#. Build the software image. Build targets are defined based on machine and distro combinations:
+.. _step4_build_software_image:
+
+#. Build the software image. Build targets are defined based on machine and distribution combinations:
 
    .. container:: nohighlight
       
@@ -1106,10 +1107,9 @@ The BSP image build has software components for the Qualcomm device support and 
 
    For various ``<machine>`` and ``<distro>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
 
-   .. note::
-      To build the images in a fully isolated environment, you can try out `kas-container <https://kas.readthedocs.io/en/latest/userguide/kas-container.html>`__ instead.
+   .. note:: To build images in a fully isolated environment, you can try using `kas-container <https://kas.readthedocs.io/en/latest/userguide/kas-container.html>`__.
 
-#. After a successful build, check that the ``rootfs.img`` file is in the build artifacts:
+#. After a successful build, check if the ``rootfs.img`` file exists in the build artifacts:
 
    .. container:: nohighlight
 
@@ -1117,8 +1117,7 @@ The BSP image build has software components for the Qualcomm device support and 
 
          # meta-qcom uses qcomflash IMAGE_FSTYPE to create a single tarball
          # containing all the relevant files to perform a full clean flash,
-         # including partition metadata, boot firmware, ESP # partition and
-         # the rootfs.
+         # including partition metadata, boot firmware, ESP partition, and rootfs.
          cd <workspace-dir>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs.qcomflash/
          ls -al rootfs.img
 
