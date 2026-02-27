@@ -17,28 +17,16 @@ The following figure shows the directory structure after ``Qualcomm_Linux.SPF.2.
 Workspace structure with Source workflow standalone instructions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following figure shows the directory structure after building firmware of ``qualcomm-linux-spf-2-0_ap_standard_oem_nomodem``:
+The following figure shows the directory structure after building from source:
 
-.. note::
-    - ``qualcomm-linux-spf-2-0_ap_standard_oem_nomodem`` contains the downloaded select firmware sources.
-    - ``LE.QCLINUX.2.0`` has the built Yocto workspace.
-   
-|ws_standalone_3|
-
-The following figure shows the directory structure after building firmware of ``qualcomm-linux-spf-2-0_amss_standard_oem_nomodem``:
-
-.. note::
-    - ``qualcomm-linux-spf-2-0_amss_standard_oem_nomodem`` contains the downloaded select firmware sources.
-    - ``LE.QCLINUX.2.0`` has the built Yocto workspace.
-  
-|ws_standalone_4|
+.. image:: ../../media/k2c-qli-build-ga/Yocto_Workspace.png
 
 Images directory structure after successful build
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following figure shows the Images directory after a successful build:
 
-.. image:: ../../media/k2c-qli-build-ga/ws_standalone_5.png
+.. image:: ../../media/k2c-qli-build-ga/build_images_for_flashing.png
 
 The following table describes the files in the images directory:
    

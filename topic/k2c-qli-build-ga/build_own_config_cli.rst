@@ -31,7 +31,7 @@ When compiling a software image, ensure that you also compile the software produ
 
    b. Update the highlighted command according to your own machine configuration and run it on the terminal:
 
-      .. image:: ../../media/k2c-qli-build-ga/compile_terminal_new.png
+      .. image:: ../../media/k2c-qli-build-ga/qsc-cli-open-build-terminal.png
 
       For example, to build qcom-multimedia-proprietary-image, change the value of <distro.yml> to ``qcom-distro-prop-image.yml``.
    
