@@ -16,7 +16,8 @@ The appropriate paths for the other chipsets are documented in the `Release Note
         # The firmware recipe is compiled when the Yocto build is initiated.
         # Example, for QCS9100, the directory path must contain QCS9100_bootbinaries.zip, QCS9100_dspso.zip, and QCS9100_fw.zip.
         # Set the environment variable to pick up the prebuilts:
-        export FWZIP_PATH="<FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/<product>/common/build/ufs/bin"
+        export FWZIP_PATH="<FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/<fwzip-path-suffix>"
+        # Example, export FWZIP_PATH="<FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/QCS9100.LE.2.0/common/build/ufs/bin"
 
 
 Overriding linux-firmware binaries
@@ -61,7 +62,7 @@ Overriding linux-firmware binaries
     
     ::
 
-        unzip $FWZIP_PATH/<chipset>_fw.zip -d $FWZIP_PATH
+        unzip $FWZIP_PATH/<soc-firmware-zip-name>.zip -d $FWZIP_PATH
         # Example, unzip $FWZIP_PATH/QCS9100_fw.zip -d $FWZIP_PATH
 
 #. Copy the contents of the firmware zip file to the devtool workspace
@@ -70,7 +71,7 @@ Overriding linux-firmware binaries
     
     ::
 
-        cp $FWZIP_PATH/<chipset>_fw/lib/firmware/<path-to-firmware>/*.{mbn,jsn,elf} build/workspace/sources/linux-firmware/<path-to-firmware>/
+        cp $FWZIP_PATH/<soc-firmware-zip-name>/lib/firmware/<firmware-path-subdir>/*.{mbn,jsn,elf} build/workspace/sources/linux-firmware/<linux-firwmare-bins-subdir>/
         # Example, cp $FWZIP_PATH/QCS9100_fw/lib/firmware/qcom/sa8775p/*.{mbn,jsn,elf} build/workspace/sources/linux-firmware/qcom/sa8775p/
 
 .. note:: If you are overriding the firmwares in linux-firmware, you would always want to override the hexagon dsp binaries as well.
@@ -93,7 +94,7 @@ Overriding DSPSO binaries
     
     ::
 
-        unzip $FWZIP_PATH/<chipset>_fw.zip -d $FWZIP_PATH
+        unzip $FWZIP_PATH/<soc-dspso-zip-name>.zip -d $FWZIP_PATH
         # Example, unzip $FWZIP_PATH/QCS9100_fw.zip -d $FWZIP_PATH
 
 #. Copy the dsp so binaries from the firmware zip file to the devtool workspace
@@ -102,15 +103,19 @@ Overriding DSPSO binaries
     
     ::
 
-        # Copy the dsp so binaries for your chipset for adsp, cdsp and gdsp
-        cp $FWZIP_PATH/<chipset>_fw/usr/share/<path-to-chipset-dspso>/adsp/* build/workspace/sources/hexagon-dsp-binaries/<path-to-chipset-adsp-dspso>/
-        cp $FWZIP_PATH/<chipset>_fw/usr/share/<path-to-chipset-dspso>/cdsp/* build/workspace/sources/hexagon-dsp-binaries/<path-to-chipset-cdsp-dspso>/
-        cp $FWZIP_PATH/<chipset>_fw/usr/share/<path-to-chipset-dspso>/gdsp/* build/workspace/sources/hexagon-dsp-binaries/<path-to-chipset-gdsp-dspso>/
+        # Copy the dsp so binaries for your chipset for ADSP, CDSP, CDSP1, GDSP0 and GDSP1 as applicable
+        cp $FWZIP_PATH/<soc-dspso-zip-name>/usr/share/<dspso-path-subdir>/adsp/* build/workspace/sources/hexagon-dsp-binaries/<hexagon-adsp-bins-subdir>/
+        cp $FWZIP_PATH/<soc-dspso-zip-name>/usr/share/<dspso-path-subdir>/cdsp/* build/workspace/sources/hexagon-dsp-binaries/<hexagon-cdsp0-bins-subdir>/
+        cp $FWZIP_PATH/<soc-dspso-zip-name>/usr/share/<dspso-path-subdir>/cdsp1/* build/workspace/sources/hexagon-dsp-binaries/<hexagon-cdsp1-bins-subdir>/
+        cp $FWZIP_PATH/<soc-dspso-zip-name>/usr/share/<dspso-path-subdir>/gdsp0/* build/workspace/sources/hexagon-dsp-binaries/<hexagon-gdsp0-bins-subdir>/
+        cp $FWZIP_PATH/<soc-dspso-zip-name>/usr/share/<dspso-path-subdir>/gdsp1/* build/workspace/sources/hexagon-dsp-binaries/<hexagon-gdsp1-bins-subdir>/
 
         # Remove any extra files that aren't natively provided by the hexagon-dsp-binaries
-        rm build/workspace/sources/hexagon-dsp-binaries/<path-to-chipset-adsp-dspso>/*.txt
-        rm build/workspace/sources/hexagon-dsp-binaries/<path-to-chipset-cdsp-dspso>/*.txt
-        rm build/workspace/sources/hexagon-dsp-binaries/<path-to-chipset-gdsp-dspso>/*.txt
+        rm build/workspace/sources/hexagon-dsp-binaries/<hexagon-adsp-bins-subdir>/*.txt
+        rm build/workspace/sources/hexagon-dsp-binaries/<hexagon-cdsp-bins-subdir>/*.txt
+        rm build/workspace/sources/hexagon-dsp-binaries/<hexagon-cdsp1-bins-subdir>/*.txt
+        rm build/workspace/sources/hexagon-dsp-binaries/<hexagon-gdsp0-bins-subdir>/*.txt
+        rm build/workspace/sources/hexagon-dsp-binaries/<hexagon-gdsp1-bins-subdir>/*.txt
 
         # Example,
         # cp $FWZIP_PATH/QCS9100_fw/usr/share/qcom/sa8775p/Qualcomm/SA8775P-RIDE/dsp/adsp/* build/workspace/sources/hexagon-dsp-binaries/sa8775p/Qualcomm/SA8775P-RIDE/adsp-DSP.AT.1.0.1-00190-LEMANS-1/
@@ -128,6 +133,9 @@ Overriding DSPSO binaries
         # cp $FWZIP_PATH/QCS9100_fw/usr/share/qcom/sa8775p/Qualcomm/SA8775P-RIDE/dsp/gdsp1/* build/workspace/sources/hexagon-dsp-binaries/sa8775p/Qualcomm/SA8775P-RIDE/gdsp1-DSP.AT.1.0.1-00190-LEMANS-1/
         # rm build/workspace/sources/hexagon-dsp-binaries/sa8775p/Qualcomm/SA8775P-RIDE/gdsp1-DSP.AT.1.0.1-00190-LEMANS-1/*.txt
 
+.. note::
+    Copy the dsp so binaries for your chipset for ADSP, CDSP, CDSP1, GDSP0 and GDSP1 as applicable. You can refer to the documentation in the `Release Notes<https://docs.qualcomm.com/doc/80-80020-300_113488/topic/build_critical_release_tags.html>`__.
+
 Overriding boot firmware binaries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -137,7 +145,7 @@ Overriding boot firmware binaries
     
     ::
 
-        kas shell -c "devtool modify firmware-qcom-boot-<chipset>" meta-qcom/ci/<machine.yml>:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
+        kas shell -c "devtool modify <firmware-bootbinaries-recipe>" meta-qcom/ci/<machine.yml>:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
         # Example, kas shell -c "devtool modify firmware-qcom-boot-qcs9100" meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
 
 #. Unzip the bootbinaries zip file if the unzipped version is not available.  
@@ -146,7 +154,7 @@ Overriding boot firmware binaries
     
     ::
 
-        unzip $FWZIP_PATH/<chipset>_bootbinaries.zip -d $FWZIP_PATH
+        unzip $FWZIP_PATH/<soc-bootbinaries-zip-name>.zip -d $FWZIP_PATH
         # Example, unzip $FWZIP_PATH/QCS9100_bootbinaries.zip -d $FWZIP_PATH
 
 #. Copy the contents of the bootbinaries zip file to the devtool workspace
@@ -155,11 +163,12 @@ Overriding boot firmware binaries
     
     ::
 
-        cp -r $FWZIP_PATH/<chipset>_bootbinaries/* build/workspace/sources/firmware-qcom-boot-<chipset>
+        cp -r $FWZIP_PATH/<soc-bootbinaries-zip-name>/* build/workspace/sources/<firmware-bootbinaries-recipe>
         # Example, cp -r $FWZIP_PATH/QCS9100_bootbinaries/* build/workspace/sources/firmware-qcom-boot-qcs9100
 
         # meta-qcom boot firmware recipes need this configuration to work correctly. 
         # pick the correct bbappend based on the recipe synced to your workspace
-        echo 'ALLOW_EMPTY:${PN} = "1"' >> build/workspace/appends/firmware-qcom-boot-qcs9100_00116.0.bbappend
+        echo 'ALLOW_EMPTY:${PN} = "1"' >> build/workspace/appends/<firmware-bootbinaries-bbappend-file>
+        # Example, echo 'ALLOW_EMPTY:${PN} = "1"' >> build/workspace/appends/firmware-qcom-boot-qcs9100_00116.0.bbappend
 
 Once these steps are run, the next Yocto image build should pickup the local firmware binaries.
