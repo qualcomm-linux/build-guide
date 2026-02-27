@@ -4,7 +4,7 @@ Build your own configuration
 -----------------------------
 To build your own configuration, you must compile the build for default machine configuration and compile the LE.QCLINUX.2.0 image with your own MACHINE and DISTRO parameter values.
 
-When compiling a software image other than ``LE.QCLINUX.2.0``, ensure that you also compile both the software product and ``LE.QCLINUX.2.0`` in the same order. For example, if you compile ``BOOT.MXF.1.0.c1``, ensure that you also compile the software product (such as ``QCM6490.LE.2.0``) and then ``LE.QCLINUX.2.0``.
+When compiling a software image, ensure that you also compile the software product. For example, if you compile ``BOOT.MXF.1.0.c1``, ensure that you also compile the software product (such as ``QCS9100.LE.2.0``).
 
 1. Compile the build for the default machine configuration:
 
@@ -12,9 +12,9 @@ When compiling a software image other than ``LE.QCLINUX.2.0``, ensure that you a
    
    #. :ref:`Compile the default build <compile_qsc_cli>`.
    
-2. Compile the ``LE.QCLINUX.2.0`` image with your own MACHINE and DISTRO parameter values.
+2. Compile the software product with your own machine and distro configuration files. 
    
-   For information on the supported machine configurations of the development kit, see the table *Default values of MACHINE and DISTRO parameters for QSC* in the `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
+   For information on the supported machine configurations of the development kit, see the table *Default values of <machine.yml> and <distro.yml> parameters for QSC* in the `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
    
    a. Run the build commands for a specific configuration:
 
@@ -23,7 +23,7 @@ When compiling a software image other than ``LE.QCLINUX.2.0``, ensure that you a
          ::
 
             qsc-cli chip-software open-build-env --workspace-path <Base_Workspace_Path> --image <Software_Image_Name>
-            # Example, qsc-cli chip-software open-build-env --workspace-path '/local/mnt/workspace/sample_workspace' --image 'LE.QCLINUX.2.0' 
+            # Example, qsc-cli chip-software open-build-env --workspace-path '/local/mnt/workspace/sample_workspace' --image 'QCS9100.LE.2.0' 
 
       This command opens the terminal.
    
@@ -33,7 +33,7 @@ When compiling a software image other than ``LE.QCLINUX.2.0``, ensure that you a
 
       .. image:: ../../media/k2c-qli-build-ga/compile_terminal_new.png
 
-      For example, to build for the Qualcomm Dragonwing™ RB3 Gen 2 Core Development Kit, change the value of ``MACHINE`` in the preceding build command to ``qcs6490-rb3gen2-core-kit``.
+      For example, to build qcom-multimedia-proprietary-image, change the value of <distro.yml> to ``qcom-distro-prop-image.yml``.
    
    c. After a successful build, check that the ``rootfs.img`` file is in the build artifacts:
 
