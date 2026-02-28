@@ -466,6 +466,15 @@ Build firmware
 
          .. rubric:: Generate firmware prebuilds (boot-critical and split-firmware binaries)
 
+         - Rename the Bluetooth Firmware directory
+
+           .. container:: nohighlight
+      
+              ::
+
+                cd <FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/
+                mv btfw.hsp BTFW.HSP.2.1.2
+
          - Create an integrated firmware binary from the individual components that you compiled:
 
            .. container:: nohighlight
@@ -756,6 +765,15 @@ Build firmware
 
          .. rubric:: Generate firmware prebuilds (boot-critical and split-firmware binaries)
 
+         - Rename the Bluetooth Firmware directory
+
+           .. container:: nohighlight
+      
+              ::
+
+                cd <FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/
+                mv btfw.hsp BTFW.HSP.2.1.2
+
          - Create an integrated firmware binary from the individual components that you compiled:
 
            .. note:: Apply all the changes from the section *Additional information* in the `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/topic/additional_information.html>`__.
@@ -1045,6 +1063,15 @@ Build firmware
          Qualcomm releases the WLAN firmware as a binary and you don't need to compile the build.
 
          .. rubric:: Generate firmware prebuilds (boot-critical and split-firmware binaries)
+
+         - Rename the Bluetooth Firmware directory
+
+           .. container:: nohighlight
+      
+              ::
+
+                cd <FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/
+                mv btfw.hsp BTFW.HSP.2.1.2
 
          - Create an integrated firmware binary from the individual components that you compiled:
 
