@@ -3,6 +3,25 @@
 Sync
 ---------------
 
+Setting up shared sstate and downloads cache
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- BitBake supports the use of ``sstate-cache`` and ``downloads`` directories to reuse previously built artifacts and speed up subsequent builds.
+  By default, these directories are created inside the build directory. However, you can also configure a shared sstate-cache and downloads
+  directory to reuse the same cache across multiple workspaces. 
+
+   .. container:: nohighlight
+      
+      ::
+
+          # export these variables before running the build
+          export DL_DIR="/path/to/shared/downloads"
+          export SSTATE_DIR="/path/to/shared/sstate"
+
+          kas build meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
+
+          # Example, kas build meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
+
 .. _alternative_methods_install_repo:
 
 Alternative methods to install Repo
