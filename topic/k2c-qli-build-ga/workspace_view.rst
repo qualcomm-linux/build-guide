@@ -6,11 +6,11 @@ This section provides sample workspace structures with ``qsc-cli`` and source wo
 Workspace structure with qsc-cli
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following figure shows the directory structure before ``Qualcomm_Linux.SPF.2.0|AP|Standard|OEM|NoModem`` distribution build with firmware and extras:
+The following figure shows the directory structure before ``Qualcomm_Linux.SPF.2.0|AP|Standard|OEM|NoModem`` distribution build with firmware and devtool:
 
 .. image:: ../../media/k2c-qli-build-ga/ws_qsc_cli_3.png
 
-The following figure shows the directory structure after ``Qualcomm_Linux.SPF.2.0|AP|Standard|OEM|NoModem`` distribution build with firmware and extras:
+The following figure shows the directory structure after ``Qualcomm_Linux.SPF.2.0|AP|Standard|OEM|NoModem`` distribution build with firmware and devtool:
 
 .. image:: ../../media/k2c-qli-build-ga/ws_qsc_cli_4.png
 

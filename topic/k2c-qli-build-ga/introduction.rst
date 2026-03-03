@@ -39,7 +39,7 @@ Sync, build, and flash the software
        - CLI
      * - Selective proprietary sources and binaries/libraries.
        - QSC command-line interface (CLI).
-     * - :ref:`Build from source (with firmware and extras) <build_addn_info>`
+     * - :ref:`Build from source (with firmware and devtool) <build_addn_info>`
        - :ref:`Build with QSC CLI <build_frm_source_qsc_cli>`
 
 .. only:: html

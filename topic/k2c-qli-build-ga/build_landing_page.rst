@@ -40,14 +40,14 @@ Build Qualcomm Linux Software
 
         The build workflow provides a set of instructions to set up the host computer environment, sync, and compile. Firmware components are available as prebuilt binaries.
 
-    .. grid-item-card::  |icn-book-blue|  Build from source (with firmware and extras) 
+    .. grid-item-card::  |icn-book-blue|  Build from source (with firmware and devtool) 
         :class-card: card-base-line
         :class-title: font-link
         :class-body: font-gray-60
         :link: build_addn_info
         :link-type: ref
 
-        The build workflow (firmware and extras) for registered users provide a set of instructions to set up the host computer environment, sync, and compile. A few of the firmware components are available as source.
+        The build workflow (firmware and devtool) for registered users provide a set of instructions to set up the host computer environment, sync, and compile. A few of the firmware components are available as source.
 
     .. grid-item-card::  |icn-book-blue|  Build with QSC CLI
         :class-card: card-base-line
