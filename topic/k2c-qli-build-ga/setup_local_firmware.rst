@@ -35,7 +35,7 @@ Override Linux-firmware binaries
 
          local_conf_header:
           firmware-build: |
-            "SRCREV:pn-linux-firmware = "06a743fd69999590e88199bb9edba9d5b73d6ad1"
+            SRCREV:pn-linux-firmware = "06a743fd69999590e88199bb9edba9d5b73d6ad1"
          EOF
 
          kas shell -c "devtool modify linux-firmware" meta-qcom/ci/<machine.yml>:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml:meta-qcom/ci/firmware.yml
