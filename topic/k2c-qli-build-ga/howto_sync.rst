@@ -57,6 +57,63 @@ Alternative methods to install Repo
          curl https://raw.githubusercontent.com/GerritCodeReview/git-repo/v2.41/repo -o ~/bin/repo && chmod +x ~/bin/repo
          export PATH=~/bin:$PATH
 
+Enable Downloads Mirror
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+BitBake builds can fail when upstream sources being referred to are inaccessible. It usually
+happens when the original source code being referred to has been moved, removed, or the server
+is temporarily down. Add the following to your local.conf to add Qualcomm's download server as
+a MIRROR to avoid such fetcher failures.
+
+   .. container:: nohighlight
+      
+      ::
+
+          MIRRORS:append = " \
+          svn://.*/.*     https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
+          git://.*/.*     https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
+          gitsm://.*/.*   https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
+          hg://.*/.*      https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
+          p4://.*/.*      https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
+          https?://.*/.*  https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
+          ftp://.*/.*     https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
+          npm://.*/?.*    https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
+          s3://.*/.*      https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
+          crate://.*/.*   https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
+          gs://.*/.*      https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
+          "
+
+One way to add this to your BitBake configuration is to create a new kas configuration file
+and include this file during build:
+
+   .. container:: nohighlight
+      
+      ::
+
+          cat << EOF > meta-qcom/ci/downloads-mirrors.yml
+          header:
+           version: 14
+
+          local_conf_header:
+           downloads-mirror: |
+            MIRRORS:append = " \
+            svn://.*/.*     https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
+            git://.*/.*     https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
+            gitsm://.*/.*   https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
+            hg://.*/.*      https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
+            p4://.*/.*      https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
+            https?://.*/.*  https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
+            ftp://.*/.*     https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
+            npm://.*/?.*    https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
+            s3://.*/.*      https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
+            crate://.*/.*   https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
+            gs://.*/.*      https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
+            "
+          EOF
+
+          kas build <kas configuration files>:meta-qcom/ci/downloads-mirror.yml
+          # Example, kas build meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml:meta-qcom/ci/downloads-mirrors.yml
+
 How does QSC CLI work?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
