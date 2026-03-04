@@ -37,6 +37,62 @@ tag for ``meta-qcom``. The milestone release provides locked revisions for the w
 
    For various ``<machine>`` and ``<distro>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
 
+Picking PRs in Release Build Workspace
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Follow the steps below to apply pull requests (PRs) within the release build workspace:
+
+1. Sync the meta layers in the workspace
+
+   .. container:: nohighlight
+
+      ::
+
+          # Checkout meta layers using kas
+          git clone https://github.com/qualcomm-linux/meta-qcom-releases -b <meta-qcom-release-tag>
+          kas checkout meta-qcom-releases/lock.yml
+
+#. Apply PRs in the meta layer
+
+   The example below demonstrates applying a PR to the meta-qcom layer.
+
+   .. container:: nohighlight
+
+      ::
+
+          # Apply PR to meta-qcom
+          cd meta-qcom
+          git fetch pull/{PR}/head
+          git merge --no-edit FETCH_HEAD
+          cd ..
+
+#. Build the image (Without updating lockfile)
+
+   .. container:: nohighlight
+
+      ::
+
+          # Build the image without manually updating the lock file
+          kas build --skip repos_checkout meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/linux-qcom-6.18.yml
+
+          # Example, kas build --skip repos_checkout meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml
+
+#. Build the image (By updating lockfile)
+
+   .. container:: nohighlight
+
+      ::
+
+          # Persist your changes by updating the lock file
+          # Replace the meta-qcom commit SHA in the lock file with the newly merged commit SHA.
+          vi meta-qcom-releases/lock.yml
+
+          # Include the lock file in the kas build command
+          cp meta-qcom-releases/lock.yml meta-qcom/ci
+          kas build meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
+
+          # Example, kas build meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
+
 .. _build_manifest:
 
 Alternative build instructions using Manifest
@@ -110,6 +166,25 @@ The machine configurations have either UFS or EMMC storage enabled by default. U
       # Example,
       # QCOM_PARTITION_FILES_SUBDIR ?= "partitions/iq-615-evk/emmc"
       # QCOM_PARTITION_FILES_SUBDIR ?= "partitions/iq-615-evk/ufs"
+
+Increasing swap space
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+If the build fails due to an out‑of‑memory (OOM) error, consider expanding the system’s
+swap space to more than 32GB. Run the following commands to increase swap space
+
+   .. container:: nohighlight
+      
+      ::
+
+         sudo su root
+         swapon --show
+         swapoff /swapfile
+         fallocate -l 64G /swapfile
+         chmod 600 /swapfile
+         mkswap /swapfile
+         swapon /swapfile
+         free -h
 
 Check if the build is complete
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
