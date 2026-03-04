@@ -39,7 +39,7 @@ Override Linux-firmware binaries
          EOF
 
          kas shell -c "devtool modify linux-firmware" meta-qcom/ci/<machine.yml>:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml:meta-qcom/ci/firmware.yml
-         # Example, kas shell -c "devtool modify linux-firmware" meta-qcom/ci/qcs9100-ride-sx:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml:meta-qcom/ci/firmware.yml
+         # Example, kas shell -c "devtool modify linux-firmware" meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml:meta-qcom/ci/firmware.yml
 
     .. note::
   
@@ -168,6 +168,4 @@ Override boot firmware binaries
         echo 'ALLOW_EMPTY:${PN} = "1"' >> build/workspace/appends/<firmware-bootbinaries-bbappend-file>
         # Example, echo 'ALLOW_EMPTY:${PN} = "1"' >> build/workspace/appends/firmware-qcom-boot-qcs9100_00116.0.bbappend
 
-Once these steps are run, the next `Yocto image build <step4_build_software_image>` will pickup the local firmware binaries.
-
-fter you run these steps, the next :ref:`Yocto image build <step4_build_software_image>` picks up the local firmware binaries.
+Once these steps are run, the next :ref:`Yocto image build <step4_build_software_image>` will pickup the local firmware binaries.
