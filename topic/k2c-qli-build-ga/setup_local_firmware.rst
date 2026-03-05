@@ -39,7 +39,7 @@ Override Linux-firmware binaries
          EOF
 
          kas shell -c "devtool modify linux-firmware" meta-qcom/ci/<machine.yml>:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml:meta-qcom/ci/firmware.yml
-         # Example, kas shell -c "devtool modify linux-firmware" meta-qcom/ci/qcs9100-ride-sx:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml:meta-qcom/ci/firmware.yml
+         # Example, kas shell -c "devtool modify linux-firmware" meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml:meta-qcom/ci/firmware.yml
 
     .. note::
   
@@ -68,7 +68,7 @@ Override Linux-firmware binaries
     
       ::
 
-        cp $FWZIP_PATH/<soc-firmware-zip-name>/lib/firmware/<firmware-path-subdir>/*.{mbn,jsn,elf} build/workspace/sources/linux-firmware/<linux-firwmare-bins-subdir>/
+        cp $FWZIP_PATH/<soc-firmware-zip-name>/<firmware-path-subdir>/*.{mbn,jsn,elf} build/workspace/sources/linux-firmware/<linux-firwmare-bins-subdir>/
         # Example, cp $FWZIP_PATH/QCS9100_fw/lib/firmware/qcom/sa8775p/*.{mbn,jsn,elf} build/workspace/sources/linux-firmware/qcom/sa8775p/
 
 .. note:: When you override the firmwares in ``linux-firmware``, you must also override the Hexagon DSP binaries.
@@ -101,18 +101,18 @@ Override DSPSO binaries
     ::
 
         # Copy the dsp so binaries for your chipset for ADSP, CDSP, CDSP1, GDSP0 and GDSP1 as applicable
-        cp $FWZIP_PATH/<soc-dspso-zip-name>/usr/share/<dspso-path-subdir>/adsp/* build/workspace/sources/hexagon-dsp-binaries/<hexagon-adsp-bins-subdir>/
-        cp $FWZIP_PATH/<soc-dspso-zip-name>/usr/share/<dspso-path-subdir>/cdsp/* build/workspace/sources/hexagon-dsp-binaries/<hexagon-cdsp0-bins-subdir>/
-        cp $FWZIP_PATH/<soc-dspso-zip-name>/usr/share/<dspso-path-subdir>/cdsp1/* build/workspace/sources/hexagon-dsp-binaries/<hexagon-cdsp1-bins-subdir>/
-        cp $FWZIP_PATH/<soc-dspso-zip-name>/usr/share/<dspso-path-subdir>/gdsp0/* build/workspace/sources/hexagon-dsp-binaries/<hexagon-gdsp0-bins-subdir>/
-        cp $FWZIP_PATH/<soc-dspso-zip-name>/usr/share/<dspso-path-subdir>/gdsp1/* build/workspace/sources/hexagon-dsp-binaries/<hexagon-gdsp1-bins-subdir>/
+        cp $FWZIP_PATH/<dspso-path-subdir>/adsp/* build/workspace/sources/hexagon-dsp-binaries/<hexagon-dsp-bins-subdir>/<hexagon-adsp-bins-subdir>/
+        cp $FWZIP_PATH/<dspso-path-subdir>/cdsp/* build/workspace/sources/hexagon-dsp-binaries/<hexagon-dsp-bins-subdir>/<hexagon-cdsp0-bins-subdir>/
+        cp $FWZIP_PATH/<dspso-path-subdir>/cdsp1/* build/workspace/sources/hexagon-dsp-binaries/<hexagon-dsp-bins-subdir>/<hexagon-cdsp1-bins-subdir>/
+        cp $FWZIP_PATH/<dspso-path-subdir>/gdsp0/* build/workspace/sources/hexagon-dsp-binaries/<hexagon-dsp-bins-subdir>/<hexagon-gdsp0-bins-subdir>/
+        cp $FWZIP_PATH/<dspso-path-subdir>/gdsp1/* build/workspace/sources/hexagon-dsp-binaries/<hexagon-dsp-bins-subdir>/<hexagon-gdsp1-bins-subdir>/
 
         # Remove any extra files that aren't natively provided by the hexagon-dsp-binaries
-        rm build/workspace/sources/hexagon-dsp-binaries/<hexagon-adsp-bins-subdir>/*.txt
-        rm build/workspace/sources/hexagon-dsp-binaries/<hexagon-cdsp-bins-subdir>/*.txt
-        rm build/workspace/sources/hexagon-dsp-binaries/<hexagon-cdsp1-bins-subdir>/*.txt
-        rm build/workspace/sources/hexagon-dsp-binaries/<hexagon-gdsp0-bins-subdir>/*.txt
-        rm build/workspace/sources/hexagon-dsp-binaries/<hexagon-gdsp1-bins-subdir>/*.txt
+        rm build/workspace/sources/hexagon-dsp-binaries/<hexagon-dsp-bins-subdir>/<hexagon-adsp-bins-subdir>/*.txt
+        rm build/workspace/sources/hexagon-dsp-binaries/<hexagon-dsp-bins-subdir>/<hexagon-cdsp-bins-subdir>/*.txt
+        rm build/workspace/sources/hexagon-dsp-binaries/<hexagon-dsp-bins-subdir>/<hexagon-cdsp1-bins-subdir>/*.txt
+        rm build/workspace/sources/hexagon-dsp-binaries/<hexagon-dsp-bins-subdir>/<hexagon-gdsp0-bins-subdir>/*.txt
+        rm build/workspace/sources/hexagon-dsp-binaries/<hexagon-dsp-bins-subdir>/<hexagon-gdsp1-bins-subdir>/*.txt
 
         # Example,
         # cp $FWZIP_PATH/QCS9100_fw/usr/share/qcom/sa8775p/Qualcomm/SA8775P-RIDE/dsp/adsp/* build/workspace/sources/hexagon-dsp-binaries/sa8775p/Qualcomm/SA8775P-RIDE/adsp-DSP.AT.1.0.1-00190-LEMANS-1/
@@ -168,6 +168,4 @@ Override boot firmware binaries
         echo 'ALLOW_EMPTY:${PN} = "1"' >> build/workspace/appends/<firmware-bootbinaries-bbappend-file>
         # Example, echo 'ALLOW_EMPTY:${PN} = "1"' >> build/workspace/appends/firmware-qcom-boot-qcs9100_00116.0.bbappend
 
-Once these steps are run, the next `Yocto image build <step4_build_software_image>` will pickup the local firmware binaries.
-
-fter you run these steps, the next :ref:`Yocto image build <step4_build_software_image>` picks up the local firmware binaries.
+Once these steps are run, the next :ref:`Yocto image build <step4_build_software_image>` will pickup the local firmware binaries.
