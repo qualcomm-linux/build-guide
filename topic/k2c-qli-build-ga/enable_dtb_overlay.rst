@@ -3,7 +3,7 @@
 Enable camera overlays
 ^^^^^^^^^^^^^^^^^^^^^^
 
-.. note:: This section applies only to QCS6490, IQ-9075, and IQ-8275. 
+.. note:: This section applies only to QCS6490, IQ-9075, and IQ-8275.
 
 When you flash and boot ``qcom-multimedia-proprietary-image``, the upstream camera stack is enabled by default. You can change this setting by updating the EFI variable.
 
@@ -30,6 +30,25 @@ Apply the DTB Overlay:
      # Reboot to reflect the changes
      sync
      reboot
+
+After rebooting, you can check the UEFI serial logs to verify that the camx overlay has
+been applied. Below is an example log snippet captured from the iq‑8275‑evk platform:
+
+.. container:: nohighlight
+
+  ::
+
+      Variable VendorDtbOverlays read successfully. Data: camx
+      ProcessQcomRuntimeOverlayRequest: Parsed camx
+
+      FindConfigToBoot:Booting with = qcom,qcs8275-iot-camx
+      FindConfigToBoot: i = 0 fdt fdt-monaco-evk.dtb str len = 18
+      FindConfigToBoot: i = 1 fdt fdt-monaco-evk-camx.dtbo str len = 24
+      ParseFitDt::
+      Config fdt-monaco-evk.dtb & Type 0
+      Config fdt-monaco-evk-camx.dtbo & Type 1
+      FitLoadDtbFromFdt: Config fdt-monaco-evk.dtb & Type 0
+      FitLoadDtbFromFdt: Config fdt-monaco-evk-camx.dtbo & Type 1
 
 Enable upstream video driver
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
