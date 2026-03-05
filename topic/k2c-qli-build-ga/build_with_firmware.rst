@@ -191,40 +191,6 @@ Build firmware
                   export HEXAGON_ROOT=$HOME/Qualcomm/HEXAGON_Tools
                   echo $HEXAGON_ROOT
 
-         .. rubric:: Build cDSP 
-
-         **Tools required**
-
-         -  Compiler version: Hexagon 8.4.07
-         -  Python version: Python 3.10.2
-         -  libffi6 package 
-         
-         **Build steps**
-
-         1. Go to the following directory:
-
-            .. container:: nohighlight
-      
-               ::
-
-                  cd <FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/CDSP.HT.2.5.c3/cdsp_proc/build/ms
-
-         2. Clean the build:
-
-            .. container:: nohighlight
-      
-               ::
-
-                  python ./build_variant.py kodiak.cdsp.prod --clean
-
-         3. Build the image:
-
-            .. container:: nohighlight
-      
-               ::
-
-                  python ./build_variant.py kodiak.cdsp.prod
-
          .. rubric:: Build aDSP
 
          **Tools required**
