@@ -77,6 +77,42 @@ Follow the steps below to apply pull requests (PRs) within the release build wor
 
           # Example, kas build --skip repos_checkout meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml
 
+Follow the steps below to apply pull requests (PRs) within the release build workspace:
+
+#. Fork or host a copy of the meta-qcom Repository
+    
+  Create a personal fork of the `qualcomm-linux/meta-qcom <https://github.com/qualcomm-linux/meta-qcom>`__ repository.
+
+#. Prepare Your Branch and Apply Patches 
+
+  Reset your working branch to the required release commit.
+  Apply any required patches and push the updated branch to your fork of meta-qcom.
+  Reset the branch to the release commit, apply any patches as required and upload them to your fork of meta-qcom.
+
+#. Fork or host a copy of the meta-qcom-releases repository
+
+  In your copy, update the meta-qcom entry to point to:
+
+  Your meta-qcom repo’s repository URL
+  The correct branch
+  The updated commit SHA that includes your applied patches
+
+#. Build the Image Using Your Updated Release Metadata
+
+  Follow the same steps used by ``Build from Source`` workflow to build the image. Use your copy of meta-qcom-releases for the lock file instead.
+
+  .. container:: nohighlight
+
+     ::
+
+        git clone https://github.com/user/meta-qcom-releases-fork
+
+        kas checkout meta-qcom-releases-fork/lock.yml
+
+        kas build meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
+
+        # Example, kas build meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
+
 .. _build_manifest:
 
 Alternative build instructions using Manifest
