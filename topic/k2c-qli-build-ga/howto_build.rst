@@ -63,10 +63,10 @@ Follow the steps below to apply pull requests (PRs) within the release build wor
           # Apply PR to meta-qcom
           cd meta-qcom
           git fetch pull/{PR}/head
-          git merge --no-edit FETCH_HEAD
+          git cherry-pick base..head # cherry-pick all changes in the PR
           cd ..
 
-#. Build the image (Without updating lockfile)
+#. Build the image
 
    .. container:: nohighlight
 
@@ -77,21 +77,41 @@ Follow the steps below to apply pull requests (PRs) within the release build wor
 
           # Example, kas build --skip repos_checkout meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml
 
-#. Build the image (By updating lockfile)
+Follow the steps below to apply pull requests (PRs) within the release build workspace:
 
-   .. container:: nohighlight
+#. Fork or host a copy of the meta-qcom Repository
+    
+  Create a personal fork of the `qualcomm-linux/meta-qcom <https://github.com/qualcomm-linux/meta-qcom>`__ repository.
 
-      ::
+#. Prepare Your Branch and Apply Patches 
 
-          # Persist your changes by updating the lock file
-          # Replace the meta-qcom commit SHA in the lock file with the newly merged commit SHA.
-          vi meta-qcom-releases/lock.yml
+  Reset your working branch to the required release commit.
+  Apply any required patches and push the updated branch to your fork of meta-qcom.
+  Reset the branch to the release commit, apply any patches as required and upload them to your fork of meta-qcom.
 
-          # Include the lock file in the kas build command
-          cp meta-qcom-releases/lock.yml meta-qcom/ci
-          kas build meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
+#. Fork or host a copy of the meta-qcom-releases repository
 
-          # Example, kas build meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
+  In your copy, update the meta-qcom entry to point to:
+
+  Your meta-qcom repo’s repository URL
+  The correct branch
+  The updated commit SHA that includes your applied patches
+
+#. Build the Image Using Your Updated Release Metadata
+
+  Follow the same steps used by ``Build from Source`` workflow to build the image. Use your copy of meta-qcom-releases for the lock file instead.
+
+  .. container:: nohighlight
+
+     ::
+
+        git clone https://github.com/user/meta-qcom-releases-fork
+
+        kas checkout meta-qcom-releases-fork/lock.yml
+
+        kas build meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
+
+        # Example, kas build meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
 
 .. _build_manifest:
 
