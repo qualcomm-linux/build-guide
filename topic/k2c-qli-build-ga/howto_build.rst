@@ -66,7 +66,7 @@ Follow the steps below to apply pull requests (PRs) within the release build wor
           git merge --no-edit FETCH_HEAD
           cd ..
 
-#. Build the image (Without updating lockfile)
+#. Build the image
 
    .. container:: nohighlight
 
@@ -76,22 +76,6 @@ Follow the steps below to apply pull requests (PRs) within the release build wor
           kas build --skip repos_checkout meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/linux-qcom-6.18.yml
 
           # Example, kas build --skip repos_checkout meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml
-
-#. Build the image (By updating lockfile)
-
-   .. container:: nohighlight
-
-      ::
-
-          # Persist your changes by updating the lock file
-          # Replace the meta-qcom commit SHA in the lock file with the newly merged commit SHA.
-          vi meta-qcom-releases/lock.yml
-
-          # Include the lock file in the kas build command
-          cp meta-qcom-releases/lock.yml meta-qcom/ci
-          kas build meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
-
-          # Example, kas build meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
 
 .. _build_manifest:
 
