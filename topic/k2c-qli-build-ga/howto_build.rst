@@ -63,7 +63,7 @@ Follow the steps below to apply pull requests (PRs) within the release build wor
           # Apply PR to meta-qcom
           cd meta-qcom
           git fetch pull/{PR}/head
-          git merge --no-edit FETCH_HEAD
+          git cherry-pick base..head # cherry-pick all changes in the PR
           cd ..
 
 #. Build the image
