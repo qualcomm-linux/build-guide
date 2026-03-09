@@ -32,12 +32,8 @@ On build completion, flashable images can be obtained from the following paths:
 
       ::
 
-         untar tar.gz
          cd <Base_Workspace_Path>/build/tmp/deploy/images/<MACHINE>/
          tar -xvf <IMAGE>-<MACHINE>.rootfs.qcomflash.tar.gz
-         
-         # Command to flash
-         <Base_Workspace_Path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>
 
 Flash instructions
 -------------------
