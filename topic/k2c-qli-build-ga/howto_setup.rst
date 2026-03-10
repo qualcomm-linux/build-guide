@@ -163,13 +163,7 @@ Wi-Fi is operational in Station mode. The Wi-Fi host driver and the authenticati
       
       ::
 
-         root@qcs6490-rb3gen2-vision-kit:~# nmcli dev wifi connect QualcommWiFi password 1234567890
-
-   .. container:: screenoutput
-
-      .. line-block:: 
-
-         Device ‘wlan0’ successfully activated with ‘d7b990bd-3b77-4b13-b239-b706553abaf8’.
+         root@iq-9075-evk:~# nmcli dev wifi connect Hydra password 1234567890
 
 #. Check the connection and device status:
 
@@ -187,7 +181,7 @@ Wi-Fi is operational in Station mode. The Wi-Fi host driver and the authenticati
       
       ::
 
-         ifconfig wlan0
+         ip address show wlp1s0
 
    .. image:: ../../media/k2c-qli-build-ga/chk_ip.png
 
@@ -209,13 +203,13 @@ If you are already connected to a network and need to reconnect to another netwo
       
       ::
 
-         nmcli c down QualcommWiFi
+         nmcli c down Hydra
 
    .. container:: screenoutput
 
       .. line-block:: 
          
-         Connection ‘QualcommWiFi’ successfully deactivated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/1)
+         Connection ‘Hydra’ successfully deactivated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/1)
 
 #. Check the disconnect status:
 
@@ -235,11 +229,14 @@ If you are already connected to a network and need to reconnect to another netwo
 
          nmcli dev wifi connect QualcommAP password XXXXXXXXX
 
-   .. container:: screenoutput
+#. Check the connection status:
 
-      .. line-block:: 
-         
-         Device ‘wlan0’ successfully activated with ‘6159ac7c-58c2-44fa-938f-45dcb544fac3’.
+   .. container:: nohighlight
+      
+      ::
+
+         nmcli -p device
+
 
 .. _use-ssh:
 
@@ -255,7 +252,7 @@ Establish the :ref:`network connectivity <connect_to_network>` before connecting
       
       ::
 
-         ifconfig eth2
+         ip address show eth2
 
    For Wi-Fi:
 
@@ -263,7 +260,7 @@ Establish the :ref:`network connectivity <connect_to_network>` before connecting
       
       ::
 
-         ifconfig wlan0
+         ip address show wlp1s0
 
 #. Use the IP address from the Linux host to establish an SSH connection to the device:
 
@@ -324,7 +321,7 @@ To check the Ethernet IP address, run the following command:
       
    ::
 
-      ifconfig
+      ip address
 
 **Sample output**:
 
