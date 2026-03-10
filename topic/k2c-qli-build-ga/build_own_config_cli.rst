@@ -53,7 +53,7 @@ When compiling a software image, ensure that you also compile the software produ
    .. note::
       - Before flashing, update the build images path to the compiled build images workspace at ``<Base_Workspace_Path>/DEV/LE.QCLINUX.2.0/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs.qcomflash``.
 
-        For example, ``<Base Workspace Path>/DEV/LE.QCLINUX.2.0/build/tmp/deploy/images/qcs9100-ride-sx/qcom-multimedia-image-qcs9100-ride-sx.rootfs.qcomflash``.
+        For example, ``<Base Workspace Path>/DEV/LE.QCLINUX.2.0/build/tmp/deploy/images/iq-9075-evk/qcom-multimedia-image-iq-9075-evk.rootfs.qcomflash``.
 
 Related topics
 ---------------

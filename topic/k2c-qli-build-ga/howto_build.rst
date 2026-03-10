@@ -33,7 +33,7 @@ tag for ``meta-qcom``. The milestone release provides locked revisions for the w
 
          kas build meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/linux-qcom-6.18.yml
 
-         # Example, kas build meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml
+         # Example, kas build meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml
 
    For various ``<machine>`` and ``<distro>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
 
@@ -75,7 +75,7 @@ Follow the steps below to apply pull requests (PRs) within the release build wor
           # Build the image without manually updating the lock file
           kas build --skip repos_checkout meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/linux-qcom-6.18.yml
 
-          # Example, kas build --skip repos_checkout meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml
+          # Example, kas build --skip repos_checkout meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml
 
 #. Build the image (By updating lockfile)
 
@@ -91,7 +91,7 @@ Follow the steps below to apply pull requests (PRs) within the release build wor
           cp meta-qcom-releases/lock.yml meta-qcom/ci
           kas build meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
 
-          # Example, kas build meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
+          # Example, kas build meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
 
 .. _build_manifest:
 
@@ -135,7 +135,7 @@ Repo is a tool which can be used to download a list of git repositories from a `
 
          # machine and distribution flags refer to the machine and distribution configuration files present in `meta-qcom/ci` directory.
          # setup-environment sets the environment settings, creates the build directory build, and enters the build directory.
-         source setup-environment --machine meta-qcom/ci/qcs9100-ride-sx.yml --distro meta-qcom/ci/qcom-distro-prop-image.yml --kernel meta-qcom/ci/linux-qcom-6.18.yml
+         source setup-environment --machine meta-qcom/ci/iq-9075-evk.yml --distro meta-qcom/ci/qcom-distro-prop-image.yml --kernel meta-qcom/ci/linux-qcom-6.18.yml
 
 #. Build the software image:
 
@@ -213,11 +213,11 @@ Modify and compile a recipe from the same workspace:
 
       # You can use devtool to modify the source-code used in any of the recipes
       kas shell -c "devtool modify <recipe>" meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/lock.yml
-      # Example, kas shell -c "devtool modify linux-qcom" meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/lock.yml
+      # Example, kas shell -c "devtool modify linux-qcom" meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/lock.yml
 
       # Build your recipe
       kas shell -c "bitbake <recipe>" meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/lock.yml
-      # Example, kas shell -c "bitbake linux-qcom" meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/lock.yml
+      # Example, kas shell -c "bitbake linux-qcom" meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/lock.yml
 
 .. _how_to_build_generate_sdk:
 
@@ -302,7 +302,7 @@ Build a standalone QDL
 
          # Built images are under <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs.qcomflash
          # qdl <prog.mbn> [<program> <patch> ...]
-         cd <workspace_path>/build/tmp/deploy/images/qcs9100-ride-sx/qcom-multimedia-image-qcs9100-ride-sx.rootfs.qcomflash
+         cd <workspace_path>/build/tmp/deploy/images/iq-9075-evk/qcom-multimedia-image-iq-9075-evk.rootfs.qcomflash
          # For UFS storage
          <qdl_download_path>/qdl/qdl --storage ufs prog_firehose_ddr.elf rawprogram*.xml patch*.xml
 

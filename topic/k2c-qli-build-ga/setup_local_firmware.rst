@@ -39,7 +39,7 @@ Override Linux-firmware binaries
          EOF
 
          kas shell -c "devtool modify linux-firmware" meta-qcom/ci/<machine.yml>:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml:meta-qcom/ci/firmware.yml
-         # Example, kas shell -c "devtool modify linux-firmware" meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml:meta-qcom/ci/firmware.yml
+         # Example, kas shell -c "devtool modify linux-firmware" meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml:meta-qcom/ci/firmware.yml
 
     .. note::
   
@@ -83,7 +83,7 @@ Override DSPSO binaries
       ::
 
          kas shell -c "devtool modify hexagon-dsp-binaries" meta-qcom/ci/<machine.yml>:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
-         # Example, kas shell -c "devtool modify hexagon-dsp-binaries" meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
+         # Example, kas shell -c "devtool modify hexagon-dsp-binaries" meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
 
 #. Unzip the firmware zip file if the unzipped version is not available
 
@@ -143,7 +143,7 @@ Override boot firmware binaries
       ::
 
         kas shell -c "devtool modify <firmware-bootbinaries-recipe>" meta-qcom/ci/<machine.yml>:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
-        # Example, kas shell -c "devtool modify firmware-qcom-boot-qcs9100" meta-qcom/ci/qcs9100-ride-sx.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
+        # Example, kas shell -c "devtool modify firmware-qcom-boot-qcs9100" meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
 
 #. Unzip the bootbinaries zip file if the unzipped version is not available
 
