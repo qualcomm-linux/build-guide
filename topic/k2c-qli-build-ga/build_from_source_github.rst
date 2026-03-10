@@ -58,6 +58,8 @@ Create and build a Yocto image:
       ::
 
          git clone https://github.com/qualcomm-linux/meta-qcom-releases -b <meta-qcom-release-tag>
+         # Example, git clone https://github.com/qualcomm-linux/meta-qcom-releases -b qli-2.0-rc1 
+
          kas checkout meta-qcom-releases/lock.yml
 
 #. Copy the kas lock file from ``meta-qcom-releases`` to ``meta-qcom``.  

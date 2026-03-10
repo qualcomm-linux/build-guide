@@ -1071,6 +1071,7 @@ The BSP image build has software components to support the Qualcomm device and s
          cd LE.QCLINUX.2.0
 
          git clone https://github.com/qualcomm-linux/meta-qcom-releases -b <meta-qcom-release-tag>
+         # Example, git clone https://github.com/qualcomm-linux/meta-qcom-releases -b qli-2.0-rc1 
 
          kas checkout meta-qcom-releases/lock.yml
 
