@@ -459,9 +459,7 @@ Configuration data table (CDT) provides platform/device-dependent data such as p
 
 1. Update CDT binary.
    
-   Based on the reference kit, rename the respective reference kit CDT file as cdt.bin in flashable images path.
-
-   .. note:: Default core kit CDT is ``cdt.bin``. Skip the CDT binary update if the reference kit is core kit.
+   Based on the reference kit, rename the respective reference kit CDT file as cdt.bin in flashable images path. Default core kit CDT is ``cdt.bin``. Skip the CDT binary update if the reference kit is core kit.
 
    .. container:: nohighlight
 
@@ -472,6 +470,26 @@ Configuration data table (CDT) provides platform/device-dependent data such as p
          # Example, the following bin files are available for Kodiak: cdt_core_kit.bin, cdt_vision_kit.bin, and cdt_industrial_kit.bin
          # If reference kit is RB3Gen2 Vision Kit, then set up cdt_vision_kit.bin as cdt.bin
          cp cdt_vision_kit.bin cdt.bin
+
+.. note:: Once flashing is successful, you can validate if the correct CDT was loaded from the UEFI serial logs:
+
+   .. container:: screenoutput
+
+      .. line-block::
+          Platform Init  [ 1966] BDS
+          Platform           : IOT
+          Subtype            : 2
+          Boot Device        : UFS
+          Chip Name          : QCS6490
+          Chip Ver           : 1.0
+
+   Here, Subtype represents the CDT loaded onto the device:
+
+   - Subtype             : 2    Vision Kit (Moselle attach)
+   - Subtype             : 5    Rb3Gen2 Corekit (hsp attach)
+   - subtype             : 6    Rb3Gen2 Corekit (Moselle attach)
+   - Subtype             : 7    Vision Kit (hsp attach)
+   - Subtype             : 13   Industrial Mezz Kit 
 
 Flash software using QDL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
