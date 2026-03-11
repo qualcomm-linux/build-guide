@@ -7,8 +7,8 @@ Sync and build with real-time Linux
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``meta-qcom-realtime`` layer provides ``PREEMPT_RT`` patches for the Qualcomm Linux kernel. This layer is available in the Qualcomm `GitHub <https://github.com/quic-yocto/meta-qcom-realtime>`__ and it's built on top of the BSP build image. For more information about this layer, see
-`meta-qcom-realtime <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-27/meta_qcom_realtime.html>`__
-from the `Qualcomm Linux Yocto Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-27>`__.
+`meta-qcom-realtime <https://docs.qualcomm.com/bundle/publicresource/topics/80-70029-27/meta_qcom_realtime.html>`__
+from the `Qualcomm Linux Yocto Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70029-27>`__.
 
 To sync and build real-time Linux, see :ref:`Build real-time Linux image <build_real_time_linux_image_unreg>`.
 
@@ -24,7 +24,7 @@ The migration process depends on the development, branching, and integration wor
       files.
    #. Qualcomm provides git history to all the source repositories.
       You can see a reference list of repositories in the `Release
-      Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
+      Notes <https://docs.qualcomm.com/doc/80-70029-300/>`__.
       For the Qualcomm repositories branched and modified at your
       end, perform the following steps:
 
@@ -46,18 +46,18 @@ The migration process depends on the development, branching, and integration wor
 Build a Qualcomm Linux kernel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-See `building kernel image <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-3/getting_started_chapter2.html#build-the-device-image>`__.
+See `building kernel image <https://docs.qualcomm.com/bundle/publicresource/topics/80-70029-3/getting_started_chapter2.html#build-the-device-image>`__.
 
 Customize Qualcomm Linux
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 See `User
-customizations <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-27/customize_qualcomm_linux.html>`__.
+customizations <https://docs.qualcomm.com/bundle/publicresource/topics/80-70029-27/customize_qualcomm_linux.html>`__.
 
 Download layers for the Qualcomm IM SDK build using the manifest release tag
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
+For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-70029-300/>`__.
 
 ::
 
@@ -74,7 +74,7 @@ For the latest ``<manifest release tag>``, see the section *Build-critical relea
 Download layers for the QIR SDK build by using the manifest release tag
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
+For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-70029-300/>`__.
 
 ::
 
@@ -91,7 +91,7 @@ For the latest ``<manifest release tag>``, see the section *Build-critical relea
 Download layers for the real-time Linux build by using the manifest release tag
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
+For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-70029-300/>`__.
 
 ::
 
@@ -132,7 +132,7 @@ commands and already have an existing ``<WORKSPACE DIR>``, follow these steps to
       # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
       # and enters into build-qcom-wayland directory
 
-   .. note:: To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
+   .. note:: To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/doc/80-70029-300/>`__.
 
 3. Build the software image:
 

@@ -15,29 +15,29 @@ Related documents
    * - **Qualcomm Technologies, Inc.**
      - 
 
-   * - `Qualcomm Linux Yocto Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-27>`__
-     - 80-70023-27
+   * - `Qualcomm Linux Yocto Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70029-27>`__
+     - 80-70029-27
 
-   * - `Qualcomm Linux Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__
-     - 80-70023-300
+   * - `Qualcomm Linux Release Notes <https://docs.qualcomm.com/doc/80-70029-300/>`__
+     - 80-70029-300
 
    * - `Qualcomm Dragonwing™ IQ-615 Beta Evaluation Kit quickstart <https://docs.qualcomm.com/bundle/80-70020-293/resource/80-70020-293_REV_AA_Qualcomm_Dragonwing_IQ-615_Beta_Evaluation_Kit_Quick_Start_Guide.pdf>`__
      - 80-70020-293   
 
-   * - `Qualcomm Linux Kernel Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-3>`__
-     - 80-70023-3
+   * - `Qualcomm Linux Kernel Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70029-3>`__
+     - 80-70029-3
 
-   * - `Qualcomm Dragonwing™ RB3 Gen 2 Development Kit user guide – Linux <https://docs.qualcomm.com/doc/80-70023-251/topic/landing-page.html>`__
-     - 80-70023-251
+   * - `Qualcomm Dragonwing™ RB3 Gen 2 Development Kit user guide – Linux <https://docs.qualcomm.com/doc/80-70029-251/topic/landing-page.html>`__
+     - 80-70029-251
 
-   * - `Qualcomm® Intelligent Multimedia SDK (IM SDK) quickstart documentation <https://docs.qualcomm.com/doc/80-70023-51/topic/qmi-sdk-qsg-landing-page.html>`__
-     - 80-70023-51
+   * - `Qualcomm® Intelligent Multimedia SDK (IM SDK) quickstart documentation <https://docs.qualcomm.com/doc/80-70029-51/topic/qmi-sdk-qsg-landing-page.html>`__
+     - 80-70029-51
 
-   * - `Qualcomm® Intelligent Robotics (QIR) SDK documentation <https://docs.qualcomm.com/doc/80-70023-265/topic/qir-sdk-landing-page.html>`__
-     - 80-70023-265
+   * - `Qualcomm® Intelligent Robotics (QIR) SDK documentation <https://docs.qualcomm.com/doc/80-70029-265/topic/qir-sdk-landing-page.html>`__
+     - 80-70029-265
 
-   * - `Qualcomm Linux Virtual Machine Setup Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-41/>`__
-     - 80-70023-41
+   * - `Qualcomm Linux Virtual Machine Setup Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70029-41/>`__
+     - 80-70029-41
 
    * - `Qualcomm Software Center User Guide <https://docs.qualcomm.com/doc/80-72780-2/topic/overview.html>`__
      - 80-72780-2
