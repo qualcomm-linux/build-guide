@@ -36,7 +36,7 @@ Download the software
 
 #. On the :guilabel:`Specify Environment` page, select the appropriate values for :guilabel:`Category`, :guilabel:`Chipset`, :guilabel:`Host Operating System`, :guilabel:`Target Operating System`, and then select :guilabel:`Next`.
 
-   .. note:: See `chipsets (hardware SoCs) <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-115/soc.html>`__ that are supported on Qualcomm Linux.
+   .. note:: See `chipsets (hardware SoCs) <https://docs.qualcomm.com/bundle/publicresource/topics/80-70029-115/soc.html>`__ that are supported on Qualcomm Linux.
 
    .. image:: ../../media/k2c-qli-build-ga/specify_env.png
 
@@ -52,12 +52,12 @@ Download the software
 
       .. note::
          
-         - For information about the supported distributions for your hardware SoCs, see the table *Access Controlled Distribution* in the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
-         - For information about the Yocto layers, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-27/qualcomm_linux_metadata_layers.html>`__.        
+         - For information about the supported distributions for your hardware SoCs, see the table *Access Controlled Distribution* in the `Release Notes <https://docs.qualcomm.com/doc/80-70029-300/>`__.
+         - For information about the Yocto layers, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70029-27/qualcomm_linux_metadata_layers.html>`__.        
          - For information about the Qualcomm IM and QIR SDKs, see the following guides:
 
-           - `Qualcomm IM SDK quickstart <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-51>`__
-           - `QIR SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-265>`__
+           - `Qualcomm IM SDK quickstart <https://docs.qualcomm.com/bundle/publicresource/topics/80-70029-51>`__
+           - `QIR SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70029-265>`__
 
 #. To download the selected compilable distribution or flashable binary, select :guilabel:`Download`. After the software download is successful, a *Download complete* status appears.
 

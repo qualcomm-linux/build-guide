@@ -2,9 +2,9 @@
 
 Build QIR SDK image
 ---------------------
-The Qualcomm® Intelligent Robotics (QIR) SDK 2.0 is a collection of components that let you develop robotic features on Qualcomm platforms. This SDK is applicable to the Qualcomm Linux releases. For more details, see `QIR SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-265>`__.
+The Qualcomm® Intelligent Robotics (QIR) SDK 2.0 is a collection of components that let you develop robotic features on Qualcomm platforms. This SDK is applicable to the Qualcomm Linux releases. For more details, see `QIR SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70029-265>`__.
 
-1. Download Qualcomm Yocto and the supporting layers. The ``<manifest release tag>`` for QIR SDK build is the same as the BSP build. Clone the QIR SDK layers on top of the BSP build. For the latest ``<manifest release tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
+1. Download Qualcomm Yocto and the supporting layers. The ``<manifest release tag>`` for QIR SDK build is the same as the BSP build. Clone the QIR SDK layers on top of the BSP build. For the latest ``<manifest release tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-70029-300/>`__.
 
    .. container:: nohighlight
       
@@ -42,7 +42,7 @@ The Qualcomm® Intelligent Robotics (QIR) SDK 2.0 is a collection of components 
          # source setup-robotics-environment: Sets the environment, creates the build directory build-qcom-robotics-ros2-humble,
          # and enters into build-qcom-robotics-ros2-humble directory.
 
-   For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
+   For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-70029-300/>`__.
 
 #. Build the robotics image and the QIR SDK artifacts:
 

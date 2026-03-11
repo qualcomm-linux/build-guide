@@ -2,7 +2,7 @@
 
 Build your own configuration
 ------------------------------
-To build your own configuration, compile the build for default machine configuration and then compile the LE.QCLINUX.1.0.r1 image with your own MACHINE and QCOM_SELECTED_BSP parameter values. For information on the supported machine configurations of the development kit, see the table *Default values of "MACHINE" and "QCOM_SELECTED_BSP" parameters for QSC* in the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
+To build your own configuration, compile the build for default machine configuration and then compile the LE.QCLINUX.1.0.r1 image with your own MACHINE and QCOM_SELECTED_BSP parameter values. For information on the supported machine configurations of the development kit, see the table *Default values of "MACHINE" and "QCOM_SELECTED_BSP" parameters for QSC* in the `Release Notes <https://docs.qualcomm.com/doc/80-70029-300/>`__.
 
 When compiling a software image other than ``LE.QCLINUX.1.0.r1``, ensure that you also compile both the software product and ``LE.QCLINUX.1.0.r1`` in the same order. For example, if you compile ``BOOT.MXF.1.0.c1``, ensure that you also compile the software product (such as ``QCM6490.LE.1.0``) and then ``LE.QCLINUX.1.0.r1``.
 

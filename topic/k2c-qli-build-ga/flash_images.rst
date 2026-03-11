@@ -110,15 +110,15 @@ Use ADB
 This procedure applies to the Ubuntu host environment. Use ADB only if the device has a preloaded build. 
 
 1. `Install
-   QUD <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-251/faqs.html#install-qud>`__
+   QUD <https://docs.qualcomm.com/bundle/publicresource/topics/80-70029-251/faqs.html#install-qud>`__
    on the host device.
 
 2. `Install
-   ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-251/faqs.html#install-adb>`__
+   ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-70029-251/faqs.html#install-adb>`__
    on the host device.
 
 3. `Connect
-   ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-251/faqs.html#install-adb>`__
+   ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-70029-251/faqs.html#install-adb>`__
    to the device.
 
 4. Move the device into EDL mode in a terminal on the host computer:
@@ -290,11 +290,11 @@ Provision UFS
 ---------------
 Universal flash storage (UFS) provisioning helps to divide the storage into many LUNs, which stores different types of data separately. This improves access efficiency and system organization.
 
-UFS is provisioned by default. If there are any changes in LUNs, UFS must be re-provisioned. To download the provision XML file and to check the applicability of UFS provisioning for different SoCs, see the table *UFS Provision* in `Release Specific Information <https://docs.qualcomm.com/doc/80-70023-300/topic/release_specific_information.html>`__.
+UFS is provisioned by default. If there are any changes in LUNs, UFS must be re-provisioned. To download the provision XML file and to check the applicability of UFS provisioning for different SoCs, see the table *UFS Provision* in `Release Specific Information <https://docs.qualcomm.com/doc/80-70029-300/topic/release_specific_information.html>`__.
 
 1. Download the provision file.
 
-   Based on the required SoC, download the respective ‘provision’ from the *UFS Provision* table of the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/topic/release_specific_information.html>`__.
+   Based on the required SoC, download the respective ‘provision’ from the *UFS Provision* table of the `Release Notes <https://docs.qualcomm.com/doc/80-70029-300/topic/release_specific_information.html>`__.
 
    .. container:: nohighlight
       
@@ -422,7 +422,7 @@ Configuration data table (CDT) provides platform/device-dependent data such as p
 
 1. Download the CDT binary.
 
-   Based on the required reference kit, download the respective CDT from the *CDT* table of the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/topic/release_specific_information.html>`__.
+   Based on the required reference kit, download the respective CDT from the *CDT* table of the `Release Notes <https://docs.qualcomm.com/doc/80-70029-300/topic/release_specific_information.html>`__.
 
    .. container:: nohighlight
       
@@ -587,7 +587,7 @@ Flash software using QDL
          Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
          Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
-   To verify the updated software version, see `Verify the Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-251/set_up_the_device.html#verify-the-qualcomm-linux-version>`__.
+   To verify the updated software version, see `Verify the Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70029-251/set_up_the_device.html#verify-the-qualcomm-linux-version>`__.
 
 .. note:: If flashing fails, perform the following steps and retry the flashing procedure:
 
@@ -674,15 +674,15 @@ Flash software using PCAT
  
          # For UFS storage
          cp ./partition_ufs/gpt_main*.bin ./partition_ufs/gpt_backup*.bin ./partition_ufs/rawprogram[0-9].xml ./partition_ufs/patch*.xml ./partition_ufs/zeros_*sectors.bin ./
-         PCAT –PLUGIN SD -DEVICE <device_serial_number> -BUILD "<build_images_path>"" -MEMORYTYPE UFS -FLAVOR asic
+         PCAT -PLUGIN SD -DEVICE <device_serial_number> -BUILD "<build_images_path>"" -MEMORYTYPE UFS -FLAVOR asic
          
-         # Example, PCAT –PLUGIN SD -DEVICE be116704 -BUILD "<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image" -MEMORYTYPE UFS -FLAVOR asic
+         # Example, PCAT -PLUGIN SD -DEVICE be116704 -BUILD "<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image" -MEMORYTYPE UFS -FLAVOR asic
  
          # For EMMC storage
          cp ./partition_emmc/gpt_main*.bin ./partition_emmc/gpt_backup*.bin ./partition_emmc/rawprogram[0-9].xml ./partition_emmc/patch*.xml ./partition_emmc/zeros_*sectors.bin ./
-         PCAT –PLUGIN SD -DEVICE <device_serial_number> -BUILD "<build_images_path>"" -MEMORYTYPE EMMC -FLAVOR asic -RAWPROG "<build_images_path>/rawprogram0.xml" -PATCHPROG "<build_images_path>/patch0.xml"
+         PCAT -PLUGIN SD -DEVICE <device_serial_number> -BUILD "<build_images_path>"" -MEMORYTYPE EMMC -FLAVOR asic -RAWPROG "<build_images_path>/rawprogram0.xml" -PATCHPROG "<build_images_path>/patch0.xml"
          
-         # Example, PCAT –PLUGIN SD -DEVICE be116704 -BUILD "<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image" -MEMORYTYPE EMMC -FLAVOR asic -RAWPROG "<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image/rawprogram0.xml" -PATCHPROG "<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image/patch0.xml"
+         # Example, PCAT -PLUGIN SD -DEVICE be116704 -BUILD "<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image" -MEMORYTYPE EMMC -FLAVOR asic -RAWPROG "<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image/rawprogram0.xml" -PATCHPROG "<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image/patch0.xml"
 
    If flashing the software is successful, the outputs is as follows:
 
@@ -705,7 +705,7 @@ Flash software using PCAT
          Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
          Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
-   The device reboots after the flashing procedure completes successfully. To verify the updated software version, see `Verify the Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-251/set_up_the_device.html#verify-the-qualcomm-linux-version>`__.
+   The device reboots after the flashing procedure completes successfully. To verify the updated software version, see `Verify the Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70029-251/set_up_the_device.html#verify-the-qualcomm-linux-version>`__.
 
 Related topics
 ---------------

@@ -66,7 +66,7 @@ Generate an eSDK
          bitbake -c do_populate_sdk_ext <image>
          # Example, bitbake -c do_populate_sdk_ext qcom-multimedia-image
 
-   To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.    
+   To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/doc/80-70029-300/>`__.    
 
 #. After building with ``meta-qcom-extras`` and firmware sources with
    QSC CLI:
@@ -185,7 +185,7 @@ Rebuild using a Docker environment
          # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
          bitbake qcom-multimedia-image
 
-   To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
+   To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/doc/80-70029-300/>`__.
 
 #. Build image ``qcom-multimedia-test-image``:
 
@@ -294,7 +294,7 @@ Download the Platform eSDK
 
 3. Download the Platform eSDK.
 
-   Based on the required SoC, download the respective eSDK from the *Artifactory links to pre-built flashable images and eSDK* table of the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/topic/prebuilt_flashable_images_along_with_esdk.html>`__.
+   Based on the required SoC, download the respective eSDK from the *Artifactory links to pre-built flashable images and eSDK* table of the `Release Notes <https://docs.qualcomm.com/doc/80-70029-300/topic/prebuilt_flashable_images_along_with_esdk.html>`__.
 
    .. container:: nohighlight
       
@@ -344,7 +344,7 @@ Download the Platform eSDK
 
    |imageLayerWorkspace|
 
-   .. note:: Advanced developers can still build their own eSDK by following the steps mentioned in `Advanced procedures <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-51/advanced-procedure.html>`__.
+   .. note:: Advanced developers can still build their own eSDK by following the steps mentioned in `Advanced procedures <https://docs.qualcomm.com/bundle/publicresource/topics/80-70029-51/advanced-procedure.html>`__.
 
 7. Run the following command to set the ``ESDK_ROOT`` variable:
 
@@ -363,7 +363,7 @@ Download the Platform eSDK
          export ESDK_ROOT=/local/mnt/workspace/Platform_eSDK_plus_QIM
 
 The Qualcomm IM SDK installation is now complete. To develop an application for
-the device, see `Develop your first application <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-51/content-develop-your-first-application.html>`__.
+the device, see `Develop your first application <https://docs.qualcomm.com/bundle/publicresource/topics/80-70029-51/content-develop-your-first-application.html>`__.
 
 
 
