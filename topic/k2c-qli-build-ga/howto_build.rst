@@ -37,62 +37,6 @@ tag for ``meta-qcom``. The milestone release provides locked revisions for the w
 
    For various ``<machine>`` and ``<distro>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
 
-Picking PRs in Release Build Workspace
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Follow the steps below to apply pull requests (PRs) within the release build workspace:
-
-1. Sync the meta layers in the workspace
-
-   .. container:: nohighlight
-
-      ::
-
-          # Checkout meta layers using kas
-          git clone https://github.com/qualcomm-linux/meta-qcom-releases -b <meta-qcom-release-tag>
-          kas checkout meta-qcom-releases/lock.yml
-
-#. Apply PRs in the meta layer
-
-   The example below demonstrates applying a PR to the meta-qcom layer.
-
-   .. container:: nohighlight
-
-      ::
-
-          # Apply PR to meta-qcom
-          cd meta-qcom
-          git fetch pull/{PR}/head
-          git merge --no-edit FETCH_HEAD
-          cd ..
-
-#. Build the image (Without updating lockfile)
-
-   .. container:: nohighlight
-
-      ::
-
-          # Build the image without manually updating the lock file
-          kas build --skip repos_checkout meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/linux-qcom-6.18.yml
-
-          # Example, kas build --skip repos_checkout meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml
-
-#. Build the image (By updating lockfile)
-
-   .. container:: nohighlight
-
-      ::
-
-          # Persist your changes by updating the lock file
-          # Replace the meta-qcom commit SHA in the lock file with the newly merged commit SHA.
-          vi meta-qcom-releases/lock.yml
-
-          # Include the lock file in the kas build command
-          cp meta-qcom-releases/lock.yml meta-qcom/ci
-          kas build meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
-
-          # Example, kas build meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
-
 .. _build_manifest:
 
 Alternative build instructions using Manifest
