@@ -5,7 +5,7 @@
 Build from source (with firmware and devtool)
 ============================================
 
-Use this information to build ``meta-qcom-extras`` layer using selective proprietary sources and binaries/libraries.
+Use this information to build ``meta-qcom`` layer along with firmware sources. 
 
 .. note:: This information is applicable only for authorized users. To upgrade your access, go to `Qualcomm support page <https://www.qualcomm.com/support/working-with-qualcomm>`__.
 

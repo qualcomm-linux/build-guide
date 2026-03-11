@@ -23,10 +23,6 @@ The following table describes the Qualcomm Yocto layers and release tags:
      - ``meta-qcom``
      - meta-qcom-releases tag
      - qcom-6.18-QLI.2.0-Ver.1.0
-   * - Licensed developers with authorized access
-     - ``meta-qcom-extras``
-     - meta-qcom-extras-release tag
-     - qcom-6.18-QLI.2.0-Ver.1.0
    * - See :ref:`Mapping access levels to firmware distributions <build_mapping_access_levels>`
      - NA
      - firmware release tag
@@ -53,7 +49,6 @@ The following tables describe the firmware distributions that you can download. 
 
        ``meta-qcom-distro``
        
-       ``meta-qcom-extras``
    * - :rspan:`2` Licensed developers (contact Qualcomm for access)
      - BSP build: High-level OS and firmware (GPS only) source
        
@@ -63,7 +58,6 @@ The following tables describe the firmware distributions that you can download. 
 
        ``meta-qcom-distro``
 
-       ``meta-qcom-extras``
    *  
      - BSP build: High-level OS and firmware (GPS and modem) source
       
@@ -72,7 +66,6 @@ The following tables describe the firmware distributions that you can download. 
 
        ``meta-qcom-distro``
 
-       ``meta-qcom-extras``
 
 The following table maps the firmware distributions to git repositories: 
 
