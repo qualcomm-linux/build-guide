@@ -81,14 +81,14 @@ Repo is a tool which can be used to download a list of git repositories from a `
          # setup-environment sets the environment settings, creates the build directory build, and enters the build directory.
          source setup-environment --machine meta-qcom/ci/iq-9075-evk.yml --distro meta-qcom/ci/qcom-distro-prop-image.yml --kernel meta-qcom/ci/linux-qcom-6.18.yml
 
-#. Build the software image:
+#. Build the required software image:
 
    .. container:: nohighlight
     
       ::
 
-         # Build required image using bitbake `bitbake qcom-multimedia-image` 
          bitbake <image-recipe>
+         # Example, bitbake qcom-multimedia-image
 
 .. _set_storage: 
 
@@ -111,24 +111,25 @@ The machine configurations have either UFS or EMMC storage enabled by default. U
       # QCOM_PARTITION_FILES_SUBDIR ?= "partitions/iq-615-evk/emmc"
       # QCOM_PARTITION_FILES_SUBDIR ?= "partitions/iq-615-evk/ufs"
 
-Increasing swap space
-^^^^^^^^^^^^^^^^^^^^^^^^
+Increase swap space
+^^^^^^^^^^^^^^^^^^^^^^
 
-If the build fails due to an out‑of‑memory (OOM) error, consider expanding the system’s
-swap space to more than 32GB. Run the following commands to increase swap space
+If the build fails because of an out-of-memory (OOM) error, increase the swap space to more than 32 GB. Run the following commands to enlarge the swap area:
 
-   .. container:: nohighlight
+.. .. code-block:: bash
+        # <insert swap‑expansion commands here>    
+.. container:: nohighlight
       
-      ::
+   ::
 
-         sudo su root
-         swapon --show
-         swapoff /swapfile
-         fallocate -l 64G /swapfile
-         chmod 600 /swapfile
-         mkswap /swapfile
-         swapon /swapfile
-         free -h
+      sudo su root
+      swapon --show
+      swapoff /swapfile
+      fallocate -l 64G /swapfile
+      chmod 600 /swapfile
+      mkswap /swapfile
+      swapon /swapfile
+      free -h
 
 Check if the build is complete
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -237,7 +237,6 @@ If you are already connected to a network and need to reconnect to another netwo
 
          nmcli -p device
 
-
 .. _use-ssh:
 
 **Sign in using SSH**

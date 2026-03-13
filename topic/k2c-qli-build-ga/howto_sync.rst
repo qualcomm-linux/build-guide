@@ -3,24 +3,22 @@
 Sync
 ---------------
 
-Setting up shared sstate and downloads cache
+Set up shared sstate and downloads cache
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- BitBake supports the use of ``sstate-cache`` and ``downloads`` directories to reuse previously built artifacts and speed up subsequent builds.
-  By default, these directories are created inside the build directory. However, you can also configure a shared sstate-cache and downloads
-  directory to reuse the same cache across multiple workspaces. 
+You can use the ``sstate-cache`` and ``downloads`` directories to reuse the previously built artifacts and accelerate later builds. By default, BitBake creates these directories inside the build directory. You can configure shared ``sstate-cache`` and ``downloads`` directories to reuse the same cache across multiple workspaces.
 
-   .. container:: nohighlight
+.. container:: nohighlight
       
-      ::
+   ::
 
-          # export these variables before running the build
-          export DL_DIR="/path/to/shared/downloads"
-          export SSTATE_DIR="/path/to/shared/sstate"
+      # export these variables before running the build
+      export DL_DIR="/path/to/shared/downloads"
+      export SSTATE_DIR="/path/to/shared/sstate"
 
-          kas build meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
+      kas build meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
 
-          # Example, kas build meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
+      # Example, kas build meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
 
 .. _alternative_methods_install_repo:
 
@@ -60,59 +58,55 @@ Alternative methods to install Repo
 Enable Downloads Mirror
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-BitBake builds can fail when upstream sources being referred to are inaccessible. It usually
-happens when the original source code being referred to has been moved, removed, or the server
-is temporarily down. Add the following to your local.conf to add Qualcomm's download server as
-a MIRROR to avoid such fetcher failures.
+BitBake builds can fail when upstream sources being referred to are inaccessible. It usually happens when the original source code being referred to has been moved, removed, or the server is temporarily down. Add the following to your local.conf to add Qualcomm's download server as a MIRROR to avoid such fetcher failures.
 
-   .. container:: nohighlight
+.. container:: nohighlight
       
-      ::
+   ::
 
-          MIRRORS:append = " \
-          svn://.*/.*     https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
-          git://.*/.*     https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
-          gitsm://.*/.*   https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
-          hg://.*/.*      https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
-          p4://.*/.*      https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
-          https?://.*/.*  https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
-          ftp://.*/.*     https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
-          npm://.*/?.*    https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
-          s3://.*/.*      https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
-          crate://.*/.*   https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
-          gs://.*/.*      https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
-          "
+      MIRRORS:append = " \
+      svn://.*/.*     https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
+      git://.*/.*     https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
+      gitsm://.*/.*   https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
+      hg://.*/.*      https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
+      p4://.*/.*      https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
+      https?://.*/.*  https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
+      ftp://.*/.*     https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
+      npm://.*/?.*    https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
+      s3://.*/.*      https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
+      crate://.*/.*   https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
+      gs://.*/.*      https://artifacts.codelinaro.org/qli-ci/downloads/main/ \
+      "
 
-One way to add this to your BitBake configuration is to create a new kas configuration file
-and include this file during build:
+One way to add this to your BitBake configuration is to create a new kas configuration file and include this file during the build:
 
-   .. container:: nohighlight
+.. container:: nohighlight
       
-      ::
+   ::
 
-          cat << EOF > meta-qcom/ci/downloads-mirrors.yml
-          header:
-           version: 14
+      cat << EOF > meta-qcom/ci/downloads-mirrors.yml
+      header:
+       version: 14
 
-          local_conf_header:
-           downloads-mirror: |
-            MIRRORS:append = " \
-            svn://.*/.*     https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
-            git://.*/.*     https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
-            gitsm://.*/.*   https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
-            hg://.*/.*      https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
-            p4://.*/.*      https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
-            https?://.*/.*  https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
-            ftp://.*/.*     https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
-            npm://.*/?.*    https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
-            s3://.*/.*      https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
-            crate://.*/.*   https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
-            gs://.*/.*      https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
-            "
-          EOF
+      local_conf_header:
+       downloads-mirror: |
+        MIRRORS:append = " \
+        svn://.*/.*     https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
+        git://.*/.*     https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
+        gitsm://.*/.*   https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
+        hg://.*/.*      https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
+        p4://.*/.*      https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
+        https?://.*/.*  https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
+        ftp://.*/.*     https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
+        npm://.*/?.*    https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
+        s3://.*/.*      https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
+        crate://.*/.*   https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
+        gs://.*/.*      https://artifacts.codelinaro.org/qli-ci/downloads/main/ \\
+        "
+      EOF
 
-          kas build <kas configuration files>:meta-qcom/ci/downloads-mirror.yml
-          # Example, kas build meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml:meta-qcom/ci/downloads-mirrors.yml
+      kas build <kas configuration files>:meta-qcom/ci/downloads-mirror.yml
+      # Example, kas build meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml:meta-qcom/ci/downloads-mirrors.yml
 
 How does QSC CLI work?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -141,7 +135,7 @@ To see all the commands provided by QSC CLI, run the following commands:
    ::
 
       qsc-cli -h
-      qsc-cli chip-software download –h
+      qsc-cli chip-software download -h
 
 To see more details about a particular command, you can append ``-h`` to the command. For example:
 

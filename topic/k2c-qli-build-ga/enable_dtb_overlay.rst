@@ -4,7 +4,7 @@ Configure alternative drivers
 -------------------------------
 
 Enable camera overlays
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: This section applies only to QCS6490, IQ-9075, and IQ-8275.
 

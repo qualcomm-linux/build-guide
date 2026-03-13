@@ -44,14 +44,14 @@ Follow these steps to flash the software images:
 
 1. Update the ``udev`` rules (one-time prerequisite).
 #. Force the device into emergency download (EDL) mode.
-#. Install QDL
+#. Install QDL.
 #. Provision UFS (one-time prerequisite).
 #. Flash SAIL (one-time prerequisite).
 #. Choose CDT based on reference kit.
 #. Flash the software:
 
-   - Using QDL (supported on Linux and macOS)
-   - Using PCAT (supported on Windows, Linux and macOS)
+   - Using QDL (supported on Linux and Apple\ :sup:`®` macOS\ :sup:`®`)
+   - Using PCAT (supported on Microsoft\ :sup:`®` Windows\ :sup:`®`, Linux, and Apple\ :sup:`®` macOS\ :sup:`®`)
 
 .. _update_udev_rules:
 
@@ -415,23 +415,27 @@ Safety Island (SAIL) is applicable only for the Qualcomm Dragonwing™ IQ-9075 a
 Choose CDT based on reference kit
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Configuration data table (CDT) provides platform/device-dependent data such as platform ID, subtype, version. Various software (drivers/firmware) modules can use this information to perform dynamic detection and initialization of the platform.
+Configuration data table (CDT) provides platform/device-dependent data such as platform ID, subtype, and version. Various software (drivers/firmware) modules can use this information to perform dynamic detection and initialization of the platform.
 
-1. Update CDT binary.
+Update CDT binary.
+
+.. note::
    
-   Based on the reference kit, rename the respective reference kit CDT file as cdt.bin in flashable images path. Default core kit CDT is ``cdt.bin``. Skip the CDT binary update if the reference kit is core kit.
+   * Skip the CDT binary update if the reference kit is a Core Kit.
+   * The default Core Kit CDT is ``cdt.bin``.
+   * Based on the reference kit, rename the respective reference kit CDT file as ``cdt.bin`` in flashable images path.
 
-   .. container:: nohighlight
+.. container:: nohighlight
 
-      ::
+   ::
 
-         # Flashable images path is <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/
-         cd <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/
-         # Example, the following bin files are available for Kodiak: cdt_core_kit.bin, cdt_vision_kit.bin, and cdt_industrial_kit.bin
-         # If reference kit is RB3Gen2 Vision Kit, then set up cdt_vision_kit.bin as cdt.bin
-         cp cdt_vision_kit.bin cdt.bin
+      # Flashable images path is <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/
+      cd <workspace_path>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>/
+      # Example, the following bin files are available for Kodiak: cdt_core_kit.bin, cdt_vision_kit.bin, and cdt_industrial_kit.bin
+      # If reference kit is RB3Gen2 Vision Kit, then set up cdt_vision_kit.bin as cdt.bin
+      cp cdt_vision_kit.bin cdt.bin
 
-.. note:: Once flashing is successful, you can validate if the correct CDT was loaded from the UEFI serial logs:
+.. note:: After flashing succeeds, verify that the correct CDT is loaded by reviewing the UEFI serial logs.
 
    .. container:: screenoutput
 
@@ -443,13 +447,12 @@ Configuration data table (CDT) provides platform/device-dependent data such as p
           Chip Name          : QCS6490
           Chip Ver           : 1.0
 
-   Here, Subtype represents the CDT loaded onto the device:
-
+   Use the *Subtype* field to identify the CDT loaded onto your device:
    - Subtype             : 2    Vision Kit (Moselle attach)
-   - Subtype             : 5    Rb3Gen2 Corekit (hsp attach)
-   - subtype             : 6    Rb3Gen2 Corekit (Moselle attach)
+   - Subtype             : 5    Rb3Gen2 Core Kit (hsp attach)
+   - subtype             : 6    Rb3Gen2 Core Kit (Moselle attach)
    - Subtype             : 7    Vision Kit (hsp attach)
-   - Subtype             : 13   Industrial Mezz Kit 
+   - Subtype             : 13   Industrial Mezz Kit
 
 Flash software using QDL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

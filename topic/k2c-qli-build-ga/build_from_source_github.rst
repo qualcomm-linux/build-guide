@@ -36,8 +36,7 @@ Install and configure the required software tools on the Ubuntu host computer.
          wget -qO kas-container https://raw.githubusercontent.com/siemens/kas/refs/tags/5.1/kas-container
          chmod +x kas-container
 
-.. note::
-  The `kas <https://kas.readthedocs.io/en/latest/>`__ tool is used by Qualcomm Linux to sync the meta layers, configure the environment, and execute the bitbake commands.
+.. note:: The `kas <https://kas.readthedocs.io/en/latest/>`__ tool is used by Qualcomm Linux to sync the meta layers, configure the environment, and execute the BitBake commands.
 
 Sync
 -----
@@ -62,8 +61,7 @@ Create and build a Yocto image:
 
          kas checkout meta-qcom-releases/lock.yml
 
-#. Copy the kas lock file from ``meta-qcom-releases`` to ``meta-qcom``.  
-   Run this step, or the checked‑out meta layers may update to a newer commit.
+#. Copy the kas lock file from ``meta-qcom-releases`` to ``meta-qcom``. Run this step, or the checked-out meta layers may update to a newer commit.
 
    .. container:: nohighlight
       
@@ -73,8 +71,7 @@ Create and build a Yocto image:
          # copy kas lock file to meta-qcom repository
          cp meta-qcom-releases/lock.yml meta-qcom/ci/lock.yml
 
-#. Build the software image.
-   You define build targets based on machine and distribution combinations.
+#. Build the software image. You define build targets based on machine and distribution combinations.
 
    .. container:: nohighlight
       

@@ -101,8 +101,8 @@ Override DSPSO binaries
     ::
 
         # Copy the dsp so binaries for your chipset for ADSP, CDSP, CDSP1, GDSP0 and GDSP1 as applicable
-        cp $FWZIP_PATH/<soc-firmware-zip-name>/usr/share/qcom/<dspso-path-subdir>/dsp/adsp/*  build/workspace/sources/hexagon-dsp-binaries/<dspso-path-subdir>/<hexagon-adsp-bins-subdir>/
-        cp $FWZIP_PATH/<soc-firmware-zip-name>/usr/share/qcom/<dspso-path-subdir>/dsp/cdsp/*  build/workspace/sources/hexagon-dsp-binaries/<dspso-path-subdir>/<hexagon-cdsp0-bins-subdir>/
+        cp $FWZIP_PATH/<soc-firmware-zip-name>/usr/share/qcom/<dspso-path-subdir>/dsp/adsp/* build/workspace/sources/hexagon-dsp-binaries/<dspso-path-subdir>/<hexagon-adsp-bins-subdir>/
+        cp $FWZIP_PATH/<soc-firmware-zip-name>/usr/share/qcom/<dspso-path-subdir>/dsp/cdsp/* build/workspace/sources/hexagon-dsp-binaries/<dspso-path-subdir>/<hexagon-cdsp0-bins-subdir>/
         cp $FWZIP_PATH/<soc-firmware-zip-name>/usr/share/qcom/<dspso-path-subdir>/dsp/cdsp1/* build/workspace/sources/hexagon-dsp-binaries/<dspso-path-subdir>/<hexagon-cdsp1-bins-subdir>/
         cp $FWZIP_PATH/<soc-firmware-zip-name>/usr/share/qcom/<dspso-path-subdir>/dsp/gdsp0/* build/workspace/sources/hexagon-dsp-binaries/<dspso-path-subdir>/<hexagon-gdsp0-bins-subdir>/
         cp $FWZIP_PATH/<soc-firmware-zip-name>/usr/share/qcom/<dspso-path-subdir>/dsp/gdsp1/* build/workspace/sources/hexagon-dsp-binaries/<dspso-path-subdir>/<hexagon-gdsp1-bins-subdir>/
@@ -168,4 +168,4 @@ Override boot firmware binaries
         echo 'ALLOW_EMPTY:${PN} = "1"' >> build/workspace/appends/<firmware-bootbinaries-bbappend-file>
         # Example, echo 'ALLOW_EMPTY:${PN} = "1"' >> build/workspace/appends/firmware-qcom-boot-qcs9100_00118.0.bbappend
 
-Once these steps are run, the next :ref:`Yocto image build <step4_build_software_image>` will pickup the local firmware binaries.
+After you run these steps, the next :ref:`Yocto image build <step4_build_software_image>` will pick up the local firmware binaries.

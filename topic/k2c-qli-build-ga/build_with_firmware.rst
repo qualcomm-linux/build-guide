@@ -58,14 +58,12 @@ The following tables describe the firmware distributions that you can download. 
 
        ``meta-qcom-distro``
 
-   *  
-     - BSP build: High-level OS and firmware (GPS and modem) source
+   * - BSP build: High-level OS and firmware (GPS and modem) source
       
-        ``Qualcomm_Linux.SPF.2.0|AMSS|Standard|OEM|``
+       ``Qualcomm_Linux.SPF.2.0|AMSS|Standard|OEM|``
      - ``meta-qcom``
 
        ``meta-qcom-distro``
-
 
 The following table maps the firmware distributions to git repositories: 
 
