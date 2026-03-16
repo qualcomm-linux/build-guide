@@ -36,7 +36,7 @@ Install and configure the required software tools on the Ubuntu host computer.
          wget -qO kas-container https://raw.githubusercontent.com/siemens/kas/refs/tags/5.1/kas-container
          chmod +x kas-container
 
-.. note:: The `kas <https://kas.readthedocs.io/en/latest/>`__ tool is used by Qualcomm Linux to sync the meta layers, configure the environment, and execute the BitBake commands.
+.. note:: Qualcomm Linux uses the `kas <https://kas.readthedocs.io/en/latest/>`__ tool to sync the meta layers, configure the environment, and execute the BitBake commands.
 
 Sync
 -----
