@@ -275,9 +275,9 @@ Sync
       ::
 
          # Replace the following command
-         repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linuxSTXscarthgap -m qcom-6.6.116-QLI.1.7-Ver.1.1.xml
+         repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linuxSTXscarthgap -m qcom-x.x.xxx-QLI.x.x-Ver.x.x.xml
          # with
-         repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-scarthgap -m qcom-6.6.116-QLI.1.7-Ver.1.1.xml
+         repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-scarthgap -m qcom-x.x.xxx-QLI.x.x-Ver.x.x.xml
 
 -  "pull access denied for 032693710300.dkr.ecr.us-west-2.amazonaws.com/stormchaser/ql-tool"
 

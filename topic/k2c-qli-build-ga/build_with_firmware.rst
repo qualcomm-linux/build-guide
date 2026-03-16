@@ -790,6 +790,7 @@ Build firmware
                   export SECTOOLS_DIR=<FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/QCS8300.LE.2.0/common/sectoolsv2/ext/Linux               
 
          -  Install and set up Qualcomm\ :sup:`®` Hexagon\ :sup:`™` Processor. Set the environment variable HEXAGON_ROOT to the path where the Hexagon SDK is installed. To change the install path when using ``qsc-cli``, see :ref:`Change the Hexagon tool install path <change_hex_tool_install_path>`.
+            
             .. container:: nohighlight
       
                ::
