@@ -50,13 +50,13 @@ Build a BSP image
 
 Create and build a Yocto image:
 
-1. Download Qualcomm Yocto and the supporting meta layers. For the latest ``<meta-qcom-release-tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-80021-300/>`__.
+1. Download Qualcomm Yocto and the supporting meta layers. For the latest ``<meta-qcom-release>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-80021-300/>`__.
       
    .. container:: nohighlight
 
       ::
 
-         git clone https://github.com/qualcomm-linux/meta-qcom-releases -b <meta-qcom-release-tag>
+         git clone https://github.com/qualcomm-linux/meta-qcom-releases -b <meta-qcom-release>
          # Example, git clone https://github.com/qualcomm-linux/meta-qcom-releases -b qli-2.0-rc2 
 
          kas checkout meta-qcom-releases/lock.yml

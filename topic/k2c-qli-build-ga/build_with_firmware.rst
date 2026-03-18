@@ -1023,7 +1023,7 @@ Build a BSP image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The BSP image build has software components to support the Qualcomm device and software features applicable to the Qualcomm SoCs. This build includes a reference distribution configuration for the Qualcomm development kits.
 
-1. Download Qualcomm Yocto and the supporting layers. For the ``<meta-qcom-release-tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-80021-300/>`__.
+1. Download Qualcomm Yocto and the supporting layers. For the ``<meta-qcom-release>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-80021-300/>`__.
 
    .. container:: nohighlight
       
@@ -1035,12 +1035,12 @@ The BSP image build has software components to support the Qualcomm device and s
          mkdir LE.QCLINUX.2.0
          cd LE.QCLINUX.2.0
 
-         git clone https://github.com/qualcomm-linux/meta-qcom-releases -b <meta-qcom-release-tag>
+         git clone https://github.com/qualcomm-linux/meta-qcom-releases -b <meta-qcom-release>
          # Example, git clone https://github.com/qualcomm-linux/meta-qcom-releases -b qli-2.0-rc2 
 
          kas checkout meta-qcom-releases/lock.yml
 
-#. Copy the kas lock file from ``meta-qcom-releases`` to ``meta-qcom``. You must run this step; otherwise, the checked‑out meta layers may update to a newer commit.
+2. Copy the kas lock file from ``meta-qcom-releases`` to ``meta-qcom``. You must run this step; otherwise, the checked‑out meta layers may update to a newer commit.
 
    .. container:: nohighlight
       
@@ -1050,11 +1050,11 @@ The BSP image build has software components to support the Qualcomm device and s
          # copy the kas lock file to meta-qcom repository
          cp meta-qcom-releases/lock.yml meta-qcom/ci/lock.yml
 
-#. :ref:`Set up local firmware binaries <setup_local_firmware>` in your Yocto build.
+3. :ref:`Set up local firmware binaries <setup_local_firmware>` in your Yocto build.
 
 .. _step4_build_software_image:
 
-#. Build the software image. Build targets are defined based on machine and distribution combinations:
+4. Build the software image. Build targets are defined based on machine and distribution combinations:
 
    .. container:: nohighlight
       
@@ -1068,7 +1068,7 @@ The BSP image build has software components to support the Qualcomm device and s
 
    .. note:: To build images in a fully isolated environment, you can try using `kas-container <https://kas.readthedocs.io/en/latest/userguide/kas-container.html>`__.
 
-#. After a successful build, check if the ``rootfs.img`` file exists in the build artifacts:
+5. After a successful build, check if the ``rootfs.img`` file exists in the build artifacts:
 
    .. container:: nohighlight
 
@@ -1080,7 +1080,7 @@ The BSP image build has software components to support the Qualcomm device and s
          cd <workspace-dir>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs.qcomflash/
          ls -al rootfs.img
 
-#. Flash the generated build using :doc:`Flash software images <flash_images>`.
+6. Flash the generated build using :doc:`Flash software images <flash_images>`.
 
 .. note::
    For repo manifest based builds, see :ref:`Alternative build instructions using Manifest <howto_build>`.
