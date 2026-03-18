@@ -5,6 +5,8 @@
 Build with QSC CLI
 ===================
 
+.. note:: QSC CLI is currently not supported on ARM based machines.
+
 Configure, download, compile, and flash Qualcomm Linux using QSC CLI.
 
 .. include:: host_machine_requirements.rst
