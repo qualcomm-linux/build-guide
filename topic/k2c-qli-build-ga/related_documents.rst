@@ -9,8 +9,8 @@ Related documents
    :class: longtable table-wrap
 
 
-   * - Document title
-     - Document number
+   * - Title
+     - Number
 
    * - **Qualcomm Technologies, Inc.**
      - 
