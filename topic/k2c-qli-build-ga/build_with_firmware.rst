@@ -715,8 +715,6 @@ Build firmware
 
          - Create an integrated firmware binary from the individual components that you compiled:
 
-           .. note:: Apply all the changes from the section *Additional information* in the `Release Notes <https://docs.qualcomm.com/doc/80-80021-300/topic/additional_information.html>`__.
-
            .. container:: nohighlight
       
               ::
