@@ -44,23 +44,23 @@ Sync
 
 QLI uses the kas tool to sync and build the Yocto meta layers. For every critical release, Kas lock files record the meta-layer repository information in `meta-qcom-releases <https://github.com/qualcomm-linux/meta-qcom-releases>`__.
 
-You can checkout the lock files for each release using the `meta-qcom-release-tag`. The meta-qcom release tag follows the syntax ``qli-<version>``. For example, the meta-qcom release tag can be ``qli-2.0-rc1``, where ``2.0-rc1`` is the release version.
+You can checkout the lock files for each release using the `meta-qcom-release` tag. The `meta-qcom-release`` tag follows the syntax ``qli-<version>``. For example, the `meta-qcom-release` tag can be ``qli-2.0-rc1``, where ``2.0-rc1`` is the release version.
 
 Build a BSP image
 -----------------
 
 Create and build a Yocto image:
 
-1. Download Qualcomm Yocto and the supporting meta layers. For the latest ``<meta-qcom-release-tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
+1. Download Qualcomm Yocto and the supporting meta layers. For the latest ``<meta-qcom-release>`` tag, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-80020-300/>`__.
       
    .. container:: nohighlight
 
       ::
 
-         git clone https://github.com/qualcomm-linux/meta-qcom-releases -b <meta-qcom-release-tag>
+         git clone https://github.com/qualcomm-linux/meta-qcom-releases -b <meta-qcom-release>
          kas checkout meta-qcom-releases/lock.yml
 
-#. Copy the kas lock file from ``meta-qcom-releases`` to ``meta-qcom``.  
+2. Copy the kas lock file from ``meta-qcom-releases`` to ``meta-qcom``.  
    Run this step, or the checked‑out meta layers may update to a newer commit.
 
    .. container:: nohighlight
@@ -71,7 +71,7 @@ Create and build a Yocto image:
          # copy kas lock file to meta-qcom repository
          cp meta-qcom-releases/lock.yml meta-qcom/ci/lock.yml
 
-#. Build the software image.
+3. Build the software image.
    You define build targets based on machine and distribution combinations.
 
    .. container:: nohighlight
@@ -86,7 +86,7 @@ Create and build a Yocto image:
 
    .. note:: You can build the images in a fully isolated environment by using `kas-container <https://kas.readthedocs.io/en/latest/userguide/kas-container.html>`__.
 
-#. After a successful build, check if the ``rootfs.img`` file exists in the build artifacts.
+4. After a successful build, check if the ``rootfs.img`` file exists in the build artifacts.
 
    .. container:: nohighlight
 
