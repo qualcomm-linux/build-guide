@@ -57,7 +57,4 @@ Sync, build, and flash the software
    .. figure:: ../../media/k2c-qli-build-ga/explore_QSC_pdf.svg
       :align: center
 
-.. note:: 
-   
-   - See `Hardware SoCs <https://docs.qualcomm.com/bundle/publicresource/topics/80-80021-115/soc.html>`__ that are supported on Qualcomm Linux.
-   - For IQ-615 build instructions, see `Qualcomm Dragonwing™ IQ-615 Beta Evaluation Kit quickstart <https://docs.qualcomm.com/bundle/80-70020-293/resource/80-70020-293.pdf>`__.
+.. note:: See `Hardware SoCs <https://docs.qualcomm.com/bundle/publicresource/topics/80-80021-115/soc.html>`__ that are supported on Qualcomm Linux.
