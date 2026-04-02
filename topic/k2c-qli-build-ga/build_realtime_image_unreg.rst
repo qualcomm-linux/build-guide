@@ -14,7 +14,7 @@ The real-time layer provides recipes and configurations required to run the Qual
          mkdir <WORKSPACE_DIR>
          cd <WORKSPACE_DIR>
          repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-scarthgap -m <manifest release tag>
-         # Example, <manifest release tag> is qcom-6.6.116-QLI.1.7-Ver.1.1.xml
+         # Example, <manifest release tag> is qcom-6.6.119-QLI.1.8-Ver.1.1.xml
          repo sync
 
 #. Clone the real-time Linux layer into the workspace:
@@ -24,7 +24,7 @@ The real-time layer provides recipes and configurations required to run the Qual
       ::
 
          git clone https://github.com/quic-yocto/meta-qcom-realtime -b <meta-qcom-realtime release tag> layers/meta-qcom-realtime
-         # Example, <meta-qcom-realtime release tag> is qcom-6.6.116-QLI.1.7-Ver.1.1_realtime-linux-1.1
+         # Example, <meta-qcom-realtime release tag> is qcom-6.6.119-QLI.1.8-Ver.1.1_realtime-linux-1.1
 
 #. Build the real-time layer:
 

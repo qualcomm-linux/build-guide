@@ -20,7 +20,7 @@ The following table shows an example mapping of the Yocto layers to the manifest
         - ``meta-qcom-distro``
      - BSP build: High-level OS and prebuilt firmware (GPS only)
        
-       ``qcom-6.6.116-QLI.1.7-Ver.1.1.xml``
+       ``qcom-6.6.119-QLI.1.8-Ver.1.1.xml``
      - ``qcom-wayland``
 
    * - 
@@ -30,7 +30,7 @@ The following table shows an example mapping of the Yocto layers to the manifest
         - ``meta-qcom-qim-product-sdk``
      - BSP build + Qualcomm IM SDK build:
        
-       ``qcom-6.6.116-QLI.1.7-Ver.1.1_qim-product-sdk-2.2.1.xml``
+       ``qcom-6.6.119-QLI.1.8-Ver.1.1_qim-product-sdk-2.3.1.xml``
      - ``qcom-wayland``
    * - 
         - ``meta-qcom``
@@ -39,7 +39,7 @@ The following table shows an example mapping of the Yocto layers to the manifest
         - ``meta-qcom-realtime``
      - BSP build + Real-time kernel build:
        
-       ``qcom-6.6.116-QLI.1.7-Ver.1.1_realtime-linux-1.1.xml``
+       ``qcom-6.6.119-QLI.1.8-Ver.1.1_realtime-linux-1.1.xml``
      - ``qcom-wayland``
    * - 
         - ``meta-qcom``
@@ -52,7 +52,7 @@ The following table shows an example mapping of the Yocto layers to the manifest
         - ``meta-qcom-qim-product-sdk``
      - BSP build + QIR SDK build:
        
-       ``qcom-6.6.116-QLI.1.7-Ver.1.1_robotics-sdk-1.1.xml``
+       ``qcom-6.6.119-QLI.1.8-Ver.1.1_robotics-sdk-1.1.xml``
      - ``qcom-robotics-ros2-humble``
 
 The release tag syntax is as follows:
@@ -61,7 +61,7 @@ The release tag syntax is as follows:
      
   ``qcom-<Linux LTS Kernel Version>-QLI.<version>-Ver.<release>.xml``
     
-  For example, the manifest release tag ``qcom-6.6.116-QLI.1.7-Ver.1.1.xml`` denotes the following:
+  For example, the manifest release tag ``qcom-6.6.119-QLI.1.8-Ver.1.1.xml`` denotes the following:
      
   - 6.6.116: Qualcomm Linux kernel
   - QLI.1.7: Qualcomm Linux v1.7
@@ -71,7 +71,7 @@ The release tag syntax is as follows:
    
   ``qcom-<Linux LTS Kernel version>-QLI.<version>-Ver.<milestone release>_<product/customization>-<patch release>.xml``
 
-  For example, the additional productization manifest release tag ``qcom-6.6.116-QLI.1.7-Ver.1.1_qim-product-sdk-2.2.1.xml`` denotes the following:
+  For example, the additional productization manifest release tag ``qcom-6.6.119-QLI.1.8-Ver.1.1_qim-product-sdk-2.3.1.xml`` denotes the following:
      
   - 6.6.116: Qualcomm Linux kernel
   - QLI.1.7: Qualcomm Linux v1.7

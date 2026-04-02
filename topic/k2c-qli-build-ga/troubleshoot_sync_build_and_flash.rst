@@ -275,9 +275,9 @@ Sync
       ::
 
          # Replace the following command
-         repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linuxSTXscarthgap -m qcom-6.6.116-QLI.1.7-Ver.1.1.xml
+         repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linuxSTXscarthgap -m qcom-6.6.119-QLI.1.8-Ver.1.1.xml
          # with
-         repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-scarthgap -m qcom-6.6.116-QLI.1.7-Ver.1.1.xml
+         repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-scarthgap -m qcom-6.6.119-QLI.1.8-Ver.1.1.xml
 
 -  "pull access denied for 032693710300.dkr.ecr.us-west-2.amazonaws.com/stormchaser/ql-tool"
 
@@ -529,7 +529,7 @@ Build
       
       ::
 
-         git clone -b r1.0_00114.0 --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk.g…
+         git clone -b r1.0_00120.0 --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk.g…
          Cloning into 'qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk'...
          fatal: repository 'https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk.g… not found
 
