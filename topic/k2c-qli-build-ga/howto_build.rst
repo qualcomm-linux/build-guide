@@ -124,7 +124,7 @@ Generate an eSDK
             cd /local/mnt/workspace/qcom-download-utils/<release>
 
             # Example
-            cd /local/mnt/workspace/qcom-download-utils/qcom-6.6.116-QLI.1.7-Ver.1.1
+            cd /local/mnt/workspace/qcom-download-utils/qcom-6.6.119-QLI.1.8-Ver.1.1
 
    #. Set up the environment and issue an eSDK build:
 
@@ -313,8 +313,8 @@ Download the Platform eSDK
 
          mkdir <esdk_download_path>
          cd <esdk_download_path>
-         wget https://artifacts.codelinaro.org/artifactory/qli-ci/flashable-binaries/qimpsdk/qcs6490-rb3gen2-core-kit/x86-qcom-6.6.116-QLI.1.7-Ver.1.1_qim-product-sdk-2.2.1.zip
-         unzip x86-qcom-6.6.116-QLI.1.7-Ver.1.1_qim-product-sdk-2.2.1.zip
+         wget https://artifacts.codelinaro.org/artifactory/qli-ci/flashable-binaries/qimpsdk/qcs6490-rb3gen2-core-kit/x86-qcom-6.6.119-QLI.1.8-Ver.1.1_qim-product-sdk-2.3.1.zip
+         unzip x86-qcom-6.6.119-QLI.1.8-Ver.1.1_qim-product-sdk-2.3.1.zip
 
       After unzipping, you must see the eSDK installer at ``<esdk_download_path>``:
       

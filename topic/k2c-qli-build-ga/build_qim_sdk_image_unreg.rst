@@ -14,7 +14,7 @@ The Qualcomm® Intelligent Multimedia SDK (IM SDK) is a collection of four stand
          mkdir <WORKSPACE_DIR>
          cd <WORKSPACE_DIR>
          repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-scarthgap -m <manifest release tag>
-         # Example, <manifest release tag> is qcom-6.6.116-QLI.1.7-Ver.1.1.xml
+         # Example, <manifest release tag> is qcom-6.6.119-QLI.1.8-Ver.1.1.xml
          repo sync
 
 #. Clone the Qualcomm IM SDK layer into the workspace:
@@ -24,7 +24,7 @@ The Qualcomm® Intelligent Multimedia SDK (IM SDK) is a collection of four stand
       ::
 
          git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b <meta-qcom-qim-product-sdk release tag> layers/meta-qcom-qim-product-sdk
-         # Example, <meta-qcom-qim-product-sdk release tag> is qcom-6.6.116-QLI.1.7-Ver.1.1_qim-product-sdk-2.2.1
+         # Example, <meta-qcom-qim-product-sdk release tag> is qcom-6.6.119-QLI.1.8-Ver.1.1_qim-product-sdk-2.3.1
 
 #. Export the Qualcomm IM SDK layer:
 

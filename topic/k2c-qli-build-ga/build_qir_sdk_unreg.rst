@@ -14,7 +14,7 @@ The Qualcomm® Intelligent Robotics (QIR) SDK 2.0 is a collection of components 
          mkdir <WORKSPACE_DIR>
          cd <WORKSPACE_DIR>
          repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-scarthgap -m <manifest release tag>
-         # Example, <manifest release tag> is qcom-6.6.116-QLI.1.7-Ver.1.1.xml
+         # Example, <manifest release tag> is qcom-6.6.119-QLI.1.8-Ver.1.1.xml
          repo sync
 
 #. Download the QIR SDK layers into the BSP build ``<WORKSPACE DIR>`` directory:
@@ -24,10 +24,10 @@ The Qualcomm® Intelligent Robotics (QIR) SDK 2.0 is a collection of components 
       ::
 
          git clone https://github.com/ros/meta-ros -b scarthgap layers/meta-ros && cd layers/meta-ros && git checkout c560699e810e60a9526f4226c2c23f8d877280c8 && cd ../../
-         git clone https://github.com/quic-yocto/meta-qcom-robotics.git -b qcom-6.6.116-QLI.1.7-Ver.1.1_robotics-sdk-1.1 layers/meta-qcom-robotics
-         git clone https://github.com/quic-yocto/meta-qcom-robotics-distro.git -b qcom-6.6.116-QLI.1.7-Ver.1.1_robotics-sdk-1.1 layers/meta-qcom-robotics-distro
-         git clone https://github.com/quic-yocto/meta-qcom-robotics-sdk.git -b qcom-6.6.116-QLI.1.7-Ver.1.1_robotics-sdk-1.1 layers/meta-qcom-robotics-sdk
-         git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b qcom-6.6.116-QLI.1.7-Ver.1.1_qim-product-sdk-2.2.1 layers/meta-qcom-qim-product-sdk
+         git clone https://github.com/quic-yocto/meta-qcom-robotics.git -b qcom-6.6.119-QLI.1.8-Ver.1.1_robotics-sdk-1.1 layers/meta-qcom-robotics
+         git clone https://github.com/quic-yocto/meta-qcom-robotics-distro.git -b qcom-6.6.119-QLI.1.8-Ver.1.1_robotics-sdk-1.1 layers/meta-qcom-robotics-distro
+         git clone https://github.com/quic-yocto/meta-qcom-robotics-sdk.git -b qcom-6.6.119-QLI.1.8-Ver.1.1_robotics-sdk-1.1 layers/meta-qcom-robotics-sdk
+         git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b qcom-6.6.119-QLI.1.8-Ver.1.1_qim-product-sdk-2.3.1 layers/meta-qcom-qim-product-sdk
 
 #. Set up the build environment:
 
