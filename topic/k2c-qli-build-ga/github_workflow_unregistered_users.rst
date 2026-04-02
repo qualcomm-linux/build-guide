@@ -5,7 +5,7 @@
 Build with GitHub for unregistered users
 =============================================
 
-Use GitHub and make a build using the prebuilt proprietary binaries/images.
+Build Qualcomm Linux using the prebuilt proprietary binaries/images.
 
 For more details on the hardware SoCs supported in this build method, see the table *Sync and build methods* in the `Release Notes <https://docs.qualcomm.com/doc/80-70029-300/>`__.
 

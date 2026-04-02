@@ -684,7 +684,7 @@ Flash software using PCAT
          
          # Example, PCAT -PLUGIN SD -DEVICE be116704 -BUILD "<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image" -MEMORYTYPE EMMC -FLAVOR asic -RAWPROG "<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image/rawprogram0.xml" -PATCHPROG "<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image/patch0.xml"
 
-   If flashing the software is successful, the outputs is as follows:
+   If flashing the software is successful, the output is as follows:
 
    .. container:: screenoutput
 
