@@ -63,8 +63,8 @@ The release tag syntax is as follows:
     
   For example, the manifest release tag ``qcom-6.6.119-QLI.1.8-Ver.1.1.xml`` denotes the following:
      
-  - 6.6.116: Qualcomm Linux kernel
-  - QLI.1.7: Qualcomm Linux v1.7
+  - 6.6.119: Qualcomm Linux kernel
+  - QLI.1.8: Qualcomm Linux v1.8
   - 1.1: Milestone release
 
 - Additional productization manifest release tag:
@@ -73,15 +73,15 @@ The release tag syntax is as follows:
 
   For example, the additional productization manifest release tag ``qcom-6.6.119-QLI.1.8-Ver.1.1_qim-product-sdk-2.3.1.xml`` denotes the following:
      
-  - 6.6.116: Qualcomm Linux kernel
-  - QLI.1.7: Qualcomm Linux v1.7
-  - qim-product-sdk-2.2.1: Qualcomm IM SDK release on top of QLI.1.7
+  - 6.6.119: Qualcomm Linux kernel
+  - QLI.1.8: Qualcomm Linux v1.8
+  - qim-product-sdk-2.3.1: Qualcomm IM SDK release on top of QLI.1.8
 
     Other product/customization examples:
 
     - *realtime-linux-1.1*
     - *robotics-sdk-1.1*
   - 1.1: Milestone release
-  - 2.2.1: Patch release associated with the milestone release
+  - 2.3.1: Patch release associated with the milestone release
 
 For more information about the Yocto layers, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70029-27/qualcomm_linux_metadata_layers.html>`__.

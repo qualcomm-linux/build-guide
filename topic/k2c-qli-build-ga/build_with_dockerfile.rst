@@ -70,7 +70,7 @@ Dockertag uses lowercase letters for the release folder followed by the Dockerfi
 
 Create and build a Yocto Docker image:
 
-1. Run ``docker_build.sh`` to create the Docker image with Dockerfile (``Dockerfile_22.04``) and Dockertag (``qcom-6.6.119-QLI.1.8-Ver.1.1_22.04``). Use this Docker image to create the container environment and run the Yocto build.
+1. Run ``docker_build.sh`` to create the Docker image with Dockerfile (``Dockerfile_22.04``) and Dockertag (``qcom-6.6.119-qli.1.8-ver.1.1_22.04``). Use this Docker image to create the container environment and run the Yocto build.
 
    
 
@@ -78,7 +78,7 @@ Create and build a Yocto Docker image:
       
       ::
 
-         bash docker/docker_build.sh -f ./docker/dockerfiles/Dockerfile_22.04 -t qcom-6.6.119-QLI.1.8-Ver.1.1_22.04
+         bash docker/docker_build.sh -f ./docker/dockerfiles/Dockerfile_22.04 -t qcom-6.6.119-qli.1.8-ver.1.1_22.04
 
    If you face any issues while running ``docker_build.sh``, see the
    following solution:
@@ -89,7 +89,7 @@ Create and build a Yocto Docker image:
 
          # Error 1: Cache-related issue.
             # If you are facing issues with the docker build command, try using --no-cache option. This option forces rebuilding of the layers that are already available
-            bash docker/docker_build.sh -n --no-cache -f ./docker/dockerfiles/Dockerfile_22.04 -t qcom-6.6.119-QLI.1.8-Ver.1.1_22.04
+            bash docker/docker_build.sh -n --no-cache -f ./docker/dockerfiles/Dockerfile_22.04 -t qcom-6.6.119-qli.1.8-ver.1.1_22.04
 
          # Error2: Response from daemon: Get "https://registry-1.docker.io/v2/": http: server gave HTTP response to HTTPS client
             # Check with your IT administrator to acquire ``registry-mirrors`` URL and replace <docker-mirror-host>`` in the following solution 
@@ -112,8 +112,8 @@ Create and build a Yocto Docker image:
       
       ::
 
-         bash docker/docker_run.sh -t qcom-6.6.119-QLI.1.8-Ver.1.1_22.04 -r qcom-6.6.119-QLI.1.8-Ver.1.1 -M <machine> --build-override <override> --alternate-repo true
-         # Example, bash docker/docker_run.sh -t qcom-6.6.119-QLI.1.8-Ver.1.1_22.04 -r qcom-6.6.119-QLI.1.8-Ver.1.1 -M qcs6490-rb3gen2-vision-kit --build-override custom --alternate-repo true
+         bash docker/docker_run.sh -t qcom-6.6.119-qli.1.8-ver.1.1_22.04 -r qcom-6.6.119-QLI.1.8-Ver.1.1 -M <machine> --build-override <override> --alternate-repo true
+         # Example, bash docker/docker_run.sh -t qcom-6.6.119-qli.1.8-ver.1.1_22.04 -r qcom-6.6.119-QLI.1.8-Ver.1.1 -M qcs6490-rb3gen2-vision-kit --build-override custom --alternate-repo true
 
    For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-70029-300/>`__.
 
@@ -144,7 +144,7 @@ Build Qualcomm IM SDK image
 
             cd <workspace_path>/qcom-download-utils/qcom-6.6.119-QLI.1.8-Ver.1.1
             bash
-            docker run -it -v "${HOME}/.gitconfig":"/home/${USER}/.gitconfig" -v "${HOME}/.netrc":"/home/${USER}/.netrc" -v $(pwd):$(pwd) -w $(pwd) qcom-6.6.119-QLI.1.8-Ver.1.1_22.04 /bin/bash
+            docker run -it -v "${HOME}/.gitconfig":"/home/${USER}/.gitconfig" -v "${HOME}/.netrc":"/home/${USER}/.netrc" -v $(pwd):$(pwd) -w $(pwd) qcom-6.6.119-qli.1.8-ver.1.1_22.04 /bin/bash
 
    #. Clone the Qualcomm IM SDK layer into the workspace:
 
@@ -206,7 +206,7 @@ To rebuild after any modifications to the software release, use your existing wo
    .. container:: screenoutput
 
        REPOSITORY                                               TAG                         IMAGE ID       CREATED        SIZE
-       qcom-6.6.119-QLI.1.8-Ver.1.1_22.04                        latest                      8fcea388d8ca   2 days ago     1.47GB
+       qcom-6.6.119-qli.1.8-ver.1.1_22.04                        latest                      8fcea388d8ca   2 days ago     1.47GB
 
 #. Run the following commands outside the Docker container:
 
@@ -218,7 +218,7 @@ To rebuild after any modifications to the software release, use your existing wo
 
          # Run the following commands inside the base image build location
          bash
-         docker run -it -v "${HOME}/.gitconfig":"/home/${USER}/.gitconfig" -v "${HOME}/.netrc":"/home/${USER}/.netrc" -v $(pwd):$(pwd) -w $(pwd) qcom-6.6.119-QLI.1.8-Ver.1.1_22.04 /bin/bash
+         docker run -it -v "${HOME}/.gitconfig":"/home/${USER}/.gitconfig" -v "${HOME}/.netrc":"/home/${USER}/.netrc" -v $(pwd):$(pwd) -w $(pwd) qcom-6.6.119-qli.1.8-ver.1.1_22.04 /bin/bash
 
          # Example
          WORKSPACE=<workspace_path>/qcom-download-utils/qcom-6.6.119-QLI.1.8-Ver.1.1
