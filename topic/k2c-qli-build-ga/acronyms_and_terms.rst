@@ -10,16 +10,14 @@ Acronyms and terms
      - Definition
    * - aDSP
      - Advanced digital signal processor
-   * - cDSP
-     - Compute digital signal processor
-   * - CDT
-     - Configuration data table 
    * - ADB
      - Android debug bridge
    * - AOP 
      - Always on processor
    * - BSP
      - Board support package
+   * - cDSP
+     - Compute digital signal processor
    * - CDT
      - Configuration data table
    * - CLI

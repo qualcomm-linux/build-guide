@@ -32,7 +32,7 @@ For information on the default configurations, see the table *Default values of 
       #. :ref:`Flash configuration data table (CDT) <flash_CDT>`.
       #. :ref:`Flash SAIL <flash_sail>`.
 
-   a. Flash the software by selecting the device on which you want to flash the compiled software. If you connected many devices, then select the correct target device.
+   a. Flash the software by selecting the device on which you want to flash the compiled software. If you want to connect many devices, then select the correct target device.
 
       .. image:: ../../media/k2c-qli-build-ga/flash.png
 
