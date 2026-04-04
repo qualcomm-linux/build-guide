@@ -321,6 +321,20 @@ Build
 
    If the build fails due to an OOM error, try increasing the swap memory to more than 32GB.
 
+-  "ERROR: (Task oe-core/meta/recipes-devtools/clang/clang_git.bb: do_compile) failed with exit code '1'
+
+   This error can trigger while running builds on MacOS machines with ARM architecture. Build
+   gcc and clang before running the image build to resolve the issue.
+
+   **Solution**
+
+      .. container:: nohighlight
+            
+         ::
+
+      kas shell -c "bitbake gcc clang" meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/lock.yml
+      # Example, kas shell -c "bitbake gcc clangd" meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/lock.yml
+
 -  "ERROR: linux-kernel-qcom-6.6-r0 do_menuconfig: No valid terminal
    found, unable to open devshell"
 
