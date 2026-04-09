@@ -111,6 +111,8 @@ The machine configurations have either UFS or EMMC storage enabled by default. U
       # QCOM_PARTITION_FILES_SUBDIR ?= "partitions/iq-615-evk/emmc"
       # QCOM_PARTITION_FILES_SUBDIR ?= "partitions/iq-615-evk/ufs"
 
+.. _increase_swap_space:
+
 Increase swap space
 ^^^^^^^^^^^^^^^^^^^^^^
 
