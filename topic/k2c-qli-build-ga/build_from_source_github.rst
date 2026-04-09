@@ -27,6 +27,8 @@ Install and configure the required software tools on the Ubuntu host computer.
 #. (Optional) Download the ``kas-container`` script.
    The ``kas`` package includes this script to run **kas** inside a container.  
    If you prefer to build images in an isolated environment, use ``kas-container``.
+   kas-container requires that docker is setup on your system. To install docker,
+   follow the instructions from the official `Docker documentation <https://docs.docker.com/engine/install/>`__.
 
    .. container:: nohighlight
       
