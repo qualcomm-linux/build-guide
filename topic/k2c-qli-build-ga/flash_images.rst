@@ -330,17 +330,26 @@ Install QDL
    - Download the tool from https://softwarecenter.qualcomm.com/#/catalog/item/Qualcomm_Device_Loader.
    - Download the latest QDL using CLI based on the required operating system and architecture type:
    
+     **Linux**
+
      .. container:: nohighlight
       
         ::
             
-           # Linux X64
+           # X64
            wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Linux/Debian/latest.zip
-           # Linux ARM64
+           # ARM64
            wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Linux/ARM64/Debian/latest.zip
-           # macOS X64
+
+     **MacOS**
+
+     .. container:: nohighlight
+      
+        ::
+            
+           # X64
            wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/macOS/latest.zip
-           # macOS ARM64
+           # ARM64
            wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/macOS/ARM64/latest.zip
 
 #. Unzip QDL:
