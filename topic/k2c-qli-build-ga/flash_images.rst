@@ -320,6 +320,31 @@ Manual
 
                .. note:: Dip switch S2-8 must be turned off after the flashing is complete.
 
+      .. group-tab:: IQ-615
+
+           1. Put the device in EDL mode by turning off the SW switch and turning on the dip switch SW3-4.
+
+              .. image:: ../../media/k2c-qli-build-ga/qcs615_qdl_mode_manual.png
+
+           #. Verify if the device is in EDL mode:
+
+              .. container:: nohighlight
+  
+                 ::
+
+                    lsusb
+
+              If the output says QDL mode, the device is in EDL mode:
+
+              .. container:: screenoutput
+
+                 .. line-block::
+
+                    Bus 002 Device 014: ID 05c6:9008 Qualcomm, Inc. Gobi Wireless Modem (QDL mode)
+
+           .. note:: SW switch must be turned on and Dip switch SW3-4 must be turned off after the flashing is complete.
+
+
 .. _setup_qdl:
 
 Install QDL
