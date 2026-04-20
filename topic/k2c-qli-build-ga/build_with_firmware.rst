@@ -1017,6 +1017,329 @@ Build firmware
            -  ``QCS8300_dspso.zip``
            -  ``QCS8300_fw.zip``
 
+      .. group-tab:: IQ-615
+
+         .. rubric:: Prerequisites
+
+         -  Ensure that the working shell is ``bash``.
+
+            .. container:: nohighlight
+      
+               ::
+
+                  echo $0
+
+            The expected output of the command should be ``bash``. If not, enter the bash shell:
+
+            .. container:: nohighlight
+      
+               ::
+
+                  bash
+
+         -  Install the libffi6 package using the following commands. This is required for the QAIC compiler, which generates the header and the source files from the IDL files:
+
+            .. container:: nohighlight
+      
+               ::
+
+                  curl -LO http://archive.ubuntu.com/ubuntu/pool/main/libf/libffi/libffi6_3.2.1-8_amd64.deb
+                  sudo dpkg -i libffi6_3.2.1-8_amd64.deb
+
+         - Install Python 2.7.18: 
+
+          .. container:: nohighlight
+    
+             ::
+
+                wget https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tgz
+                tar -xvf Python-2.7.18.tgz
+                cd Python-2.7.18
+                ./configure
+                make
+                sudo make install
+
+         -  Install LLVM for AOP, Qualcomm TEE, and boot compilation:
+
+            .. container:: nohighlight
+      
+               ::
+
+                  cd <FIRMWARE_ROOT>
+                  mkdir llvm
+
+                  # Sign in to qsc-cli and activate the license
+                  qsc-cli login
+                  qsc-cli tool activate-license --name sdllvm_arm
+
+                  # LLVM requirement for AOP is 3.9.3
+                  mkdir -p /pkg/qct/software/llvm
+                  qsc-cli tool install --name sdllvm_arm --required-version 3.9.3 --path /pkg/qct/software/llvm/release/arm/3.9.3
+                  chmod -R 777 /pkg/qct/software/llvm/release/arm/3.9.3
+
+                  # LLVM requirement for boot compilation is 14.0.4
+                  qsc-cli tool install --name sdllvm_arm --required-version 14.0.4 --path <FIRMWARE_ROOT>/llvm/14.0.4
+                  chmod -R 777 <FIRMWARE_ROOT>/llvm/14.0.4
+
+                  # LLVM requirement for Qualcomm TrustZone compilation is 16.0.7
+                  qsc-cli tool install --name sdllvm_arm --required-version 16.0.7 --path <FIRMWARE_ROOT>/llvm/16.0.7
+                  chmod -R 777 <FIRMWARE_ROOT>/llvm/16.0.7
+
+         -  Export the ``SECTOOLS`` variable and compile the firmware builds (``<FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem`` is the top-level directory):
+
+            .. container:: nohighlight
+      
+               ::
+
+                  export SECTOOLS=<FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/QCS615.LE.2.0/common/sectoolsv2/ext/Linux/sectools
+                  export SECTOOLS_DIR=<FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/QCS615.LE.2.0/common/sectoolsv2/ext/Linux               
+
+         -  Install and set up Qualcomm\ :sup:`®` Hexagon\ :sup:`™` Processor. Set the environment variable HEXAGON_ROOT to the path where the Hexagon SDK is installed. To change the install path when using ``qsc-cli``, see :ref:`Change the Hexagon tool install path <change_hex_tool_install_path>`.
+            
+            .. container:: nohighlight
+      
+               ::
+
+                  qsc-cli tool extract --name hexagon8.2 --required-version 8.2.05.1
+                  export HEXAGON_ROOT=$HOME/Qualcomm/HEXAGON_Tools
+                  echo $HEXAGON_ROOT
+
+         .. rubric:: Build cDSP
+
+         **Tools required**
+
+         -  Compiler version: Hexagon 8.2.05
+         -  Python version: Python 2.7.18
+         -  libffi6 package 
+         
+         **Build steps**
+
+         1. Go to the following directory:
+
+            .. container:: nohighlight
+      
+               ::
+
+                  cd <FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/CDSP.VT.2.2.c4
+
+         #. Clean the build:
+
+            .. container:: nohighlight
+      
+               ::
+
+                  python cdsp_proc/build/build.py -c sm6150 -o clean -f CDSP
+
+         #. Build the image:
+
+            .. container:: nohighlight
+      
+               ::
+
+                  python cdsp_proc/build/build.py -c sm6150 -o all -f CDSP
+
+         .. rubric:: Build aDSP
+
+         **Tools required**
+
+         -  Compiler version: Hexagon 8.2.05
+         -  Python version: Python 2.7.18
+         -  libffi6 package 
+         
+         **Build steps**
+
+         1. Nanopb integration (one-time setup):
+                     
+            .. container:: nohighlight
+      
+               ::
+
+                  cd <FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/ADSP.VT.5.2.c6/adsp_proc/ssc_api
+
+                  curl https://jpa.kapsi.fi/nanopb/download/nanopb-0.3.9.5-linux-x86.tar.gz -o nanopb-0.3.9.5-linux-x86.tar.gz
+
+                  cd <FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/ADSP.VT.5.2.c6/adsp_proc/
+
+                  python ssc_api/build/config_nanopb_dependency.py -f nanopb-0.3.9.5-linux-x86
+
+         #. Go to the following directory:
+
+            .. container:: nohighlight
+      
+               ::
+
+                  cd <FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/ADSP.VT.5.2.c6
+
+         #. Clean the build:
+
+            .. container:: nohighlight
+      
+               ::
+
+                  python adsp_proc/build/build.py -c sm6150 -o clean -f ADSP
+
+         #. Build the image:
+
+            .. container:: nohighlight
+      
+               ::
+
+                  python adsp_proc/build/build.py -c sm6150 -o all -f ADSP
+
+         .. rubric:: Build AOP
+
+         **Tools required**
+
+         -  Compiler version: LLVM 3.9.3
+         -  Python version: Python 2.7.18
+         
+         **Build steps**
+
+         1. Navigate to the following directory:
+
+            .. container:: nohighlight
+      
+               ::
+
+                  cd <FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/AOP.HO.3.6.2/aop_proc/build/
+
+         #. Clean the build:
+
+            .. container:: nohighlight
+      
+               ::
+
+                  ./build_TalosAU.sh -c
+
+         #. Build the image:
+
+            .. container:: nohighlight
+      
+               ::
+
+                  ./build_TalosAU.sh
+
+         .. rubric:: Build Boot
+
+         **Tools required**
+
+         -  Compiler version: LLVM version must be updated to 14.0.4
+
+            .. container:: nohighlight
+      
+               ::
+
+                  export LLVM=<FIRMWARE_ROOT>/llvm/14.0.4/
+
+           .. note::
+              To avoid build errors, ensure that there is a / at the end of the command
+
+         -  Python version: Python 3.10
+         
+         **Build steps**
+
+         1. Install the device tree compiler:
+
+            .. container:: nohighlight
+      
+               ::
+
+                  sudo apt-get install device-tree-compiler
+                  export DTC=/usr/bin
+
+         #. Go to the following directory:
+
+            .. container:: nohighlight
+      
+               ::
+
+                  cd <FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/BOOT.MXF.1.0.c1/
+
+         #. Install the dependencies:
+
+            .. container:: nohighlight
+      
+               ::
+
+                  python -m pip install -r boot_images/boot_tools/dtschema_tools/oss/requirements.txt
+                  pip install json-schema-for-humans
+
+         #. Clean the build:
+
+            .. container:: nohighlight
+      
+               ::
+
+                  python -u boot_images/boot_tools/buildex.py -t talos,QcomToolsPkg -v LAA -r RELEASE --build_flags=cleanall
+
+         #. Build the image:
+
+            .. container:: nohighlight
+      
+               ::
+
+                  python -u boot_images/boot_tools/buildex.py -t talos,QcomToolsPkg -v LAA -r RELEASE
+
+            .. note:: 
+               For debug variant builds, replace ``RELEASE`` with ``DEBUG``.
+
+         .. rubric:: Build TrustZone
+
+         **Tools required**
+
+         -  Compiler version: LLVM 16.0.7
+         -  Python version: Python 3.10 
+         
+         **Build steps**
+
+         1. Install LLVM:
+
+            .. container:: nohighlight
+      
+               ::
+
+                  cd <FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/TZ.XF.5.29.1/trustzone_images/build/ms/
+                  vi build_config_deploy_talos.xml
+                  # Edit all the occurrences of /pkg/qct/software/llvm/release/arm/16.0.7/ to <FIRMWARE_ROOT>/llvm/16.0.7/
+
+         #. Clean the build:
+
+            .. container:: nohighlight
+      
+               ::
+
+                  python build_all.py -b TZ.XF.5.0 CHIPSET=talos --cfg=build_config_deploy_talos.xml --clean
+
+         #. Build the image:
+
+            .. container:: nohighlight
+      
+               ::
+
+                  cd <FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/TZ.XF.5.29.1/trustzone_images/build/ms/
+                  python build_all.py -b TZ.XF.5.0 CHIPSET=talos --cfg=build_config_deploy_talos.xml
+
+         .. rubric:: BTFM and WLAN firmware
+
+         The BTFM and WLAN firmwares are released as a binary and build compilation isn’t required
+
+         .. rubric:: Generate firmware prebuilds (boot-critical and split-firmware binaries)
+
+         - Generate firmware prebuilts (boot-critical and split-firmware binaries):
+
+           .. container:: nohighlight
+         
+              ::
+
+                 cd <FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/QCS615.LE.2.0/common/build
+                 python build.py --imf
+
+         - Firmware prebuilt is successful if the following zip files are generated in the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/QCS615.LE.2.0/common/build/common/bin`` directory:
+                        
+           -  ``QCS615_bootbinaries.zip``
+           -  ``QCS615_dspso.zip``
+           -  ``QCS615_fw.zip``
+
 Build a BSP image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The BSP image build has software components to support the Qualcomm device and software features applicable to the Qualcomm SoCs. This build includes a reference distribution configuration for the Qualcomm development kits.
