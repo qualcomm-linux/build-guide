@@ -38,8 +38,8 @@ Override Linux-firmware binaries
             SRCREV:pn-linux-firmware = "599764611a8ac213c6aa6dad17c941c2f46b53cb"
          EOF
 
-         kas shell -c "devtool modify linux-firmware" meta-qcom/ci/<machine.yml>:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml:meta-qcom/ci/firmware.yml
-         # Example, kas shell -c "devtool modify linux-firmware" meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml:meta-qcom/ci/firmware.yml
+         kas shell -c "devtool modify linux-firmware" meta-qcom/ci/<machine.yml>:meta-qcom/ci/qcom-distro.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml:meta-qcom/ci/firmware.yml
+         # Example, kas shell -c "devtool modify linux-firmware" meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml:meta-qcom/ci/firmware.yml
 
     .. note::
   
@@ -82,8 +82,8 @@ Override DSPSO binaries
     
       ::
 
-         kas shell -c "devtool modify hexagon-dsp-binaries" meta-qcom/ci/<machine.yml>:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
-         # Example, kas shell -c "devtool modify hexagon-dsp-binaries" meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
+         kas shell -c "devtool modify hexagon-dsp-binaries" meta-qcom/ci/<machine.yml>:meta-qcom/ci/qcom-distro.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
+         # Example, kas shell -c "devtool modify hexagon-dsp-binaries" meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
 
 #. Unzip the firmware zip file if the unzipped version is not available
 
@@ -142,8 +142,8 @@ Override boot firmware binaries
     
       ::
 
-        kas shell -c "devtool modify <firmware-bootbinaries-recipe>" meta-qcom/ci/<machine.yml>:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
-        # Example, kas shell -c "devtool modify firmware-qcom-boot-qcs9100" meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
+        kas shell -c "devtool modify <firmware-bootbinaries-recipe>" meta-qcom/ci/<machine.yml>:meta-qcom/ci/qcom-distro.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
+        # Example, kas shell -c "devtool modify firmware-qcom-boot-qcs9100" meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
 
 #. Unzip the bootbinaries zip file if the unzipped version is not available
 

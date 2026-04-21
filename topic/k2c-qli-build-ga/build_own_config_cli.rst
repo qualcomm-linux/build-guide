@@ -33,7 +33,7 @@ When compiling a software image, ensure that you also compile the software produ
 
       .. image:: ../../media/k2c-qli-build-ga/qsc-cli-open-build-terminal.png
 
-      For example, to build qcom-multimedia-proprietary-image, change the value of <distro.yml> to ``qcom-distro-prop-image.yml``.
+      For example, to build qcom-multimedia-proprietary-image, change the value of <distro.yml> to ``qcom-distro.yml``.
    
    c. After a successful build, check if the ``rootfs.img`` file exists in the build artifacts:
 

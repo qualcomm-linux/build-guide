@@ -1383,7 +1383,7 @@ The BSP image build has software components to support the Qualcomm device and s
 
          kas shell -c "devtool build-image <image-recipe>" meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
 
-         # Example, kas shell -c "devtool build-image qcom-multimedia-proprietary-image" meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
+         # Example, kas shell -c "devtool build-image qcom-multimedia-proprietary-image" meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
 
    For various ``<machine>`` and ``<distro>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-80021-300/>`__.
 

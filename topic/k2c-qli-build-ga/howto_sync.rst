@@ -18,7 +18,7 @@ You can use the ``sstate-cache`` and ``downloads`` directories to reuse the prev
 
       kas build meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
 
-      # Example, kas build meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
+      # Example, kas build meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
 
 .. _alternative_methods_install_repo:
 
@@ -106,7 +106,7 @@ One way to add this to your BitBake configuration is to create a new kas configu
       EOF
 
       kas build <kas configuration files>:meta-qcom/ci/downloads-mirror.yml
-      # Example, kas build meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml:meta-qcom/ci/downloads-mirrors.yml
+      # Example, kas build meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml:meta-qcom/ci/downloads-mirrors.yml
 
 How does QSC CLI work?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
