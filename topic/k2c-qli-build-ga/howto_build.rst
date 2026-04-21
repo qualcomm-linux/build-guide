@@ -33,7 +33,7 @@ tag for ``meta-qcom``. The milestone release provides locked revisions for the w
 
          kas build meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/linux-qcom-6.18.yml
 
-         # Example, kas build meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml
+         # Example, kas build meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro.yml:meta-qcom/ci/linux-qcom-6.18.yml
 
    For various ``<machine>`` and ``<distro>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-80021-300/>`__.
 
@@ -79,7 +79,7 @@ Repo is a tool which can be used to download a list of git repositories from a `
 
          # machine and distribution flags refer to the machine and distribution configuration files present in `meta-qcom/ci` directory.
          # setup-environment sets the environment settings, creates the build directory build, and enters the build directory.
-         source setup-environment --machine meta-qcom/ci/iq-9075-evk.yml --distro meta-qcom/ci/qcom-distro-prop-image.yml --kernel meta-qcom/ci/linux-qcom-6.18.yml
+         source setup-environment --machine meta-qcom/ci/iq-9075-evk.yml --distro meta-qcom/ci/qcom-distro.yml --kernel meta-qcom/ci/linux-qcom-6.18.yml
 
 #. Build the required software image:
 
@@ -160,11 +160,11 @@ Modify and compile a recipe from the same workspace:
 
       # You can use devtool to modify the source-code used in any of the recipes
       kas shell -c "devtool modify <recipe>" meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/lock.yml
-      # Example, kas shell -c "devtool modify linux-qcom" meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/lock.yml
+      # Example, kas shell -c "devtool modify linux-qcom" meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro.yml:meta-qcom/ci/lock.yml
 
       # Build your recipe
       kas shell -c "bitbake <recipe>" meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/lock.yml
-      # Example, kas shell -c "bitbake linux-qcom" meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/lock.yml
+      # Example, kas shell -c "bitbake linux-qcom" meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro.yml:meta-qcom/ci/lock.yml
 
 .. _how_to_build_generate_sdk:
 

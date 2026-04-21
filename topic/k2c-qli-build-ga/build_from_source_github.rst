@@ -87,7 +87,7 @@ Create and build a Yocto image:
 
          kas build meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
 
-         # Example, kas build meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro-prop-image.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
+         # Example, kas build meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
 
    For various ``<machine>`` and ``<distro>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-80021-300/>`__.
 
