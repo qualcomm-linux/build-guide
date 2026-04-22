@@ -116,8 +116,12 @@ The machine configurations have either UFS or EMMC storage enabled by default. U
 Increase swap space
 ^^^^^^^^^^^^^^^^^^^^^^
 
-If the build fails because of an out-of-memory (OOM) error, increase the swap space to more than 32 GB. Run the following commands to enlarge the swap area:
+If your build fails because of an out‑of‑memory (OOM) error, increase the swap space to exceed 32 GB.  
+Run the following commands to enlarge the swap area:
 
+::
+
+   <commands>
 .. .. code-block:: bash
         # <insert swap‑expansion commands here>    
 .. container:: nohighlight

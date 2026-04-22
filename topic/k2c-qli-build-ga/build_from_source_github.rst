@@ -27,7 +27,7 @@ Install and configure the required software tools on the Ubuntu host computer.
 #. (Optional) Download the ``kas-container`` script.
    The ``kas`` package includes this script to run **kas** inside a container.  
    If you prefer to build images in an isolated environment, use ``kas-container``.
-   kas-container requires that docker is setup on your system. To install docker,
+   You must set up Docker on your system to use ``kas-container``. To install Docker,
    follow the instructions from the official `Docker documentation <https://docs.docker.com/engine/install/>`__.
 
    .. container:: nohighlight
@@ -73,11 +73,7 @@ Create and build a Yocto image:
          # copy kas lock file to meta-qcom repository
          cp meta-qcom-releases/lock.yml meta-qcom/ci/lock.yml
 
-.. note::
-
-   If you have limited resources on your system (RAM less than 64 GB) and are facing issues with the build, 
-   consider increasing the swap space on your machine before running the build. Refer to the section
-   :ref:`Increase swap space <increase_swap_space>`.
+   .. note:: If you have less than 64 GB RAM and you encounter build issues, increase your swap space before you run the build. See :ref:`Increase swap space <increase_swap_space>`.
 
 #. Build the software image. You define build targets based on machine and distribution combinations.
 
