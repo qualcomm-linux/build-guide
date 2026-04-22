@@ -342,7 +342,7 @@ Manual
 
                     Bus 002 Device 014: ID 05c6:9008 Qualcomm, Inc. Gobi Wireless Modem (QDL mode)
 
-           .. note:: SW switch must be turned on and Dip switch SW3-4 must be turned off after the flashing is complete.
+           .. note:: SW switch must be turned on and dip switch SW3-4 must be turned off after the flashing is complete.
 
 
 .. _setup_qdl:
@@ -355,27 +355,33 @@ Install QDL
    - Download the tool from https://softwarecenter.qualcomm.com/#/catalog/item/Qualcomm_Device_Loader.
    - Download the latest QDL using CLI based on the required operating system and architecture type:
    
-     **Linux**
+   .. container:: persistenttab-soc
 
-     .. container:: nohighlight
+   .. tabs::
+
+      .. group-tab:: Linux
+
+         .. container:: nohighlight
       
-        ::
+            ::
             
-           # X64
-           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Linux/Debian/latest.zip
-           # ARM64
-           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Linux/ARM64/Debian/latest.zip
+               # X64
+               wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Linux/Debian/latest.zip
+               
+               # ARM64
+               wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Linux/ARM64/Debian/latest.zip
 
-     **MacOS**
+      .. group-tab:: macOS
 
-     .. container:: nohighlight
+         .. container:: nohighlight
       
-        ::
+            ::
             
-           # X64
-           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/macOS/latest.zip
-           # ARM64
-           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/macOS/ARM64/latest.zip
+               # X64
+               wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/macOS/latest.zip
+
+               # ARM64
+               wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/macOS/ARM64/latest.zip
 
 #. Unzip QDL:
 

@@ -421,7 +421,7 @@ Build firmware
 
          Qualcomm releases the WLAN firmware as a binary and you don't need to compile the build.
 
-         .. rubric:: Generate firmware prebuilds (boot-critical and split-firmware binaries)
+         .. rubric:: Generate firmware prebuilts (boot-critical and split-firmware binaries)
 
          - Create an integrated firmware binary from the individual components that you compiled:
 
@@ -432,7 +432,7 @@ Build firmware
                 cd <FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/QCM6490.LE.2.0/common/build
                 python build.py --imf
 
-         - Firmware prebuild is successful if the following zip files are generated in the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/QCM6490.LE.2.0/common/build/ufs/bin`` directory:
+         - Firmware prebuilt is successful if the following zip files are generated in the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/QCM6490.LE.2.0/common/build/ufs/bin`` directory:
 
             -  ``QCM6490_bootbinaries.zip``
             -  ``QCM6490_dspso.zip``
@@ -711,7 +711,7 @@ Build firmware
 
          Qualcomm releases the WLAN firmware as a binary and you don't need to compile the build.
 
-         .. rubric:: Generate firmware prebuilds (boot-critical and split-firmware binaries)
+         .. rubric:: Generate firmware prebuilts (boot-critical and split-firmware binaries)
 
          - Create an integrated firmware binary from the individual components that you compiled:
 
@@ -722,7 +722,7 @@ Build firmware
                 cd <FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/QCS9100.LE.2.0/common/build
                 python build.py --imf
 
-         - Firmware prebuild is successful if the following zip files are generated in the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/QCS9100.LE.2.0/common/build/ufs/bin`` directory:
+         - Firmware prebuilt is successful if the following zip files are generated in the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/QCS9100.LE.2.0/common/build/ufs/bin`` directory:
 
             -  ``QCS9100_bootbinaries.zip``
             -  ``QCS9100_dspso.zip``
@@ -1000,7 +1000,7 @@ Build firmware
 
          Qualcomm releases the WLAN firmware as a binary and you don't need to compile the build.
 
-         .. rubric:: Generate firmware prebuilds (boot-critical and split-firmware binaries)
+         .. rubric:: Generate firmware prebuilts (boot-critical and split-firmware binaries)
 
          - Create an integrated firmware binary from the individual components that you compiled:
 
@@ -1011,7 +1011,7 @@ Build firmware
                  cd <FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/QCS8300.LE.2.0/common/build
                  python build.py --imf
 
-         - Firmware prebuild is successful if the following zip files are generated in the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/QCS8300.LE.2.0/common/build/ufs/bin`` directory:
+         - Firmware prebuilt is successful if the following zip files are generated in the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/QCS8300.LE.2.0/common/build/ufs/bin`` directory:
                         
            -  ``QCS8300_bootbinaries.zip``
            -  ``QCS8300_dspso.zip``
@@ -1046,18 +1046,18 @@ Build firmware
                   curl -LO http://archive.ubuntu.com/ubuntu/pool/main/libf/libffi/libffi6_3.2.1-8_amd64.deb
                   sudo dpkg -i libffi6_3.2.1-8_amd64.deb
 
-         - Install Python 2.7.18: 
+         -  Install Python 2.7.18: 
 
-          .. container:: nohighlight
+            .. container:: nohighlight
     
-             ::
+               ::
 
-                wget https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tgz
-                tar -xvf Python-2.7.18.tgz
-                cd Python-2.7.18
-                ./configure
-                make
-                sudo make install
+                  wget https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tgz
+                  tar -xvf Python-2.7.18.tgz
+                  cd Python-2.7.18
+                  ./configure
+                  make
+                  sudo make install
 
          -  Install LLVM for AOP, Qualcomm TEE, and boot compilation:
 
@@ -1231,8 +1231,7 @@ Build firmware
 
                   export LLVM=<FIRMWARE_ROOT>/llvm/14.0.4/
 
-           .. note::
-              To avoid build errors, ensure that there is a / at the end of the command
+            .. note:: To avoid build errors, ensure that there is a ``/`` at the end of the command.
 
          -  Python version: Python 3.10
          
@@ -1319,13 +1318,17 @@ Build firmware
                   cd <FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem/TZ.XF.5.29.1/trustzone_images/build/ms/
                   python build_all.py -b TZ.XF.5.0 CHIPSET=talos --cfg=build_config_deploy_talos.xml
 
-         .. rubric:: BTFM and WLAN firmware
+         .. rubric:: BTFM firmware
 
-         The BTFM and WLAN firmwares are released as a binary and build compilation isn’t required
+         Qualcomm releases the BTFM firmware as a binary and you don't need to compile the build.
 
-         .. rubric:: Generate firmware prebuilds (boot-critical and split-firmware binaries)
+         .. rubric:: WLAN firmware
 
-         - Generate firmware prebuilts (boot-critical and split-firmware binaries):
+         Qualcomm releases the WLAN firmware as a binary and you don't need to compile the build.
+
+         .. rubric:: Generate firmware prebuilts (boot-critical and split-firmware binaries)
+
+         - Create an integrated firmware binary from the individual components that you compiled:
 
            .. container:: nohighlight
          
