@@ -45,7 +45,7 @@ Sync
 
 QLI uses the kas tool to sync and build the Yocto meta layers. For every critical release, Kas lock files record the meta-layer repository information in `meta-qcom-releases <https://github.com/qualcomm-linux/meta-qcom-releases>`__.
 
-You can checkout the lock files for each release using the `meta-qcom-release-tag`. The meta-qcom release tag follows the syntax ``qli-<version>``. For example, the meta-qcom release tag can be ``qli-2.0-rc2``, where ``2.0-rc2`` is the release version.
+You can checkout the lock files for each release using the `meta-qcom-release-tag`. The meta-qcom release tag follows the syntax ``qli-<version>``. For example, the meta-qcom release tag can be ``qli-2.0-rc3``, where ``2.0-rc3`` is the release version.
 
 Build a BSP image
 -----------------
@@ -59,7 +59,7 @@ Create and build a Yocto image:
       ::
 
          git clone https://github.com/qualcomm-linux/meta-qcom-releases -b <meta-qcom-release>
-         # Example, git clone https://github.com/qualcomm-linux/meta-qcom-releases -b qli-2.0-rc2 
+         # Example, git clone https://github.com/qualcomm-linux/meta-qcom-releases -b qli-2.0-rc3 
 
          kas checkout meta-qcom-releases/lock.yml
 

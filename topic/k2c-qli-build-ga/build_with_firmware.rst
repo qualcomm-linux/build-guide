@@ -22,11 +22,11 @@ The following table describes the Qualcomm Yocto layers and release tags:
    * - Public developers (unregistered)
      - ``meta-qcom``
      - meta-qcom-releases tag
-     - qli-2.0-rc2
+     - qli-2.0-rc3
    * - See :ref:`Mapping access levels to firmware distributions <build_mapping_access_levels>`
      - NA
      - firmware release tag
-     - r2.0_00002.0
+     - r2.0_00005.0
 
 The following tables describe the firmware distributions that you can download. For more information about the Yocto layers, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-80021-27/qualcomm_linux_metadata_layers.html>`__.
 
@@ -1357,7 +1357,7 @@ The BSP image build has software components to support the Qualcomm device and s
          cd LE.QCLINUX.2.0
 
          git clone https://github.com/qualcomm-linux/meta-qcom-releases -b <meta-qcom-release>
-         # Example, git clone https://github.com/qualcomm-linux/meta-qcom-releases -b qli-2.0-rc2 
+         # Example, git clone https://github.com/qualcomm-linux/meta-qcom-releases -b qli-2.0-rc3 
 
          kas checkout meta-qcom-releases/lock.yml
 

@@ -62,7 +62,7 @@ Repo is a tool which can be used to download a list of git repositories from a `
          mkdir <workspace-dir>
          cd <workspace-dir>
 
-         # Example, <manifest-release-tag> is qli-2.0-rc2.xml
+         # Example, <manifest-release-tag> is qli-2.0-rc3.xml
          repo init -u https://github.com/qualcomm-linux/qcom-manifest -b main -m <manifest-release-tag>.xml
 
          repo sync
