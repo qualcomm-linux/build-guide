@@ -35,7 +35,7 @@ Override Linux-firmware binaries
 
          local_conf_header:
           firmware-build: |
-            SRCREV:pn-linux-firmware = "599764611a8ac213c6aa6dad17c941c2f46b53cb"
+            SRCREV:pn-linux-firmware = "c822cbbb14ce5b8ee1f27346220640ac350bbf34"
          EOF
 
          kas shell -c "devtool modify linux-firmware" meta-qcom/ci/<machine.yml>:meta-qcom/ci/qcom-distro.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml:meta-qcom/ci/firmware.yml
@@ -51,7 +51,7 @@ Override Linux-firmware binaries
 
            ::
 
-              SRCREV:pn-linux-firmware = "599764611a8ac213c6aa6dad17c941c2f46b53cb"
+              SRCREV:pn-linux-firmware = "c822cbbb14ce5b8ee1f27346220640ac350bbf34"
 
 #. Unzip the frmware zip file if you do not have the unzipped version.
 
@@ -166,6 +166,6 @@ Override boot firmware binaries
         # meta-qcom boot firmware recipes need this configuration to work correctly. 
         # pick the correct bbappend based on the recipe synced to your workspace
         echo 'ALLOW_EMPTY:${PN} = "1"' >> build/workspace/appends/<firmware-bootbinaries-bbappend-file>
-        # Example, echo 'ALLOW_EMPTY:${PN} = "1"' >> build/workspace/appends/firmware-qcom-boot-qcs9100_00118.0.bbappend
+        # Example, echo 'ALLOW_EMPTY:${PN} = "1"' >> build/workspace/appends/firmware-qcom-boot-qcs9100_00123.bbappend
 
 After you run these steps, the next :ref:`Yocto image build <step4_build_software_image>` will pick up the local firmware binaries.
