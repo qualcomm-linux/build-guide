@@ -342,8 +342,7 @@ Manual
 
                     Bus 002 Device 014: ID 05c6:9008 Qualcomm, Inc. Gobi Wireless Modem (QDL mode)
 
-           .. note:: SW switch must be turned on and Dip switch SW3-4 must be turned off after the flashing is complete.
-
+           .. note:: SW switch must be turned on and dip switch SW3-4 must be turned off after the flashing is complete.
 
 .. _setup_qdl:
 
