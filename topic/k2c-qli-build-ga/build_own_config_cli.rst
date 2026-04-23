@@ -14,7 +14,7 @@ When compiling a software image, ensure that you also compile the software produ
    
 2. Compile the software product with your own machine and distribution configuration files. 
    
-   For information on the supported machine configurations of the development kit, see the table *Default values of Machine parameters for QSC CLI* in the `Release Notes <https://docs.qualcomm.com/doc/80-80021-300/>`__.
+   For information on the supported machine configurations of the development kit, see the table *Default values of Machine parameters for QSC CLI* in the `Release Notes <https://docs.qualcomm.com/doc/80-80022-300/>`__.
    
    a. Run the build commands for a specific configuration:
 

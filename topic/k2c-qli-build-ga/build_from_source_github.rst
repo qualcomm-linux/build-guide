@@ -52,7 +52,7 @@ Build a BSP image
 
 Create and build a Yocto image:
 
-1. Download Qualcomm Yocto and the supporting meta layers. For the latest ``<meta-qcom-release>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-80021-300/>`__.
+1. Download Qualcomm Yocto and the supporting meta layers. For the latest ``<meta-qcom-release>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-80022-300/>`__.
       
    .. container:: nohighlight
 
@@ -85,7 +85,7 @@ Create and build a Yocto image:
 
          # Example, kas build meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
 
-   For various ``<machine>`` and ``<distro>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-80021-300/>`__.
+   For various ``<machine>`` and ``<distro>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-80022-300/>`__.
 
    .. note:: You can build the images in a fully isolated environment by using `kas-container <https://kas.readthedocs.io/en/latest/userguide/kas-container.html>`__.
 

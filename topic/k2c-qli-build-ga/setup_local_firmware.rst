@@ -3,7 +3,7 @@
 Set up local firmware binaries
 --------------------------------------
 
-Once the firmware compilations are complete, you can run these commands to include your local firmware binaries in the Yocto image compilation rather than the upstream firmware binaries. These commands provide examples to override firmware for the QCS9100 chipset. The appropriate paths for other chipsets are documented in the `Release Notes <https://docs.qualcomm.com/doc/80-80021-300/>`__.
+Once the firmware compilations are complete, you can run these commands to include your local firmware binaries in the Yocto image compilation rather than the upstream firmware binaries. These commands provide examples to override firmware for the QCS9100 chipset. The appropriate paths for other chipsets are documented in the `Release Notes <https://docs.qualcomm.com/doc/80-80022-300/>`__.
 
 .. rubric:: Prerequisite
   
@@ -131,7 +131,7 @@ Override DSPSO binaries
         # rm build/workspace/sources/hexagon-dsp-binaries/sa8775p/Qualcomm/SA8775P-RIDE/gdsp1-DSP.AT.1.0.1-00196-LEMANS-2/*.txt
 
 .. note::
-    Copy the dsp so binaries for your chipset for ADSP, CDSP, CDSP1, GDSP0 and GDSP1 as applicable. You can refer to the documentation in the `Release Notes<https://docs.qualcomm.com/doc/80-80021-300_113488/topic/build_critical_release_tags.html>`__.
+    Copy the dsp so binaries for your chipset for ADSP, CDSP, CDSP1, GDSP0 and GDSP1 as applicable. You can refer to the documentation in the `Release Notes<https://docs.qualcomm.com/doc/80-80022-300/topic/build_critical_release_tags.html>`__.
 
 Override boot firmware binaries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

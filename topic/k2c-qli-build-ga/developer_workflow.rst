@@ -15,7 +15,7 @@ The migration process depends on the development, branching, and integration wor
       files.
    #. Qualcomm provides git history to all the source repositories.
       You can see a reference list of repositories in the `Release
-      Notes <https://docs.qualcomm.com/doc/80-80021-300/>`__.
+      Notes <https://docs.qualcomm.com/doc/80-80022-300/>`__.
       For the Qualcomm repositories branched and modified at your
       end, perform the following steps:
 
@@ -37,10 +37,10 @@ The migration process depends on the development, branching, and integration wor
 Build a Qualcomm Linux kernel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-See `building kernel image <https://docs.qualcomm.com/bundle/publicresource/topics/80-80021-3/getting_started_chapter2.html#build-the-device-image>`__.
+See `building kernel image <https://docs.qualcomm.com/bundle/publicresource/topics/80-80022-3/getting_started_chapter2.html#build-the-device-image>`__.
 
 Customize Qualcomm Linux
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 See `User
-customizations <https://docs.qualcomm.com/bundle/publicresource/topics/80-80021-27/customize_qualcomm_linux.html>`__.
+customizations <https://docs.qualcomm.com/bundle/publicresource/topics/80-80022-27/customize_qualcomm_linux.html>`__.

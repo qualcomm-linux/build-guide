@@ -28,7 +28,7 @@ The following table describes the Qualcomm Yocto layers and release tags:
      - firmware release tag
      - r2.0_00005.0
 
-The following tables describe the firmware distributions that you can download. For more information about the Yocto layers, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-80021-27/qualcomm_linux_metadata_layers.html>`__.
+The following tables describe the firmware distributions that you can download. For more information about the Yocto layers, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-80022-27/qualcomm_linux_metadata_layers.html>`__.
 
 .. _build_mapping_access_levels:
 
@@ -103,7 +103,7 @@ The following ``git clone`` command downloads the selected firmware components i
       git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-2-0_ap_standard_oem_nomodem.git
       # Example, <firmware release tag> is r2.0_00002.0
 
-The ``git clone`` command clones the content into the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nm`` directory. For the latest ``<firmware release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-80021-300/>`__.
+The ``git clone`` command clones the content into the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-2-0_ap_standard_oem_nm`` directory. For the latest ``<firmware release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-80022-300/>`__.
 
 Build firmware
 ^^^^^^^^^^^^^^^^^^^^^
@@ -1347,7 +1347,7 @@ Build a BSP image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The BSP image build has software components to support the Qualcomm device and software features applicable to the Qualcomm SoCs. This build includes a reference distribution configuration for the Qualcomm development kits.
 
-1. Download Qualcomm Yocto and the supporting layers. For the ``<meta-qcom-release>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-80021-300/>`__.
+1. Download Qualcomm Yocto and the supporting layers. For the ``<meta-qcom-release>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-80022-300/>`__.
 
    .. container:: nohighlight
       
@@ -1388,7 +1388,7 @@ The BSP image build has software components to support the Qualcomm device and s
 
          # Example, kas shell -c "devtool build-image qcom-multimedia-proprietary-image" meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/lock.yml
 
-   For various ``<machine>`` and ``<distro>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-80021-300/>`__.
+   For various ``<machine>`` and ``<distro>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-80022-300/>`__.
 
    .. note:: To build images in a fully isolated environment, you can try using `kas-container <https://kas.readthedocs.io/en/latest/userguide/kas-container.html>`__.
 

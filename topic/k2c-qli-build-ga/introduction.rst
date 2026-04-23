@@ -3,7 +3,7 @@
 Build overview
 ===============
 
-Qualcomm Linux uses Yocto to build an embedded system software image. Hence, Qualcomm recommends that you read the `Qualcomm Linux Yocto Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-80021-27>`__ before starting your build. You can do any of the following:
+Qualcomm Linux uses Yocto to build an embedded system software image. Hence, Qualcomm recommends that you read the `Qualcomm Linux Yocto Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-80022-27>`__ before starting your build. You can do any of the following:
  
 - Download prebuilt images and flash the software
 - Sync, build, and flash the software
@@ -11,7 +11,7 @@ Qualcomm Linux uses Yocto to build an embedded system software image. Hence, Qua
 Download prebuilt images and flash the software
 ------------------------------------------------
 
-- In the `Release Notes <https://docs.qualcomm.com/doc/80-80021-300/topic/prebuilt_flashable_images_along_with_esdk.html>`__, go to the *Artifactory links to prebuilt flashable images and eSDK* table to download prebuilt flashable images and the Platform eSDK.
+- In the `Release Notes <https://docs.qualcomm.com/doc/80-80022-300/topic/prebuilt_flashable_images_along_with_esdk.html>`__, go to the *Artifactory links to prebuilt flashable images and eSDK* table to download prebuilt flashable images and the Platform eSDK.
 
   .. note:: The Platform eSDK is an installer that allows you to synchronize, modify, compile, and install applications and open-source plug-ins within a complete Yocto environment.
 
@@ -57,4 +57,4 @@ Sync, build, and flash the software
    .. figure:: ../../media/k2c-qli-build-ga/explore_QSC_pdf.svg
       :align: center
 
-.. note:: See `Hardware SoCs <https://docs.qualcomm.com/bundle/publicresource/topics/80-80021-115/soc.html>`__ that are supported on Qualcomm Linux.
+.. note:: See `Hardware SoCs <https://docs.qualcomm.com/bundle/publicresource/topics/80-80022-115/soc.html>`__ that are supported on Qualcomm Linux.
