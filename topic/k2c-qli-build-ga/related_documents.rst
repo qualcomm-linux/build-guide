@@ -15,20 +15,20 @@ Related documents
    * - **Qualcomm Technologies, Inc.**
      - 
 
-   * - `Qualcomm Linux Yocto Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-80021-27>`__
-     - 80-80021-27
+   * - `Qualcomm Linux Yocto Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-80022-27>`__
+     - 80-80022-27
 
-   * - `Qualcomm Linux Release Notes <https://docs.qualcomm.com/doc/80-80021-300/>`__
-     - 80-80021-300
+   * - `Qualcomm Linux Release Notes <https://docs.qualcomm.com/doc/80-80022-300/>`__
+     - 80-80022-300
 
-   * - `Qualcomm Linux Kernel Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-80021-3>`__
-     - 80-80021-3
+   * - `Qualcomm Linux Kernel Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-80022-3>`__
+     - 80-80022-3
 
-   * - `Qualcomm Dragonwing™ RB3 Gen 2 Development Kit user guide – Linux <https://docs.qualcomm.com/doc/80-80021-251/topic/landing-page.html>`__
-     - 80-80021-251
+   * - `Qualcomm Dragonwing™ RB3 Gen 2 Development Kit user guide – Linux <https://docs.qualcomm.com/doc/80-80022-251/topic/landing-page.html>`__
+     - 80-80022-251
 
-   * - `Qualcomm Linux Virtual Machine Setup Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-80021-41/>`__
-     - 80-80021-41
+   * - `Qualcomm Linux Virtual Machine Setup Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-80022-41/>`__
+     - 80-80022-41
 
    * - `Qualcomm Software Center User Guide <https://docs.qualcomm.com/doc/80-72780-2/topic/overview.html>`__
      - 80-72780-2

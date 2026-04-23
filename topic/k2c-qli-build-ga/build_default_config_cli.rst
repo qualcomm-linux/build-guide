@@ -6,7 +6,7 @@ Build the default configuration
 Compile
 ''''''''
 
-For information on the default configurations, see the table *Default values of Machine parameters for QSC CLI* in the `Release Notes <https://docs.qualcomm.com/doc/80-80021-300/>`__.
+For information on the default configurations, see the table *Default values of Machine parameters for QSC CLI* in the `Release Notes <https://docs.qualcomm.com/doc/80-80022-300/>`__.
 
 When the download is complete, start the compilation process. Depending on the size of the software and the host computer configuration, the compilation process can take a few hours.
 
@@ -37,7 +37,7 @@ To recompile individual software images after any modifications to the software 
       
       # Example, qsc-cli chip-software compile --image BOOT.MXF.1.0.c1 --workspace-path '/local/mnt/workspace/sample_workspace'
 
-For information on software image names (``--image``), see the table *QSC-CLI Input Parameters* in the `Release Notes <https://docs.qualcomm.com/doc/80-80021-300/>`__.
+For information on software image names (``--image``), see the table *QSC-CLI Input Parameters* in the `Release Notes <https://docs.qualcomm.com/doc/80-80022-300/>`__.
 
 Flash
 '''''''''
@@ -99,6 +99,6 @@ The ``--buildflavor`` argument is optional and only required for devices that ha
         ID | DEVICE TYPE | DEVICE STATE | SERIAL NUMBER | ADB SERIAL NUMBER | DESCRIPTION
         NA | NA          | EDL          | BE116704      | be116704          | Qualcomm USB Composite Device:QUSB_BULK_CID:042F_SN:BE116704
 
-   - The device reboots after the flashing procedure completes successfully. To verify the updated software version, see `Verify the Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-80021-251/set_up_the_device.html#verify-the-qualcomm-linux-version>`__.
+   - The device reboots after the flashing procedure completes successfully. To verify the updated software version, see `Verify the Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-80022-251/set_up_the_device.html#verify-the-qualcomm-linux-version>`__.
 
 .. note:: Flashing using QSC CLI is not supported on Windows Subsystem for Linux (WSL).
