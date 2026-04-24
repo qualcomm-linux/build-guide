@@ -106,6 +106,7 @@ Create and build a Yocto image:
    * The machine configurations have either UFS or EMMC storage enabled by default. To change the default storage, see :ref:`Set storage <set_storage>`.
    * To build meta-qcom tip, see :ref:`Build meta-qcom tip <build_tip>`.
    * For repo manifest based builds, see :ref:`Alternative build instructions using Manifest <build_manifest>`.
+   * For enabling debug configuration for builds, see :ref:`Create a build for debugging <debug_build>`.
 
 Flash
 -----
