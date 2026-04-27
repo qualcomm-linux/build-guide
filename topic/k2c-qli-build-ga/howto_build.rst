@@ -37,6 +37,24 @@ tag for ``meta-qcom``. The milestone release provides locked revisions for the w
 
    For various ``<machine>`` and ``<distro>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-80022-300/>`__.
 
+.. _debug_build:
+
+Creating a build for debugging
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To generate a debug build, add ``debug.yml`` kas configuration fragment to your build command.
+To understand which kernel defconfig and config fragments are used when DEBUG_BUILD is set to 1, see Kernel recipe, under `Kernel recipes <https://docs.qualcomm.com/doc/80-80020-27/topic/meta_qcom.html?product=895724676033554725&version=2.0rc1#kernel-recipes>`__.
+
+#. Build the software image with debug configuration.
+
+   .. container:: nohighlight
+      
+      ::
+
+         kas build meta-qcom/ci/<machine.yml>:meta-qcom/ci/<distro.yml>:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/debug.yml
+
+         # Example, kas build meta-qcom/ci/iq-9075-evk.yml:meta-qcom/ci/qcom-distro.yml:meta-qcom/ci/linux-qcom-6.18.yml:meta-qcom/ci/debug.yml
+
 .. _build_manifest:
 
 Alternative build instructions using Manifest
