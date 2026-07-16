@@ -96,11 +96,11 @@
    ```
 - Clean the build
    ```bash
-   python3 ./build_variant.py hamoa.adsp.prod --clean
+   python3 ./build_variant.py hamoa.adsp.prod --clean && python3 ./build_variant.py hamoa.adsp.charger --clean
    ```
 - Build the image
    ```bash
-   python3 ./build_variant.py hamoa.adsp.prod
+   python3 ./build_variant.py hamoa.adsp.prod && python3 ./build_variant.py hamoa.adsp.charger
    ```
 
 **Build cDSP**
