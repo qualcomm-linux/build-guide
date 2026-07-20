@@ -137,7 +137,7 @@ This includes the following steps:
 
 1. Get to a Docker shell as mentioned in :ref:`Generate an eSDK <how_to_build_generate_sdk>`.
 
-#. Download a new release. For the ``<manifest release tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-70030-300/>`__. An example ``<manifest release tag>`` is ``qcom-6.6.136-QLI.1.9-Ver.1.0.xml``.
+#. Download a new release. For the ``<manifest release tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-70030-300/>`__. An example ``<manifest release tag>`` is ``qcom-6.6.136-QLI.1.9-Ver.1.1.xml``.
 
    .. container:: nohighlight
       
