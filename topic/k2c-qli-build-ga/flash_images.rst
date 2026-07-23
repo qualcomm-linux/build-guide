@@ -407,7 +407,7 @@ Safety Island (SAIL) is applicable only for the Qualcomm Dragonwing™ IQ-9075 a
 
         # SAIL image is under <workspace_path>/build-<DISTRO>/tmp-glibc/deploy/images/<MACHINE>/<IMAGE>/sail_nor
         # build_path: For DISTRO=qcom-wayland, it's build-qcom-wayland. 
-        #             For DISTRO=qcom-robotics-ros2-humble, it's build-qcom-robotics-ros2-humble
+        #             For DISTRO=qcom-robotics-ros2-jazzy, it's build-qcom-robotics-ros2-jazzy
         # qdl --storage spinor <prog.mbn> [<program> <patch> ...]
         # Example, build_path is build-qcom-wayland
         cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs9075-rb8-core-kit/qcom-multimedia-image/sail_nor
@@ -550,7 +550,7 @@ Flash software using QDL
 
          # Built images are under <workspace_path>/build-<DISTRO>/tmp-glibc/deploy/images/<MACHINE>/<IMAGE>
          # build_path: For DISTRO=qcom-wayland, it's build-qcom-wayland. 
-         #             For DISTRO=qcom-robotics-ros2-humble, it's build-qcom-robotics-ros2-humble
+         #             For DISTRO=qcom-robotics-ros2-jazzy, it's build-qcom-robotics-ros2-jazzy
          # qdl <prog.mbn> [<program> <patch> ...]
          # Example: build_path is build-qcom-wayland
          cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image

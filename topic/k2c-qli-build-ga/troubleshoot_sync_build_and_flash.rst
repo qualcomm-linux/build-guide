@@ -500,7 +500,7 @@ Build
       
       ::
 
-         rm -rf <workspace_path>/build-qcom-robotics-ros2-humble/tmp-glibc
+         rm -rf <workspace_path>/build-qcom-robotics-ros2-jazzy/tmp-glibc
          bitbake -c cleanall pseudo-native & bitbake pseudo-native
          ../qirp-build qcom-robotics-full-image
 

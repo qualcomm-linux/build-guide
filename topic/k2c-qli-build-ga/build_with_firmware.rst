@@ -1409,10 +1409,10 @@ The QIR SDK 2.0 is a collection of components that let you develop robotic featu
 
          ln -s layers/meta-qcom-robotics-distro/set_bb_env.sh ./setup-robotics-environment
          ln -s layers/meta-qcom-robotics-sdk/scripts/qirp-build ./qirp-build
-         MACHINE=<machine> DISTRO=qcom-robotics-ros2-humble QCOM_SELECTED_BSP=custom source setup-robotics-environment
-         # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-robotics-ros2-humble QCOM_SELECTED_BSP=custom source setup-robotics-environment
-         # source setup-robotics-environment: Sets the environment, creates the build directory build-qcom-robotics-ros2-humble,
-         # and enters into build-qcom-robotics-ros2-humble directory.
+         MACHINE=<machine> DISTRO=qcom-robotics-ros2-jazzy QCOM_SELECTED_BSP=custom source setup-robotics-environment
+         # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-robotics-ros2-jazzy QCOM_SELECTED_BSP=custom source setup-robotics-environment
+         # source setup-robotics-environment: Sets the environment, creates the build directory build-qcom-robotics-ros2-jazzy,
+         # and enters into build-qcom-robotics-ros2-jazzy directory.
          ../qirp-build qcom-robotics-full-image
 
    To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/doc/80-70030-300/>`__.
@@ -1423,9 +1423,9 @@ The QIR SDK 2.0 is a collection of components that let you develop robotic featu
       
       ::
 
-         QIR SDK artifacts: <workspace_path>/build-qcom-robotics-ros2-humble/tmp-glibc/deploy/qirpsdk_artifacts/qirp-sdk_<version>.tar.gz
+         QIR SDK artifacts: <workspace_path>/build-qcom-robotics-ros2-jazzy/tmp-glibc/deploy/qirpsdk_artifacts/qirp-sdk_<version>.tar.gz
          # system.img is present in the following path
-         Robotics image: <workspace_path>/build-qcom-robotics-ros2-humble/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-robotics-full-image
+         Robotics image: <workspace_path>/build-qcom-robotics-ros2-jazzy/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-robotics-full-image
 
 #. Flash the generated build using :doc:`Flash software images <flash_images>`.
 
