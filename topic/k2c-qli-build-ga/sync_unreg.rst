@@ -53,7 +53,7 @@ The following table shows an example mapping of the Yocto layers to the manifest
      - BSP build + QIR SDK build:
        
        ``qcom-6.6.136-QLI.1.9-Ver.1.1_robotics-sdk-1.1.xml``
-     - ``qcom-robotics-ros2-humble``
+     - ``qcom-robotics-ros2-jazzy``
 
 The release tag syntax is as follows:
 
